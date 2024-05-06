@@ -1,11 +1,11 @@
-22.1 Release Notes
+26.1 Release Notes
 ==================
 
-Bitcoin Core version 22.1 is now available from:
+Bitcoin Core version 26.1 is now available from:
 
-  <https://bitcoincore.org/bin/bitcoin-core-22.1/>
+  <https://bitcoincore.org/bin/bitcoin-core-26.1/>
 
-This release includes new features, various bug fixes and performance
+This release includes various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
@@ -32,97 +32,74 @@ Compatibility
 ==============
 
 Bitcoin Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.14+, and Windows 7 and newer.  Bitcoin
+using the Linux kernel, macOS 11.0+, and Windows 7 and newer.  Bitcoin
 Core should also work on most other Unix-like systems but is not as
 frequently tested on them.  It is not recommended to use Bitcoin Core on
 unsupported systems.
 
-From Bitcoin Core 22.0 onwards, macOS versions earlier than 10.14 are no longer supported.
-
 Notable changes
 ===============
 
-Updated settings
-----------------
-
-- In previous releases, the meaning of the command line option
-  `-persistmempool` (without a value provided) incorrectly disabled mempool
-  persistence.  `-persistmempool` is now treated like other boolean options to
-  mean `-persistmempool=1`. Passing `-persistmempool=0`, `-persistmempool=1`
-  and `-nopersistmempool` is unaffected. (#23061)
-
-### P2P
-
-### RPC and other APIs
-
-- #25237 rpc: Capture UniValue by ref for rpcdoccheck
-- #25983 Prevent data race for pathHandlers
-- #26275 Fix crash on deriveaddresses when index is 2147483647 (2^31-1)
-
 ### Wallet
 
-- #22781 wallet: fix the behavior of IsHDEnabled
-- #22949 fee: Round up fee calculation to avoid a lower than expected feerate
-- #23333 wallet: fix segfault by avoiding invalid default-ctored external_spk_managers entry
+- #28994 wallet: skip BnB when SFFO is enabled
+- #28920 wallet: birth time update during tx scanning
+- #29176 wallet: Fix use-after-free in WalletBatch::EraseRecords
+- #29510 wallet: getrawchangeaddress and getnewaddress failures should not affect keypools for descriptor wallets
 
-### Build system
+### RPC
 
-- #22820 build, qt: Fix typo in QtInputSupport check
-- #23045 build: Restrict check for CRC32C intrinsic to aarch64
-- #23148 build: Fix guix linker-loader path and add check_ELF_interpreter
-- #23314 build: explicitly disable libsecp256k1 openssl based tests
-- #23580 build: patch qt to explicitly define previously implicit header include
-- #24215 guix: ignore additional failing certvalidator test
-- #24256 build: Bump depends packages (zmq, libXau)
-- #25201 windeploy: Renewed windows code signing certificate
-- #25985 Revert "build: Use Homebrew's sqlite package if it is available"
-- #26633 depends: update qt 5.12 url to archive location
+- #29003 rpc: fix getrawtransaction segfault
+- #28784 rpc: keep .cookie file if it was not generated
 
-### GUI
+### Logs
 
-- #gui631 Disallow encryption of watchonly wallets
-- #gui680 Fixes MacOS 13 segfault by preventing certain notifications
-- #24498 qt: Avoid crash on startup if int specified in settings.json
+- #29227 log mempool loading progress
 
-### Tests
+### P2P and network changes
 
-- #23716 test: replace hashlib.ripemd160 with an own implementation
-- #24239 test: fix ceildiv division by using integers
+- #29200 net: create I2P sessions using both ECIES-X25519 and ElGamal encryption
+- #29412 p2p: Don't process mutated blocks
+- #29524 p2p: Don't consider blocks mutated if they don't connect to known prev block
 
-### Utilities
+### Build
 
-- #22390 system: skip trying to set the locale on NetBSD
-- #22895 don't call GetBlockPos in ReadBlockFromDisk without cs_main lock
-- #24104 fs: Make compatible with boost 1.78
+- #29127 Use hardened runtime on macOS release builds.
+- #29195 build: Fix -Xclang -internal-isystem option
+
+### CI
+
+- #28992 ci: Use Ubuntu 24.04 Noble for asan,tsan,tidy,fuzz
+- #29080 ci: Set HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK to avoid unrelated failures
+- #29610 ci: Fix "macOS native" job
 
 ### Miscellaneous
 
-- #23335 refactor: include a missing <limits> header in fs.cpp
-- #23504 ci: Replace soon EOL hirsute with jammy
-- #26321 Adjust .tx/config for new Transifex CLI
+- #28391 refactor: Simplify CTxMempool/BlockAssembler fields, remove some external mapTx access
+- #29179 test: wallet rescan with reorged parent + IsFromMe child in mempool
+- #28791 snapshots: don't core dump when running -checkblockindex after loadtxoutset
+- #29357 test: Drop x modifier in fsbridge::fopen call for MinGW builds
+- #29529 fuzz: restrict fopencookie usage to Linux & FreeBSD
 
 Credits
 =======
 
 Thanks to everyone who directly contributed to this release:
 
-- Andrew Chow
-- BlackcoinDev
-- Carl Dong
+- dergoegge
+- fanquake
+- furszy
+- glozow
+- Greg Sanders
 - Hennadii Stepanov
-- Joan Karadimov
-- John Moffett
 - Jon Atack
-- Kittywhiskers Van Gogh
-- Marco Falke
+- MarcoFalke
+- Mark Friedenbach
 - Martin Zumsande
-- Michael Ford
-- muxator
-- Pieter Wuille
-- Ryan Ofsky
-- Saibato
-- Sebastian Falbesoner
-- W. J. van der Laan
+- Murch
+- Roman Zeyde
+- stickies-v
+- UdjinM6
 
 As well as to everyone that helped with translations on
 [Transifex](https://www.transifex.com/bitcoin/bitcoin/).

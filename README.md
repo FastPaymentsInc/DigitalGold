@@ -12,4 +12,4 @@ US Digital Gold is an asset-backed private digital currency, coins in circulatio
 
 The NotFiat treasury is independently audited on a quarterly basis to ensure full transparency and accountability.
 
-USDG Wallet is the name of open source software which enables the use of this currency. This is experimental version of the software, based on Bitcoin Core 22.x.
+USDG Wallet is the name of open source software which enables the use of this currency. This is experimental version of the software, based on Bitcoin Core 26.x.

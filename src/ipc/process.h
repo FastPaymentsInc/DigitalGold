@@ -5,13 +5,15 @@
 #ifndef BITCOIN_IPC_PROCESS_H
 #define BITCOIN_IPC_PROCESS_H
 
+#include <util/fs.h>
+
 #include <memory>
 #include <string>
 
 namespace ipc {
 class Protocol;
 
-//! IPC process interface for spawning usdg processes and serving requests
+//! IPC process interface for spawning bitcoin processes and serving requests
 //! in processes that have been spawned.
 //!
 //! There will be different implementations of this interface depending on the

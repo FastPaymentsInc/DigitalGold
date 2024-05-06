@@ -1,19 +1,18 @@
-// Copyright (c) 2017-2020 The Bitcoin Core developers
+// Copyright (c) 2017-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <consensus/tx_verify.h>
 
-#include <consensus/consensus.h>
-#include <primitives/transaction.h>
-#include <script/interpreter.h>
-#include <consensus/validation.h>
-
-#include <validation.h>
-
-// TODO remove the following dependencies
 #include <chain.h>
 #include <coins.h>
+#include <consensus/amount.h>
+#include <consensus/consensus.h>
+#include <consensus/validation.h>
+#include <primitives/transaction.h>
+#include <script/interpreter.h>
+#include <validation.h>
+#include <util/check.h>
 #include <util/moneystr.h>
 
 bool IsFinalTx(const CTransaction &tx, int nBlockHeight, int64_t nBlockTime)
@@ -77,7 +76,7 @@ std::pair<int, int64_t> CalculateSequenceLocks(const CTransaction &tx, int flags
         int nCoinHeight = prevHeights[txinIndex];
 
         if (txin.nSequence & CTxIn::SEQUENCE_LOCKTIME_TYPE_FLAG) {
-            int64_t nCoinTime = block.GetAncestor(std::max(nCoinHeight-1, 0))->GetMedianTimePast();
+            const int64_t nCoinTime{Assert(block.GetAncestor(std::max(nCoinHeight - 1, 0)))->GetMedianTimePast()};
             // NOTE: Subtract 1 to maintain nLockTime semantics
             // BIP 68 relative lock times have the semantics of calculating
             // the first block or time at which the transaction would be
@@ -146,7 +145,7 @@ unsigned int GetP2SHSigOpCount(const CTransaction& tx, const CCoinsViewCache& in
     return nSigOps;
 }
 
-int64_t GetTransactionSigOpCost(const CTransaction& tx, const CCoinsViewCache& inputs, int flags)
+int64_t GetTransactionSigOpCost(const CTransaction& tx, const CCoinsViewCache& inputs, uint32_t flags)
 {
     int64_t nSigOps = GetLegacySigOpCount(tx) * WITNESS_SCALE_FACTOR;
 
@@ -167,13 +166,18 @@ int64_t GetTransactionSigOpCost(const CTransaction& tx, const CCoinsViewCache& i
     return nSigOps;
 }
 
-bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, const CCoinsViewCache& inputs, int nSpendHeight, CAmount& txfee, uint32_t nTimeTx)
+bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, const CCoinsViewCache& inputs, int nSpendHeight, CAmount& txfee)
 {
     // are the actual inputs available?
     if (!inputs.HaveInputs(tx)) {
         return state.Invalid(TxValidationResult::TX_MISSING_INPUTS, "bad-txns-inputs-missingorspent",
                          strprintf("%s: inputs missing/spent", __func__));
     }
+
+    // Blackcoin: in v2 transactions use GetAdjustedTime() as nTimeTx
+    int64_t nTimeTx = tx.nTime;
+    if (!nTimeTx && tx.nVersion >= 2)
+        nTimeTx = GetAdjustedTimeSeconds();
 
     CAmount nValueIn = 0;
     for (unsigned int i = 0; i < tx.vin.size(); ++i) {
@@ -182,7 +186,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
         assert(!coin.IsSpent());
 
         // If prev is coinbase or coinstake, check that it's matured
-        if ((coin.IsCoinBase() || coin.IsCoinStake()) && nSpendHeight - coin.nHeight < (::Params().GetConsensus().IsProtocolV3_1(nTimeTx) ? ::Params().GetConsensus().nCoinbaseMaturity : Params().nCoinbaseMaturity)) {
+        if ((coin.IsCoinBase() || coin.IsCoinStake()) && nSpendHeight - coin.nHeight < ::Params().GetConsensus().nCoinbaseMaturity) {
             return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "bad-txns-premature-spend-of-coinbase",
                 strprintf("tried to spend coinbase at depth %d", nSpendHeight - coin.nHeight));
         }
@@ -213,7 +217,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
         }
 
         // Blackcoin: Minimum fee check
-        if (::Params().GetConsensus().IsProtocolV3_1(nTimeTx) && txfee_aux < GetMinFee(tx, nTimeTx))
+        if (txfee_aux < GetMinFee(tx, nTimeTx))
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-fee-not-enough");
 
         txfee = txfee_aux; 
@@ -225,21 +229,17 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
 // Blackcoin: GetMinFee
 CAmount GetMinFee(const CTransaction& tx, uint32_t nTimeTx)
 {
-    size_t nBytes = ::GetSerializeSize(tx, PROTOCOL_VERSION);
+    size_t nBytes = GetVirtualTransactionSize(tx);
     return GetMinFee(nBytes, nTimeTx);
 }
 
 CAmount GetMinFee(size_t nBytes, uint32_t nTime)
 {
     CAmount nMinFee;
+    CFeeRate nMinFeeRate;
 
-    if (Params().GetConsensus().IsProtocolV3_1(nTime))
-        nMinFee = (nBytes <= 200) ? MIN_TX_FEE : (CAmount)(nBytes * (TX_FEE_PER_KB / 1000));
-    else {
-        nMinFee = ::minRelayTxFee.GetFee(nBytes);
-        if (nMinFee < DEFAULT_MIN_RELAY_TX_FEE)
-            nMinFee = DEFAULT_MIN_RELAY_TX_FEE;
-    }
+    nMinFeeRate = CFeeRate{TX_FEE_PER_KB};
+    nMinFee = (nBytes <= 200) ? MIN_TX_FEE : nMinFeeRate.GetFee(nBytes);
 
     if (!MoneyRange(nMinFee))
         nMinFee = MAX_MONEY;

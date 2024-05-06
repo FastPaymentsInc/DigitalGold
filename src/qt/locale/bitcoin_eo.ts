@@ -7,7 +7,7 @@
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Krei novan adreson</translation>
+        <translation type="unfinished">Krei novan adreson</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Kopii elektitan adreson al la tondejo</translation>
+        <translation type="unfinished">Kopii elektitan adreson al la tondejo</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Forigi la elektitan adreson el la listo</translation>
+        <translation type="unfinished">Forigi la elektitan adreson el la listo</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
@@ -35,15 +35,15 @@
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Eksporti la datumojn el la aktuala langeto al dosiero</translation>
+        <translation type="unfinished">Eksporti la datumojn el la aktuala langeto al dosiero</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;Eksporti</translation>
+        <translation type="unfinished">&amp;Eksporti</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Forigi</translation>
+        <translation type="unfinished">&amp;Forigi</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -56,14 +56,6 @@
     <message>
         <source>C&amp;hoose</source>
         <translation type="unfinished">&amp;Elekti</translation>
-    </message>
-    <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Sendaj adresoj</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Ricevaj adresoj</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
@@ -92,7 +84,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Perkome disigita dosiero</translation>
     </message>
     <message>
@@ -124,19 +116,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>Dialogo pri pasfrazo</translation>
+        <translation type="unfinished">Dialogo pri pasfrazo</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>Enigu pasfrazon</translation>
+        <translation type="unfinished">Enigu pasfrazon</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>Nova pasfrazo</translation>
+        <translation type="unfinished">Nova pasfrazo</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>Ripetu la novan pasfrazon</translation>
+        <translation type="unfinished">Ripetu la novan pasfrazon</translation>
     </message>
     <message>
         <source>Show passphrase</source>
@@ -161,10 +153,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Confirm wallet encryption</source>
         <translation type="unfinished">Konfirmo de ĉifrado de la monujo</translation>
-    </message>
-    <message>
-        <source>Confirm wallet encryption</source>
-        <translation>Konfirmo de ĉifrado de la monujo</translation>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
@@ -197,26 +185,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Your wallet is now encrypted. </source>
         <translation type="unfinished">Via monujo ĵus estas ĉifrata.</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase for the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Enigi la novan pasfrazon por la monujo. &lt;br/&gt;Bonvolu uzi pasfrazon de &lt;b&gt;dek aŭ pli hazardaj signoj&lt;/b&gt;, aŭ &lt;b&gt;ok aŭ pli vortoj&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Enter the old passphrase and new passphrase for the wallet.</source>
-        <translation>Enigi la malnovan pasfrazon kaj la novan pasfrazon por la monujo.</translation>
-    </message>
-    <message>
-        <source>Wallet to be encrypted</source>
-        <translation>Monujo ĉifriĝota</translation>
-    </message>
-    <message>
-        <source>Your wallet is about to be encrypted. </source>
-        <translation>Via monujo estas ĉifriĝota.</translation>
-    </message>
-    <message>
-        <source>Your wallet is now encrypted. </source>
-        <translation>Via monujo ĵus estas ĉifrata.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -268,10 +236,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>QObject</name>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation type="unfinished">Eraro: la elektita dosierujo por datumoj "%1" ne ekzistas.</translation>
-    </message>
-    <message>
         <source>Error: %1</source>
         <translation type="unfinished">Eraro: %1</translation>
     </message>
@@ -293,14 +257,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -342,27 +306,27 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;Superrigardo</translation>
+        <translation type="unfinished">&amp;Superrigardo</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Vidigi ĝeneralan superrigardon de la monujo</translation>
+        <translation type="unfinished">Vidigi ĝeneralan superrigardon de la monujo</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;Transakcioj</translation>
+        <translation type="unfinished">&amp;Transakcioj</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Esplori historion de transakcioj</translation>
+        <translation type="unfinished">Esplori historion de transakcioj</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;Eliri</translation>
+        <translation type="unfinished">&amp;Eliri</translation>
     </message>
     <message>
         <source>Quit application</source>
-        <translation>Eliri la aplikaĵon</translation>
+        <translation type="unfinished">Eliri la aplikaĵon</translation>
     </message>
     <message>
         <source>&amp;About %1</source>
@@ -373,16 +337,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Montri informojn pri %1</translation>
     </message>
     <message>
-        <source>Show information about %1</source>
-        <translation>Montri informojn pri %1</translation>
-    </message>
-    <message>
         <source>About &amp;Qt</source>
-        <translation>Pri &amp;Qt</translation>
+        <translation type="unfinished">Pri &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Vidigi informojn pri Qt</translation>
+        <translation type="unfinished">Vidigi informojn pri Qt</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
@@ -403,59 +363,51 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Sendi monon al Blackmon-adreso</translation>
+        <translation type="unfinished">Sendi monon al Bitmon-adreso</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Krei alilokan sekurkopion de monujo</translation>
+        <translation type="unfinished">Krei alilokan sekurkopion de monujo</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Ŝanĝi la pasfrazon por ĉifri la monujon</translation>
+        <translation type="unfinished">Ŝanĝi la pasfrazon por ĉifri la monujon</translation>
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>&amp;Sendi</translation>
+        <translation type="unfinished">&amp;Sendi</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>&amp;Ricevi</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Montri / Kaŝi</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Montri aŭ kaŝi la ĉefan fenestron</translation>
+        <translation type="unfinished">&amp;Ricevi</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Ĉifri la privatajn ŝlosilojn de via monujo</translation>
+        <translation type="unfinished">Ĉifri la privatajn ŝlosilojn de via monujo</translation>
     </message>
     <message>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Subskribi mesaĝojn per via Blackmon-adresoj por pravigi, ke vi estas la posedanto</translation>
+        <translation type="unfinished">Subskribi mesaĝojn per via Bitmon-adresoj por pravigi, ke vi estas la posedanto</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Kontroli mesaĝojn por kontroli ĉu ili estas subskribitaj per specifaj Blackmon-adresoj</translation>
+        <translation type="unfinished">Kontroli mesaĝojn por kontroli ĉu ili estas subskribitaj per specifaj Bitmon-adresoj</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Dosiero</translation>
+        <translation type="unfinished">&amp;Dosiero</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Agordoj</translation>
+        <translation type="unfinished">&amp;Agordoj</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Helpo</translation>
+        <translation type="unfinished">&amp;Helpo</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>Langeto-breto</translation>
+        <translation type="unfinished">Langeto-breto</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
@@ -475,38 +427,38 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>mankas %1</translation>
+        <translation type="unfinished">mankas %1</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>Lasta ricevita bloko kreiĝis antaŭ %1.</translation>
+        <translation type="unfinished">Lasta ricevita bloko kreiĝis antaŭ %1.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Transakcioj por tio ankoraŭ ne videblas.</translation>
+        <translation type="unfinished">Transakcioj por tio ankoraŭ ne videblas.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eraro</translation>
+        <translation type="unfinished">Eraro</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Averto</translation>
+        <translation type="unfinished">Averto</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informoj</translation>
+        <translation type="unfinished">Informoj</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation>Ĝisdata</translation>
+        <translation type="unfinished">Ĝisdata</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -527,6 +479,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>default wallet</source>
         <translation type="unfinished">defaŭlta monujo</translation>
+    </message>
+    <message>
+        <source>Wallet Name</source>
+        <extracomment>Label of the input field where the name of the wallet is entered.</extracomment>
+        <translation type="unfinished">Monujo-Nomo</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -557,14 +514,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Averto: %1</translation>
     </message>
     <message>
-        <source>Error: %1</source>
-        <translation>Eraro: %1</translation>
-    </message>
-    <message>
-        <source>Warning: %1</source>
-        <translation>Averta: %1</translation>
-    </message>
-    <message>
         <source>Date: %1
 </source>
         <translation type="unfinished">Dato: %1
@@ -581,11 +530,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 </source>
         <translation type="unfinished">Monujo: %1
 </translation>
-    </message>
-    <message>
-        <source>Wallet: %1
-</source>
-        <translation>Monujo: %1</translation>
     </message>
     <message>
         <source>Type: %1
@@ -607,19 +551,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>Sendita transakcio</translation>
+        <translation type="unfinished">Sendita transakcio</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Envenanta transakcio</translation>
+        <translation type="unfinished">Envenanta transakcio</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj aktuale &lt;b&gt;malŝlosita&lt;/b&gt;</translation>
+        <translation type="unfinished">Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj aktuale &lt;b&gt;malŝlosita&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj aktuale &lt;b&gt;ŝlosita&lt;/b&gt;</translation>
+        <translation type="unfinished">Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj aktuale &lt;b&gt;ŝlosita&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Original message:</source>
@@ -647,10 +591,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Fee:</source>
         <translation type="unfinished">Krompago:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Polvo:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -717,24 +657,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopii bajtojn</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopii polvon</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopii restmonon</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 ŝlosita)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">jes</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">ne</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -751,6 +679,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 </context>
 <context>
     <name>CreateWalletActivity</name>
+    <message>
+        <source>Create Wallet</source>
+        <extracomment>Title of window indicating the progress of creation of a new wallet.</extracomment>
+        <translation type="unfinished">Krei Monujon</translation>
+    </message>
     <message>
         <source>Create wallet failed</source>
         <translation type="unfinished">Krei monujon malsukcesis</translation>
@@ -773,6 +706,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>default wallet</source>
         <translation type="unfinished">defaŭlta monujo</translation>
+    </message>
+    <message>
+        <source>Open Wallet</source>
+        <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
+        <translation type="unfinished">Malfermi la Monujon</translation>
     </message>
     </context>
 <context>
@@ -821,11 +759,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>Redakti Adreson</translation>
+        <translation type="unfinished">Redakti Adreson</translation>
     </message>
     <message>
         <source>&amp;Label</source>
-        <translation>&amp;Etikedo</translation>
+        <translation type="unfinished">&amp;Etikedo</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
@@ -837,7 +775,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation>&amp;Adreso</translation>
+        <translation type="unfinished">&amp;Adreso</translation>
     </message>
     <message>
         <source>New sending address</source>
@@ -868,23 +806,23 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation>Kreiĝos nova dosierujo por la datumoj.</translation>
+        <translation type="unfinished">Kreiĝos nova dosierujo por la datumoj.</translation>
     </message>
     <message>
         <source>name</source>
-        <translation>nomo</translation>
+        <translation type="unfinished">nomo</translation>
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation>Tiu dosierujo jam ekzistas. Aldonu %1 si vi volas krei novan dosierujon ĉi tie.</translation>
+        <translation type="unfinished">Tiu dosierujo jam ekzistas. Aldonu %1 si vi volas krei novan dosierujon ĉi tie.</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>Vojo jam ekzistas, kaj ne estas dosierujo.</translation>
+        <translation type="unfinished">Vojo jam ekzistas, kaj ne estas dosierujo.</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation>Ne eblas krei dosierujon por datumoj ĉi tie.</translation>
+        <translation type="unfinished">Ne eblas krei dosierujon por datumoj ĉi tie.</translation>
     </message>
 </context>
 <context>
@@ -892,6 +830,27 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Bitcoin</source>
         <translation type="unfinished">Bitmono</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n GB of space available</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(of %n GB needed)</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(%n GB needed for full chain)</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
     </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
@@ -903,11 +862,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eraro</translation>
+        <translation type="unfinished">Eraro</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Bonvenon</translation>
+        <translation type="unfinished">Bonvenon</translation>
     </message>
     <message>
         <source>Welcome to %1.</source>
@@ -915,11 +874,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation>Uzi la defaŭltan dosierujon por datumoj</translation>
+        <translation type="unfinished">Uzi la defaŭltan dosierujon por datumoj</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>Uzi alian dosierujon por datumoj:</translation>
+        <translation type="unfinished">Uzi alian dosierujon por datumoj:</translation>
     </message>
 </context>
 <context>
@@ -951,10 +910,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Formularo</translation>
     </message>
     <message>
-        <source>Unknown...</source>
-        <translation>Nekonata...</translation>
-    </message>
-    <message>
         <source>Last block time</source>
         <translation type="unfinished">Horo de la lasta bloko</translation>
     </message>
@@ -978,30 +933,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
         <translation type="unfinished">%1 sinkronigadas. Ĝi elŝutos kapaĵojn kaj blokojn de samtavolanoj, kaj validigos ilin, ĝis ĝi atingas la pinton de la blokĉeno.</translation>
     </message>
-    <message>
-        <source>Progress</source>
-        <translation>Progreso</translation>
-    </message>
-    <message>
-        <source>Progress increase per hour</source>
-        <translation>Hora pligrandigo da progreso</translation>
-    </message>
-    <message>
-        <source>calculating...</source>
-        <translation>kalkuladas...</translation>
-    </message>
-    <message>
-        <source>Hide</source>
-        <translation>Kaŝi</translation>
-    </message>
-    <message>
-        <source>Esc</source>
-        <translation>Esk</translation>
-    </message>
-    <message>
-        <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
-        <translation>%1 sinkronigadas. Ĝi elŝutos kapaĵojn kaj blokojn de samtavolanoj, kaj validigos ilin, ĝis ĝi atingas la pinton de la blokĉeno.</translation>
-    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -1009,16 +940,21 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Open bitcoin URI</source>
         <translation type="unfinished">Malfermi na la URI de bitmono</translation>
     </message>
-    </context>
+    <message>
+        <source>Paste address from clipboard</source>
+        <extracomment>Tooltip text for button that allows you to paste an address that is in your clipboard.</extracomment>
+        <translation type="unfinished">Alglui adreson de tondejo</translation>
+    </message>
+</context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>Agordaĵoj</translation>
+        <translation type="unfinished">Agordaĵoj</translation>
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>Ĉ&amp;efa</translation>
+        <translation type="unfinished">Ĉ&amp;efa</translation>
     </message>
     <message>
         <source>Automatically start %1 after logging in to the system.</source>
@@ -1041,24 +977,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">IP-adreso de prokurilo (ekz. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Kvanto da skriptaj kaj kontroleraraj fadenoj</translation>
-    </message>
-    <message>
-        <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
-        <translation>IP-adreso de prokurilo (ekz. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
-    </message>
-    <message>
         <source>Reset all client options to default.</source>
-        <translation>Reagordi ĉion al defaŭlataj valoroj.</translation>
+        <translation type="unfinished">Reagordi ĉion al defaŭlataj valoroj.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>&amp;Rekomenci agordadon</translation>
+        <translation type="unfinished">&amp;Rekomenci agordadon</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>&amp;Reto</translation>
+        <translation type="unfinished">&amp;Reto</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
@@ -1070,55 +998,55 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aŭtomate malfermi la kursilan pordon por Blackmono. Tio funkcias nur se via kursilo havas la UPnP-funkcion, kaj se tiu ĉi estas ŝaltita.</translation>
+        <translation type="unfinished">Aŭtomate malfermi la kursilan pordon por Bitmono. Tio funkcias nur se via kursilo havas la UPnP-funkcion, kaj se tiu ĉi estas ŝaltita.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Mapigi pordon per &amp;UPnP</translation>
+        <translation type="unfinished">Mapigi pordon per &amp;UPnP</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
-        <translation>Prokurila &amp;IP:</translation>
+        <translation type="unfinished">Prokurila &amp;IP:</translation>
     </message>
     <message>
         <source>&amp;Port:</source>
-        <translation>&amp;Pordo:</translation>
+        <translation type="unfinished">&amp;Pordo:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
-        <translation>la pordo de la prokurilo (ekz. 9050)</translation>
+        <translation type="unfinished">la pordo de la prokurilo (ekz. 9050)</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation>&amp;Fenestro</translation>
+        <translation type="unfinished">&amp;Fenestro</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
-        <translation>Montri nur sistempletan piktogramon post minimumigo de la fenestro.</translation>
+        <translation type="unfinished">Montri nur sistempletan piktogramon post minimumigo de la fenestro.</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimumigi al la sistempleto anstataŭ al la taskopleto</translation>
+        <translation type="unfinished">&amp;Minimumigi al la sistempleto anstataŭ al la taskopleto</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimumigi je fermo</translation>
+        <translation type="unfinished">M&amp;inimumigi je fermo</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>&amp;Aspekto</translation>
+        <translation type="unfinished">&amp;Aspekto</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>&amp;Lingvo de la fasado:</translation>
+        <translation type="unfinished">&amp;Lingvo de la fasado:</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unuo por vidigi sumojn:</translation>
+        <translation type="unfinished">&amp;Unuo por vidigi sumojn:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elekti la defaŭltan manieron por montri bitmonajn sumojn en la interfaco, kaj kiam vi sendos bitmonon.</translation>
+        <translation type="unfinished">Elekti la defaŭltan manieron por montri bitmonajn sumojn en la interfaco, kaj kiam vi sendos bitmonon.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1126,15 +1054,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;Bone</translation>
+        <translation type="unfinished">&amp;Bone</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;Nuligi</translation>
+        <translation type="unfinished">&amp;Nuligi</translation>
     </message>
     <message>
         <source>default</source>
-        <translation>defaŭlta</translation>
+        <translation type="unfinished">defaŭlta</translation>
     </message>
     <message>
         <source>none</source>
@@ -1142,7 +1070,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Confirm options reset</source>
-        <translation>Konfirmi reŝargo de agordoj</translation>
+        <extracomment>Window title text of pop-up window shown when the user has chosen to reset options.</extracomment>
+        <translation type="unfinished">Konfirmi reŝargo de agordoj</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1150,26 +1079,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>La prokurila adreso estas malvalida.</translation>
+        <translation type="unfinished">La prokurila adreso estas malvalida.</translation>
     </message>
 </context>
 <context>
     <name>OverviewPage</name>
     <message>
         <source>Form</source>
-        <translation>Formularo</translation>
+        <translation type="unfinished">Formularo</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Eblas, ke la informoj videblaj ĉi tie estas eksdataj. Via monujo aŭtomate sinkoniĝas kun la blackmona reto kiam ili konektiĝas, sed tiu procezo ankoraŭ ne finfariĝis.</translation>
-    </message>
-    <message>
-        <source>Available:</source>
-        <translation>Disponebla:</translation>
-    </message>
-    <message>
-        <source>Available:</source>
-        <translation>Disponebla:</translation>
+        <translation type="unfinished">Eblas, ke la informoj videblaj ĉi tie estas eksdataj. Via monujo aŭtomate sinkoniĝas kun la bitmona reto kiam ili konektiĝas, sed tiu procezo ankoraŭ ne finfariĝis.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1177,19 +1098,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Your current spendable balance</source>
-        <translation>via aktuala elspezebla saldo</translation>
+        <translation type="unfinished">via aktuala elspezebla saldo</translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>la sumo de transakcioj ankoraŭ ne konfirmitaj, kiuj ankoraŭ ne elspezeblas</translation>
+        <translation type="unfinished">la sumo de transakcioj ankoraŭ ne konfirmitaj, kiuj ankoraŭ ne elspezeblas</translation>
     </message>
     <message>
         <source>Immature:</source>
-        <translation>Nematura:</translation>
+        <translation type="unfinished">Nematura:</translation>
     </message>
     <message>
         <source>Mined balance that has not yet matured</source>
-        <translation>Minita saldo, kiu ankoraŭ ne maturiĝis</translation>
+        <translation type="unfinished">Minita saldo, kiu ankoraŭ ne maturiĝis</translation>
     </message>
     <message>
         <source>Balances</source>
@@ -1197,11 +1118,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Totalo:</translation>
+        <translation type="unfinished">Totalo:</translation>
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>via aktuala totala saldo</translation>
+        <translation type="unfinished">via aktuala totala saldo</translation>
     </message>
     <message>
         <source>Spendable:</source>
@@ -1217,6 +1138,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Close</source>
         <translation type="unfinished">Fermi</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">propra adreso</translation>
     </message>
     <message>
         <source>Total Amount</source>
@@ -1274,7 +1199,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <extracomment>Title of Peers Table column which states the network the peer connected through.</extracomment>
         <translation type="unfinished">Reto</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -1298,15 +1223,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>RPCConsole</name>
     <message>
         <source>N/A</source>
-        <translation>neaplikebla</translation>
+        <translation type="unfinished">neaplikebla</translation>
     </message>
     <message>
         <source>Client version</source>
-        <translation>Versio de kliento</translation>
+        <translation type="unfinished">Versio de kliento</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;Informoj</translation>
+        <translation type="unfinished">&amp;Informoj</translation>
     </message>
     <message>
         <source>General</source>
@@ -1314,11 +1239,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Startup time</source>
-        <translation>Horo de lanĉo</translation>
+        <translation type="unfinished">Horo de lanĉo</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Reto</translation>
+        <translation type="unfinished">Reto</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1326,19 +1251,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Number of connections</source>
-        <translation>Nombro de konektoj</translation>
+        <translation type="unfinished">Nombro de konektoj</translation>
     </message>
     <message>
         <source>Block chain</source>
-        <translation>Blokĉeno</translation>
+        <translation type="unfinished">Blokĉeno</translation>
     </message>
     <message>
         <source>Wallet: </source>
         <translation type="unfinished">Monujo:</translation>
-    </message>
-    <message>
-        <source>Wallet: </source>
-        <translation>Monujo:</translation>
     </message>
     <message>
         <source>Received</source>
@@ -1370,15 +1291,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Last block time</source>
-        <translation>Horo de la lasta bloko</translation>
+        <translation type="unfinished">Horo de la lasta bloko</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Malfermi</translation>
+        <translation type="unfinished">&amp;Malfermi</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>&amp;Konzolo</translation>
+        <translation type="unfinished">&amp;Konzolo</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
@@ -1390,11 +1311,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Debug log file</source>
-        <translation>Sencimiga protokoldosiero</translation>
+        <translation type="unfinished">Sencimiga protokoldosiero</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>Malplenigi konzolon</translation>
+        <translation type="unfinished">Malplenigi konzolon</translation>
     </message>
     <message>
         <source>In:</source>
@@ -1538,7 +1459,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Sendi Bitmonon</translation>
+        <translation type="unfinished">Sendi Bitmonon</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1581,40 +1502,32 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kaŝi</translation>
     </message>
     <message>
-        <source>Hide</source>
-        <translation>Kaŝi</translation>
-    </message>
-    <message>
         <source>Send to multiple recipients at once</source>
-        <translation>Sendi samtempe al pluraj ricevantoj</translation>
+        <translation type="unfinished">Sendi samtempe al pluraj ricevantoj</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>Aldoni &amp;Ricevonton</translation>
+        <translation type="unfinished">Aldoni &amp;Ricevonton</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation type="unfinished">Malplenigi ĉiujn kampojn de la formularo.</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Polvo:</translation>
-    </message>
-    <message>
         <source>Clear &amp;All</source>
-        <translation>&amp;Forigi Ĉion</translation>
+        <translation type="unfinished">&amp;Forigi Ĉion</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation>Saldo:</translation>
+        <translation type="unfinished">Saldo:</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Konfirmi la sendon</translation>
+        <translation type="unfinished">Konfirmi la sendon</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>Ŝendi</translation>
+        <translation type="unfinished">Ŝendi</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1637,20 +1550,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kopii bajtojn</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopii polvon</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopii restmonon</translation>
     </message>
     <message>
         <source>%1 to %2</source>
         <translation type="unfinished">%1 al %2</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation type="unfinished">Ĉu vi certas, ke vi volas sendi?</translation>
     </message>
     <message>
         <source>or</source>
@@ -1665,16 +1570,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Totala Sumo</translation>
     </message>
     <message>
-        <source>Total Amount</source>
-        <translation>Totala Sumo</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation type="unfinished">Konfirmi sendon de bitmono</translation>
-    </message>
-    <message>
-        <source>Send</source>
-        <translation>Sendi</translation>
     </message>
     <message>
         <source>The amount to pay must be larger than 0.</source>
@@ -1694,7 +1591,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -1712,15 +1609,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>SendCoinsEntry</name>
     <message>
         <source>A&amp;mount:</source>
-        <translation>&amp;Sumo:</translation>
+        <translation type="unfinished">&amp;Sumo:</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>&amp;Ricevonto:</translation>
+        <translation type="unfinished">&amp;Ricevonto:</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;Etikedo:</translation>
+        <translation type="unfinished">&amp;Etikedo:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1728,7 +1625,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Alglui adreson de tondejo</translation>
+        <translation type="unfinished">Alglui adreson de tondejo</translation>
     </message>
     <message>
         <source>Remove this entry</source>
@@ -1742,24 +1639,23 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation type="unfinished">Tajpu etikedon por tiu ĉi adreso por aldoni ĝin al la listo de uzitaj adresoj</translation>
     </message>
+    </context>
+<context>
+    <name>SendConfirmationDialog</name>
     <message>
-        <source>Pay To:</source>
-        <translation type="unfinished">Pagi Al:</translation>
+        <source>Send</source>
+        <translation type="unfinished">Sendi</translation>
     </message>
-    <message>
-        <source>Memo:</source>
-        <translation type="unfinished">Memorando:</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Subskriboj - Subskribi / Kontroli mesaĝon</translation>
+        <translation type="unfinished">Subskriboj - Subskribi / Kontroli mesaĝon</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
-        <translation>&amp;Subskribi Mesaĝon</translation>
+        <translation type="unfinished">&amp;Subskribi Mesaĝon</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1767,51 +1663,51 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Alglui adreson de tondejo</translation>
+        <translation type="unfinished">Alglui adreson de tondejo</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>Tajpu la mesaĝon, kiun vi volas sendi, cîi tie</translation>
+        <translation type="unfinished">Tajpu la mesaĝon, kiun vi volas sendi, cîi tie</translation>
     </message>
     <message>
         <source>Signature</source>
-        <translation>Subskribo</translation>
+        <translation type="unfinished">Subskribo</translation>
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopii la aktualan subskribon al la tondejo</translation>
+        <translation type="unfinished">Kopii la aktualan subskribon al la tondejo</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Subskribi la mesaĝon por pravigi, ke vi estas la posedanto de tiu Blackmon-adreso</translation>
+        <translation type="unfinished">Subskribi la mesaĝon por pravigi, ke vi estas la posedanto de tiu Bitmon-adreso</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>Subskribi &amp;Mesaĝon</translation>
+        <translation type="unfinished">Subskribi &amp;Mesaĝon</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Reagordigi ĉiujn prisubskribajn kampojn</translation>
+        <translation type="unfinished">Reagordigi ĉiujn prisubskribajn kampojn</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>&amp;Forigi Ĉion</translation>
+        <translation type="unfinished">&amp;Forigi Ĉion</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;Kontroli Mesaĝon</translation>
+        <translation type="unfinished">&amp;Kontroli Mesaĝon</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Kontroli la mesaĝon por pravigi, ke ĝi ja estas subskribita per la specifa Blackmon-adreso</translation>
+        <translation type="unfinished">Kontroli la mesaĝon por pravigi, ke ĝi ja estas subskribita per la specifa Bitmon-adreso</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>Kontroli &amp;Mesaĝon</translation>
+        <translation type="unfinished">Kontroli &amp;Mesaĝon</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Reagordigi ĉiujn prikontrolajn kampojn</translation>
+        <translation type="unfinished">Reagordigi ĉiujn prikontrolajn kampojn</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
@@ -1868,23 +1764,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Malferma ĝis %1</translation>
-    </message>
     <message>
         <source>%1/unconfirmed</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block, but less than 6 blocks.</extracomment>
         <translation type="unfinished">%1/nekonfirmite</translation>
     </message>
     <message>
         <source>%1 confirmations</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in 6 or more blocks.</extracomment>
         <translation type="unfinished">%1 konfirmoj</translation>
     </message>
     <message>
@@ -1929,7 +1816,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -1999,7 +1886,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>TransactionDescDialog</name>
     <message>
         <source>This pane shows a detailed description of the transaction</source>
-        <translation>Tiu ĉi panelo montras detalan priskribon de la transakcio</translation>
+        <translation type="unfinished">Tiu ĉi panelo montras detalan priskribon de la transakcio</translation>
     </message>
     </context>
 <context>
@@ -2015,17 +1902,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Label</source>
         <translation type="unfinished">Etikedo</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Malferma ĝis %1</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -2050,10 +1926,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Sendita al</translation>
-    </message>
-    <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Pago al vi mem</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2119,10 +1991,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Sendita al</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Al vi mem</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Minita</translation>
     </message>
@@ -2136,7 +2004,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Perkome disigita dosiero</translation>
     </message>
     <message>
@@ -2178,7 +2046,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Create a new wallet</source>
         <translation type="unfinished">Krei novan monujon</translation>
     </message>
-</context>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Eraro</translation>
+    </message>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -2199,10 +2071,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation type="unfinished">Eksporti la datumojn el la aktuala langeto al dosiero</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="unfinished">Eraro</translation>
     </message>
     <message>
         <source>Backup Wallet</source>

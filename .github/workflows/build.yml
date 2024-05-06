@@ -2,6 +2,8 @@ name: build
 
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -150,7 +152,7 @@ jobs:
       - name: Build USDG
         run: |
           ./autogen.sh
-          ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports --enable-sse2 || ( cat config.log && false)
+          ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports || ( cat config.log && false)
           make -j $MAKEJOBS ${{ matrix.goal }} || ( echo "Build failure. Verbose build follows." && make ${{ matrix.goal }} V=1 ; false )
  
       - name: Check security

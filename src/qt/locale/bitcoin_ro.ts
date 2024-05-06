@@ -7,7 +7,7 @@
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Creează o adresă nouă</translation>
+        <translation type="unfinished">Creează o adresă nouă</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Copiază adresa selectată curent în clipboard</translation>
+        <translation type="unfinished">Copiază adresa selectată curent în clipboard</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Şterge adresa selectată curent din listă</translation>
+        <translation type="unfinished">Şterge adresa selectată curent din listă</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
@@ -35,11 +35,11 @@
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Exportă datele din tab-ul curent într-un fişier</translation>
+        <translation type="unfinished">Exportă datele din tab-ul curent într-un fişier</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Şterge</translation>
+        <translation type="unfinished">&amp;Şterge</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -54,14 +54,6 @@
         <translation type="unfinished">A&amp;lege</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Adresa de trimitere</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Adresa de primire</translation>
-    </message>
-    <message>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">Acestea sunt adresele tale Bitcoin pentru efectuarea platilor. Intotdeauna verifica atent suma de plata si adresa beneficiarului inainte de a trimite monede.</translation>
     </message>
@@ -70,10 +62,6 @@
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Acestea sunt adresele Bitcoin pentru primirea plăților. Folosiți butonul " Creați o nouă adresă de primire" din fila de primire pentru a crea noi adrese.
 Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
-    </message>
-    <message>
-        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Acestea sunt adresele dvs. Bitcoin pentru primirea plăților. Utilizați butonul „Creați o nouă adresă de primire” din secțiunea primire pentru a crea adrese noi.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -93,13 +81,21 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Fișier separat prin virgulă</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
         <translation type="unfinished">A apărut o eroare la salvarea listei de adrese la %1. Vă rugăm să încercaţi din nou.</translation>
+    </message>
+    <message>
+        <source>Sending addresses - %1</source>
+        <translation type="unfinished">Adresa de trimitere-%1</translation>
+    </message>
+    <message>
+        <source>Receiving addresses - %1</source>
+        <translation type="unfinished">Adresa de primire - %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
@@ -125,19 +121,19 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>Dialogul pentru fraza de acces</translation>
+        <translation type="unfinished">Dialogul pentru fraza de acces</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>Introduceţi fraza de acces</translation>
+        <translation type="unfinished">Introduceţi fraza de acces</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>Frază de acces nouă</translation>
+        <translation type="unfinished">Frază de acces nouă</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>Repetaţi noua frază de acces</translation>
+        <translation type="unfinished">Repetaţi noua frază de acces</translation>
     </message>
     <message>
         <source>Show passphrase</source>
@@ -201,31 +197,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Protofelul tău este criptat.</translation>
     </message>
     <message>
-        <source>Enter the new passphrase for the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Introduceti o parola noua pentru portofel. &lt;br/&gt;Va rugam sa folositi o parola de &lt;b&gt; zece sau mai multe caractere&lt;/b&gt;, sau &lt;b&gt;mai mult de opt cuvinte&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Enter the old passphrase and new passphrase for the wallet.</source>
-        <translation>Introduceţi vechea şi noua parolă pentru portofel.
- </translation>
-    </message>
-    <message>
-        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation>Reţineti: criptarea portofelului dvs. nu vă poate proteja în totalitate bitcoin-urile împotriva furtului de malware care vă infectează computerul.</translation>
-    </message>
-    <message>
-        <source>Wallet to be encrypted</source>
-        <translation>Portofel de criptat</translation>
-    </message>
-    <message>
-        <source>Your wallet is about to be encrypted. </source>
-        <translation>Portofelul tău urmează să fie criptat.</translation>
-    </message>
-    <message>
-        <source>Your wallet is now encrypted. </source>
-        <translation>Protofelul tău este criptat.</translation>
-    </message>
-    <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation type="unfinished">IMPORTANT: Orice copie de siguranţă făcută anterior portofelului dumneavoastră ar trebui înlocuită cu cea generată cel mai recent, fişier criptat al portofelului. Pentru siguranţă, copiile de siguranţă vechi ale portofelului ne-criptat vor deveni inutile imediat ce veţi începe folosirea noului fişier criptat al portofelului.</translation>
     </message>
@@ -268,6 +239,10 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
 <context>
     <name>BitcoinApplication</name>
     <message>
+        <source>Settings file %1 might be corrupt or invalid.</source>
+        <translation type="unfinished">Fișierul de configurări %1 poate fi corupt sau invalid.</translation>
+    </message>
+    <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Excepție de fugă</translation>
     </message>
@@ -287,20 +262,18 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation type="unfinished">Eroare: Directorul de date specificat "%1" nu există.</translation>
+        <source>Do you want to reset settings to default values, or to abort without making changes?</source>
+        <extracomment>Explanatory text shown on startup when the settings file cannot be read. Prompts user to make a choice between resetting or aborting.</extracomment>
+        <translation type="unfinished">Vrei să resetezi opțiunile la valorile predeterminate sau sa abordezi fără a face schimbări?</translation>
     </message>
     <message>
-        <source>Error: Cannot parse configuration file: %1.</source>
-        <translation type="unfinished">Eroare: Nu se poate analiza fişierul de configuraţie: %1.</translation>
+        <source>A fatal error occurred. Check that settings file is writable, or try running with -nosettings.</source>
+        <extracomment>Explanatory text shown on startup when the settings file could not be written. Prompts user to check that we have the ability to write to the file. Explains that the user has the option of running without a settings file.</extracomment>
+        <translation type="unfinished">A apărut o eroare fatală. Verificați dacă se poate scrie în fișierul de setări sau încercați să rulați cu -nosettings.</translation>
     </message>
     <message>
         <source>Error: %1</source>
         <translation type="unfinished">Eroare: %1</translation>
-    </message>
-    <message>
-        <source>Error initializing settings: %1</source>
-        <translation type="unfinished">Eroare de inițializare a setărilor: %1</translation>
     </message>
     <message>
         <source>%1 didn't yet exit safely…</source>
@@ -320,10 +293,12 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Inbound</source>
+        <extracomment>An inbound connection from a peer. An inbound connection is a connection initiated by a peer.</extracomment>
         <translation type="unfinished">Intrare</translation>
     </message>
     <message>
         <source>Outbound</source>
+        <extracomment>An outbound connection to a peer. An outbound connection is a connection initiated by us.</extracomment>
         <translation type="unfinished">Ieşire</translation>
     </message>
     <message>
@@ -340,7 +315,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
             <numerusform />
@@ -348,7 +323,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
             <numerusform />
@@ -395,27 +370,27 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;Imagine de ansamblu</translation>
+        <translation type="unfinished">&amp;Imagine de ansamblu</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Arată o stare generală de ansamblu a portofelului</translation>
+        <translation type="unfinished">Arată o stare generală de ansamblu a portofelului</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;Tranzacţii</translation>
+        <translation type="unfinished">&amp;Tranzacţii</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Răsfoire istoric tranzacţii</translation>
+        <translation type="unfinished">Răsfoire istoric tranzacţii</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Ieşire</translation>
+        <translation type="unfinished">Ieşire</translation>
     </message>
     <message>
         <source>Quit application</source>
-        <translation>Închide aplicaţia</translation>
+        <translation type="unfinished">Închide aplicaţia</translation>
     </message>
     <message>
         <source>&amp;About %1</source>
@@ -427,11 +402,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Despre &amp;Qt</translation>
+        <translation type="unfinished">Despre &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Arată informaţii despre Qt</translation>
+        <translation type="unfinished">Arată informaţii despre Qt</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
@@ -440,14 +415,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Create a new wallet</source>
         <translation type="unfinished">Crează un portofel nou</translation>
-    </message>
-    <message>
-        <source>Create Wallet...</source>
-        <translation>Crează portofel...</translation>
-    </message>
-    <message>
-        <source>Create a new wallet</source>
-        <translation>Crează un portofel nou</translation>
     </message>
     <message>
         <source>Wallet:</source>
@@ -464,35 +431,27 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Trimite monede către o adresă Bitcoin</translation>
+        <translation type="unfinished">Trimite monede către o adresă Bitcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Creează o copie de rezervă a portofelului într-o locaţie diferită</translation>
+        <translation type="unfinished">Creează o copie de rezervă a portofelului într-o locaţie diferită</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Schimbă fraza de acces folosită pentru criptarea portofelului</translation>
+        <translation type="unfinished">Schimbă fraza de acces folosită pentru criptarea portofelului</translation>
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>Trimite</translation>
+        <translation type="unfinished">Trimite</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>P&amp;rimeşte</translation>
+        <translation type="unfinished">P&amp;rimeşte</translation>
     </message>
     <message>
         <source>&amp;Options…</source>
         <translation type="unfinished">&amp;Opțiuni...</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>Arată/Ascunde</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Arată sau ascunde fereastra principală</translation>
     </message>
     <message>
         <source>&amp;Encrypt Wallet…</source>
@@ -500,7 +459,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Criptează cheile private ale portofelului dvs.</translation>
+        <translation type="unfinished">Criptează cheile private ale portofelului dvs.</translation>
     </message>
     <message>
         <source>&amp;Backup Wallet…</source>
@@ -516,7 +475,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Semnaţi mesaje cu adresa dvs. Bitcoin pentru a dovedi că vă aparţin</translation>
+        <translation type="unfinished">Semnaţi mesaje cu adresa dvs. Bitcoin pentru a dovedi că vă aparţin</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -524,15 +483,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Bitcoin specificată</translation>
+        <translation type="unfinished">Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Bitcoin specificată</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
         <translation type="unfinished">&amp;Încarcă PSBT din fișier...</translation>
-    </message>
-    <message>
-        <source>Load PSBT from clipboard…</source>
-        <translation type="unfinished">Încărcați PSBT din clipboard...</translation>
     </message>
     <message>
         <source>Open &amp;URI…</source>
@@ -552,19 +507,19 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Fişier</translation>
+        <translation type="unfinished">&amp;Fişier</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Setări</translation>
+        <translation type="unfinished">&amp;Setări</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>A&amp;jutor</translation>
+        <translation type="unfinished">A&amp;jutor</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>Bara de unelte</translation>
+        <translation type="unfinished">Bara de unelte</translation>
     </message>
     <message>
         <source>Syncing Headers (%1%)…</source>
@@ -581,10 +536,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Processing blocks on disk…</source>
         <translation type="unfinished">Procesarea blocurilor pe disc...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk…</source>
-        <translation type="unfinished">Reindexarea blocurilor pe disc...</translation>
     </message>
     <message>
         <source>Connecting to peers…</source>
@@ -608,15 +559,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation>
-            <numerusform>Sa procesat %n un bloc din istoricul tranzacțiilor.</numerusform>
-            <numerusform>S-au procesat %n de blocuri din istoricul tranzacţiilor.</numerusform>
-            <numerusform>S-au procesat %n de blocuri din istoricul tranzacţiilor.</numerusform>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>%1 în urmă</translation>
+        <translation type="unfinished">%1 în urmă</translation>
     </message>
     <message>
         <source>Catching up…</source>
@@ -624,27 +575,27 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>Ultimul bloc recepţionat a fost generat acum %1.</translation>
+        <translation type="unfinished">Ultimul bloc recepţionat a fost generat acum %1.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Tranzacţiile după aceasta nu vor fi vizibile încă.</translation>
+        <translation type="unfinished">Tranzacţiile după aceasta nu vor fi vizibile încă.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="unfinished">Eroare</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertisment</translation>
+        <translation type="unfinished">Avertisment</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informaţie</translation>
+        <translation type="unfinished">Informaţie</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation>Actualizat</translation>
+        <translation type="unfinished">Actualizat</translation>
     </message>
     <message>
         <source>Load Partially Signed Bitcoin Transaction</source>
@@ -711,16 +662,28 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Niciun portofel disponibil</translation>
     </message>
     <message>
-        <source>No wallets available</source>
-        <translation>Niciun portofel disponibil</translation>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">Datele de portmoneu</translation>
+    </message>
+    <message>
+        <source>Load Wallet Backup</source>
+        <extracomment>The title for Restore Wallet File Windows</extracomment>
+        <translation type="unfinished">Încarcă backup-ul portmoneului</translation>
+    </message>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
+        <translation type="unfinished">Restaurare portofel</translation>
+    </message>
+    <message>
+        <source>Wallet Name</source>
+        <extracomment>Label of the input field where the name of the wallet is entered.</extracomment>
+        <translation type="unfinished">Numele portofelului</translation>
     </message>
     <message>
         <source>&amp;Window</source>
         <translation type="unfinished">&amp;Fereastră</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation type="unfinished">Minimizare</translation>
     </message>
     <message>
         <source>Main Window</source>
@@ -740,16 +703,17 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         </translation>
     </message>
     <message>
+        <source>Click for more actions.</source>
+        <extracomment>A substring of the tooltip. "More actions" are available via the context menu.</extracomment>
+        <translation type="unfinished">Pulsează pentru mai multe acțiuni.</translation>
+    </message>
+    <message>
         <source>Error: %1</source>
         <translation type="unfinished">Eroare: %1</translation>
     </message>
     <message>
         <source>Warning: %1</source>
         <translation type="unfinished"> Atenționare: %1</translation>
-    </message>
-    <message>
-        <source>Warning: %1</source>
-        <translation> Atenționare: %1</translation>
     </message>
     <message>
         <source>Date: %1
@@ -789,11 +753,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>Tranzacţie expediată</translation>
+        <translation type="unfinished">Tranzacţie expediată</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Tranzacţie recepţionată</translation>
+        <translation type="unfinished">Tranzacţie recepţionată</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
@@ -808,16 +772,12 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Cheia privată &lt;b&gt;dezactivată&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Private key &lt;b&gt;disabled&lt;/b&gt;</source>
-        <translation>Cheia privată &lt;b&gt;dezactivată&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Portofelul este &lt;b&gt;criptat&lt;/b&gt; iar în momentul de faţă este &lt;b&gt;deblocat&lt;/b&gt;</translation>
+        <translation type="unfinished">Portofelul este &lt;b&gt;criptat&lt;/b&gt; iar în momentul de faţă este &lt;b&gt;deblocat&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Portofelul este &lt;b&gt;criptat&lt;/b&gt; iar în momentul de faţă este &lt;b&gt;blocat&lt;/b&gt;</translation>
+        <translation type="unfinished">Portofelul este &lt;b&gt;criptat&lt;/b&gt; iar în momentul de faţă este &lt;b&gt;blocat&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Original message:</source>
@@ -852,10 +812,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Fee:</source>
         <translation type="unfinished">Comision:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Praf:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -922,28 +878,12 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Copiază octeţi</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Copiază praf</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Copiază rest</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 blocat)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">da</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">nu</translation>
-    </message>
-    <message>
-        <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation type="unfinished">Această etichetă devine roşie, dacă orice beneficiar primeşte o sumă mai mică decât pragul curent pentru praf.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -965,6 +905,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
 <context>
     <name>CreateWalletActivity</name>
     <message>
+        <source>Create Wallet</source>
+        <extracomment>Title of window indicating the progress of creation of a new wallet.</extracomment>
+        <translation type="unfinished">Crează portofel</translation>
+    </message>
+    <message>
         <source>Create wallet failed</source>
         <translation type="unfinished">Crearea portofelului a eşuat</translation>
     </message>
@@ -973,6 +918,19 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Atentionare la crearea portofelului</translation>
     </message>
     </context>
+<context>
+    <name>LoadWalletsActivity</name>
+    <message>
+        <source>Load Wallets</source>
+        <extracomment>Title of progress window which is displayed when wallets are being loaded.</extracomment>
+        <translation type="unfinished">Încarcă portmonee</translation>
+    </message>
+    <message>
+        <source>Loading wallets…</source>
+        <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
+        <translation type="unfinished">Încărcând portmonee</translation>
+    </message>
+</context>
 <context>
     <name>OpenWalletActivity</name>
     <message>
@@ -987,7 +945,35 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>default wallet</source>
         <translation type="unfinished">portofel implicit</translation>
     </message>
+    <message>
+        <source>Open Wallet</source>
+        <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
+        <translation type="unfinished">Deschide portofel</translation>
+    </message>
     </context>
+<context>
+    <name>RestoreWalletActivity</name>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
+        <translation type="unfinished">Restaurare portofel</translation>
+    </message>
+    <message>
+        <source>Restore wallet failed</source>
+        <extracomment>Title of message box which is displayed when the wallet could not be restored.</extracomment>
+        <translation type="unfinished">Restaurarea portofelului nereusita</translation>
+    </message>
+    <message>
+        <source>Restore wallet warning</source>
+        <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
+        <translation type="unfinished">Avertisment restaurare portofel</translation>
+    </message>
+    <message>
+        <source>Restore wallet message</source>
+        <extracomment>Title of message box which is displayed when the wallet is successfully restored.</extracomment>
+        <translation type="unfinished">Mesaj restaurare portofel</translation>
+    </message>
+</context>
 <context>
     <name>WalletController</name>
     <message>
@@ -996,7 +982,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Are you sure you wish to close the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
-        <translation type="unfinished">Esti sigur ca doresti sa inchizi portofelul&lt;b&gt;%1&lt;b&gt;?</translation>
+        <translation type="unfinished">Esti sigur ca doresti sa inchizi portofelul&lt;i&gt;%1&lt;/i&gt;?</translation>
+    </message>
+    <message>
+        <source>Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled.</source>
+        <translation type="unfinished">A închide portmoneul pentru prea mult timp poate rezulta în a trebui să resincronizezi lanțul complet daca "pruning" este activat.  </translation>
     </message>
     <message>
         <source>Close all wallets</source>
@@ -1046,31 +1036,27 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Faceți Portofel gol</translation>
     </message>
     <message>
-        <source>Use descriptors for scriptPubKey management</source>
-        <translation type="unfinished">Utilizați descriptori pentru gestionarea scriptPubKey</translation>
+        <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
+        <translation type="unfinished">Utilizeaza un dispozitiv de semnare a tranzactiilor, de exemplu un portofel hardware. Mai intai, configureaza software-ul pentru dispozitivul extern din preferintele portofelului.</translation>
     </message>
     <message>
-        <source>Descriptor Wallet</source>
-        <translation type="unfinished"> Descriptor Portofel</translation>
+        <source>External signer</source>
+        <translation type="unfinished">Semnator extern</translation>
     </message>
     <message>
         <source>Create</source>
         <translation type="unfinished">Creează</translation>
-    </message>
-    <message>
-        <source>Compiled without sqlite support (required for descriptor wallets)</source>
-        <translation type="unfinished">Compilat fără suport sqlite (necesar pentru portofele descriptor)</translation>
     </message>
     </context>
 <context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>Editează adresa</translation>
+        <translation type="unfinished">Editează adresa</translation>
     </message>
     <message>
         <source>&amp;Label</source>
-        <translation>&amp;Etichetă</translation>
+        <translation type="unfinished">&amp;Etichetă</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
@@ -1082,7 +1068,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation>&amp;Adresă</translation>
+        <translation type="unfinished">&amp;Adresă</translation>
     </message>
     <message>
         <source>New sending address</source>
@@ -1121,27 +1107,55 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation>Va fi creat un nou dosar de date.</translation>
+        <translation type="unfinished">Va fi creat un nou dosar de date.</translation>
     </message>
     <message>
         <source>name</source>
-        <translation>nume</translation>
+        <translation type="unfinished">nume</translation>
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation>Dosarul deja există. Adaugă %1 dacă intenţionaţi să creaţi un nou dosar aici.</translation>
+        <translation type="unfinished">Dosarul deja există. Adaugă %1 dacă intenţionaţi să creaţi un nou dosar aici.</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>Calea deja există şi nu este un dosar.</translation>
+        <translation type="unfinished">Calea deja există şi nu este un dosar.</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation>Nu se poate crea un dosar de date aici.</translation>
+        <translation type="unfinished">Nu se poate crea un dosar de date aici.</translation>
     </message>
 </context>
 <context>
     <name>Intro</name>
+    <message numerus="yes">
+        <source>%n GB of space available</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(of %n GB needed)</source>
+        <translation type="unfinished">
+            <numerusform>(din %n GB necesar)</numerusform>
+            <numerusform>(din %n GB necesari)</numerusform>
+            <numerusform>(din %n GB necesari)</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(%n GB needed for full chain)</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message>
+        <source>Choose data directory</source>
+        <translation type="unfinished">Alege directorul de date</translation>
+    </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
         <translation type="unfinished">Cel putin %1GB de date vor fi stocate in acest director, si aceasta valoare va creste in timp.</translation>
@@ -1173,11 +1187,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="unfinished">Eroare</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Bun venit</translation>
+        <translation type="unfinished">Bun venit</translation>
     </message>
     <message>
         <source>Welcome to %1.</source>
@@ -1188,8 +1202,8 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Deoarece este prima lansare a programului poți alege unde %1 va stoca datele sale.</translation>
     </message>
     <message>
-        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
-        <translation type="unfinished">Cand apasati OK, %1 va incepe descarcarea si procesarea intregului %4 blockchain (%2GB) incepand cu cele mai vechi tranzactii din %3 de la lansarea initiala a %4.</translation>
+        <source>Limit block chain storage to</source>
+        <translation type="unfinished">Limiteaza stocarea blockchainul-ui la</translation>
     </message>
     <message>
         <source>Reverting this setting requires re-downloading the entire blockchain. It is faster to download the full chain first and prune it later. Disables some advanced features.</source>
@@ -1209,11 +1223,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation>Foloseşte dosarul de date implicit</translation>
+        <translation type="unfinished">Foloseşte dosarul de date implicit</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>Foloseşte un dosar de date personalizat:</translation>
+        <translation type="unfinished">Foloseşte un dosar de date personalizat:</translation>
     </message>
 </context>
 <context>
@@ -1253,6 +1267,14 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Numarul de blocuri ramase</translation>
     </message>
     <message>
+        <source>Unknown…</source>
+        <translation type="unfinished">Necunoscut...</translation>
+    </message>
+    <message>
+        <source>calculating…</source>
+        <translation type="unfinished">Se calculeaza...</translation>
+    </message>
+    <message>
         <source>Last block time</source>
         <translation type="unfinished">Data ultimului bloc</translation>
     </message>
@@ -1272,6 +1294,10 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>Hide</source>
         <translation type="unfinished">Ascunde</translation>
     </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Iesire</translation>
+    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -1279,16 +1305,21 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>Open bitcoin URI</source>
         <translation type="unfinished">DeschidețI Bitcoin URI</translation>
     </message>
-    </context>
+    <message>
+        <source>Paste address from clipboard</source>
+        <extracomment>Tooltip text for button that allows you to paste an address that is in your clipboard.</extracomment>
+        <translation type="unfinished">Lipeşte adresa din clipboard</translation>
+    </message>
+</context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>Opţiuni</translation>
+        <translation type="unfinished">Opţiuni</translation>
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>Principal</translation>
+        <translation type="unfinished">Principal</translation>
     </message>
     <message>
         <source>Automatically start %1 after logging in to the system.</source>
@@ -1297,6 +1328,10 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>&amp;Start %1 on system login</source>
         <translation type="unfinished">&amp;Porneste %1 la logarea in sistem.</translation>
+    </message>
+    <message>
+        <source>Enabling pruning significantly reduces the disk space required to store transactions. All blocks are still fully validated. Reverting this setting requires re-downloading the entire blockchain.</source>
+        <translation type="unfinished">A activa "pruning" reduce signifiant spațiul pe disk pentru a stoca tranzacțiile.</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1319,10 +1354,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Minimizează fereastra în locul părăsirii programului în momentul închiderii ferestrei. Cînd acestă opţiune e activă, aplicaţia se va opri doar în momentul selectării comenzii 'Închide aplicaţia' din menu.</translation>
     </message>
     <message>
-        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation type="unfinished">URL-uri terţe părţi (de exemplu, un explorator de bloc), care apar în tab-ul tranzacţiilor ca elemente de meniu contextual. %s în URL este înlocuit cu hash de tranzacţie. URL-urile multiple sînt separate prin bară verticală |.</translation>
-    </message>
-    <message>
         <source>Open the %1 configuration file from the working directory.</source>
         <translation type="unfinished">Deschide fisierul de configurare %1 din directorul curent.</translation>
     </message>
@@ -1332,15 +1363,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>Resetează toate setările clientului la valorile implicite.</translation>
+        <translation type="unfinished">Resetează toate setările clientului la valorile implicite.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>&amp;Resetează opţiunile</translation>
+        <translation type="unfinished">&amp;Resetează opţiunile</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>Reţea</translation>
+        <translation type="unfinished">Reţea</translation>
     </message>
     <message>
         <source>Prune &amp;block storage to</source>
@@ -1353,6 +1384,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation type="unfinished">(0 = automat, &lt;0 = lasă atîtea nuclee libere)</translation>
+    </message>
+    <message>
+        <source>Enable R&amp;PC server</source>
+        <extracomment>An Options window setting to enable the RPC server.</extracomment>
+        <translation type="unfinished">Permite server-ul R&amp;PC</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
@@ -1371,12 +1407,17 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Cheltuire rest neconfirmat</translation>
     </message>
     <message>
+        <source>Enable &amp;PSBT controls</source>
+        <extracomment>An options window setting to enable PSBT controls.</extracomment>
+        <translation type="unfinished">Permite controalele &amp;PSBT</translation>
+    </message>
+    <message>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului Bitcoin. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
+        <translation type="unfinished">Deschide automat în router portul aferent clientului Bitcoin. Funcţionează doar dacă routerul duportă UPnP şi e activat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Mapare port folosind &amp;UPnP</translation>
+        <translation type="unfinished">Mapare port folosind &amp;UPnP</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
@@ -1388,15 +1429,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Conectare la reţeaua Bitcoin printr-un proxy SOCKS.</translation>
+        <translation type="unfinished">Conectare la reţeaua Bitcoin printr-un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation type="unfinished">&amp;Conectare printr-un proxy SOCKS (implicit proxy):</translation>
+        <translation type="unfinished">&amp;Conectare printr-un proxy SOCKS5 (implicit proxy):</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Portul proxy (de exemplu: 9050)</translation>
+        <translation type="unfinished">Portul proxy (de exemplu: 9050)</translation>
     </message>
     <message>
         <source>Used for reaching peers via:</source>
@@ -1404,27 +1445,31 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation>&amp;Fereastră</translation>
+        <translation type="unfinished">&amp;Fereastră</translation>
+    </message>
+    <message>
+        <source>Show the icon in the system tray.</source>
+        <translation type="unfinished">Arata pictograma in zona de notificare</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
-        <translation>Arată doar un icon în tray la ascunderea ferestrei</translation>
+        <translation type="unfinished">Arată doar un icon în tray la ascunderea ferestrei</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimizare în tray în loc de taskbar</translation>
+        <translation type="unfinished">&amp;Minimizare în tray în loc de taskbar</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimizare fereastră în locul închiderii programului</translation>
+        <translation type="unfinished">M&amp;inimizare fereastră în locul închiderii programului</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>&amp;Afişare</translation>
+        <translation type="unfinished">&amp;Afişare</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>&amp;Limbă interfaţă utilizator</translation>
+        <translation type="unfinished">&amp;Limbă interfaţă utilizator</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting %1.</source>
@@ -1432,11 +1477,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unitatea de măsură pentru afişarea sumelor:</translation>
+        <translation type="unfinished">&amp;Unitatea de măsură pentru afişarea sumelor:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de bitcoin.</translation>
+        <translation type="unfinished">Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de bitcoin.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1444,19 +1489,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Conectați-vă la rețeaua Bitcoin printr-un proxy SOCKS5 separat pentru serviciile Tor (onion).</translation>
-    </message>
-    <message>
-        <source>&amp;Third party transaction URLs</source>
-        <translation type="unfinished">URL-uri tranzacţii &amp;terţe părţi</translation>
+        <translation type="unfinished">Conectați-vă la rețeaua Bitcoin printr-un proxy SOCKS5 separat pentru serviciile Tor onion.</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>Renunţă</translation>
+        <translation type="unfinished">Renunţă</translation>
     </message>
     <message>
         <source>default</source>
-        <translation>iniţial</translation>
+        <translation type="unfinished">iniţial</translation>
     </message>
     <message>
         <source>none</source>
@@ -1464,23 +1505,36 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
-        <translation>Confirmă resetarea opţiunilor</translation>
+        <extracomment>Window title text of pop-up window shown when the user has chosen to reset options.</extracomment>
+        <translation type="unfinished">Confirmă resetarea opţiunilor</translation>
     </message>
     <message>
         <source>Client restart required to activate changes.</source>
+        <extracomment>Text explaining that the settings changed will not come into effect until the client is restarted.</extracomment>
         <translation type="unfinished">Este necesară repornirea clientului pentru a activa schimbările.</translation>
     </message>
     <message>
         <source>Client will be shut down. Do you want to proceed?</source>
+        <extracomment>Text asking the user to confirm if they would like to proceed with a client shutdown.</extracomment>
         <translation type="unfinished">Clientul va fi închis. Doriţi să continuaţi?</translation>
     </message>
     <message>
         <source>Configuration options</source>
+        <extracomment>Window title text of pop-up box that allows opening up of configuration file.</extracomment>
         <translation type="unfinished">Optiuni de configurare</translation>
     </message>
     <message>
         <source>The configuration file is used to specify advanced user options which override GUI settings. Additionally, any command-line options will override this configuration file.</source>
+        <extracomment>Explanatory text about the priority order of instructions considered by client. The order from high to low being: command-line, configuration file, GUI settings.</extracomment>
         <translation type="unfinished">Fisierul de configurare e folosit pentru a specifica optiuni utilizator avansate care modifica setarile din GUI. In plus orice optiune din linia de comanda va modifica acest fisier de configurare.</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation type="unfinished">Continua</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Anulare</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1496,14 +1550,14 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa bitcoin pe care aţi specificat-o nu este validă.</translation>
+        <translation type="unfinished">Adresa bitcoin pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
     <name>OverviewPage</name>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Bitcoin după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
+        <translation type="unfinished">Informaţiile afişate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Bitcoin după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1515,7 +1569,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
-        <translation>Balanţa dvs. curentă de cheltuieli</translation>
+        <translation type="unfinished">Balanţa dvs. curentă de cheltuieli</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1523,15 +1577,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Totalul tranzacţiilor care nu sunt confirmate încă şi care nu sunt încă adunate la balanţa de cheltuieli</translation>
+        <translation type="unfinished">Totalul tranzacţiilor care nu sunt confirmate încă şi care nu sunt încă adunate la balanţa de cheltuieli</translation>
     </message>
     <message>
         <source>Immature:</source>
-        <translation>Nematurizat:</translation>
+        <translation type="unfinished">Nematurizat:</translation>
     </message>
     <message>
         <source>Mined balance that has not yet matured</source>
-        <translation>Balanţa minata ce nu s-a maturizat încă</translation>
+        <translation type="unfinished">Balanţa minata ce nu s-a maturizat încă</translation>
     </message>
     <message>
         <source>Balances</source>
@@ -1539,7 +1593,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Balanţa totală curentă</translation>
+        <translation type="unfinished">Balanţa totală curentă</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1573,12 +1627,20 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Copiați în clipboard</translation>
     </message>
     <message>
+        <source>Save…</source>
+        <translation type="unfinished">Salveaza</translation>
+    </message>
+    <message>
         <source>Close</source>
         <translation type="unfinished">Inchide</translation>
     </message>
     <message>
         <source>Save Transaction Data</source>
         <translation type="unfinished">Salvați datele tranzacției</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">adresa proprie</translation>
     </message>
     <message>
         <source>Total Amount</source>
@@ -1628,6 +1690,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Agent utilizator</translation>
     </message>
     <message>
+        <source>Direction</source>
+        <extracomment>Title of Peers Table column which indicates the direction the peer connection was initiated from.</extracomment>
+        <translation type="unfinished">Direcţie</translation>
+    </message>
+    <message>
         <source>Sent</source>
         <extracomment>Title of Peers Table column which indicates the total amount of network information we have sent to the peer.</extracomment>
         <translation type="unfinished">Expediat</translation>
@@ -1651,6 +1718,16 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>Network</source>
         <extracomment>Title of Peers Table column which states the network the peer connected through.</extracomment>
         <translation type="unfinished">Reţea</translation>
+    </message>
+    <message>
+        <source>Inbound</source>
+        <extracomment>An Inbound Connection from a Peer.</extracomment>
+        <translation type="unfinished">Intrare</translation>
+    </message>
+    <message>
+        <source>Outbound</source>
+        <extracomment>An Outbound Connection to a Peer.</extracomment>
+        <translation type="unfinished">Ieşire</translation>
     </message>
 </context>
 <context>
@@ -1680,15 +1757,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>RPCConsole</name>
     <message>
         <source>N/A</source>
-        <translation>Nespecificat</translation>
+        <translation type="unfinished">Nespecificat</translation>
     </message>
     <message>
         <source>Client version</source>
-        <translation>Versiune client</translation>
+        <translation type="unfinished">Versiune client</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;Informaţii</translation>
+        <translation type="unfinished">&amp;Informaţii</translation>
     </message>
     <message>
         <source>Datadir</source>
@@ -1696,11 +1773,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Startup time</source>
-        <translation>Ora de pornire</translation>
+        <translation type="unfinished">Ora de pornire</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Reţea</translation>
+        <translation type="unfinished">Reţea</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1708,11 +1785,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Number of connections</source>
-        <translation>Numărul de conexiuni</translation>
+        <translation type="unfinished">Numărul de conexiuni</translation>
     </message>
     <message>
         <source>Block chain</source>
-        <translation>Lanţ de blocuri</translation>
+        <translation type="unfinished">Lanţ de blocuri</translation>
     </message>
     <message>
         <source>Memory Pool</source>
@@ -1783,10 +1860,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Fereastra nodului</translation>
     </message>
     <message>
-        <source>Node window</source>
-        <translation>Fereastra nodului</translation>
-    </message>
-    <message>
         <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished">Deschide fişierul jurnal depanare %1 din directorul curent. Aceasta poate dura cateva secunde pentru fişierele mai mari.</translation>
     </message>
@@ -1832,15 +1905,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Last block time</source>
-        <translation>Data ultimului bloc</translation>
+        <translation type="unfinished">Data ultimului bloc</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Deschide</translation>
+        <translation type="unfinished">&amp;Deschide</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>&amp;Consolă</translation>
+        <translation type="unfinished">&amp;Consolă</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
@@ -1852,11 +1925,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Debug log file</source>
-        <translation>Fişier jurnal depanare</translation>
+        <translation type="unfinished">Fişier jurnal depanare</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>Curăţă consola</translation>
+        <translation type="unfinished">Curăţă consola</translation>
     </message>
     <message>
         <source>In:</source>
@@ -1923,7 +1996,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>ReceiveCoinsDialog</name>
     <message>
         <source>&amp;Amount:</source>
-        <translation type="unfinished">Sum&amp;a:</translation>
+        <translation type="unfinished">&amp;Suma:</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -1956,14 +2029,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Clear</source>
         <translation type="unfinished">Curăţă</translation>
-    </message>
-    <message>
-        <source>Native segwit addresses (aka Bech32 or BIP-173) reduce your transaction fees later on and offer better protection against typos, but old wallets don't support them. When unchecked, an address compatible with older wallets will be created instead.</source>
-        <translation type="unfinished">Adresele native segwit (aka Bech32 sau BIP-173) vor reduce mai tarziu comisioanele de tranzactionare si vor oferi o mai buna protectie impotriva introducerii gresite, dar portofelele vechi nu sunt compatibile. Daca optiunea nu e bifata, se va crea o adresa compatibila cu portofelele vechi.</translation>
-    </message>
-    <message>
-        <source>Generate native segwit (Bech32) address</source>
-        <translation type="unfinished">Genereaza adresa nativa segwit (Bech32)</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2064,7 +2129,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Trimite monede</translation>
+        <translation type="unfinished">Trimite monede</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2140,19 +2205,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
-        <translation>Trimite simultan către mai mulţi destinatari</translation>
+        <translation type="unfinished">Trimite simultan către mai mulţi destinatari</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>Adaugă destinata&amp;r</translation>
+        <translation type="unfinished">Adaugă destinata&amp;r</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation type="unfinished">Şterge toate câmpurile formularului.</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Praf:</translation>
     </message>
     <message>
         <source>Confirmation time target:</source>
@@ -2168,19 +2229,19 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>Curăţă to&amp;ate</translation>
+        <translation type="unfinished">Curăţă to&amp;ate</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation>Balanţă:</translation>
+        <translation type="unfinished">Sold:</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Confirmă operaţiunea de trimitere</translation>
+        <translation type="unfinished">Confirmă operaţiunea de trimitere</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>Trimit&amp;e</translation>
+        <translation type="unfinished">Trimit&amp;e</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -2203,10 +2264,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Copiază octeţi</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Copiază praf</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Copiază rest</translation>
     </message>
@@ -2219,16 +2276,8 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">din portofelul '%1'</translation>
     </message>
     <message>
-        <source> from wallet '%1'</source>
-        <translation>din portofelul '%1'</translation>
-    </message>
-    <message>
         <source>%1 to %2</source>
         <translation type="unfinished">%1 la %2</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation type="unfinished">Sigur doriţi să trimiteţi?</translation>
     </message>
     <message>
         <source>Save Transaction Data</source>
@@ -2244,6 +2293,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
+        <extracomment>Text to prompt a user to review the details of the transaction they are attempting to send.</extracomment>
         <translation type="unfinished">Va rugam sa revizuiti tranzactia.</translation>
     </message>
     <message>
@@ -2290,13 +2340,9 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
         <translation type="unfinished">O taxă mai mare de %1 este considerată o taxă absurd de mare</translation>
     </message>
-    <message>
-        <source>Payment request expired.</source>
-        <translation type="unfinished">Cerere de plată expirata</translation>
-    </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
             <numerusform />
@@ -2327,15 +2373,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>SendCoinsEntry</name>
     <message>
         <source>A&amp;mount:</source>
-        <translation>Su&amp;mă:</translation>
+        <translation type="unfinished">Su&amp;mă:</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>Plăteşte că&amp;tre:</translation>
+        <translation type="unfinished">Plăteşte că&amp;tre:</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;Etichetă:</translation>
+        <translation type="unfinished">&amp;Etichetă:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2347,7 +2393,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Lipeşte adresa din clipboard</translation>
+        <translation type="unfinished">Lipeşte adresa din clipboard</translation>
     </message>
     <message>
         <source>Remove this entry</source>
@@ -2370,14 +2416,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Mesaj:</translation>
     </message>
     <message>
-        <source>This is an unauthenticated payment request.</source>
-        <translation type="unfinished">Aceasta este o cerere de plata neautentificata.</translation>
-    </message>
-    <message>
-        <source>This is an authenticated payment request.</source>
-        <translation type="unfinished">Aceasta este o cerere de plata autentificata.</translation>
-    </message>
-    <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation type="unfinished">Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
@@ -2385,20 +2423,23 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
         <translation type="unfinished">un mesaj a fost ataşat la bitcoin: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua bitcoin.</translation>
     </message>
+</context>
+<context>
+    <name>SendConfirmationDialog</name>
     <message>
-        <source>Pay To:</source>
-        <translation type="unfinished">Plăteşte către:</translation>
+        <source>Send</source>
+        <translation type="unfinished">Trimis</translation>
     </message>
     </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Semnaturi - Semnează/verifică un mesaj</translation>
+        <translation type="unfinished">Semnaturi - Semnează/verifică un mesaj</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
-        <translation>&amp;Semnează mesaj</translation>
+        <translation type="unfinished">&amp;Semnează mesaj</translation>
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -2414,39 +2455,39 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Lipeşte adresa din clipboard</translation>
+        <translation type="unfinished">Lipeşte adresa din clipboard</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>Introduceţi mesajul pe care vreţi să-l semnaţi, aici</translation>
+        <translation type="unfinished">Introduceţi mesajul pe care vreţi să-l semnaţi, aici</translation>
     </message>
     <message>
         <source>Signature</source>
-        <translation>Semnătură</translation>
+        <translation type="unfinished">Semnătură</translation>
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Copiază semnatura curentă în clipboard-ul sistemului</translation>
+        <translation type="unfinished">Copiază semnatura curentă în clipboard-ul sistemului</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Bitcoin</translation>
+        <translation type="unfinished">Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Bitcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>Semnează &amp;mesaj</translation>
+        <translation type="unfinished">Semnează &amp;mesaj</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Resetează toate cîmpurile mesajelor semnate</translation>
+        <translation type="unfinished">Resetează toate cîmpurile mesajelor semnate</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>Curăţă to&amp;ate</translation>
+        <translation type="unfinished">Curăţă to&amp;ate</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;Verifică mesaj</translation>
+        <translation type="unfinished">&amp;Verifică mesaj</translation>
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
@@ -2458,15 +2499,15 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Bitcoin specificată</translation>
+        <translation type="unfinished">Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Bitcoin specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>Verifică &amp;mesaj</translation>
+        <translation type="unfinished">Verifică &amp;mesaj</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Resetează toate cîmpurile mesajelor semnate</translation>
+        <translation type="unfinished">Resetează toate cîmpurile mesajelor semnate</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
@@ -2527,40 +2568,24 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Deschis pînă la %1</translation>
-    </message>
     <message>
         <source>conflicted with a transaction with %1 confirmations</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that conflicts with a confirmed transaction.</extracomment>
         <translation type="unfinished">in conflict cu o tranzactie cu %1 confirmari</translation>
     </message>
     <message>
-        <source>0/unconfirmed, %1</source>
-        <translation type="unfinished">0/neconfirmat, %1</translation>
-    </message>
-    <message>
-        <source>not in memory pool</source>
-        <translation type="unfinished">nu e in memory pool</translation>
-    </message>
-    <message>
         <source>abandoned</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an abandoned transaction.</extracomment>
         <translation type="unfinished">abandonat</translation>
     </message>
     <message>
         <source>%1/unconfirmed</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block, but less than 6 blocks.</extracomment>
         <translation type="unfinished">%1/neconfirmat</translation>
     </message>
     <message>
         <source>%1 confirmations</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in 6 or more blocks.</extracomment>
         <translation type="unfinished">%1 confirmări</translation>
     </message>
     <message>
@@ -2605,7 +2630,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
             <numerusform />
@@ -2652,10 +2677,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">(Certificatul nu a fost verificat)</translation>
     </message>
     <message>
-        <source> (Certificate was not verified)</source>
-        <translation>(Certificatul nu a fost verificat)</translation>
-    </message>
-    <message>
         <source>Merchant</source>
         <translation type="unfinished">Comerciant</translation>
     </message>
@@ -2692,7 +2713,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <name>TransactionDescDialog</name>
     <message>
         <source>This pane shows a detailed description of the transaction</source>
-        <translation>Acest panou arată o descriere detaliată a tranzacţiei</translation>
+        <translation type="unfinished">Acest panou arată o descriere detaliată a tranzacţiei</translation>
     </message>
     <message>
         <source>Details for %1</source>
@@ -2712,18 +2733,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Label</source>
         <translation type="unfinished">Etichetă</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Deschis pînă la %1</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -2764,10 +2773,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Trimis către</translation>
-    </message>
-    <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Plată către dvs.</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2845,10 +2850,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Trimis către</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Către dvs.</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Minat</translation>
     </message>
@@ -2870,7 +2871,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Fișier separat prin virgulă</translation>
     </message>
     <message>
@@ -2928,7 +2929,11 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>Create a new wallet</source>
         <translation type="unfinished">Crează un portofel nou</translation>
     </message>
-</context>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Eroare</translation>
+    </message>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -2945,6 +2950,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Do you want to increase the fee?</source>
+        <extracomment>Asks a user if they would like to manually increase the fee of a transaction that has already been created.</extracomment>
         <translation type="unfinished">Doriti sa cresteti taxa de tranzactie?</translation>
     </message>
     <message>
@@ -2983,12 +2989,13 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Exportă datele din tab-ul curent într-un fişier</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
-    </message>
-    <message>
         <source>Backup Wallet</source>
         <translation type="unfinished">Backup portofelul electronic</translation>
+    </message>
+    <message>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">Datele de portmoneu</translation>
     </message>
     <message>
         <source>Backup Failed</source>
@@ -3018,36 +3025,12 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Dezvoltatorii %s</translation>
     </message>
     <message>
-        <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation type="unfinished">-maxtxfee este setata foarte sus! Se pot plati taxe de aceasta marime pe o singura tranzactie.</translation>
-    </message>
-    <message>
         <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
         <translation type="unfinished">Nu se poate obține o blocare a directorului de date %s. %s probabil rulează deja.</translation>
     </message>
     <message>
-        <source>Cannot provide specific connections and have addrman find outgoing connections at the same.</source>
-        <translation type="unfinished">Nu se pot furniza conexiuni specifice in acelasi timp in care addrman este folosit pentru a gasi conexiuni de iesire.</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished">Distribuit sub licenţa de programe MIT, vezi fişierul însoţitor %s sau %s</translation>
-    </message>
-    <message>
-        <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation type="unfinished">Eroare la citirea %s! Toate cheile sînt citite corect, dar datele tranzactiei sau anumite intrări din agenda sînt incorecte sau lipsesc.</translation>
-    </message>
-    <message>
-        <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
-        <translation type="unfinished">Eroare: Ascultarea conexiunilor de intrare nu a reuşit (ascultarea a reurnat eroarea %s)</translation>
-    </message>
-    <message>
-        <source>Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable -fallbackfee.</source>
-        <translation type="unfinished">Estimarea taxei a esuat. Taxa implicita este dezactivata. Asteptati cateva blocuri, sau activati -fallbackfee.</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation type="unfinished">Sumă nevalidă pentru -maxtxfee=&lt;amount&gt;: '%s' (trebuie să fie cel puţin taxa minrelay de %s pentru a preveni blocarea tranzactiilor)</translation>
     </message>
     <message>
         <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
@@ -3122,10 +3105,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Nu se poate scrie in directorul de date '%s"; verificati permisiunile.</translation>
     </message>
     <message>
-        <source>Change index out of range</source>
-        <translation type="unfinished">Indexul de schimbare este iesit din parametrii</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">Bloc defect din baza de date detectat</translation>
     </message>
@@ -3178,10 +3157,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Eroare la citirea bazei de date. Oprire.</translation>
     </message>
     <message>
-        <source>Error upgrading chainstate database</source>
-        <translation type="unfinished">Eroare la actualizarea bazei de date chainstate</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low for %s</source>
         <translation type="unfinished">Eroare: Spațiul pe disc este redus pentru %s</translation>
     </message>
@@ -3216,18 +3191,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
         <translation type="unfinished">Sumă nevalidă pentru -%s=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -discardfee=&lt;amount&gt;: '%s'</source>
-        <translation type="unfinished">Sumă nevalidă pentru -discardfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
-        <translation type="unfinished">Suma nevalidă pentru -fallbackfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
-        <translation type="unfinished">Sumă nevalidă pentru -paytxfee=&lt;suma&gt;: '%s' (trebuie să fie cel puţin %s)</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
@@ -3346,14 +3309,6 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Categoria de logging %s=%s nu este suportata.</translation>
     </message>
     <message>
-        <source>Upgrading UTXO database</source>
-        <translation type="unfinished">Actualizarea bazei de date UTXO</translation>
-    </message>
-    <message>
-        <source>Upgrading txindex database</source>
-        <translation type="unfinished">Actualizarea bazei de date txindex</translation>
-    </message>
-    <message>
         <source>User Agent comment (%s) contains unsafe characters.</source>
         <translation type="unfinished">Comentariul (%s) al Agentului Utilizator contine caractere nesigure.</translation>
     </message>
@@ -3361,5 +3316,5 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
         <translation type="unfinished">Portofelul trebuie rescris: reporneşte %s pentru finalizare</translation>
     </message>
-</context>
+    </context>
 </TS>

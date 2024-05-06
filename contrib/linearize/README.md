@@ -1,5 +1,5 @@
 # Linearize
-Construct a linear, no-fork, best version of the USGD blockchain.
+Construct a linear, no-fork, best version of the USDG blockchain.
 
 ## Step 1: Download hash list
 

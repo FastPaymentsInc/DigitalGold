@@ -7,7 +7,7 @@
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Sortu helbide berria</translation>
+        <translation type="unfinished">Sortu helbide berria</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Kopiatu hautatutako helbidea sistemaren arbelean</translation>
+        <translation type="unfinished">Kopiatu hautatutako helbidea sistemaren arbelean</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Ezabatu aukeratutako helbideak listatik</translation>
+        <translation type="unfinished">Ezabatu aukeratutako helbideak listatik</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
@@ -35,15 +35,15 @@
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Uneko fitxategian datuak esportatu</translation>
+        <translation type="unfinished">Uneko fitxategian datuak esportatu</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;Esportatu</translation>
+        <translation type="unfinished">&amp;Esportatu</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Ezabatu</translation>
+        <translation type="unfinished">&amp;Ezabatu</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -56,14 +56,6 @@
     <message>
         <source>C&amp;hoose</source>
         <translation type="unfinished">&amp;Aukeratu</translation>
-    </message>
-    <message>
-        <source>Sending addresses</source>
-        <translation type="unfinished">Helbideak bidaltzen</translation>
-    </message>
-    <message>
-        <source>Receiving addresses</source>
-        <translation type="unfinished">Helbideak jasotzen</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
@@ -93,7 +85,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Komaz bereizitako fitxategia</translation>
     </message>
     <message>
@@ -125,19 +117,19 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>Pasahitzaren dialogoa</translation>
+        <translation type="unfinished">Pasahitzaren dialogoa</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>Pasahitza sartu</translation>
+        <translation type="unfinished">Pasahitza sartu</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>Pasahitz berria</translation>
+        <translation type="unfinished">Pasahitz berria</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>Pasahitz berria errepiikatu</translation>
+        <translation type="unfinished">Pasahitz berria errepiikatu</translation>
     </message>
     <message>
         <source>Show passphrase</source>
@@ -261,20 +253,12 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Akatsa: %1</translation>
     </message>
     <message>
-        <source>Error initializing settings: %1</source>
-        <translation type="unfinished">Errorea konfigurazioa hasiaraztean: %1</translation>
-    </message>
-    <message>
         <source>unknown</source>
         <translation type="unfinished">ezezaguna</translation>
     </message>
     <message>
         <source>Amount</source>
         <translation type="unfinished">Kopurua</translation>
-    </message>
-    <message>
-        <source>Internal</source>
-        <translation type="unfinished">Barnekoa</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -286,14 +270,14 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -331,27 +315,27 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;Gainbegiratu</translation>
+        <translation type="unfinished">&amp;Gainbegiratu</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Diruzorroaren begirada orokorra ikusi</translation>
+        <translation type="unfinished">Diruzorroaren begirada orokorra ikusi</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;Transakzioak</translation>
+        <translation type="unfinished">&amp;Transakzioak</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Ikusi transakzioen historia</translation>
+        <translation type="unfinished">Ikusi transakzioen historia</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Irten</translation>
+        <translation type="unfinished">Irten</translation>
     </message>
     <message>
         <source>Quit application</source>
-        <translation>Aplikaziotik irten</translation>
+        <translation type="unfinished">Aplikaziotik irten</translation>
     </message>
     <message>
         <source>&amp;About %1</source>
@@ -363,11 +347,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt-ri buruz</translation>
+        <translation type="unfinished">&amp;Qt-ri buruz</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Erakutsi Qt-ren buruzko informazioa</translation>
+        <translation type="unfinished">Erakutsi Qt-ren buruzko informazioa</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
@@ -376,6 +360,10 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Create a new wallet</source>
         <translation type="unfinished">Diruzorro berri bat sortu</translation>
+    </message>
+    <message>
+        <source>&amp;Minimize</source>
+        <translation type="unfinished">&amp;Minimizatu</translation>
     </message>
     <message>
         <source>Wallet:</source>
@@ -392,47 +380,27 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Bidali txanponak Bitcoin helbide batera</translation>
+        <translation type="unfinished">Bidali txanponak Bitcoin helbide batera</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Diru-zorroaren segurtasun-kopia beste leku batean.</translation>
-    </message>
-    <message>
-        <source>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
-        <translation>Proxya &lt;b&gt;gaituta&lt;/b&gt; dago : %1</translation>
-    </message>
-    <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Bidali txanponak Bitcoin helbide batera</translation>
-    </message>
-    <message>
-        <source>Backup wallet to another location</source>
-        <translation>Diru-zorroaren segurtasun-kopia beste leku batean.</translation>
+        <translation type="unfinished">Diru-zorroaren segurtasun-kopia beste leku batean.</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Diruzorroa enkriptatzeko erabilitako pasahitza aldatu</translation>
+        <translation type="unfinished">Diruzorroa enkriptatzeko erabilitako pasahitza aldatu</translation>
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>&amp;Bidali</translation>
+        <translation type="unfinished">&amp;Bidali</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>&amp;Jaso</translation>
+        <translation type="unfinished">&amp;Jaso</translation>
     </message>
     <message>
         <source>&amp;Options…</source>
         <translation type="unfinished">&amp;Aukerak...</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Erakutsi / Izkutatu</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Lehio nagusia erakutsi edo izkutatu</translation>
     </message>
     <message>
         <source>&amp;Encrypt Wallet…</source>
@@ -440,7 +408,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Zure diru-zorroari dagozkion giltza pribatuak enkriptatu.</translation>
+        <translation type="unfinished">Zure diru-zorroari dagozkion giltza pribatuak enkriptatu.</translation>
     </message>
     <message>
         <source>&amp;Backup Wallet…</source>
@@ -456,7 +424,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Sinatu mezuak Bitcoinen helbideekin, jabetza frogatzeko.</translation>
+        <translation type="unfinished">Sinatu mezuak Bitcoinen helbideekin, jabetza frogatzeko.</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -464,15 +432,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Egiaztatu mesua Bitcoin helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
+        <translation type="unfinished">Egiaztatu mesua Bitcoin helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
         <translation type="unfinished">&amp;kargatu PSBT fitxategitik...</translation>
-    </message>
-    <message>
-        <source>Load PSBT from clipboard…</source>
-        <translation type="unfinished">Arbeletik PSBT kargatu...</translation>
     </message>
     <message>
         <source>Open &amp;URI…</source>
@@ -492,19 +456,19 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Artxiboa</translation>
+        <translation type="unfinished">&amp;Artxiboa</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Ezarpenak</translation>
+        <translation type="unfinished">&amp;Ezarpenak</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Laguntza</translation>
+        <translation type="unfinished">&amp;Laguntza</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>Fitxen tresna-barra</translation>
+        <translation type="unfinished">Fitxen tresna-barra</translation>
     </message>
     <message>
         <source>Synchronizing with network…</source>
@@ -517,10 +481,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Processing blocks on disk…</source>
         <translation type="unfinished">Diskoko blokeak prozesatzen...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk…</source>
-        <translation type="unfinished">Diskoko blokeak berzerrendatzen</translation>
     </message>
     <message>
         <source>Connecting to peers…</source>
@@ -540,14 +500,14 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>%1 atzetik</translation>
+        <translation type="unfinished">%1 atzetik</translation>
     </message>
     <message>
         <source>Catching up…</source>
@@ -555,31 +515,35 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>Jasotako azken blokea duela %1 sortu zen.</translation>
+        <translation type="unfinished">Jasotako azken blokea duela %1 sortu zen.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Honen ondorengo transakzioak oraindik ez daude ikusgai.</translation>
+        <translation type="unfinished">Honen ondorengo transakzioak oraindik ez daude ikusgai.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Akatsa</translation>
+        <translation type="unfinished">Akatsa</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="unfinished">Abisua</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informazioa</translation>
+        <translation type="unfinished">Informazioa</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation>Eguneratua</translation>
+        <translation type="unfinished">Eguneratua</translation>
     </message>
     <message>
         <source>Load Partially Signed Bitcoin Transaction</source>
         <translation type="unfinished">Partzialki sinatutako Bitcoin transakzioa kargatu</translation>
+    </message>
+    <message>
+        <source>Load PSBT from &amp;clipboard…</source>
+        <translation type="unfinished">kargatu PSBT arbeletik...</translation>
     </message>
     <message>
         <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
@@ -626,24 +590,13 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Ez dago diru-zorrorik eskura</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation>Diruzorro lehenetsia</translation>
-    </message>
-    <message>
-        <source>No wallets available</source>
-        <translation>Ez dago diru-zorrorik eskura</translation>
+        <source>Wallet Name</source>
+        <extracomment>Label of the input field where the name of the wallet is entered.</extracomment>
+        <translation type="unfinished">Diruzorroaren izena</translation>
     </message>
     <message>
         <source>&amp;Window</source>
         <translation type="unfinished">&amp;Lehioa</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation type="unfinished">Txikitu</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Txikitu</translation>
     </message>
     <message>
         <source>Zoom</source>
@@ -656,6 +609,14 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>%1 client</source>
         <translation type="unfinished">%1 bezeroa</translation>
+    </message>
+    <message>
+        <source>&amp;Hide</source>
+        <translation type="unfinished">&amp;Ezkutatu</translation>
+    </message>
+    <message>
+        <source>S&amp;how</source>
+        <translation type="unfinished">E&amp;rakutsi</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Bitcoin network.</source>
@@ -703,12 +664,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
 </translation>
     </message>
     <message>
-        <source>Type: %1
-</source>
-        <translation>Mota: %1
-</translation>
-    </message>
-    <message>
         <source>Label: %1
 </source>
         <translation type="unfinished">Etiketa: %1
@@ -722,11 +677,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>Bidalitako transakzioa</translation>
+        <translation type="unfinished">Bidalitako transakzioa</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Sartutako transakzioa</translation>
+        <translation type="unfinished">Sartutako transakzioa</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
@@ -742,11 +697,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Zorroa &lt;b&gt;enkriptatuta&lt;/b&gt; eta &lt;b&gt;desblokeatuta&lt;/b&gt; dago une honetan</translation>
+        <translation type="unfinished">Zorroa &lt;b&gt;enkriptatuta&lt;/b&gt; eta &lt;b&gt;desblokeatuta&lt;/b&gt; dago une honetan</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Zorroa &lt;b&gt;enkriptatuta&lt;/b&gt; eta &lt;b&gt;blokeatuta&lt;/b&gt; dago une honetan</translation>
+        <translation type="unfinished">Zorroa &lt;b&gt;enkriptatuta&lt;/b&gt; eta &lt;b&gt;blokeatuta&lt;/b&gt; dago une honetan</translation>
     </message>
     <message>
         <source>Original message:</source>
@@ -776,20 +731,8 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Ordainketa:</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Ordainketa:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Hautsa:</translation>
-    </message>
-    <message>
         <source>After Fee:</source>
         <translation type="unfinished">Ordaindu ondoren:</translation>
-    </message>
-    <message>
-        <source>After Fee:</source>
-        <translation>Ordaindu ondoren:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -804,14 +747,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Zerrenda modua</translation>
     </message>
     <message>
-        <source>Tree mode</source>
-        <translation>Zuhaitz modua</translation>
-    </message>
-    <message>
-        <source>List mode</source>
-        <translation>Zerrenda modua</translation>
-    </message>
-    <message>
         <source>Amount</source>
         <translation type="unfinished">Kopurua</translation>
     </message>
@@ -822,14 +757,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Received with address</source>
         <translation type="unfinished">Helbidearekin jasoa</translation>
-    </message>
-    <message>
-        <source>Received with label</source>
-        <translation>Etiketarekin jasoa</translation>
-    </message>
-    <message>
-        <source>Received with address</source>
-        <translation>Helbidearekin jasoa</translation>
     </message>
     <message>
         <source>Date</source>
@@ -868,60 +795,12 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Kopiatu byte-ak</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopiatu hautsa</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopiatu aldaketa</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
         <translation type="unfinished">(%1 blokeatuta)</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>zenbatekoaren kopia</translation>
-    </message>
-    <message>
-        <source>Copy transaction ID</source>
-        <translation>Kopiatu transakzioaren IDa</translation>
-    </message>
-    <message>
-        <source>Lock unspent</source>
-        <translation>Blokeatu erabili gabe</translation>
-    </message>
-    <message>
-        <source>Unlock unspent</source>
-        <translation>Desblokeatu gastatu gabe</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopia kopurua</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopiatu byte-ak</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Kopiatu hautsa</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopiatu aldaketa</translation>
-    </message>
-    <message>
-        <source>(%1 locked)</source>
-        <translation>(%1 blokeatuta)</translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation type="unfinished">bai</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation type="unfinished">ez</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -935,7 +814,13 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
 <context>
     <name>CreateWalletActivity</name>
     <message>
+        <source>Create Wallet</source>
+        <extracomment>Title of window indicating the progress of creation of a new wallet.</extracomment>
+        <translation type="unfinished">Diruzorroa sortu</translation>
+    </message>
+    <message>
         <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the create wallet progress window which indicates to the user which wallet is currently being created.</extracomment>
         <translation type="unfinished">Diru-zorroa sortzen&lt;b&gt;%1&lt;/b&gt;...</translation>
     </message>
     <message>
@@ -949,6 +834,19 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Can't list signers</source>
         <translation type="unfinished">Ezin dira sinatzaileak zerrendatu</translation>
+    </message>
+    </context>
+<context>
+    <name>LoadWalletsActivity</name>
+    <message>
+        <source>Load Wallets</source>
+        <extracomment>Title of progress window which is displayed when wallets are being loaded.</extracomment>
+        <translation type="unfinished">Kargatu diruzorroak</translation>
+    </message>
+    <message>
+        <source>Loading wallets…</source>
+        <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
+        <translation type="unfinished">Diruzorroak kargatzen...</translation>
     </message>
 </context>
 <context>
@@ -966,7 +864,13 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Diruzorro lehenetsia</translation>
     </message>
     <message>
+        <source>Open Wallet</source>
+        <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
+        <translation type="unfinished">Diruzorroa zabaldu</translation>
+    </message>
+    <message>
         <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the open wallet progress window which indicates to the user which wallet is currently being opened.</extracomment>
         <translation type="unfinished">&lt;b&gt;%1&lt;/b&gt; diruzorroa irekitzen ...</translation>
     </message>
 </context>
@@ -1016,10 +920,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Egin diruzorro hutsa...</translation>
     </message>
     <message>
-        <source>Descriptor Wallet</source>
-        <translation type="unfinished">Deskriptorearen zorroa</translation>
-    </message>
-    <message>
         <source>External signer</source>
         <translation type="unfinished">Kanpo sinatzailea</translation>
     </message>
@@ -1032,15 +932,15 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>Helbidea editatu</translation>
+        <translation type="unfinished">Helbidea editatu</translation>
     </message>
     <message>
         <source>&amp;Label</source>
-        <translation>&amp;Etiketa</translation>
+        <translation type="unfinished">&amp;Etiketa</translation>
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation>&amp;Helbidea</translation>
+        <translation type="unfinished">&amp;Helbidea</translation>
     </message>
     <message>
         <source>New sending address</source>
@@ -1067,23 +967,44 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation>Datu direktorio berria sortuko da.</translation>
+        <translation type="unfinished">Datu direktorio berria sortuko da.</translation>
     </message>
     <message>
         <source>name</source>
-        <translation>izena</translation>
+        <translation type="unfinished">izena</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>Bidea existitzen da, eta ez da direktorioa.</translation>
+        <translation type="unfinished">Bidea existitzen da, eta ez da direktorioa.</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation>Ezin da datu direktoria hemen sortu.</translation>
+        <translation type="unfinished">Ezin da datu direktoria hemen sortu.</translation>
     </message>
 </context>
 <context>
     <name>Intro</name>
+    <message numerus="yes">
+        <source>%n GB of space available</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(of %n GB needed)</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>(%n GB needed for full chain)</source>
+        <translation type="unfinished">
+            <numerusform />
+            <numerusform />
+        </translation>
+    </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
         <extracomment>Explanatory text on the capability of the current prune target.</extracomment>
@@ -1094,11 +1015,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Akatsa</translation>
+        <translation type="unfinished">Akatsa</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Ongietorri</translation>
+        <translation type="unfinished">Ongietorri</translation>
     </message>
     <message>
         <source>Welcome to %1.</source>
@@ -1110,11 +1031,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation>Erabili datu direktorio lehenetsia</translation>
+        <translation type="unfinished">Erabili datu direktorio lehenetsia</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>Erabili datu direktorio pertsonalizatu bat:</translation>
+        <translation type="unfinished">Erabili datu direktorio pertsonalizatu bat:</translation>
     </message>
 </context>
 <context>
@@ -1173,10 +1094,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>Hide</source>
         <translation type="unfinished">Izkutatu</translation>
     </message>
-    <message>
-        <source>Esc</source>
-        <translation>Esc</translation>
-    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -1188,16 +1105,21 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>URI:</source>
         <translation type="unfinished">URI: </translation>
     </message>
+    <message>
+        <source>Paste address from clipboard</source>
+        <extracomment>Tooltip text for button that allows you to paste an address that is in your clipboard.</extracomment>
+        <translation type="unfinished">Arbeletik helbidea itsatsi</translation>
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>Aukerak</translation>
+        <translation type="unfinished">Aukerak</translation>
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>&amp;Nagusia</translation>
+        <translation type="unfinished">&amp;Nagusia</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1213,15 +1135,15 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>Bezeroaren aukera guztiak hasieratu.</translation>
+        <translation type="unfinished">Bezeroaren aukera guztiak hasieratu.</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>&amp;Aukerak Hasieratu</translation>
+        <translation type="unfinished">&amp;Aukerak Hasieratu</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>&amp;Sarea</translation>
+        <translation type="unfinished">&amp;Sarea</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1233,7 +1155,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Portua mapeatu &amp;UPnP erabiliz</translation>
+        <translation type="unfinished">Portua mapeatu &amp;UPnP erabiliz</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
@@ -1245,43 +1167,43 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
-        <translation>Proxyaren &amp;IP helbidea:</translation>
+        <translation type="unfinished">Proxyaren &amp;IP helbidea:</translation>
     </message>
     <message>
         <source>&amp;Port:</source>
-        <translation>&amp;Portua:</translation>
+        <translation type="unfinished">&amp;Portua:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Proxy portua (9050 adibidez)</translation>
+        <translation type="unfinished">Proxy portua (9050 adibidez)</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation>&amp;Lehioa</translation>
+        <translation type="unfinished">&amp;Lehioa</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>&amp;Pantaila</translation>
+        <translation type="unfinished">&amp;Pantaila</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>Erabiltzaile-interfazearen &amp;hizkuntza:</translation>
+        <translation type="unfinished">Erabiltzaile-interfazearen &amp;hizkuntza:</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Zenbatekoa azaltzeko &amp;unitatea:</translation>
+        <translation type="unfinished">Zenbatekoa azaltzeko &amp;unitatea:</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;Ados</translation>
+        <translation type="unfinished">&amp;Ados</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;Ezeztatu</translation>
+        <translation type="unfinished">&amp;Ezeztatu</translation>
     </message>
     <message>
         <source>default</source>
-        <translation>lehenetsi</translation>
+        <translation type="unfinished">lehenetsi</translation>
     </message>
     <message>
         <source>none</source>
@@ -1289,22 +1211,17 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
-        <translation>Berretsi aukeren berrezarpena</translation>
+        <extracomment>Window title text of pop-up window shown when the user has chosen to reset options.</extracomment>
+        <translation type="unfinished">Berretsi aukeren berrezarpena</translation>
     </message>
     <message>
         <source>Client restart required to activate changes.</source>
+        <extracomment>Text explaining that the settings changed will not come into effect until the client is restarted.</extracomment>
         <translation type="unfinished">Bezeroa berrabiarazi behar da aldaketak aktibatzeko.</translation>
     </message>
     <message>
-        <source>Confirm options reset</source>
-        <translation>Berretsi aukeren berrezarpena</translation>
-    </message>
-    <message>
-        <source>Client restart required to activate changes.</source>
-        <translation>Bezeroa berrabiarazi behar da aldaketak aktibatzeko.</translation>
-    </message>
-    <message>
         <source>Configuration options</source>
+        <extracomment>Window title text of pop-up box that allows opening up of configuration file.</extracomment>
         <translation type="unfinished">Konfiguraketa aukerak</translation>
     </message>
     <message>
@@ -1320,7 +1237,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>OverviewPage</name>
     <message>
         <source>Form</source>
-        <translation>Inprimakia</translation>
+        <translation type="unfinished">Inprimakia</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1336,7 +1253,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Immature:</source>
-        <translation>Ez dago eskuragarri:</translation>
+        <translation type="unfinished">Ez dago eskuragarri:</translation>
     </message>
     <message>
         <source>Balances</source>
@@ -1344,11 +1261,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Guztira:</translation>
+        <translation type="unfinished">Guztira:</translation>
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Zure oraingo erabateko saldoa</translation>
+        <translation type="unfinished">Zure oraingo erabateko saldoa</translation>
     </message>
     <message>
         <source>Spendable:</source>
@@ -1361,10 +1278,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </context>
 <context>
     <name>PSBTOperationsDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="unfinished">Elkarrizketa</translation>
-    </message>
     <message>
         <source>Sign Tx</source>
         <translation type="unfinished">Sinatu Tx</translation>
@@ -1388,6 +1301,10 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>PSBT saved to disk.</source>
         <translation type="unfinished">PSBT diskoan gorde da.</translation>
+    </message>
+    <message>
+        <source>own address</source>
+        <translation type="unfinished">zure helbidea</translation>
     </message>
     <message>
         <source>Total Amount</source>
@@ -1446,7 +1363,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <extracomment>Title of Peers Table column which states the network the peer connected through.</extracomment>
         <translation type="unfinished">Sarea</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -1463,7 +1380,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>PNG Image</source>
-        <extracomment>Expanded name of the PNG file format. See https://en.wikipedia.org/wiki/Portable_Network_Graphics</extracomment>
+        <extracomment>Expanded name of the PNG file format. See: https://en.wikipedia.org/wiki/Portable_Network_Graphics.</extracomment>
         <translation type="unfinished">PNG irudia</translation>
     </message>
 </context>
@@ -1471,11 +1388,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>RPCConsole</name>
     <message>
         <source>Client version</source>
-        <translation>Bezeroaren bertsioa</translation>
+        <translation type="unfinished">Bezeroaren bertsioa</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;Informazioa</translation>
+        <translation type="unfinished">&amp;Informazioa</translation>
     </message>
     <message>
         <source>General</source>
@@ -1491,11 +1408,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Startup time</source>
-        <translation>Abiatzeko ordua</translation>
+        <translation type="unfinished">Abiatzeko ordua</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Sarea</translation>
+        <translation type="unfinished">Sarea</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1503,7 +1420,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Number of connections</source>
-        <translation>Konexio kopurua</translation>
+        <translation type="unfinished">Konexio kopurua</translation>
     </message>
     <message>
         <source>Wallet: </source>
@@ -1555,11 +1472,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Last block time</source>
-        <translation>Azken blokearen unea</translation>
+        <translation type="unfinished">Azken blokearen unea</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>Garbitu kontsola</translation>
+        <translation type="unfinished">Garbitu kontsola</translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
@@ -1637,11 +1554,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>Could not unlock wallet.</source>
         <translation type="unfinished">Ezin da diruzorroa desblokeatu.</translation>
     </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>zenbatekoaren kopia</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -1716,7 +1629,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Txanponak bidali</translation>
+        <translation type="unfinished">Txanponak bidali</translation>
     </message>
     <message>
         <source>automatically selected</source>
@@ -1741,14 +1654,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>After Fee:</source>
         <translation type="unfinished">Ordaindu ondoren:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Ordainketa:</translation>
-    </message>
-    <message>
-        <source>After Fee:</source>
-        <translation>Ordaindu ondoren:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -1776,15 +1681,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
-        <translation>Hainbat jasotzaileri batera bidali</translation>
+        <translation type="unfinished">Hainbat jasotzaileri batera bidali</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation type="unfinished">Garbitu formularioko eremu guztiak.</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Hautsa:</translation>
     </message>
     <message>
         <source>Choose…</source>
@@ -1792,15 +1693,15 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation>Saldoa:</translation>
+        <translation type="unfinished">Saldoa:</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Bidalketa berretsi</translation>
+        <translation type="unfinished">Bidalketa berretsi</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>Bidali</translation>
+        <translation type="unfinished">Bidali</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1823,29 +1724,17 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Kopiatu byte-ak</translation>
     </message>
     <message>
-        <source>Copy dust</source>
-        <translation type="unfinished">Kopiatu hautsa</translation>
-    </message>
-    <message>
         <source>Copy change</source>
         <translation type="unfinished">Kopiatu aldaketa</translation>
     </message>
     <message>
         <source>Sign on device</source>
-        <extracomment>"device" usually means a hardware wallet</extracomment>
+        <extracomment>"device" usually means a hardware wallet.</extracomment>
         <translation type="unfinished">Sinatu gailuan</translation>
     </message>
     <message>
         <source>Connect your hardware wallet first.</source>
         <translation type="unfinished">Konektatu zure hardware diruzorroa lehenago.</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation type="unfinished">Ziur zaude bidali nahi duzula?</translation>
-    </message>
-    <message>
-        <source>Sign and send</source>
-        <translation type="unfinished">Sinatu eta bidali</translation>
     </message>
     <message>
         <source>Sign failed</source>
@@ -1867,6 +1756,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>PSBT saved</source>
+        <extracomment>Popup message when a PSBT has been saved to a file</extracomment>
         <translation type="unfinished">PSBT gordeta</translation>
     </message>
     <message>
@@ -1891,7 +1781,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -1905,15 +1795,15 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>SendCoinsEntry</name>
     <message>
         <source>A&amp;mount:</source>
-        <translation>K&amp;opurua:</translation>
+        <translation type="unfinished">K&amp;opurua:</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>Ordaindu &amp;honi:</translation>
+        <translation type="unfinished">Ordaindu &amp;honi:</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;Etiketa:</translation>
+        <translation type="unfinished">&amp;Etiketa:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1921,15 +1811,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Arbeletik helbidea itsatsi</translation>
+        <translation type="unfinished">Arbeletik helbidea itsatsi</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation type="unfinished">Mezua:</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation type="unfinished">Honi ordaindu:</translation>
     </message>
     </context>
 <context>
@@ -1940,27 +1826,27 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Arbeletik helbidea itsatsi</translation>
+        <translation type="unfinished">Arbeletik helbidea itsatsi</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>Sartu sinatu nahi duzun mezua hemen</translation>
+        <translation type="unfinished">Sartu sinatu nahi duzun mezua hemen</translation>
     </message>
     <message>
         <source>Signature</source>
-        <translation>Sinadura</translation>
+        <translation type="unfinished">Sinadura</translation>
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopiatu oraingo sinadura sistemaren arbelera</translation>
+        <translation type="unfinished">Kopiatu oraingo sinadura sistemaren arbelera</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>Sinatu &amp;Mezua</translation>
+        <translation type="unfinished">Sinatu &amp;Mezua</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;Egiaztatu mezua</translation>
+        <translation type="unfinished">&amp;Egiaztatu mezua</translation>
     </message>
     <message>
         <source>No error</source>
@@ -1989,40 +1875,24 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Zabalik %1 arte</translation>
-    </message>
     <message>
         <source>abandoned</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an abandoned transaction.</extracomment>
         <translation type="unfinished">abandonatuta</translation>
     </message>
     <message>
-        <source>abandoned</source>
-        <translation>abandonatuta</translation>
-    </message>
-    <message>
         <source>%1/unconfirmed</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block, but less than 6 blocks.</extracomment>
         <translation type="unfinished">%1/konfirmatu gabe</translation>
     </message>
     <message>
         <source>%1 confirmations</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in 6 or more blocks.</extracomment>
         <translation type="unfinished">%1 konfirmazio</translation>
     </message>
     <message>
         <source>Status</source>
         <translation type="unfinished">Egoera</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Egoera</translation>
     </message>
     <message>
         <source>Date</source>
@@ -2039,18 +1909,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>From</source>
         <translation type="unfinished">Tik</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation>Iturria</translation>
-    </message>
-    <message>
-        <source>Generated</source>
-        <translation>Sortua</translation>
-    </message>
-    <message>
-        <source>From</source>
-        <translation>Tik</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -2078,7 +1936,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
@@ -2098,42 +1956,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Total credit</source>
         <translation type="unfinished">Kreditu totala</translation>
-    </message>
-    <message>
-        <source>To</source>
-        <translation>Ra</translation>
-    </message>
-    <message>
-        <source>own address</source>
-        <translation>zure helbidea</translation>
-    </message>
-    <message>
-        <source>watch-only</source>
-        <translation>ikusi bakarrik</translation>
-    </message>
-    <message>
-        <source>label</source>
-        <translation>etiketa</translation>
-    </message>
-    <message>
-        <source>Credit</source>
-        <translation>Kreditua</translation>
-    </message>
-    <message>
-        <source>not accepted</source>
-        <translation>Onartu gabe</translation>
-    </message>
-    <message>
-        <source>Debit</source>
-        <translation>Zorrak</translation>
-    </message>
-    <message>
-        <source>Total debit</source>
-        <translation>Zor totala</translation>
-    </message>
-    <message>
-        <source>Total credit</source>
-        <translation>Kreditu totala</translation>
     </message>
     <message>
         <source>Message</source>
@@ -2160,7 +1982,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>TransactionDescDialog</name>
     <message>
         <source>This pane shows a detailed description of the transaction</source>
-        <translation>Panel honek transakzien deskribapen xehea azaltzen du</translation>
+        <translation type="unfinished">Panel honek transakzien deskribapen xehea azaltzen du</translation>
     </message>
     </context>
 <context>
@@ -2176,17 +1998,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Label</source>
         <translation type="unfinished">Izendapen</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Open until %1</source>
-        <translation type="unfinished">Zabalik %1 arte</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
@@ -2207,10 +2018,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Sent to</source>
         <translation type="unfinished">Hona bidalia</translation>
-    </message>
-    <message>
-        <source>Payment to yourself</source>
-        <translation type="unfinished">Zure buruarentzat ordainketa</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2276,10 +2083,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Hona bidalia</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation type="unfinished">Zeure buruari</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation type="unfinished">Meatua</translation>
     </message>
@@ -2297,7 +2100,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See https://en.wikipedia.org/wiki/Comma-separated_values</extracomment>
+        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Komaz bereizitako fitxategia</translation>
     </message>
     <message>
@@ -2331,7 +2134,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>Create a new wallet</source>
         <translation type="unfinished">Diruzorro berri bat sortu</translation>
     </message>
-</context>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Akatsa</translation>
+    </message>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -2365,10 +2172,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>Export the data in the current tab to a file</source>
         <translation type="unfinished">Uneko fitxategian datuak esportatu</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation type="unfinished">Akatsa</translation>
-    </message>
     </context>
 <context>
     <name>bitcoin-core</name>
@@ -2383,6 +2186,14 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Loading wallet…</source>
         <translation type="unfinished">Diruzorroa kargatzen...</translation>
+    </message>
+    <message>
+        <source>Missing amount</source>
+        <translation type="unfinished">Zenbatekoa falta da</translation>
+    </message>
+    <message>
+        <source>No addresses available</source>
+        <translation type="unfinished">Ez dago helbiderik eskuragarri</translation>
     </message>
     <message>
         <source>Replaying blocks…</source>
@@ -2425,20 +2236,12 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Giltzak sortzeko ezgai</translation>
     </message>
     <message>
-        <source>Upgrading UTXO database</source>
-        <translation type="unfinished">UTXO datubasea hobetzen</translation>
-    </message>
-    <message>
-        <source>Upgrading txindex database</source>
-        <translation type="unfinished">txindex datubasea hobetzen</translation>
-    </message>
-    <message>
         <source>Verifying blocks…</source>
         <translation type="unfinished">Blokeak egiaztatzen...</translation>
     </message>
     <message>
         <source>Verifying wallet(s)…</source>
-        <translation type="unfinished">Diruzorroa(k) egiaztatzen...</translation>
+        <translation type="unfinished">Diruzorroak egiaztatzen...</translation>
     </message>
     </context>
 </TS>

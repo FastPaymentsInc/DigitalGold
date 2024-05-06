@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2019 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,7 +31,7 @@ class Intro : public QDialog
 
 public:
     explicit Intro(QWidget *parent = nullptr,
-                   int64_t blockchain_size_gb = 0, int64_t chain_state_size_gb = 0);
+                   int64_t blockchain_size_gb = 0);
     ~Intro();
 
     QString getDataDirectory();
@@ -63,13 +63,12 @@ private Q_SLOTS:
 
 private:
     Ui::Intro *ui;
-    QThread *thread;
+    QThread* thread{nullptr};
     QMutex mutex;
-    bool signalled;
+    bool signalled{false};
     QString pathToCheck;
     const int64_t m_blockchain_size_gb;
-    const int64_t m_chain_state_size_gb;
-    //! Total required space (in GB) depending on user choice (prune or not prune).
+    //! Total required space (in GB).
     int64_t m_required_space_gb{0};
     uint64_t m_bytes_available{0};
 

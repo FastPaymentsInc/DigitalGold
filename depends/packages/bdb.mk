@@ -1,6 +1,6 @@
 package=bdb
 $(package)_version=6.2.38
-$(package)_download_path=https://strawberryperl.com/package/kmx/libs_src/
+$(package)_download_path=https://source.ipfire.org/source-2.x/
 $(package)_file_name=db-$($(package)_version).tar.gz
 $(package)_sha256_hash=99ccd944ffcccc88c0f404b4f3d8cb10747e1e3dfe9ec566f518725f986ca2fd
 $(package)_build_subdir=build_unix
@@ -13,8 +13,10 @@ $(package)_config_opts_freebsd=--with-pic
 $(package)_config_opts_netbsd=--with-pic
 $(package)_config_opts_openbsd=--with-pic
 $(package)_config_opts_android=--with-pic
-$(package)_cflags+=-Wno-error=implicit-function-declaration
-$(package)_cxxflags+=-std=c++17
+$(package)_cflags+=-Wno-error=implicit-function-declaration -Wno-error=format-security -Wno-error=implicit-int
+$(package)_cppflags_freebsd=-D_XOPEN_SOURCE=600 -D__BSD_VISIBLE=1
+$(package)_cppflags_netbsd=-D_XOPEN_SOURCE=600
+$(package)_cppflags_openbsd=-D_XOPEN_SOURCE=600
 $(package)_cppflags_mingw32=-DUNICODE -D_UNICODE
 endef
 

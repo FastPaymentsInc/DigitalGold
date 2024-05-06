@@ -9,6 +9,7 @@ src/usdg-gui
 src/usdg-node
 src/usdg-tx
 src/usdg-util
+src/usdg-chainstate
 src/usdg-wallet
 src/test/fuzz/fuzz
 src/test/test_usdg
@@ -43,8 +44,6 @@ src/obj
 share/setup.nsi
 share/qt/Info.plist
 
-src/univalue/gen
-
 src/qt/*.moc
 src/qt/moc_*.cpp
 src/qt/forms/ui_*.h
@@ -75,14 +74,14 @@ src/qt/usdg-qt.includes
 
 *.log
 *.trs
-*.dmg
-*.iso
+*.zip
 
 *.json.h
 *.raw.h
 
 # Only ignore unexpected patches
 *.patch
+!contrib/guix/patches/*.patch
 !depends/patches/**/*.patch
 
 #libtool object files
@@ -95,7 +94,6 @@ Makefile
 !depends/Makefile
 src/qt/usdg-qt
 USDG-Qt.app
-background.tiff*
 
 # Qt Creator
 Makefile.am.user
@@ -103,7 +101,6 @@ Makefile.am.user
 # Unit-tests
 Makefile.test
 usdg-qt_test
-src/test/buildenv.py
 
 # Resources cpp
 qrc_*.cpp
@@ -149,10 +146,42 @@ db62/
 
 osx_volname
 dist/
-*.background.tiff
 
 /guix-build-*
 
-# Visual Studio
+/ci/scratch/
+
+# USDG specifics
+
+#binaries
+src/usdg
+src/usdgd
+src/usdg-cli
+src/usdg-gui
+src/usdg-node
+src/usdg-tx
+src/usdg-util
+src/usdg-chainstate
+src/usdg-wallet
+src/test/test_usdg
+src/qt/test/test_usdg-qt
+
+# autoreconf
+src/qt/usdg-qt.config
+src/qt/usdg-qt.creator
+src/qt/usdg-qt.creator.user
+src/qt/usdg-qt.files
+src/qt/usdg-qt.includes
+
+# Compilation and Qt preprocessor part
+src/qt/usdg-qt
+USDG-Qt.app
+
+# Unit-tests
+usdg-qt_test
+
+# Output from running db62 installation
+db62/
+
+# VSCode
 .vscode/*
-.vs/*

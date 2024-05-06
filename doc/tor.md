@@ -2,9 +2,7 @@
 
 It is possible to run Bitcoin Core as a Tor onion service, and connect to such services.
 
-The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#TBBSocksPort) for how to properly
-configure Tor.
-
+The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150.
 ## Compatibility
 
 - Starting with version 22.0, Bitcoin Core only supports Tor version 3 hidden
@@ -16,17 +14,18 @@ configure Tor.
 ## How to see information about your Tor configuration via Bitcoin Core
 
 There are several ways to see your local onion address in Bitcoin Core:
-- in the debug log (grep for "tor:" or "AddLocal")
-- in the output of RPC `getnetworkinfo` in the "localaddresses" section
-- in the output of the CLI `-netinfo` peer connections dashboard
+- in the "Local addresses" output of CLI `-netinfo`
+- in the "localaddresses" output of RPC `getnetworkinfo`
+- in the debug log (grep for "AddLocal"; the Tor address ends in `.onion`)
 
 You may set the `-debug=tor` config logging option to have additional
 information in the debug log about your Tor configuration.
 
-CLI `-addrinfo` returns the number of addresses known to your node per network
-type, including Tor v2 and v3. This is useful to see how many onion addresses
-are known to your node for `-onlynet=onion` and how many Tor v3 addresses it
-knows when upgrading to Bitcoin Core v22.0 and up that supports Tor v3 only.
+CLI `-addrinfo` returns the number of addresses known to your node per
+network. This can be useful to see how many onion peers your node knows,
+e.g. for `-onlynet=onion`.
+
+You can use the `getnodeaddresses` RPC to fetch a number of onion peers known to your node; run `bitcoin-cli help getnodeaddresses` for details.
 
 ## 1. Run Bitcoin Core behind a Tor proxy
 
@@ -41,9 +40,11 @@ outgoing connections, but more is possible.
     -onion=ip:port  Set the proxy server to use for Tor onion services. You do not
                     need to set this if it's the same as -proxy. You can use -onion=0
                     to explicitly disable access to onion services.
+                    ------------------------------------------------------------------
                     Note: Only the -proxy option sets the proxy for DNS requests;
                     with -onion they will not route over Tor, so use -proxy if you
                     have privacy concerns.
+                    ------------------------------------------------------------------
 
     -listen         When using -proxy, listening is disabled by default. If you want
                     to manually configure an onion service (see section 3), you'll
@@ -54,18 +55,14 @@ outgoing connections, but more is possible.
     -seednode=X     SOCKS5. In Tor mode, such addresses can also be exchanged with
                     other P2P nodes.
 
-    -onlynet=onion  Make outgoing connections only to .onion addresses. Incoming
-                    connections are not affected by this option. This option can be
-                    specified multiple times to allow multiple network types, e.g.
-                    ipv4, ipv6 or onion. If you use this option with values other
-                    than onion you *cannot* disable onion connections; outgoing onion
-                    connections will be enabled when you use -proxy or -onion. Use
-                    -noonion or -onion=0 if you want to be sure there are no outbound
-                    onion connections over the default proxy or your defined -proxy.
+    -onlynet=onion  Make automatic outbound connections only to .onion addresses.
+                    Inbound and manual connections are not affected by this option.
+                    It can be specified multiple times to allow multiple networks,
+                    e.g. onlynet=onion, onlynet=i2p, onlynet=cjdns.
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-    ./usdgd -proxy=127.0.0.1:9050
+    ./bitcoind -proxy=127.0.0.1:9050
 
 ## 2. Automatically create a Bitcoin Core onion service
 
@@ -80,7 +77,7 @@ it requires a Tor connection to work. It can be explicitly disabled with
 `-listenonion=0`. If it is not disabled, it can be configured using the
 `-torcontrol` and `-torpassword` settings.
 
-To see verbose Tor information in the usdgd debug log, pass `-debug=tor`.
+To see verbose Tor information in the bitcoind debug log, pass `-debug=tor`.
 
 ### Control Port
 
@@ -92,36 +89,30 @@ out by default (if not, add them):
 ControlPort 9051
 CookieAuthentication 1
 CookieAuthFileGroupReadable 1
+DataDirectoryGroupReadable 1
 ```
 
 Add or uncomment those, save, and restart Tor (usually `systemctl restart tor`
 or `sudo systemctl restart tor` on most systemd-based systems, including recent
 Debian and Ubuntu, or just restart the computer).
 
-On some systems (such as Arch Linux), you may also need to add the following
-line:
-
-```
-DataDirectoryGroupReadable 1
-```
-
 ### Authentication
 
 Connecting to Tor's control socket API requires one of two authentication
-methods to be configured: cookie authentication or usdgd's `-torpassword`
+methods to be configured: cookie authentication or bitcoind's `-torpassword`
 configuration option.
 
 #### Cookie authentication
 
-For cookie authentication, the user running usdgd must have read access to
+For cookie authentication, the user running bitcoind must have read access to
 the `CookieAuthFile` specified in the Tor configuration. In some cases this is
 preconfigured and the creation of an onion service is automatic. Don't forget to
-use the `-debug=tor` usdgd configuration option to enable Tor debug logging.
+use the `-debug=tor` bitcoind configuration option to enable Tor debug logging.
 
 If a permissions problem is seen in the debug log, e.g. `tor: Authentication
 cookie /run/tor/control.authcookie could not be opened (check permissions)`, it
 can be resolved by adding both the user running Tor and the user running
-usdgd to the same Tor group and setting permissions appropriately.
+bitcoind to the same Tor group and setting permissions appropriately.
 
 On Debian-derived systems, the Tor group will likely be `debian-tor` and one way
 to verify could be to list the groups and grep for a "tor" group name:
@@ -134,18 +125,18 @@ You can also check the group of the cookie file. On most Linux systems, the Tor
 auth cookie will usually be `/run/tor/control.authcookie`:
 
 ```
-stat -c '%G' /run/tor/control.authcookie
+TORGROUP=$(stat -c '%G' /run/tor/control.authcookie)
 ```
 
 Once you have determined the `${TORGROUP}` and selected the `${USER}` that will
-run usdgd, run this as root:
+run bitcoind, run this as root:
 
 ```
 usermod -a -G ${TORGROUP} ${USER}
 ```
 
 Then restart the computer (or log out) and log in as the `${USER}` that will run
-usdgd.
+bitcoind.
 
 #### `torpassword` authentication
 
@@ -164,17 +155,17 @@ details).
 You can also manually configure your node to be reachable from the Tor network.
 Add these lines to your `/etc/tor/torrc` (or equivalent config file):
 
-    HiddenServiceDir /var/lib/tor/usdg-service/
+    HiddenServiceDir /var/lib/tor/bitcoin-service/
     HiddenServicePort 15714 127.0.0.1:15715
 
 The directory can be different of course, but virtual port numbers should be equal to
-your usdgd's P2P listen port (15714 by default), and target addresses and ports
+your bitcoind's P2P listen port (15714 by default), and target addresses and ports
 should be equal to binding address and port for inbound Tor connections (127.0.0.1:15715 by default).
 
-    -externalip=X   You can tell usdg about its publicly reachable addresses using
+    -externalip=X   You can tell bitcoin about its publicly reachable addresses using
                     this option, and this can be an onion address. Given the above
                     configuration, you can find your onion address in
-                    /var/lib/tor/usdg-service/hostname. For connections
+                    /var/lib/tor/bitcoin-service/hostname. For connections
                     coming from unroutable addresses (such as 127.0.0.1, where the
                     Tor proxy typically runs), onion addresses are given
                     preference for your node to advertise itself with.
@@ -196,25 +187,25 @@ should be equal to binding address and port for inbound Tor connections (127.0.0
 
 In a typical situation, where you're only reachable via Tor, this should suffice:
 
-    ./usdgd -proxy=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -listen
+    ./bitcoind -proxy=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -listen
 
 (obviously, replace the .onion address with your own). It should be noted that you still
 listen on all devices and another node could establish a clearnet connection, when knowing
 your address. To mitigate this, additionally bind the address of your Tor proxy:
 
-    ./usdgd ... -bind=127.0.0.1
+    ./bitcoind ... -bind=127.0.0.1
 
 If you don't care too much about hiding your node, and want to be reachable on IPv4
 as well, use `discover` instead:
 
-    ./usdgd ... -discover
+    ./bitcoind ... -discover
 
 and open port 15714 on your firewall (or use port mapping, i.e., `-upnp`).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-    ./usdgd -onion=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -discover
+    ./bitcoind -onion=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -discover
 
 ## 4. Privacy recommendations
 

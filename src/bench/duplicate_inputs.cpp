@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2020 The Bitcoin Core developers
+// Copyright (c) 2011-2022 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,6 +7,7 @@
 #include <consensus/merkle.h>
 #include <consensus/validation.h>
 #include <pow.h>
+#include <random.h>
 #include <test/util/setup_common.h>
 #include <txmempool.h>
 #include <validation.h>
@@ -30,7 +31,7 @@ static void DuplicateInputs(benchmark::Bench& bench)
     block.nBits = GetNextTargetRequired(pindexPrev, chainparams.GetConsensus(), block.IsProofOfStake());
     block.nNonce = 0;
     auto nHeight = pindexPrev->nHeight + 1;
-    CChainState& chainstate = testing_setup->m_node.chainman->ActiveChainstate();
+    Chainstate& chainstate = testing_setup->m_node.chainman->ActiveChainstate();
 
     // Make a coinbase TX
     coinbaseTx.vin.resize(1);
@@ -63,4 +64,4 @@ static void DuplicateInputs(benchmark::Bench& bench)
     });
 }
 
-BENCHMARK(DuplicateInputs);
+BENCHMARK(DuplicateInputs, benchmark::PriorityLevel::HIGH);
