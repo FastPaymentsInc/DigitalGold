@@ -132,16 +132,3 @@ void SelectParams(const ChainType chain)
     SelectBaseParams(chain);
     globalChainParams = CreateChainParams(gArgs, chain);
 }
-
-// Blackcoin: Donations to dev fund 
-std::string CChainParams::GetDevFundAddress() const
-{
-    return !vDevFundAddress.empty() ? vDevFundAddress[0] : "";
-}
-
-CScript CChainParams::GetDevRewardScript() const
-{
-    CTxDestination dest = DecodeDestination(GetDevFundAddress());
-    CScript scriptPubKey = GetScriptForDestination(dest);
-    return scriptPubKey;
-}

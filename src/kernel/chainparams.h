@@ -126,8 +126,6 @@ public:
     }
 
     const ChainTxData& TxData() const { return chainTxData; }
-    std::string GetDevFundAddress() const;
-    CScript GetDevRewardScript() const;
 
     /**
      * SigNetOptions holds configurations for creating a signet CChainParams.

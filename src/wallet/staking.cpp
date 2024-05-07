@@ -446,40 +446,20 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
     if (nReward < 0)
         return false;
 
-    bool isDevFundEnabled = (wallet.m_donation_percentage > 0 && !Params().GetDevFundAddress().empty()) ? true : false;
-    CAmount nDevCredit = 0;
-    CAmount nMinerCredit = 0;
-
-    if (isDevFundEnabled)
-    {
-        nDevCredit = (GetProofOfStakeSubsidy() * wallet.m_donation_percentage) / 100;
-        nMinerCredit = nReward - nDevCredit;
-        nCredit += nMinerCredit;
-    }
-    else
-    {
-        nCredit += nReward;
-    }
+    nCredit += nReward;
 
     // Split stake
     if (nCredit >= GetStakeSplitThreshold())
         txNew.vout.push_back(CTxOut(0, scriptPubKeyOut));
 
-    if (isDevFundEnabled)
-        txNew.vout.push_back(CTxOut(0, Params().GetDevRewardScript()));
-
     // Set output amount
-    if (txNew.vout.size() == (isDevFundEnabled ? 4u : 3u) + bMinterKey) {
+    if (txNew.vout.size() == 3u + bMinterKey) {
         txNew.vout[1 + bMinterKey].nValue = (nCredit / 2 / CENT) * CENT;
         txNew.vout[2 + bMinterKey].nValue = nCredit - txNew.vout[1 + bMinterKey].nValue;
-        if (isDevFundEnabled)
-            txNew.vout[3 + bMinterKey].nValue = nDevCredit;
     }
     else
     {
         txNew.vout[1 + bMinterKey].nValue = nCredit;
-        if (isDevFundEnabled)
-            txNew.vout[2 + bMinterKey].nValue = nDevCredit;
     }
 
     // Sign
