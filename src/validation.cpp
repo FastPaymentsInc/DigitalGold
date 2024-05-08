@@ -1658,16 +1658,16 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, b
 }
 
 // USDG
-// Premine 800 blocks to get 20 556 330 000 USDG.
-// Continue PoW for another 400 blocks at 0.05 USDG reward and mature more blocks for staking.
+// Premine 1500 blocks to get 21 000 000 USDG.
+// Continue PoW for another 900 blocks at 0.0125 USDG reward and mature more blocks for staking.
 // PoW will stop at block 2400.
-// PoS will start at block 1201 at 0.0125 USDG block reward.
+// PoS will be enabled at block 1501 at 0.0125 USDG block reward
 CAmount GetProofOfWorkSubsidy(int nHeight)
 {
     if (nHeight <= 500) 
-        return 10000 * COIN; // 5 000 000 USDG used for staking nodes.
-    else if (nHeight > 500 && nHeight <= 800)
-        return 75171100 * COIN; // 22 551 330 000 USDG used for the foundation.
+        return 1000 * COIN; // 500 000 USDG used for staking nodes.
+    else if (nHeight > 500 && nHeight <= 1500)
+        return 20500 * COIN; // 20 500 000 USDG used for the main address.
     else
         return COIN * 1 / 80; // Premine ends at block 2400. These extra blocks are needed to keep the network going. 
 }

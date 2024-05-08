@@ -1,21 +1,14 @@
 # List of fixed seed nodes for main network
 
 # IPv4 nodes
-167.86.117.103:7533
-167.86.117.144:7533
-167.86.117.143:7533
-162.19.192.20:7533
-162.19.192.21:7533
-162.19.192.22:7533
-194.233.93.215:7533
-154.26.153.25:7533
+167.86.117.103:7633
+167.86.117.144:7633
+167.86.117.143:7633
 
 # IPv6 nodes
-[2a02:c207:2056:6532::1]:7533
-[2a02:c207:2056:6534::1]:7533
-[2a02:c207:2056:6533::1]:7533
+[2a02:c207:2056:6532::1]:7633
+[2a02:c207:2056:6534::1]:7633
+[2a02:c207:2056:6533::1]:7633
 
 # Onion nodes
-gynolse6nen5ww5n4ymfzt2apjdgfzfjk4a3ijomer2grbxwpy3kk3qd.onion:7533
-kfgahviwybz3b3wjqfukmvw7l5vgl2au62casmx6ida75yiqz5vusead.onion:7533
-37eqiiafe35rn3ru4vfknjjihvmjmjsh7cnfkfxq5pxyjgwkylthsuad.onion:7533
+

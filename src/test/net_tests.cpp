@@ -677,7 +677,7 @@ BOOST_AUTO_TEST_CASE(get_local_addr_for_peer_port)
     peer_out_in_addr.s_addr = htonl(0x01020304);
     CNode peer_out{/*id=*/0,
                    /*sock=*/nullptr,
-                   /*addrIn=*/CAddress{CService{peer_out_in_addr, 15714}, NODE_NETWORK},
+                   /*addrIn=*/CAddress{CService{peer_out_in_addr, 7633}, NODE_NETWORK},
                    /*nKeyedNetGroupIn=*/0,
                    /*nLocalHostNonceIn=*/0,
                    /*addrBindIn=*/CAddress{},
@@ -698,7 +698,7 @@ BOOST_AUTO_TEST_CASE(get_local_addr_for_peer_port)
     peer_in_in_addr.s_addr = htonl(0x05060708);
     CNode peer_in{/*id=*/0,
                   /*sock=*/nullptr,
-                  /*addrIn=*/CAddress{CService{peer_in_in_addr, 15714}, NODE_NETWORK},
+                  /*addrIn=*/CAddress{CService{peer_in_in_addr, 7633}, NODE_NETWORK},
                   /*nKeyedNetGroupIn=*/0,
                   /*nLocalHostNonceIn=*/0,
                   /*addrBindIn=*/CAddress{},
@@ -835,7 +835,7 @@ BOOST_AUTO_TEST_CASE(initial_advertise_from_version_message)
     peer_in_addr.s_addr = htonl(0x01020304);
     CNode peer{/*id=*/0,
                /*sock=*/nullptr,
-               /*addrIn=*/CAddress{CService{peer_in_addr, 15714}, NODE_NETWORK},
+               /*addrIn=*/CAddress{CService{peer_in_addr, 7633}, NODE_NETWORK},
                /*nKeyedNetGroupIn=*/0,
                /*nLocalHostNonceIn=*/0,
                /*addrBindIn=*/CAddress{},

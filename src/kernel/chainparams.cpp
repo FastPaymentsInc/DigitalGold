@@ -26,6 +26,9 @@
 #include <cstring>
 #include <type_traits>
 
+// for genesis block generation
+#include <arith_uint256.h>
+
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     // Genesis block
@@ -72,7 +75,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Keep up with inflation using USDG coin 15/jul/2022";
+    const char* pszTimestamp = "The Times 08/may/2024 Banks told to be more transparent over how they treat business";
     const CScript genesisOutputScript = CScript() << ParseHex("042c98b5c882539a9fa30cbc58a11db2b58e7361ffbaba911da56504684a70bf7483fc6a238dfb3d570e1c1abdd503d82989bd675528c16cdbe392c7c8f0131976") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -120,7 +123,7 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000547b1b8e78ad5bc3");
+        consensus.nMinimumChainWork = uint256S("0x00");
         consensus.defaultAssumeValid = uint256S("0x00");
 
         /**
@@ -128,26 +131,26 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf2;
-        pchMessageStart[1] = 0xc3;
-        pchMessageStart[2] = 0xa4;
-        pchMessageStart[3] = 0xd5;
-        nDefaultPort = 7533;
+        pchMessageStart[0] = 0xf6;
+        pchMessageStart[1] = 0xc7;
+        pchMessageStart[2] = 0xa8;
+        pchMessageStart[3] = 0xd9;
+        nDefaultPort = 7633;
         m_assumed_blockchain_size = 5;
 
-        genesis = CreateGenesisBlock(1657918800, 528385, 0x1e0fffff, 1, 0);
+        genesis = CreateGenesisBlock(1715187600, 2334988, 0x1e0fffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000dc29655c1eb3594818f00d5567504f8cf14b2434872ae720ead236c06a6"));
-        assert(genesis.hashMerkleRoot == uint256S("0x52e750b3cf3608fa79f8477485b4a778f38d6bde11c72b8affa1ab0a637af583"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000e03ef71247a5078af07a30eecd93e0d86e8286ca6844f9e02fe8d1f9968"));
+        assert(genesis.hashMerkleRoot == uint256S("0x46a78c30cad1debd1f794090b4e1feb1bb71c76dfb2d08ae15b84e3142eb271e"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("seed1.usdgcoin.org"); // hosted at seed1.usdgcoin.org
-        vSeeds.emplace_back("seed2.usdgcoin.org"); // hosted at seed2.usdgcoin.org
-        vSeeds.emplace_back("seed3.usdgcoin.org"); // hosted at seed3.usdgcoin.org
+        vSeeds.emplace_back("electrum1.blackcoin.nl"); // hosted at electrum1.blackcoin.nl
+        vSeeds.emplace_back("electrum2.blackcoin.nl"); // hosted at electrum2.blackcoin.nl
+        vSeeds.emplace_back("electrum3.blackcoin.nl"); // hosted at electrum3.blackcoin.nl
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,130);
@@ -164,11 +167,7 @@ public:
 
         checkpointData = {
             {
-                {     0, uint256S("0x00000dc29655c1eb3594818f00d5567504f8cf14b2434872ae720ead236c06a6")}, // Genesis block
-                {   800, uint256S("0x000000214e731ba5ab82f7f809d19ca2d429fcd0060903fdcb80e23c27a83f28")}, // Pre-mine phase I
-                {  1200, uint256S("0xfdc46ec8eace9a7d4b8957f0ff555e69609a56e512bc7c627ae58dedeb10f4ea")}, // Pre-mine phase II
-                {  2400, uint256S("0x74799f6c53dd24aa963b3db97535cf96231d93eaa4c1351f17c71e9b31cb4dca")}, // Pre-mine end phase
-                {  5000, uint256S("0xd8606f789979feac3dadb5d140519a0430d73bbb3ed3a91885f7495eb85ff838")}, // PoS is stable now
+                {     0, uint256S("0x00000e03ef71247a5078af07a30eecd93e0d86e8286ca6844f9e02fe8d1f9968")}, // Genesis block
             }
         };
 
@@ -231,20 +230,20 @@ public:
         consensus.nStakeTimestampMask = 0xf;
         consensus.nCoinbaseMaturity = 10;
 
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000005271db979acd550416");
+        consensus.nMinimumChainWork = uint256S("0x00");
         consensus.defaultAssumeValid = uint256S("0x00");
 
-        pchMessageStart[0] = 0x02;
-        pchMessageStart[1] = 0x21;
+        pchMessageStart[0] = 0x06;
+        pchMessageStart[1] = 0x27;
         pchMessageStart[2] = 0x18;
-        pchMessageStart[3] = 0x04;
-        nDefaultPort = 17533;
+        pchMessageStart[3] = 0x09;
+        nDefaultPort = 17633;
         m_assumed_blockchain_size = 5;
 
-        genesis = CreateGenesisBlock(1657918880, 64302, 0x1f00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1715187600, 217347, 0x1f00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000ade4522264c59ec4b4b92dd4c8e288302fea5ce9e3992edfdd50b9f3c29a"));
-        assert(genesis.hashMerkleRoot == uint256S("0xbcab77d090a581c608fc9ce97fff21297cc5e356155a5b299c2ebe4c4bf2c53a"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000abae30e9f0c023d770429c40b7bc52d3dda8e39c1bc34088d5a67156bcee"));
+        assert(genesis.hashMerkleRoot == uint256S("0x46a78c30cad1debd1f794090b4e1feb1bb71c76dfb2d08ae15b84e3142eb271e"));
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
@@ -270,8 +269,7 @@ public:
 
         checkpointData = {
             {
-                {     0, uint256S("0x0000ade4522264c59ec4b4b92dd4c8e288302fea5ce9e3992edfdd50b9f3c29a")}, // Genesis block
-                {  1200, uint256S("0xc28e21edf56c1f0a2cda4dda2a89f3f966c2b9b1e3fcaf71fa1f176fd7dc3305")}, // Pre-mine ended
+                {     0, uint256S("0x0000abae30e9f0c023d770429c40b7bc52d3dda8e39c1bc34088d5a67156bcee")}, // Genesis block
             }
         };
 
@@ -377,12 +375,12 @@ public:
         uint256 hash = h.GetHash();
         std::copy_n(hash.begin(), 4, pchMessageStart.begin());
 
-        nDefaultPort = 37533;
+        nDefaultPort = 37633;
 
-        genesis = CreateGenesisBlock(1657918888, 3727, 0x1f00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1715187600, 598835, 0x1f000fff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000a1bf5d560b48296fea38a31a750be5b958397c3e8d28db61d04eff33f875"));
-        assert(genesis.hashMerkleRoot == uint256S("0xc35c6ca889657bf233b0824161a2d1f91f4a0d9781084714dfe10bc98251a3a5"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000ee80648e72b18c21d4336316160feda76805e1407996f716731c48e598"));
+        assert(genesis.hashMerkleRoot == uint256S("0x46a78c30cad1debd1f794090b4e1feb1bb71c76dfb2d08ae15b84e3142eb271e"));
 
         vFixedSeeds.clear();
 
@@ -452,11 +450,11 @@ public:
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};
 
-        pchMessageStart[0] = 0xc8;
-        pchMessageStart[1] = 0xd4;
-        pchMessageStart[2] = 0xa2;
-        pchMessageStart[3] = 0xb1;
-        nDefaultPort = 27533;
+        pchMessageStart[0] = 0xc1;
+        pchMessageStart[1] = 0xd2;
+        pchMessageStart[2] = 0xa4;
+        pchMessageStart[3] = 0xb8;
+        nDefaultPort = 27633;
         m_assumed_blockchain_size = 0;
 
         for (const auto& [dep, height] : opts.activation_heights) {
@@ -478,10 +476,10 @@ public:
             consensus.vDeployments[deployment_pos].min_activation_height = version_bits_params.min_activation_height;
         }
 
-        genesis = CreateGenesisBlock(1657918888, 3727, 0x1f00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1715187700, 43935, 0x1f00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000a1bf5d560b48296fea38a31a750be5b958397c3e8d28db61d04eff33f875"));
-        assert(genesis.hashMerkleRoot == uint256S("0xc35c6ca889657bf233b0824161a2d1f91f4a0d9781084714dfe10bc98251a3a5"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000036834efb3f2539e493273db128b6c644b681152e15e5ab8933c494b355d1"));
+        assert(genesis.hashMerkleRoot == uint256S("0xda6291e4a2744df3eba357a4c6cbeda978a94dfd612f42a0cab7ec925a696698"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();
