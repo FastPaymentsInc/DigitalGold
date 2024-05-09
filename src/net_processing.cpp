@@ -795,7 +795,7 @@ private:
     void MaybeSendFeefilter(CNode& node, Peer& peer, std::chrono::microseconds current_time) EXCLUSIVE_LOCKS_REQUIRED(g_msgproc_mutex);
 
     /** Process net block. */
-    bool ProcessNetBlockHeaders(CNode& node, const std::vector<CBlockHeader>& block, bool min_pow_checked, BlockValidationState& state, bool old_client, const CBlockIndex** ppindex=nullptr);
+    bool ProcessNetBlockHeaders(CNode& node, const std::vector<CBlockHeader>& block, bool min_pow_checked, BlockValidationState& state, const CBlockIndex** ppindex=nullptr);
     bool ProcessNetBlock(const std::shared_ptr<const CBlock> pblock, bool force_processing, bool min_pow_checked, bool* new_block, CNode& node);
 
     CNodeHeaders& ServiceHeaders(const CService& address) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
@@ -1625,10 +1625,10 @@ void PeerManagerImpl::PushNodeVersion(CNode& pnode, const Peer& peer)
     }
 }
 
-bool PeerManagerImpl::ProcessNetBlockHeaders(CNode& pfrom, const std::vector<CBlockHeader>& block, bool min_pow_checked, BlockValidationState& state, bool old_client, const CBlockIndex** ppindex)
+bool PeerManagerImpl::ProcessNetBlockHeaders(CNode& pfrom, const std::vector<CBlockHeader>& block, bool min_pow_checked, BlockValidationState& state, const CBlockIndex** ppindex)
 {
     const CBlockIndex *pindexFirst = nullptr;
-    bool ret = m_chainman.ProcessNewBlockHeaders(block, min_pow_checked, state, old_client, ppindex, &pindexFirst);
+    bool ret = m_chainman.ProcessNewBlockHeaders(block, min_pow_checked, state, ppindex, &pindexFirst);
     if (gArgs.GetBoolArg("-headerspamfilter", DEFAULT_HEADER_SPAM_FILTER))
     {
         if (!m_chainman.IsInitialBlockDownload() || (gArgs.GetBoolArg("-headerspamfilterduringibd", DEFAULT_HEADER_SPAM_FILTER_DURING_IBD) && m_chainman.IsInitialBlockDownload()))
@@ -1657,23 +1657,10 @@ bool PeerManagerImpl::ProcessNetBlock(const std::shared_ptr<const CBlock> pblock
         }
     }
 
-    // Blackcoin ToDo: revert after nodes upgrade to current version
-    // /*
-    // Set nFlags in case of proof of stake block received from an old node
-    std::shared_ptr<CBlock> pblock_mutable = std::const_pointer_cast<CBlock>(pblock);
-    bool old_client = pfrom.nVersion <= OLD_VERSION;
-
-    if (old_client && pblock_mutable->IsProofOfStake())
-        pblock_mutable->nFlags = CBlockIndex::BLOCK_PROOF_OF_STAKE;
-
-    // Avoid implicit conversions
-    const std::shared_ptr<const CBlock> pblock_const = std::const_pointer_cast<const CBlock>(pblock_mutable);
-    // */
-
     // Process the header before processing the block
     const CBlockIndex *pindex = nullptr;
     BlockValidationState state;
-    if (!ProcessNetBlockHeaders(pfrom, {*pblock_const}, min_pow_checked, state, old_client, &pindex)) {
+    if (!ProcessNetBlockHeaders(pfrom, {*pblock}, min_pow_checked, state, &pindex)) {
         if (state.IsInvalid()) {
             MaybePunishNodeForBlock(pfrom.GetId(), state, false, strprintf("Peer %d sent us invalid header\n", pfrom.GetId()));
             return error("%s: invalid header received", __func__);
@@ -1705,7 +1692,7 @@ bool PeerManagerImpl::ProcessNetBlock(const std::shared_ptr<const CBlock> pblock
         }
     }
 
-    if (!m_chainman.ProcessNewBlock(pblock_const, force_processing, min_pow_checked, new_block))
+    if (!m_chainman.ProcessNewBlock(pblock, force_processing, min_pow_checked, new_block))
         return error("%s: ProcessNewBlock FAILED", __func__);
 
     return true;
@@ -3190,7 +3177,7 @@ void PeerManagerImpl::ProcessHeadersMessage(CNode& pfrom, Peer& peer,
 
     // Now process all the headers.
     BlockValidationState state;
-    if (!ProcessNetBlockHeaders(pfrom, headers, /*min_pow_checked=*/true, state, pfrom.nVersion <= OLD_VERSION, &pindexLast)) {
+    if (!ProcessNetBlockHeaders(pfrom, headers, /*min_pow_checked=*/true, state, &pindexLast)) {
         if (state.IsInvalid()) {
             MaybePunishNodeForBlock(pfrom.GetId(), state, via_compact_block, "invalid header received");
             return;
@@ -3580,11 +3567,8 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
     PeerRef peer = GetPeerRef(pfrom.GetId());
     if (peer == nullptr) return;
 
-    // peercoin: set/unset deserialization mode to read PoS flag in headers
-    if (pfrom.nVersion <= OLD_VERSION)
-        vRecv.SetType(vRecv.GetType() & ~SER_POSMARKER);
-    else
-        vRecv.SetType(vRecv.GetType() | SER_POSMARKER);
+    // peercoin: set deserialization mode to read PoS flag in headers
+    vRecv.SetType(vRecv.GetType() | SER_POSMARKER);
 
     if (msg_type == NetMsgType::VERSION) {
         if (pfrom.nVersion != 0) {
@@ -4637,7 +4621,7 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
 
         const CBlockIndex *pindex = nullptr;
         BlockValidationState state;
-        if (!ProcessNetBlockHeaders(pfrom, {cmpctblock.header}, /*min_pow_checked=*/true, state, pfrom.nVersion <= OLD_VERSION, &pindex)) {
+        if (!ProcessNetBlockHeaders(pfrom, {cmpctblock.header}, /*min_pow_checked=*/true, state, &pindex)) {
             if (state.IsInvalid()) {
                 MaybePunishNodeForBlock(pfrom.GetId(), state, /*via_compact_block=*/true, "invalid header via cmpctblock");
                 return;

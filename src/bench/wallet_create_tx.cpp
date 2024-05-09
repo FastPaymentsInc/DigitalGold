@@ -63,7 +63,7 @@ void generateFakeBlock(const CChainParams& params,
     {
         LOCK(::cs_main);
         // Add it to the index
-        CBlockIndex* pindex{context.chainman->m_blockman.AddToBlockIndex(block, context.chainman->m_best_header, false)};
+        CBlockIndex* pindex{context.chainman->m_blockman.AddToBlockIndex(block, context.chainman->m_best_header)};
         // add it to the chain
         context.chainman->ActiveChain().SetTip(*pindex);
     }
