@@ -136,7 +136,7 @@ public:
         pchMessageStart[2] = 0xa8;
         pchMessageStart[3] = 0xd9;
         nDefaultPort = 7633;
-        m_assumed_blockchain_size = 5;
+        m_assumed_blockchain_size = 1;
 
         genesis = CreateGenesisBlock(1715187600, 2334988, 0x1e0fffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -238,7 +238,7 @@ public:
         pchMessageStart[2] = 0x18;
         pchMessageStart[3] = 0x09;
         nDefaultPort = 17633;
-        m_assumed_blockchain_size = 5;
+        m_assumed_blockchain_size = 1;
 
         genesis = CreateGenesisBlock(1715187600, 217347, 0x1f00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
