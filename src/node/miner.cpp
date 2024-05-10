@@ -692,7 +692,7 @@ void PoSMiner(CWallet *pwallet)
                 }
             }
 
-            while (GuessVerificationProgress(Params().TxData(), pwallet->chain().getTip()) < 0.996) {
+            while (GuessVerificationProgress(Params().TxData(), pwallet->chain().getTip()) < 0.000001) {
                 pwallet->m_last_coin_stake_search_interval = 0;
                 pwallet->WalletLogPrintf("Staker thread sleeps while sync at %f\n", GuessVerificationProgress(Params().TxData(), pwallet->chain().getTip()));
                 if (!SleepStaker(pwallet, 10000))
