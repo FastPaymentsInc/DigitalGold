@@ -123,8 +123,8 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000143f71ce67");
-        consensus.defaultAssumeValid = uint256S("0x0000003912525cbabfe9616a1daa0d1d8860dac2163a45376cdaa9abcbcb4369");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000264e839b23bfdaa");
+        consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -169,6 +169,7 @@ public:
             {
                 {     0, uint256S("0x00000e03ef71247a5078af07a30eecd93e0d86e8286ca6844f9e02fe8d1f9968")}, // Genesis block
                 {     1500, uint256S("0x0000003912525cbabfe9616a1daa0d1d8860dac2163a45376cdaa9abcbcb4369")}, // 21M pre-mine
+                {     2400, uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5")}, // PoW ended
             }
         };
 
@@ -177,10 +178,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 1499 0000003912525cbabfe9616a1daa0d1d8860dac2163a45376cdaa9abcbcb4369
-            /* nTime    */ 1715286614,
-            /* nTxCount */ 1499,
-            /* dTxRate  */ 0.1549642310714138
+            // Data from RPC: getchaintxstats 2400 e8f2a41049ad8e8c7345b75190fee5d78a89b5b0f769ebed52c2194f7fb88fa3
+            /* nTime    */ 1715417888,
+            /* nTxCount */ 2993,
+            /* dTxRate  */ 0.01311807584010947
         };
 
         // A vector of p2sh addresses
