@@ -434,7 +434,7 @@ class NetTest(BitcoinTestFramework):
                 "entries": [
                     {
                         "address": "2.0.0.0",
-                        "port": 8333,
+                        "port": 7633,
                         "services": 9,
                         "network": "ipv4",
                         "source": "2.0.0.0",
@@ -447,7 +447,7 @@ class NetTest(BitcoinTestFramework):
                 "entries": [
                     {
                         "address": "1.2.3.4",
-                        "port": 8333,
+                        "port": 7633,
                         "services": 9,
                         "network": "ipv4",
                         "source": "1.2.3.4",
