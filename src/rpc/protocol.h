@@ -81,7 +81,10 @@ enum RPCErrorCode
     RPC_WALLET_NOT_SPECIFIED        = -19, //!< No wallet specified (error when there are multiple wallets loaded)
     RPC_WALLET_ALREADY_LOADED       = -35, //!< This same wallet is already loaded
     RPC_WALLET_ALREADY_EXISTS       = -36, //!< There is already a wallet with the same name
+
+    //! Backwards compatible aliases
     RPC_WALLET_INVALID_ACCOUNT_NAME = RPC_WALLET_INVALID_LABEL_NAME,
+
     //! Unused reserved codes, kept around for backwards compatibility. Do not reuse.
     RPC_FORBIDDEN_BY_SAFE_MODE      = -2,  //!< Server is in safe mode, and command is not allowed in safe mode
 };

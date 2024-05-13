@@ -1819,16 +1819,6 @@ else
   BUILD_TEST=""
 fi
 
-AC_MSG_CHECKING([whether to enable sse2 instructions])
-if test x$use_sse2 != xno; then
-  AC_MSG_RESULT(yes)
-  AC_DEFINE([USE_SSE2],[1],[Define if SSE2 support should be compiled in])
-  use_sse2=yes
-  CPPFLAGS="$CPPFLAGS -DUSE_SSE2=1"
-else
-  AC_MSG_RESULT(no)
-fi
-
 AC_MSG_CHECKING([whether to reduce exports])
 if test "$use_reduce_exports" = "yes"; then
   AC_MSG_RESULT([yes])
@@ -1854,7 +1844,6 @@ AM_CONDITIONAL([ENABLE_QT], [test "$bitcoin_enable_qt" = "yes"])
 AM_CONDITIONAL([ENABLE_QT_TESTS], [test "$BUILD_TEST_QT" = "yes"])
 AM_CONDITIONAL([ENABLE_BENCH], [test "$use_bench" = "yes"])
 AM_CONDITIONAL([USE_QRCODE], [test "$use_qr" = "yes"])
-AM_CONDITIONAL([USE_SSE2], [test x$use_sse2 = xyes])
 AM_CONDITIONAL([USE_LCOV], [test "$use_lcov" = "yes"])
 AM_CONDITIONAL([USE_LIBEVENT], [test "$use_libevent" = "yes"])
 AM_CONDITIONAL([HARDEN], [test "$use_hardening" = "yes"])
@@ -1934,7 +1923,6 @@ AC_SUBST(USE_BDB)
 AC_SUBST(ENABLE_EXTERNAL_SIGNER)
 AC_SUBST(USE_UPNP)
 AC_SUBST(USE_QRCODE)
-AC_SUBST(USE_SSE2)
 AC_SUBST(TESTDEFS)
 AC_SUBST(MINIUPNPC_CPPFLAGS)
 AC_SUBST(MINIUPNPC_LIBS)

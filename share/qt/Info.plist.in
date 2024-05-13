@@ -43,7 +43,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.usdg.USDG-Qt</string>
+  <string>org.usdgcoin.USDG-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

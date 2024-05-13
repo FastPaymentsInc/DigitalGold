@@ -1,11 +1,11 @@
 .PHONY: FORCE
 all: FORCE
-	$(MAKE) -C .. blackmore_qt test_blackmore_qt
+	$(MAKE) -C .. usdg_qt test_usdg_qt
 clean: FORCE
-	$(MAKE) -C .. blackmore_qt_clean test_blackmore_qt_clean
+	$(MAKE) -C .. usdg_qt_clean test_usdg_qt_clean
 check: FORCE
-	$(MAKE) -C .. test_blackmore_qt_check
-blackmore-qt blackmore-qt.exe: FORCE
-	 $(MAKE) -C .. blackmore_qt
+	$(MAKE) -C .. test_usdg_qt_check
+usdg-qt usdg-qt.exe: FORCE
+	 $(MAKE) -C .. usdg_qt
 apk: FORCE
-	$(MAKE) -C .. blackmore_qt_apk
+	$(MAKE) -C .. usdg_qt_apk

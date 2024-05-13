@@ -247,8 +247,6 @@ BITCOIN_CORE_H = \
   pos.h \
   pow.h \
   prevector.h \
-  primitives/block.h \
-  primitives/transaction.h \
   protocol.h \
   psbt.h \
   random.h \
@@ -685,7 +683,6 @@ libbitcoin_common_a_SOURCES = \
   common/settings.cpp \
   common/system.cpp \
   compressor.cpp \
-  consensus/merkle.cpp \
   core_read.cpp \
   core_write.cpp \
   deploymentinfo.cpp \
