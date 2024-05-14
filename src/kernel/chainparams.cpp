@@ -123,7 +123,7 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000264e839b23bfdaa");
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000a14facc04c9048e"); // block 4287
         consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5");
 
         /**
@@ -178,10 +178,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 2400 e8f2a41049ad8e8c7345b75190fee5d78a89b5b0f769ebed52c2194f7fb88fa3
-            /* nTime    */ 1715417888,
-            /* nTxCount */ 2993,
-            /* dTxRate  */ 0.01311807584010947
+            // Data from RPC: getchaintxstats 2401 48fcebc185fd83432a5bffad97b3b415a6e9d4aa554c3ebe117b75777785cdc9
+            /* nTime    */ 1715665808,
+            /* nTxCount */ 4653,
+            /* dTxRate  */ 0.01580760450073381
         };
 
         // A vector of p2sh addresses
