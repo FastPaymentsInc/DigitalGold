@@ -124,7 +124,7 @@ public:
         consensus.nCoinbaseMaturity = 240;
 
         consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000a14facc04c9048e"); // block 4287
-        consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5");
+        consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5"); // block 2400
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
