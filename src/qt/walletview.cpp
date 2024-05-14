@@ -239,6 +239,7 @@ void WalletView::unlockWallet(bool fromMenu)
 {
     if(!walletModel)
         return;
+
     // Unlock wallet when requested by wallet model
     if (walletModel->getEncryptionStatus() == WalletModel::Locked)
     {

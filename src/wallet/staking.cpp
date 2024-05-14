@@ -299,7 +299,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
             LogPrintf("couldnt retrieve tx %s\n", *pcoin.first->GetHash().ToString().c_str());
             continue;
         }
-        
+
         static int nMaxStakeSearchInterval = 60;
         for (unsigned int n=0; n<std::min(nSearchInterval,(int64_t)nMaxStakeSearchInterval) && !fKernelFound; n++)
         {
