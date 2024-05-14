@@ -299,8 +299,8 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
             LogPrintf("couldnt retrieve tx %s\n", *pcoin.first->GetHash().ToString().c_str());
             continue;
         }
-        // Blackcoin: default value of 60 has been changed to 300, to allow more time in case of low network activity. 
-        static int nMaxStakeSearchInterval = 300;
+        
+        static int nMaxStakeSearchInterval = 60;
         for (unsigned int n=0; n<std::min(nSearchInterval,(int64_t)nMaxStakeSearchInterval) && !fKernelFound; n++)
         {
             // Search backward in time from the given txNew timestamp
