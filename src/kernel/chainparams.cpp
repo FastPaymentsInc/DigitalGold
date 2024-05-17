@@ -123,7 +123,7 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000a14facc04c9048e"); // block 4287
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000001297d9f9e7ad7e9e"); // block 6363
         consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5"); // block 2400
 
         /**
@@ -178,10 +178,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 2401 48fcebc185fd83432a5bffad97b3b415a6e9d4aa554c3ebe117b75777785cdc9
-            /* nTime    */ 1715665808,
-            /* nTxCount */ 4653,
-            /* dTxRate  */ 0.01580760450073381
+            // Data from RPC: getchaintxstats 2401 ed1be0368040260d66a32e3504690f007c19658174b1c591d61b6a6f2c3acaf5 // block 6363
+            /* nTime    */ 1715933072,
+            /* nTxCount */ 10922,
+            /* dTxRate  */ 0.01552483974358974
         };
 
         // A vector of p2sh addresses
@@ -232,8 +232,8 @@ public:
         consensus.nStakeTimestampMask = 0xf;
         consensus.nCoinbaseMaturity = 10;
 
-        consensus.nMinimumChainWork = uint256S("0x00");
-        consensus.defaultAssumeValid = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000002eb2d55332fa97"); // block 1500 
+        consensus.defaultAssumeValid = uint256S("0x000000538297fc5fe2722999996fb8772fa532277a60a956dc8087507d0a4934"); // block 1500
 
         pchMessageStart[0] = 0x06;
         pchMessageStart[1] = 0x27;
@@ -272,6 +272,7 @@ public:
         checkpointData = {
             {
                 {     0, uint256S("0x0000abae30e9f0c023d770429c40b7bc52d3dda8e39c1bc34088d5a67156bcee")}, // Genesis block
+                {     1500, uint256S("0x000000538297fc5fe2722999996fb8772fa532277a60a956dc8087507d0a4934")}, // End Pre-mine
             }
         };
 
@@ -280,10 +281,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 120 c28e21edf56c1f0a2cda4dda2a89f3f966c2b9b1e3fcaf71fa1f176fd7dc3305
-            /* nTime    */ 1675350592,
-            /* nTxCount */ 2514,
-            /* dTxRate  */ 0.126
+            // Data from RPC: getchaintxstats 1501 085c7f408358b7933bacfffcdf65f84978cff2fa8e5d11ce62a2948e58e8621e // block 2873
+            /* nTime    */ 1715933536,
+            /* nTxCount */ 4287,
+            /* dTxRate  */ 0.01297253379674558
         };
 
         // A vector of p2sh addresses
