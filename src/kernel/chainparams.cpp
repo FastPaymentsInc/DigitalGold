@@ -247,14 +247,11 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000abae30e9f0c023d770429c40b7bc52d3dda8e39c1bc34088d5a67156bcee"));
         assert(genesis.hashMerkleRoot == uint256S("0x46a78c30cad1debd1f794090b4e1feb1bb71c76dfb2d08ae15b84e3142eb271e"));
 
-        vSeeds.clear();
+        // vSeeds.clear(); < needed when no vSeeds are used
         // nodes with support for servicebits filtering should be at the top
-        /*
-        vSeeds.emplace_back("testnet-seed.bitcoin.jonasschnelli.ch.");
-        vSeeds.emplace_back("seed.tbtc.petertodd.org.");
-        vSeeds.emplace_back("seed.testnet.bitcoin.sprovoost.nl.");
-        vSeeds.emplace_back("testnet-seed.bluematt.me."); // Just a static list of stable node(s), only supports x9
-        */
+        vSeeds.emplace_back("electrum1.blackcoin.nl"); // hosted at electrum1.blackcoin.nl
+        vSeeds.emplace_back("electrum2.blackcoin.nl"); // hosted at electrum2.blackcoin.nl
+        vSeeds.emplace_back("electrum3.blackcoin.nl"); // hosted at electrum3.blackcoin.nl
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,30);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,90);

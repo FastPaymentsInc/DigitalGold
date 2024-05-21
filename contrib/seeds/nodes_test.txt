@@ -11,3 +11,4 @@
 [2a02:c207:2056:6533::1]:17633
 
 # Onion nodes
+yuvwqa5rfabinqla5f7rppzyepguaotypwgpfvqh6d5xtneadrqt3oad.onion:17633
