@@ -1,3 +1,5 @@
+# List of fixed seed nodes for mainnet
+
 # IPv4 nodes
 167.86.117.103:7633
 167.86.117.144:7633
@@ -15,7 +17,6 @@
 [2605:a141:2189:3174::1]:7633
 
 # Onion nodes
-ycfqornuuwm3rt7j2ga5v6vq77bdmn3wdnsqp7gtcitaxkd3w5vyw6id.onion:7633
 ifarq4cbwqi3jgdmvf3lozucvemno3ug57ttvjqrlfyy2yp574p3hnad.onion:7633
 2tqh34dsweiddexkdpc2bj2zoer4q5es52bzl63ovptpygewowfqhgyd.onion:7633
 so2fy7qw5ey7ze3rdigjntjxfgfdlj2r45fvidovxejlr57ilj6z3gad.onion:7633
