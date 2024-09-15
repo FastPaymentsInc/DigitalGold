@@ -139,7 +139,7 @@ jobs:
           tar -C depends/SDKs -xzvf depends/sdk-sources/Xcode-${{ matrix.sdk }}-extracted-SDK-with-libcxx-headers.tar.gz
 
       - name: Dependency cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4.0.2
         env:
           cache-name: depends
         with:
@@ -164,16 +164,16 @@ jobs:
         run: make -C src check-symbols
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: usdg-${{ github.sha }}-${{ matrix.name }}
           path: |
             depends/${{ matrix.host }}/bin/usdg*
             dist/USDG-Qt.app
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 14
 
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.8
         with:
           name: usdg-${{ github.sha }}-${{ matrix.name }}
