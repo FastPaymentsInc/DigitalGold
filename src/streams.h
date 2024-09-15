@@ -10,6 +10,7 @@
 #include <span.h>
 #include <support/allocators/zeroafterfree.h>
 #include <util/overflow.h>
+#include <version.h> // for INIT_PROTO_VERSION
 
 #include <algorithm>
 #include <assert.h>
@@ -45,60 +46,20 @@ inline void Xor(Span<std::byte> write, Span<const std::byte> key, size_t key_off
 }
 } // namespace util
 
-template<typename Stream>
-class OverrideStream
-{
-    Stream* stream;
-
-    const int nVersion;
-
-public:
-    OverrideStream(Stream* stream_, int nVersion_) : stream{stream_}, nVersion{nVersion_} {}
-
-    template<typename T>
-    OverrideStream<Stream>& operator<<(const T& obj)
-    {
-        ::Serialize(*this, obj);
-        return (*this);
-    }
-
-    template<typename T>
-    OverrideStream<Stream>& operator>>(T&& obj)
-    {
-        ::Unserialize(*this, obj);
-        return (*this);
-    }
-
-    void write(Span<const std::byte> src)
-    {
-        stream->write(src);
-    }
-
-    void read(Span<std::byte> dst)
-    {
-        stream->read(dst);
-    }
-
-    int GetVersion() const { return nVersion; }
-    size_t size() const { return stream->size(); }
-    void ignore(size_t size) { return stream->ignore(size); }
-};
-
 /* Minimal stream for overwriting and/or appending to an existing byte vector
  *
  * The referenced vector will grow as necessary
  */
 // Blackcoin: Keep nType
-class CVectorWriter
+class VectorWriter
 {
  public:
 /*
- * @param[in]  nVersionIn Serialization Version (including any flags)
  * @param[in]  vchDataIn  Referenced byte vector to overwrite/append
  * @param[in]  nPosIn Starting position. Vector index where writes should start. The vector will initially
  *                    grow as necessary to max(nPosIn, vec.size()). So to append, use vec.size().
 */
-    CVectorWriter(int nTypeIn, int nVersionIn, std::vector<unsigned char>& vchDataIn, size_t nPosIn) : nType(nTypeIn), nVersion{nVersionIn}, vchData{vchDataIn}, nPos{nPosIn}
+    VectorWriter(int nTypeIn, std::vector<unsigned char>& vchDataIn, size_t nPosIn) : nType(nTypeIn), vchData{vchDataIn}, nPos{nPosIn}
     {
         if(nPos > vchData.size())
             vchData.resize(nPos);
@@ -108,7 +69,7 @@ class CVectorWriter
  * @param[in]  args  A list of items to serialize starting at nPosIn.
 */
     template <typename... Args>
-    CVectorWriter(int nTypeIn, int nVersionIn, std::vector<unsigned char>& vchDataIn, size_t nPosIn, Args&&... args) : CVectorWriter{nTypeIn, nVersionIn, vchDataIn, nPosIn}
+    VectorWriter(int nTypeIn, std::vector<unsigned char>& vchDataIn, size_t nPosIn, Args&&... args) : VectorWriter{nTypeIn, vchDataIn, nPosIn}
     {
         ::SerializeMany(*this, std::forward<Args>(args)...);
     }
@@ -125,14 +86,10 @@ class CVectorWriter
         nPos += src.size();
     }
     template<typename T>
-    CVectorWriter& operator<<(const T& obj)
+    VectorWriter& operator<<(const T& obj)
     {
         ::Serialize(*this, obj);
         return (*this);
-    }
-    int GetVersion() const
-    {
-        return nVersion;
     }
     int GetType() const
     {
@@ -140,7 +97,6 @@ class CVectorWriter
     }
 private:
     const int nType;
-    const int nVersion;
     std::vector<unsigned char>& vchData;
     size_t nPos;
 };
@@ -150,16 +106,13 @@ private:
 class SpanReader
 {
 private:
-    const int m_version;
     Span<const unsigned char> m_data;
 
 public:
     /**
-     * @param[in]  version Serialization Version (including any flags)
      * @param[in]  data Referenced byte vector to overwrite/append
      */
-    SpanReader(int version, Span<const unsigned char> data)
-        : m_version{version}, m_data{data} {}
+    explicit SpanReader(Span<const unsigned char> data) : m_data{data} {}
 
     template<typename T>
     SpanReader& operator>>(T&& obj)
@@ -167,8 +120,6 @@ public:
         ::Unserialize(*this, obj);
         return (*this);
     }
-
-    int GetVersion() const { return m_version; }
 
     size_t size() const { return m_data.size(); }
     bool empty() const { return m_data.empty(); }
@@ -336,15 +287,14 @@ private:
     int nVersion;
 
 public:
-    explicit CDataStream(int nTypeIn, int nVersionIn)
-        : nType{nTypeIn},
-          nVersion{nVersionIn} {}
+    explicit CDataStream(int nTypeIn)
+        : nType{nTypeIn}, nVersion{INIT_PROTO_VERSION} {}
 
-    explicit CDataStream(Span<const uint8_t> sp, int type, int version) : CDataStream{AsBytes(sp), type, version} {}
-    explicit CDataStream(Span<const value_type> sp, int nTypeIn, int nVersionIn)
+    explicit CDataStream(Span<const uint8_t> sp, int type) : CDataStream{AsBytes(sp), type} {}
+    explicit CDataStream(Span<const value_type> sp, int nTypeIn)
         : DataStream{sp},
           nType{nTypeIn},
-          nVersion{nVersionIn} {}
+          nVersion{INIT_PROTO_VERSION} {}
 
     void SetType(int n)          { nType = n; }
     int GetType() const          { return nType; }
@@ -476,7 +426,7 @@ class AutoFile
 {
 protected:
     std::FILE* m_file;
-    const std::vector<std::byte> m_xor;
+    std::vector<std::byte> m_xor;
 
 public:
     explicit AutoFile(std::FILE* file, std::vector<std::byte> data_xor={}) : m_file{file}, m_xor{std::move(data_xor)} {}
@@ -516,6 +466,9 @@ public:
      */
     bool IsNull() const { return m_file == nullptr; }
 
+    /** Continue with a different XOR key */
+    void SetXor(std::vector<std::byte> data_xor) { m_xor = data_xor; }
+
     /** Implementation detail, only used internally. */
     std::size_t detail_fread(Span<std::byte> dst);
 
@@ -546,13 +499,11 @@ class CAutoFile : public AutoFile
 {
 private:
     const int nType;
-    const int nVersion;
 
 public:
-    explicit CAutoFile(std::FILE* file, int type, int version, std::vector<std::byte> data_xor = {}) : AutoFile{file, std::move(data_xor)}, nType{type}, nVersion{version} {}
-    explicit CAutoFile(std::FILE* file, int version, std::vector<std::byte> data_xor = {}) : AutoFile{file, std::move(data_xor)}, nType(SER_GETHASH), nVersion{version} {}
+    explicit CAutoFile(std::FILE* file, int type, std::vector<std::byte> data_xor = {}) : AutoFile{file, std::move(data_xor)}, nType{type} {}
+    explicit CAutoFile(std::FILE* file, std::vector<std::byte> data_xor = {}) : AutoFile{file, std::move(data_xor)}, nType(SER_GETHASH) {}
     int GetType() const          { return nType; }
-    int GetVersion() const       { return nVersion; }
 
     template<typename T>
     CAutoFile& operator<<(const T& obj)
@@ -635,7 +586,6 @@ public:
             throw std::ios_base::failure("Rewind limit must be less than buffer size");
     }
 
-    int GetVersion() const { return m_src.GetVersion(); }
     int GetType() const { return nType; }
 
     //! check whether we're at the end of the source file

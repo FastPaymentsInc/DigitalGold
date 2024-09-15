@@ -93,7 +93,7 @@ void DeserializeFromFuzzingInput(FuzzBufferType buffer, T&& obj, const P& params
 template <typename T>
 CDataStream Serialize(const T& obj)
 {
-    CDataStream ds{SER_NETWORK, INIT_PROTO_VERSION};
+    CDataStream ds{SER_NETWORK};
     ds << obj;
     return ds;
 }
@@ -109,7 +109,7 @@ T Deserialize(CDataStream ds)
 template <typename T>
 void DeserializeFromFuzzingInput(FuzzBufferType buffer, T&& obj)
 {
-    CDataStream ds{buffer, SER_NETWORK, INIT_PROTO_VERSION};
+    CDataStream ds{buffer, SER_NETWORK};
     {
         try {
             int version;
@@ -217,7 +217,7 @@ FUZZ_TARGET_DESERIALIZE(psbt_output_deserialize, {
 })
 FUZZ_TARGET_DESERIALIZE(block_deserialize, {
     CBlock block;
-    DeserializeFromFuzzingInput(buffer, block);
+    DeserializeFromFuzzingInput(buffer, TX_WITH_WITNESS(block));
 })
 FUZZ_TARGET_DESERIALIZE(blocklocator_deserialize, {
     CBlockLocator bl;
@@ -225,7 +225,7 @@ FUZZ_TARGET_DESERIALIZE(blocklocator_deserialize, {
 })
 FUZZ_TARGET_DESERIALIZE(blockmerkleroot, {
     CBlock block;
-    DeserializeFromFuzzingInput(buffer, block);
+    DeserializeFromFuzzingInput(buffer, TX_WITH_WITNESS(block));
     bool mutated;
     BlockMerkleRoot(block, &mutated);
 })

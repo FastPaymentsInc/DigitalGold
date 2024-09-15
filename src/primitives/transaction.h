@@ -11,6 +11,7 @@
 #include <script/script.h>
 #include <serialize.h>
 #include <uint256.h>
+#include <util/transaction_identifier.h> // IWYU pragma: export
 
 #include <cstddef>
 #include <cstdint>
@@ -22,14 +23,6 @@
 #include <tuple>
 #include <utility>
 #include <vector>
-
-/**
- * A flag that is ORed into the protocol version to designate that a transaction
- * should be (un)serialized without witness data.
- * Make sure that this does not collide with any of the values in `version.h`
- * or with `ADDRV2_FORMAT`.
- */
-static const int SERIALIZE_TRANSACTION_NO_WITNESS = 0x40000000;
 
 /** An outpoint - a combination of a transaction hash and an index n into its vout */
 class COutPoint
@@ -207,6 +200,13 @@ public:
 
 struct CMutableTransaction;
 
+struct TransactionSerParams {
+    const bool allow_witness;
+    SER_PARAMS_OPFUNC
+};
+static constexpr TransactionSerParams TX_WITH_WITNESS{.allow_witness = true};
+static constexpr TransactionSerParams TX_NO_WITNESS{.allow_witness = false};
+
 /**
  * Basic transaction serialization format:
  * - int32_t nVersion
@@ -226,8 +226,9 @@ struct CMutableTransaction;
  * - uint32_t nLockTime
  */
 template<typename Stream, typename TxType>
-inline void UnserializeTransaction(TxType& tx, Stream& s) {
-    const bool fAllowWitness = !(s.GetVersion() & SERIALIZE_TRANSACTION_NO_WITNESS);
+void UnserializeTransaction(TxType& tx, Stream& s, const TransactionSerParams& params)
+{
+    const bool fAllowWitness = params.allow_witness;
 
     s >> tx.nVersion;
     if (tx.nVersion < 2)
@@ -269,8 +270,9 @@ inline void UnserializeTransaction(TxType& tx, Stream& s) {
 }
 
 template<typename Stream, typename TxType>
-inline void SerializeTransaction(const TxType& tx, Stream& s) {
-    const bool fAllowWitness = !(s.GetVersion() & SERIALIZE_TRANSACTION_NO_WITNESS);
+void SerializeTransaction(const TxType& tx, Stream& s, const TransactionSerParams& params)
+{
+    const bool fAllowWitness = params.allow_witness;
 
     s << tx.nVersion;
     if (tx.nVersion < 2)
@@ -328,11 +330,11 @@ public:
 
 private:
     /** Memory only. */
-    const uint256 hash;
-    const uint256 m_witness_hash;
+    const Txid hash;
+    const Wtxid m_witness_hash;
 
-    uint256 ComputeHash() const;
-    uint256 ComputeWitnessHash() const;
+    Txid ComputeHash() const;
+    Wtxid ComputeWitnessHash() const;
 
 public:
     /** Convert a CMutableTransaction into a CTransaction. */
@@ -341,20 +343,22 @@ public:
 
     template <typename Stream>
     inline void Serialize(Stream& s) const {
-        SerializeTransaction(*this, s);
+        SerializeTransaction(*this, s, s.GetParams());
     }
 
     /** This deserializing constructor is provided instead of an Unserialize method.
      *  Unserialize is not possible, since it would require overwriting const fields. */
     template <typename Stream>
-    CTransaction(deserialize_type, Stream& s) : CTransaction(CMutableTransaction(deserialize, s)) {}
+    CTransaction(deserialize_type, const TransactionSerParams& params, Stream& s) : CTransaction(CMutableTransaction(deserialize, params, s)) {}
+    template <typename Stream>
+    CTransaction(deserialize_type, ParamsStream<TransactionSerParams,Stream>& s) : CTransaction(CMutableTransaction(deserialize, s)) {}
 
     bool IsNull() const {
         return vin.empty() && vout.empty();
     }
 
-    const uint256& GetHash() const { return hash; }
-    const uint256& GetWitnessHash() const { return m_witness_hash; };
+    const Txid& GetHash() const { return hash; }
+    const Wtxid& GetWitnessHash() const { return m_witness_hash; };
 
     // Return sum of txouts.
     CAmount GetValueOut() const;
@@ -414,24 +418,28 @@ struct CMutableTransaction
 
     template <typename Stream>
     inline void Serialize(Stream& s) const {
-        SerializeTransaction(*this, s);
+        SerializeTransaction(*this, s, s.GetParams());
     }
-
 
     template <typename Stream>
     inline void Unserialize(Stream& s) {
-        UnserializeTransaction(*this, s);
+        UnserializeTransaction(*this, s, s.GetParams());
     }
 
     template <typename Stream>
-    CMutableTransaction(deserialize_type, Stream& s) {
+    CMutableTransaction(deserialize_type, const TransactionSerParams& params, Stream& s) {
+        UnserializeTransaction(*this, s, params);
+    }
+
+    template <typename Stream>
+    CMutableTransaction(deserialize_type, ParamsStream<TransactionSerParams,Stream>& s) {
         Unserialize(s);
     }
 
     /** Compute the hash of this CMutableTransaction. This is computed on the
      * fly, as opposed to GetHash() in CTransaction, which uses a cached result.
      */
-    uint256 GetHash() const;
+    Txid GetHash() const;
 
     bool HasWitness() const
     {

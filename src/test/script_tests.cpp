@@ -141,8 +141,8 @@ void DoTest(const CScript& scriptPubKey, const CScript& scriptSig, const CScript
     }
 
 #if defined(HAVE_CONSENSUS_LIB)
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << tx2;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(tx2);
     uint32_t libconsensus_flags{flags & bitcoinconsensus_SCRIPT_FLAGS_VERIFY_ALL};
     if (libconsensus_flags == flags) {
         int expectedSuccessCode = expect ? 1 : 0;
@@ -1276,6 +1276,30 @@ BOOST_AUTO_TEST_CASE(script_combineSigs)
     BOOST_CHECK(combined.scriptSig == partial3c);
 }
 
+/**
+ * Reproduction of an exception incorrectly raised when parsing a public key inside a TapMiniscript.
+ */
+BOOST_AUTO_TEST_CASE(sign_invalid_miniscript)
+{
+    FillableSigningProvider keystore;
+    SignatureData sig_data;
+    CMutableTransaction prev, curr;
+
+    // Create a Taproot output which contains a leaf in which a non-32 bytes push is used where a public key is expected
+    // by the Miniscript parser. This offending Script was found by the RPC fuzzer.
+    const auto invalid_pubkey{ParseHex("173d36c8c9c9c9ffffffffffff0200000000021e1e37373721361818181818181e1e1e1e19000000000000000000b19292929292926b006c9b9b9292")};
+    TaprootBuilder builder;
+    builder.Add(0, {invalid_pubkey}, 0xc0);
+    XOnlyPubKey nums{ParseHex("50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0")};
+    builder.Finalize(nums);
+    prev.vout.emplace_back(0, GetScriptForDestination(builder.GetOutput()));
+    curr.vin.emplace_back(COutPoint{prev.GetHash(), 0});
+    sig_data.tr_spenddata = builder.GetSpendData();
+
+    // SignSignature can fail but it shouldn't raise an exception (nor crash).
+    BOOST_CHECK(!SignSignature(keystore, CTransaction(prev), curr, 0, SIGHASH_ALL, sig_data));
+}
+
 BOOST_AUTO_TEST_CASE(script_standard_push)
 {
     ScriptError err;
@@ -1470,7 +1494,7 @@ BOOST_AUTO_TEST_CASE(script_HasValidOps)
 static CMutableTransaction TxFromHex(const std::string& str)
 {
     CMutableTransaction tx;
-    SpanReader{SERIALIZE_TRANSACTION_NO_WITNESS, ParseHex(str)} >> tx;
+    SpanReader{ParseHex(str)} >> TX_NO_WITNESS(tx);
     return tx;
 }
 
@@ -1480,7 +1504,7 @@ static std::vector<CTxOut> TxOutsFromJSON(const UniValue& univalue)
     std::vector<CTxOut> prevouts;
     for (size_t i = 0; i < univalue.size(); ++i) {
         CTxOut txout;
-        SpanReader{0, ParseHex(univalue[i].get_str())} >> txout;
+        SpanReader{ParseHex(univalue[i].get_str())} >> txout;
         prevouts.push_back(std::move(txout));
     }
     return prevouts;
@@ -1513,8 +1537,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_returns_true)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
@@ -1536,8 +1560,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_index_err)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
@@ -1559,8 +1583,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_size)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size() * 2, nIn, libconsensus_flags, &err);
@@ -1582,7 +1606,7 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_serialization)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
+    DataStream stream;
     stream << 0xffffffff;
 
     bitcoinconsensus_error err;
@@ -1605,8 +1629,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_amount_required_err)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
@@ -1628,8 +1652,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_invalid_flags)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), UCharCast(stream.data()), stream.size(), nIn, libconsensus_flags, &err);
@@ -1651,8 +1675,8 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_spent_outputs_required_err)
     CTransaction creditTx{BuildCreditingTransaction(scriptPubKey, 1)};
     CTransaction spendTx{BuildSpendingTransaction(scriptSig, wit, creditTx)};
 
-    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-    stream << spendTx;
+    DataStream stream;
+    stream << TX_WITH_WITNESS(spendTx);
 
     bitcoinconsensus_error err;
     int result{bitcoinconsensus_verify_script_with_spent_outputs(scriptPubKey.data(), scriptPubKey.size(), creditTx.vout[0].nValue, UCharCast(stream.data()), stream.size(), nullptr, 0, nIn, libconsensus_flags, &err)};
@@ -1718,8 +1742,8 @@ static void AssetTest(const UniValue& test)
         CachingTransactionSignatureChecker txcheck(&tx, idx, prevouts[idx].nValue, true, txdata);
 
 #if defined(HAVE_CONSENSUS_LIB)
-        CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-        stream << tx;
+        DataStream stream;
+        stream << TX_WITH_WITNESS(tx);
         std::vector<UTXO> utxos;
         utxos.resize(prevouts.size());
         for (size_t i = 0; i < prevouts.size(); i++) {
@@ -1752,8 +1776,8 @@ static void AssetTest(const UniValue& test)
         CachingTransactionSignatureChecker txcheck(&tx, idx, prevouts[idx].nValue, true, txdata);
 
 #if defined(HAVE_CONSENSUS_LIB)
-        CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
-        stream << tx;
+        DataStream stream;
+        stream << TX_WITH_WITNESS(tx);
         std::vector<UTXO> utxos;
         utxos.resize(prevouts.size());
         for (size_t i = 0; i < prevouts.size(); i++) {
@@ -1816,7 +1840,7 @@ BOOST_AUTO_TEST_CASE(bip341_keypath_test_vectors)
     for (const auto& vec : vectors.getValues()) {
         auto txhex = ParseHex(vec["given"]["rawUnsignedTx"].get_str());
         CMutableTransaction tx;
-        SpanReader{PROTOCOL_VERSION, txhex} >> tx;
+        SpanReader{txhex} >> TX_WITH_WITNESS(tx);
         std::vector<CTxOut> utxos;
         for (const auto& utxo_spent : vec["given"]["utxosSpent"].getValues()) {
             auto script_bytes = ParseHex(utxo_spent["scriptPubKey"].get_str());

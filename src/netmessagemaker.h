@@ -19,7 +19,7 @@ public:
     {
         CSerializedNetMsg msg;
         msg.m_type = std::move(msg_type);
-        CVectorWriter{ SER_NETWORK | SER_POSMARKER, nFlags | nVersion, msg.data, 0, std::forward<Args>(args)... };
+        VectorWriter{SER_NETWORK | SER_POSMARKER, msg.data, 0, std::forward<Args>(args)...};
         return msg;
     }
 
