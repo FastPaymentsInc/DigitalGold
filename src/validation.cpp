@@ -2142,8 +2142,9 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
         flags |= SCRIPT_VERIFY_WITNESS;
     }
 
-    // USDG: Enforce CHECKLOCKTIMEVERIFY (BIP65)
+    // USDG: Enforce CHECKLOCKTIMEVERIFY (BIP65) and BIP147 NULLDUMMY
     flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
+    flags |= SCRIPT_VERIFY_NULLDUMMY;
 
     // Enforce CHECKSEQUENCEVERIFY (BIP112)
     if (DeploymentActiveAt(block_index, chainman, Consensus::DEPLOYMENT_CSV)) {
@@ -2154,9 +2155,6 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     if (DeploymentActiveAt(block_index, chainman, Consensus::DEPLOYMENT_TAPROOT)) {
         flags |= SCRIPT_VERIFY_TAPROOT;
     }
-
-    // USDG: Enforce BIP147 NULLDUMMY
-    flags |= SCRIPT_VERIFY_NULLDUMMY;
 
     return flags;
 }
