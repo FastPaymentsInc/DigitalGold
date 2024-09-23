@@ -100,8 +100,8 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.fPoSNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 12000; // 80% of 15000
-        consensus.nMinerConfirmationWindow = 15000; // nTargetTimespan / nTargetSpacing * 1000
+        consensus.nRuleChangeActivationThreshold = 1200; // 80% of 1500
+        consensus.nMinerConfirmationWindow = 1500; // nTargetTimespan / nTargetSpacing * 100
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = Consensus::BIP9Deployment::NEVER_ACTIVE;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
@@ -210,7 +210,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.fPoSNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1125; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 1500; // nTargetTimespan / nTargetSpacing * 1000
+        consensus.nMinerConfirmationWindow = 1500; // nTargetTimespan / nTargetSpacing * 100
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = Consensus::BIP9Deployment::NEVER_ACTIVE;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
@@ -349,8 +349,8 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.fPoSNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 12000; // 80% of 15000
-        consensus.nMinerConfirmationWindow = 15000; // nTargetTimespan / nTargetSpacing * 1000
+        consensus.nRuleChangeActivationThreshold = 1200; // 80% of 1500
+        consensus.nMinerConfirmationWindow = 1500; // nTargetTimespan / nTargetSpacing * 100
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -425,7 +425,7 @@ public:
         consensus.fPowNoRetargeting = true;
         consensus.fPoSNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 120; // 80% for regtest
-        consensus.nMinerConfirmationWindow = 150; // Faster than normal for regtest (150 instead of 15000)
+        consensus.nMinerConfirmationWindow = 150; // Faster than normal for regtest (150 instead of 1500)
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
