@@ -27,7 +27,7 @@ jobs:
           #- linux-32-bit
           - linux-64-bit
           #- windows-64-bit
-          #- macos-64-bit
+          - macos-64-bit
           #- linux-arm-32-bit
           - linux-arm-64-bit
         include:
@@ -48,7 +48,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-sse2 --enable-glibc-back-compat -disable-bench -disable-tests -disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat -disable-bench -disable-tests -disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           # - name: windows-64-bit
@@ -66,16 +66,16 @@ jobs:
           #   config-opts: "--enable-sse2 -disable-bench -disable-tests -disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libgcc"
           #   goal: install
 
-          # - name: macos-64-bit
-          #   host: x86_64-apple-darwin
-          #   os: ubuntu-22.04
-          #   packages: curl bsdmainutils cmake libz-dev python3-setuptools libtinfo5 xorriso
-          #   check-security: false
-          #   check-symbols: false
-          #   dep-opts: ""
-          #   config-opts: "--enable-sse2 -disable-bench -disable-tests -disable-man --enable-fuzz=no --enable-fuzz-binary=no"
-          #   goal: deploy
-          #   sdk: 12.2-12B45b
+          - name: macos-64-bit
+            host: x86_64-apple-darwin
+            os: ubuntu-22.04
+            packages: curl bsdmainutils cmake libz-dev python3-setuptools libtinfo5 xorriso
+            check-security: false
+            check-symbols: false
+            dep-opts: ""
+            config-opts: "-disable-bench -disable-tests -disable-man --enable-fuzz=no --enable-fuzz-binary=no"
+            goal: deploy
+            sdk: 12.2-12B45b
 
           # - name: linux-arm-32-bit
           #   host: arm-linux-gnueabihf
