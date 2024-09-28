@@ -1075,8 +1075,8 @@ CWalletTx* CWallet::AddToWallet(CTransactionRef tx, const TxState& state, const 
         }
     }
 
-    // Mark inactive coinbase transactions and their descendants as abandoned
-    if (wtx.IsCoinBase() && wtx.isInactive()) {
+    // Mark inactive coinbase and coinstake transactions and their descendants as abandoned
+    if ((wtx.IsCoinBase() || wtx.IsCoinStake()) && wtx.isInactive()) {
         std::vector<CWalletTx*> txs{&wtx};
 
         TxStateInactive inactive_state = TxStateInactive{/*abandoned=*/true};
@@ -1507,6 +1507,9 @@ void CWallet::blockDisconnected(const interfaces::BlockInfo& block)
             }
         }
     }
+
+    // Blackcoin - Call to abandon orphaned coinstakes after handling disconnections
+    AbandonOrphanedCoinstakes();
 }
 
 void CWallet::updatedBlockTip()
@@ -3122,9 +3125,6 @@ std::shared_ptr<CWallet> CWallet::Create(WalletContext& context, const std::stri
         walletInstance->WalletLogPrintf("mapWallet.size() = %u\n",       walletInstance->mapWallet.size());
         walletInstance->WalletLogPrintf("m_address_book.size() = %u\n",  walletInstance->m_address_book.size());
     }
-
-    // Flush orphaned coinstakes
-    walletInstance->AbandonOrphanedCoinstakes();
 
     return walletInstance;
 }

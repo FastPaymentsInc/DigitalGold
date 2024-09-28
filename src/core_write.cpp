@@ -140,10 +140,14 @@ std::string ScriptToAsmStr(const CScript& script, const bool fAttemptSighashDeco
     return str;
 }
 
-std::string EncodeHexTx(const CTransaction& tx, const int serializeFlags)
+std::string EncodeHexTx(const CTransaction& tx, const bool without_witness)
 {
-    CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION | serializeFlags);
-    ssTx << tx;
+    DataStream ssTx;
+    if (without_witness) {
+        ssTx << TX_NO_WITNESS(tx);
+    } else {
+        ssTx << TX_WITH_WITNESS(tx);
+    }
     return HexStr(ssTx);
 }
 
@@ -161,14 +165,15 @@ void ScriptToUniv(const CScript& script, UniValue& out, bool include_hex, bool i
 
     std::vector<std::vector<unsigned char>> solns;
     const TxoutType type{Solver(script, solns)};
-
-    if (include_address && ExtractDestination(script, address) && type != TxoutType::PUBKEY) {
+    // Blackcoin: We need to see the encoded pubkey address.
+    // This is essentially a reversal of Bitcoin PR #16725
+    if (include_address && ExtractDestination(script, address)) /*&& type != TxoutType::PUBKEY)*/ {
         out.pushKV("address", EncodeDestination(address));
     }
     out.pushKV("type", GetTxnOutputType(type));
 }
 
-void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry, bool include_hex, int serialize_flags, const CTxUndo* txundo, TxVerbosity verbosity)
+void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry, bool include_hex, bool without_witness, const CTxUndo* txundo, TxVerbosity verbosity)
 {
     CHECK_NONFATAL(verbosity >= TxVerbosity::SHOW_DETAILS);
 
@@ -179,7 +184,7 @@ void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry
     entry.pushKV("version", static_cast<int64_t>(static_cast<uint32_t>(tx.nVersion)));
     if (tx.nVersion < 2)
         entry.pushKV("time", (int64_t)tx.nTime);
-    entry.pushKV("size", (int)::GetSerializeSize(tx, PROTOCOL_VERSION));
+    entry.pushKV("size", tx.GetTotalSize());
     entry.pushKV("vsize", (GetTransactionWeight(tx) + WITNESS_SCALE_FACTOR - 1) / WITNESS_SCALE_FACTOR);
     entry.pushKV("weight", GetTransactionWeight(tx));
     entry.pushKV("locktime", (int64_t)tx.nLockTime);
@@ -257,8 +262,13 @@ void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry
 
     if (have_undo) {
         const CAmount fee = amt_total_in - amt_total_out;
-        CHECK_NONFATAL(MoneyRange(fee));
-        entry.pushKV("fee", ValueFromAmount(fee));
+        if (!tx.IsCoinStake()) {
+            CHECK_NONFATAL(MoneyRange(fee));
+            entry.pushKV("fee", ValueFromAmount(fee));
+        }
+        else {
+            entry.pushKV("reward", ValueFromAmount(-fee));
+        }
     }
 
     if (!block_hash.IsNull()) {
@@ -266,6 +276,6 @@ void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry
     }
 
     if (include_hex) {
-        entry.pushKV("hex", EncodeHexTx(tx, serialize_flags)); // The hex-encoded transaction. Used the name "hex" to be consistent with the verbose output of "getrawtransaction".
+        entry.pushKV("hex", EncodeHexTx(tx, without_witness)); // The hex-encoded transaction. Used the name "hex" to be consistent with the verbose output of "getrawtransaction".
     }
 }

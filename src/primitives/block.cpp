@@ -12,7 +12,7 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-    return (CHashWriter{PROTOCOL_VERSION} << *this).GetHash();
+    return (CHashWriter{} << *this).GetHash();
 }
 
 std::string CBlock::ToString() const

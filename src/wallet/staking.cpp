@@ -245,7 +245,7 @@ bool SelectCoinsForStaking(const CWallet& wallet, CAmount& nTargetValue, std::se
 
 // peercoin: create coin stake transaction
 typedef std::vector<unsigned char> valtype;
-bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, CAmount& nFees)
+bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, CAmount& nFees, CTxDestination destination)
 {
     bool fAllowWatchOnly = wallet.IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS);
     CBlockIndex* pindexPrev = wallet.chain().getTip();
@@ -355,17 +355,8 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
                     scriptPubKeyOut = scriptPubKeyKernel;
                 else if (whichType == TxoutType::WITNESS_V0_KEYHASH || whichType == TxoutType::WITNESS_V1_TAPROOT) // pay to witness keyhash
                 {
-                    // prepare reserve destination in case we need to use it for handling non legacy inputs
-                    CTxDestination dest;
-                    ReserveDestination reservedest(&wallet, OutputType::LEGACY);
-                    auto op_dest = reservedest.GetReservedDestination(true);
-                    if (!op_dest) {
-                        LogPrintf("Error: Keypool ran out, please call keypoolrefill first.\n");
-                        break;
-                    }
-                    dest = *op_dest;
                     std::vector<valtype> vSolutionsTmp;
-                    CScript scriptPubKeyTmp = GetScriptForDestination(dest);
+                    CScript scriptPubKeyTmp = GetScriptForDestination(destination);
                     Solver(scriptPubKeyTmp, vSolutionsTmp);
                     std::unique_ptr<SigningProvider> provider = wallet.GetSolvingProvider(scriptPubKeyTmp);
                     if (!provider) {
@@ -488,7 +479,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
     }
 
     // Limit size
-    unsigned int nBytes = ::GetSerializeSize(txNew, PROTOCOL_VERSION);
+    unsigned int nBytes = ::GetSerializeSize(TX_WITH_WITNESS(txNew));
     if (nBytes >= 1000000/5)
         return error("CreateCoinStake : exceeded coinstake size limit");
 

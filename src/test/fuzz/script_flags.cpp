@@ -13,7 +13,7 @@
 
 FUZZ_TARGET(script_flags)
 {
-    CDataStream ds(buffer, SER_NETWORK, INIT_PROTO_VERSION);
+    CDataStream ds(buffer, SER_NETWORK);
     try {
         int nVersion;
         ds >> nVersion;
@@ -23,7 +23,7 @@ FUZZ_TARGET(script_flags)
     }
 
     try {
-        const CTransaction tx(deserialize, ds);
+        const CTransaction tx(deserialize, TX_WITH_WITNESS, ds);
 
         unsigned int verify_flags;
         ds >> verify_flags;
