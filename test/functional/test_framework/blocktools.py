@@ -50,7 +50,7 @@ MAX_BLOCK_SIGOPS = 20000
 MAX_BLOCK_SIGOPS_WEIGHT = MAX_BLOCK_SIGOPS * WITNESS_SCALE_FACTOR
 
 # Genesis block time (regtest)
-TIME_GENESIS_BLOCK = 1393221600
+TIME_GENESIS_BLOCK = 1715187700
 
 MAX_FUTURE_BLOCK_TIME = 2 * 60 * 60
 
@@ -62,7 +62,7 @@ WITNESS_COMMITMENT_HEADER = b"\xaa\x21\xa9\xed"
 
 NORMAL_GBT_REQUEST_PARAMS = {"rules": ["segwit"]}
 VERSIONBITS_LAST_OLD_BLOCK_VERSION = 4
-MIN_BLOCKS_TO_KEEP = 288
+MIN_BLOCKS_TO_KEEP = 2700
 
 
 def create_block(hashprev=None, coinbase=None, ntime=None, *, version=None, tmpl=None, txlist=None):

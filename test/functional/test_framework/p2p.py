@@ -83,7 +83,7 @@ from test_framework.util import (
 logger = logging.getLogger("TestFramework.p2p")
 
 # The minimum P2P version that this test framework supports
-MIN_P2P_VERSION_SUPPORTED = 60001
+MIN_P2P_VERSION_SUPPORTED = 70016
 # The P2P version that this test framework implements and sends in its `version` message
 # Version 70016 supports wtxid relay
 P2P_VERSION = 70016
@@ -92,7 +92,7 @@ P2P_VERSION = 70016
 # Blackcoin
 # NODE_NETWORK | NODE_WITNESS
 '''
-P2P_SERVICES = NODE_NETWORK
+P2P_SERVICES = NODE_WITNESS
 # The P2P user agent string that this test framework sends in its `version` message
 P2P_SUBVERSION = "/python-p2p-tester:0.0.3/"
 # Value for relay that this test framework sends in its `version` message
@@ -145,9 +145,9 @@ MESSAGEMAP = {
 }
 
 MAGIC_BYTES = {
-    "mainnet": b"\x70\x32\x22\x05",   # mainnet
-    "testnet": b"\xcd\xf2\xc0\xef",   # testnet
-    "regtest": b"\x70\x35\x22\x06",   # regtest
+    "mainnet": b"\xf6\xc7\xa8\xd9",   # mainnet
+    "testnet": b"\x06\x27\x18\x09",   # testnet
+    "regtest": b"\xc1\xd2\xa4\xb8",   # regtest
     "signet": b"\x0a\x03\xcf\x40",    # signet
 }
 
