@@ -5,7 +5,7 @@ Upstart: usdgd.conf
 OpenRC:  usdgd.openrc
          usdgd.openrcconf
 CentOS:  usdgd.init
-macOS:   org.usdg.usdgd.plist
+macOS:   org.usdgcoin.usdgd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 
