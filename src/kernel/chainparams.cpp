@@ -179,9 +179,9 @@ public:
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 2401 af6ed9f90bc3519457410bd6c0d3c4993cbadd49d5072e7ecb4ac3dc1fcd4c9c // block 131927
-            /* nTime    */ 1727758528,
-            /* nTxCount */ 262082,
-            /* dTxRate  */ 0.02866797210812876
+            .nTime    = 1727758528,
+            .nTxCount = 262082,
+            .dTxRate  = 0.02866797210812876
         };
 
         // A vector of p2sh addresses
@@ -280,9 +280,9 @@ public:
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 1501 afa2f79c2d364fac7e52f2ea8f9b4f7cbb7ba09f492652129cf602f35b358007 // block 178885
-            /* nTime    */ 1727758672,
-            /* nTxCount */ 358549,
-            /* dTxRate  */ 0.02981961220597584
+            .nTime    = 1727758672,
+            .nTxCount = 358549,
+            .dTxRate  = 0.02981961220597584
         };
 
         // A vector of p2sh addresses
