@@ -38,7 +38,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: linux-64-bit
@@ -48,7 +48,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: windows-64-bit
@@ -63,7 +63,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libgcc"
+            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libgcc"
             goal: install
 
           - name: macos-64-bit
@@ -73,7 +73,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no"
+            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no"
             goal: deploy
             sdk: 12.2-12B45b
 
@@ -84,7 +84,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: linux-arm-64-bit
@@ -94,7 +94,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man --enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
     runs-on: ${{ matrix.os }}
