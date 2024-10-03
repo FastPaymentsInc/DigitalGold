@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - develop
+      - main
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -33,22 +33,22 @@ jobs:
         include:
           - name: linux-32-bit
             host: i686-pc-linux-gnu
-            os: ubuntu-22.04
+            os: ubuntu-20.04
             packages: g++-multilib
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: linux-64-bit
             host: x86_64-pc-linux-gnu
-            os: ubuntu-22.04
+            os: ubuntu-20.04
             packages: python3
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: windows-64-bit
@@ -63,7 +63,7 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "LDFLAGS=-static-libgcc"
+            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libgcc"
             goal: install
 
           - name: macos-64-bit
@@ -73,28 +73,28 @@ jobs:
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: ""
+            config-opts: "--enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no"
             goal: deploy
             sdk: 12.2-12B45b
 
           - name: linux-arm-32-bit
             host: arm-linux-gnueabihf
-            os: ubuntu-22.04
+            os: ubuntu-20.04
             packages: g++-arm-linux-gnueabihf binutils-arm-linux-gnueabihf
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
           - name: linux-arm-64-bit
             host: aarch64-linux-gnu
-            os: ubuntu-22.04
+            os: ubuntu-20.04
             packages: g++-aarch64-linux-gnu binutils-aarch64-linux-gnu
             check-security: false
             check-symbols: false
             dep-opts: ""
-            config-opts: "--enable-glibc-back-compat LDFLAGS=-static-libstdc++"
+            config-opts: "--enable-glibc-back-compat --enable-reduce-exports --enable-upnp-default --disable-tests --disable-bench --disable-man ----enable-fuzz=no --enable-fuzz-binary=no LDFLAGS=-static-libstdc++"
             goal: install
 
     runs-on: ${{ matrix.os }}
@@ -119,11 +119,11 @@ jobs:
         run: ${{ matrix.postinstall }}
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.0
 
       - name: SDK cache
         if: ${{ matrix.sdk }}
-        uses: actions/cache@v3
+        uses: actions/cache@v4.0.2
         env:
           cache-name: sdk
         with:
@@ -166,7 +166,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4.4.0
         with:
-          name: usdg-${{ github.sha }}-${{ matrix.name }}
+          name: usdg-26.2-${{ github.sha }}-${{ matrix.name }}
           path: |
             depends/${{ matrix.host }}/bin/usdg*
             dist/USDG-Qt.app
@@ -176,4 +176,4 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4.1.8
         with:
-          name: usdg-${{ github.sha }}-${{ matrix.name }}
+          name: usdg-26.2-${{ github.sha }}-${{ matrix.name }}
