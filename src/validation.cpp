@@ -2127,19 +2127,13 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     // violating blocks.
     uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_WITNESS | SCRIPT_VERIFY_TAPROOT};
     */
-    // Blackcoin
-    // BIP16 and DERSIG (BIP66) is always active
-    // Blackcoin also requires DER encoding of pubkeys and low S in sigs
-    uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_DERKEY | SCRIPT_VERIFY_LOW_S};
+    // USDG: BIP16, DER encoding of pubkeys and low S in sigs are always active.
+    // For simplicity, always leave P2SH+DERSIG+DERKEY+LOW_S+WITNESS on except for the
+    // violating blocks.
+    uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_DERKEY | SCRIPT_VERIFY_LOW_S | SCRIPT_VERIFY_WITNESS};
     const auto it{consensusparams.script_flag_exceptions.find(*Assert(block_index.phashBlock))};
     if (it != consensusparams.script_flag_exceptions.end()) {
         flags = it->second;
-    }
-
-    // Enforce WITNESS rules whenever P2SH is in effect (and the segwit
-    // deployment is active).
-    if (flags & SCRIPT_VERIFY_P2SH && DeploymentActiveAt(block_index, chainman, Consensus::DEPLOYMENT_SEGWIT)) {
-        flags |= SCRIPT_VERIFY_WITNESS;
     }
 
     // USDG: Enforce CHECKLOCKTIMEVERIFY (BIP65) and BIP147 NULLDUMMY
