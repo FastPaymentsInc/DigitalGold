@@ -164,7 +164,7 @@ public:
                 {     0, uint256S("0x00000e03ef71247a5078af07a30eecd93e0d86e8286ca6844f9e02fe8d1f9968")}, // Genesis block
                 {     1500, uint256S("0x0000003912525cbabfe9616a1daa0d1d8860dac2163a45376cdaa9abcbcb4369")}, // 21M pre-mine
                 {     2400, uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5")}, // PoW ended
-                {     13500, uint256S("0xcf5cc7c68e63027e99ec55faf6ef057870820d603973d780766ba36ed94279fb")}, // SegWit activation
+                {     13500, uint256S("0x7761b77ec5425d392bcb55dec275eb4289b993c84ad70751917348a6e0fd1a3b")}, // SegWit activation
             }
         };
 
