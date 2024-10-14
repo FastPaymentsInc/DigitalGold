@@ -117,8 +117,8 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000026705f3de5769f95b"); // block 131927
-        consensus.defaultAssumeValid = uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5"); // block 2400
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000002bb6dbee5addb5afd"); // block 148120
+        consensus.defaultAssumeValid = uint256S("0x3db6467bc8d6a716dca7c0f9ea681328786a3e1aeab2193c9fcea42509bf69f7"); // block 148120
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -164,6 +164,7 @@ public:
                 {     0, uint256S("0x00000e03ef71247a5078af07a30eecd93e0d86e8286ca6844f9e02fe8d1f9968")}, // Genesis block
                 {     1500, uint256S("0x0000003912525cbabfe9616a1daa0d1d8860dac2163a45376cdaa9abcbcb4369")}, // 21M pre-mine
                 {     2400, uint256S("0x55d28a786c2be3af4484f02a751968f21d1cca934d4f8b1cfecfd4c5fa34ccb5")}, // PoW ended
+                {     13500, uint256S("0xcf5cc7c68e63027e99ec55faf6ef057870820d603973d780766ba36ed94279fb")}, // SegWit activation
             }
         };
 
@@ -172,10 +173,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 2401 af6ed9f90bc3519457410bd6c0d3c4993cbadd49d5072e7ecb4ac3dc1fcd4c9c // block 131927
-            .nTime    = 1727758528,
-            .nTxCount = 262082,
-            .dTxRate  = 0.02866797210812876
+            // Data from RPC: getchaintxstats 3000 3db6467bc8d6a716dca7c0f9ea681328786a3e1aeab2193c9fcea42509bf69f7 // block 148120
+            .nTime    = 1728915568,
+            .nTxCount = 295485,
+            .dTxRate  = 0.02821852910212062
         };
 
         // A vector of p2sh addresses
@@ -220,8 +221,8 @@ public:
         consensus.nStakeTimestampMask = 0xf;
         consensus.nCoinbaseMaturity = 10;
 
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000033af536330d4e2e2e3"); // block 178885 
-        consensus.defaultAssumeValid = uint256S("0x000000538297fc5fe2722999996fb8772fa532277a60a956dc8087507d0a4934"); // block 1500
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000003a308705b7cc985c69"); // block 196113 
+        consensus.defaultAssumeValid = uint256S("0xd0773eded09440e2237a9e145b254296757b64b352ab9dd4a763eabcce6c1f85"); // block 196113
 
         pchMessageStart[0] = 0x06;
         pchMessageStart[1] = 0x27;
@@ -258,7 +259,7 @@ public:
             {
                 {     0, uint256S("0x0000abae30e9f0c023d770429c40b7bc52d3dda8e39c1bc34088d5a67156bcee")}, // Genesis block
                 {     1500, uint256S("0x000000538297fc5fe2722999996fb8772fa532277a60a956dc8087507d0a4934")}, // End Pre-mine
-                {     174000, uint256S("0x4eaf7d4d0231d29fa469fbf944314bb86c7fa763750d727c63efc9e8994dc268")}, // Segwit activation
+                {     174000, uint256S("0x4eaf7d4d0231d29fa469fbf944314bb86c7fa763750d727c63efc9e8994dc268")}, // SegWit activation
             }
         };
 
@@ -267,10 +268,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 1501 afa2f79c2d364fac7e52f2ea8f9b4f7cbb7ba09f492652129cf602f35b358007 // block 178885
-            .nTime    = 1727758672,
-            .nTxCount = 358549,
-            .dTxRate  = 0.02981961220597584
+            // Data from RPC: getchaintxstats 3000 d0773eded09440e2237a9e145b254296757b64b352ab9dd4a763eabcce6c1f85 // block 196113
+            .nTime    = 1728916432,
+            .nTxCount = 393009,
+            .dTxRate  = 0.02986144290492116
         };
 
         // A vector of p2sh addresses

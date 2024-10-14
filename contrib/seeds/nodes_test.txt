@@ -1,23 +1,16 @@
 # List of fixed seed nodes for testnet
 
 # IPv4 nodes
-167.86.117.103:17633
-167.86.117.144:17633
-167.86.117.143:17633
-154.38.178.121:17633
 157.173.195.203:17633
 85.239.232.93:17633
+185.197.251.199:17633
 
 # IPv6 nodes
-[2a02:c207:2056:6532::1]:17633
-[2a02:c207:2056:6534::1]:17633
-[2a02:c207:2056:6533::1]:17633
-[2605:a143:2189:3171::1]:17633
 [2605:a140:2189:3175::1]:17633
 [2605:a141:2189:3174::1]:17633
+[2a02:c206:2210:3221::1]:17633 
 
 # Onion nodes
-yuvwqa5rfabinqla5f7rppzyepguaotypwgpfvqh6d5xtneadrqt3oad.onion:17633
-5vydkrb7ezfxo2jsw636gzpmwgkyuuxmbmztzish2uhqlaeeqz7u46qd.onion:17633
 imdh4qnuw2n7pginf6phd25hb5gswa4kfwxvb6onkaszokmbw6kstcyd.onion:17633
 455cmubl62zofwp73th4zqxvgmatasiid3zz5fpdl5ogee5kj7rqbgyd.onion:17633
+l7wgczkp53c3rqr3rzsbqzgaqgzhtl73xd2mubp5klhshwkjdo5akfid.onion:17633
