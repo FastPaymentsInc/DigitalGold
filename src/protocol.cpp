@@ -131,9 +131,7 @@ ServiceFlags GetDesirableServiceFlags(ServiceFlags services) {
     if ((services & NODE_NETWORK_LIMITED) && g_initial_block_download_completed) {
         return ServiceFlags(NODE_NETWORK_LIMITED | NODE_WITNESS);
     }
-    // Blackcoin: Do not ask for NODE_WITNESS for now
-    // return ServiceFlags(NODE_NETWORK | NODE_WITNESS);
-    return ServiceFlags(NODE_NETWORK);
+    return ServiceFlags(NODE_NETWORK | NODE_WITNESS);
 }
 
 void SetServiceFlagsIBDCache(bool state) {

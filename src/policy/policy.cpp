@@ -68,7 +68,7 @@ bool IsDust(const CTxOut& txout, const CFeeRate& dustRelayFeeIn)
     return (txout.nValue < GetDustThreshold(txout, dustRelayFeeIn));
 } 
 
-bool IsStandard(const CScript& scriptPubKey, const std::optional<unsigned>& max_datacarrier_bytes, TxoutType& whichType, const bool witnessEnabled)
+bool IsStandard(const CScript& scriptPubKey, const std::optional<unsigned>& max_datacarrier_bytes, TxoutType& whichType)
 {
     std::vector<std::vector<unsigned char> > vSolutions;
     whichType = Solver(scriptPubKey, vSolutions);
@@ -87,13 +87,12 @@ bool IsStandard(const CScript& scriptPubKey, const std::optional<unsigned>& max_
         if (!max_datacarrier_bytes || scriptPubKey.size() > *max_datacarrier_bytes) {
             return false;
         }
-    } else if (!witnessEnabled && (whichType == TxoutType::WITNESS_V0_SCRIPTHASH || whichType == TxoutType::WITNESS_V0_KEYHASH || whichType == TxoutType::WITNESS_V1_TAPROOT || whichType == TxoutType::WITNESS_UNKNOWN)) {
-        return false;
     }
+
     return true;
 }
 
-bool IsStandardTx(const CTransaction& tx, const std::optional<unsigned>& max_datacarrier_bytes, bool permit_bare_multisig, const CFeeRate& dust_relay_fee, std::string& reason, const bool witnessEnabled)
+bool IsStandardTx(const CTransaction& tx, const std::optional<unsigned>& max_datacarrier_bytes, bool permit_bare_multisig, const CFeeRate& dust_relay_fee, std::string& reason)
 {
     if (tx.nVersion > TX_MAX_STANDARD_VERSION || tx.nVersion < 1) {
         reason = "version";
@@ -133,7 +132,7 @@ bool IsStandardTx(const CTransaction& tx, const std::optional<unsigned>& max_dat
     unsigned int nDataOut = 0;
     TxoutType whichType;
     for (const CTxOut& txout : tx.vout) {
-        if (!::IsStandard(txout.scriptPubKey, max_datacarrier_bytes, whichType, witnessEnabled)) {
+        if (!::IsStandard(txout.scriptPubKey, max_datacarrier_bytes, whichType)) {
             reason = "scriptpubkey";
             return false;
         }

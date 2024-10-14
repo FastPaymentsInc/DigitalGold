@@ -144,7 +144,7 @@ static const CAmount DEFAULT_RESERVE_BALANCE = 0;
 class CCoinControl;
 
 //! Default for -addresstype
-constexpr OutputType DEFAULT_ADDRESS_TYPE{OutputType::LEGACY};
+constexpr OutputType DEFAULT_ADDRESS_TYPE{OutputType::BECH32};
 
 static constexpr uint64_t KNOWN_WALLET_FLAGS =
         WALLET_FLAG_AVOID_REUSE

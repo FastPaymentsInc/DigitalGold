@@ -727,15 +727,9 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     if (tx.IsCoinStake())
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "coinstake");
 
-    // Reject transactions with witness before segregated witness activates (override with -prematurewitness)
-    bool witnessEnabled = DeploymentActiveAfter(m_active_chainstate.m_chain.Tip(), m_active_chainstate.m_chainman, Consensus::DEPLOYMENT_SEGWIT);
-    if (!gArgs.GetBoolArg("-prematurewitness", false) && tx.HasWitness() && !witnessEnabled) {
-        return state.Invalid(TxValidationResult::TX_NOT_STANDARD, "no-witness-yet");
-    }
-
     // Rather not work on nonstandard transactions (unless -testnet/-regtest)
     std::string reason;
-    if (m_pool.m_require_standard && !IsStandardTx(tx, m_pool.m_max_datacarrier_bytes, m_pool.m_permit_bare_multisig, m_pool.m_dust_relay_feerate, reason, witnessEnabled)) {
+    if (m_pool.m_require_standard && !IsStandardTx(tx, m_pool.m_max_datacarrier_bytes, m_pool.m_permit_bare_multisig, m_pool.m_dust_relay_feerate, reason)) {
         return state.Invalid(TxValidationResult::TX_NOT_STANDARD, reason);
     }
 
@@ -2127,19 +2121,13 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     // violating blocks.
     uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_WITNESS | SCRIPT_VERIFY_TAPROOT};
     */
-    // Blackcoin
-    // BIP16 and DERSIG (BIP66) is always active
-    // Blackcoin also requires DER encoding of pubkeys and low S in sigs
-    uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_DERKEY | SCRIPT_VERIFY_LOW_S};
+    // USDG: BIP16, DER encoding of pubkeys and low S in sigs are always active.
+    // For simplicity, always leave P2SH+DERSIG+DERKEY+LOW_S+WITNESS on except for the
+    // violating blocks.
+    uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_DERKEY | SCRIPT_VERIFY_LOW_S | SCRIPT_VERIFY_WITNESS};
     const auto it{consensusparams.script_flag_exceptions.find(*Assert(block_index.phashBlock))};
     if (it != consensusparams.script_flag_exceptions.end()) {
         flags = it->second;
-    }
-
-    // Enforce WITNESS rules whenever P2SH is in effect (and the segwit
-    // deployment is active).
-    if (flags & SCRIPT_VERIFY_P2SH && DeploymentActiveAt(block_index, chainman, Consensus::DEPLOYMENT_SEGWIT)) {
-        flags |= SCRIPT_VERIFY_WITNESS;
     }
 
     // USDG: Enforce CHECKLOCKTIMEVERIFY (BIP65) and BIP147 NULLDUMMY
