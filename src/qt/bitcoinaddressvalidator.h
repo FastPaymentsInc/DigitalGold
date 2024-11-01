@@ -20,7 +20,7 @@ public:
     State validate(QString &input, int &pos) const override;
 };
 
-/** Bitcoin address widget validator, checks for a valid usdg address.
+/** USDG address widget validator, checks for a valid usdg address.
  */
 class BitcoinAddressCheckValidator : public QValidator
 {

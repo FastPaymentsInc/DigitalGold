@@ -487,7 +487,7 @@ struct CNodeState {
 
     CNodeState(bool is_inbound) : m_is_inbound(is_inbound) {}
 };
-
+// Qtum
 class CNodeHeaders
 {
 public:
@@ -1239,7 +1239,7 @@ static bool CanServeWitnesses(const Peer& peer)
 {
     return peer.m_their_services & NODE_WITNESS;
 }
-
+// Qtum
 CNodeHeaders& PeerManagerImpl::ServiceHeaders(const CService& address) EXCLUSIVE_LOCKS_REQUIRED(cs_main) {
     unsigned short port =
             gArgs.GetBoolArg("-headerspamfilterignoreport", DEFAULT_HEADER_SPAM_FILTER_IGNORE_PORT) ? 0 : address.GetPort();
@@ -2060,7 +2060,6 @@ std::optional<std::string> PeerManagerImpl::FetchBlock(NodeId peer_id, const CBl
 
     // Construct message to request the block
     const uint256& hash{block_index.GetBlockHash()};
-
     std::vector<CInv> invs{CInv(MSG_BLOCK | MSG_WITNESS_FLAG, hash)};
 
     // Send block request message to the peer
@@ -3062,6 +3061,7 @@ void PeerManagerImpl::ProcessHeadersMessage(CNode& pfrom, Peer& peer,
     size_t nCount = headers.size();
 
     if (nCount == 0) {
+        // Nothing interesting. Stop asking this peers for more headers.
         // If we were in the middle of headers sync, receiving an empty headers
         // message suggests that the peer suddenly has nothing to give us
         // (perhaps it reorged to our chain). Clear download state for this peer.
@@ -3622,6 +3622,7 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
         if (!vRecv.empty()) {
             std::string strSubVer;
             vRecv >> LIMITED_STRING(strSubVer, MAX_SUBVERSION_LENGTH);
+            cleanSubVer = SanitizeString(strSubVer);
         }
         if (!vRecv.empty()) {
             vRecv >> starting_height;

@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.usdgcoin.USDG-Qt";
+        return @"org.digitalgoldfoundation.USDG-Qt";
     } else {
         return [self __bundleIdentifier];
     }

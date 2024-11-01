@@ -1004,7 +1004,7 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
         coin_selection_params.change_spend_size = (size_t)change_spend_size;
     }
 
-    // Get current time
+    // Blackcoin: Get current time
     int64_t current_time = GetAdjustedTimeSeconds();
 
     // Set discard feerate

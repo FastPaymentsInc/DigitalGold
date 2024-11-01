@@ -130,13 +130,13 @@ setting the USDGD and FLAGS environment variables in the file
 
 ### macOS
 
-Copy org.usdgcoin.usdgd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.usdgcoin.usdgd.plist`.
+Copy org.digitalgoldfoundation.usdgd.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.digitalgoldfoundation.usdgd.plist`.
 
 This Launch Agent will cause usdgd to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run usdgd as the current user.
-You will need to modify org.usdgcoin.usdgd.plist if you intend to use it as a
+You will need to modify org.digitalgoldfoundation.usdgd.plist if you intend to use it as a
 Launch Daemon with a dedicated usdg user.
 
 Auto-respawn

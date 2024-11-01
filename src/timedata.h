@@ -82,7 +82,7 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime);
  * Reset the internal state of GetTimeOffset(), GetAdjustedTime() and AddTimeData().
  */
 void TestOnlyResetTimeData();
-
+// Blackcoin
 int64_t GetAdjustedTimeSeconds();
 
 #endif // BITCOIN_TIMEDATA_H

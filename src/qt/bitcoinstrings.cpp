@@ -121,6 +121,9 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "cjdnsreachable is not provided"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Outbound connections restricted to Tor (-onlynet=onion) but the proxy for "
+"reaching the Tor network is explicitly forbidden: -onion=0"),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"Outbound connections restricted to Tor (-onlynet=onion) but the proxy for "
 "reaching the Tor network is not provided: none of -proxy, -onion or -"
 "listenonion is given"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""

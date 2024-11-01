@@ -92,8 +92,6 @@ CreateWalletDialog::CreateWalletDialog(QWidget* parent) :
         ui->external_signer_checkbox->setChecked(false);
 #endif
 
-        ui->blank_wallet_checkbox->setChecked(false);
-        ui->blank_wallet_checkbox->setEnabled(true);
 }
 
 CreateWalletDialog::~CreateWalletDialog()

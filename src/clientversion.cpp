@@ -97,7 +97,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/USDGcoinFoundation/USDGcoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/DigitalGoldFoundation/USDGcoin>";
 
     return strprintf(_("Copyright (C) 2009-%i The Bitcoin Core Developers").translated, COPYRIGHT_YEAR) +
            "\n" +

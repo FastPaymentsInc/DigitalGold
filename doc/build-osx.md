@@ -58,7 +58,7 @@ Now that all the required dependencies are installed, let's clone the USDG repos
 All build scripts and commands will run from this directory.
 
 ``` bash
-git clone https://github.com/USDGcoinFoundation/USDGcoin.git
+git clone https://github.com/DigitalGoldFoundation/USDGcoin.git
 ```
 
 ### 5. Install Optional Dependencies

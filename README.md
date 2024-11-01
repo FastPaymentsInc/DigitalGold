@@ -1,9 +1,9 @@
 USDG
 =====================================
-[![build](https://github.com/USDGcoinFoundation/USDGcoin/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/USDGcoinFoundation/USDGcoin/actions/workflows/build.yml)
+[![build](https://github.com/DigitalGoldFoundation/USDGcoin/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/DigitalGoldFoundation/USDGcoin/actions/workflows/build.yml)
 
 
-https://usdigitalgold.org
+https://digitalgoldfoundation.org
 
 USDG Wallet
 ----------------

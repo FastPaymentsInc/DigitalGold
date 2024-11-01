@@ -112,6 +112,12 @@ bool OptionsModel::Init(bilingual_str& error)
 
     // These are Qt-only settings:
 
+    // Main - USDG - enable autostart
+    if (!settings.contains("fAutoStart")) {
+    GUIUtil::SetStartOnSystemStartup(true);
+    settings.setValue("fAutoStart", true);
+    }
+
     // Window
     if (!settings.contains("fHideTrayIcon")) {
         settings.setValue("fHideTrayIcon", false);
@@ -122,9 +128,9 @@ bool OptionsModel::Init(bilingual_str& error)
     if (!settings.contains("fMinimizeToTray"))
         settings.setValue("fMinimizeToTray", false);
     fMinimizeToTray = settings.value("fMinimizeToTray").toBool() && m_show_tray_icon;
-
+    // USDG - default minimize on close
     if (!settings.contains("fMinimizeOnClose"))
-        settings.setValue("fMinimizeOnClose", false);
+        settings.setValue("fMinimizeOnClose", true);
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
@@ -238,9 +244,11 @@ void OptionsModel::Reset()
     // Set that this was reset
     settings.setValue("fReset", true);
 
-    // default setting for OptionsModel::StartAtStartup - disabled
-    if (GUIUtil::GetStartOnSystemStartup())
-        GUIUtil::SetStartOnSystemStartup(false);
+    // USDG - enable autostart om reset
+    // Enable the default setting for OptionsModel::StartAtStartup if it’s not already active
+    if (!GUIUtil::GetStartOnSystemStartup()) {
+        GUIUtil::SetStartOnSystemStartup(true);
+    }
 }
 
 int OptionsModel::rowCount(const QModelIndex & parent) const

@@ -252,6 +252,7 @@ public:
         sendCoinsDialog.setModel(walletModel.get());
         transactionView.setModel(walletModel.get());
     }
+
 };
 
 //! Simple qt wallet tests.

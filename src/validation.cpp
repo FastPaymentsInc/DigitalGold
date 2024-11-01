@@ -689,6 +689,7 @@ private:
 
     /** Whether the transaction(s) would replace any mempool transactions. If so, RBF rules apply. */
     /*
+    // Blackcoin
     bool m_rbf{false};
     */
 };
@@ -749,8 +750,8 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
         return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "time-too-new");
     }
 
-    // is it already in the memory pool?
     if (m_pool.exists(GenTxid::Wtxid(tx.GetWitnessHash()))) {
+        // Exact transaction already exists in the mempool.
         return state.Invalid(TxValidationResult::TX_CONFLICT, "txn-already-in-mempool");
     } else if (m_pool.exists(GenTxid::Txid(tx.GetHash()))) {
         // Transaction with the same non-witness data but different witness (same txid, different
@@ -925,6 +926,7 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
         // outputs - one for each counterparty. For more info on the uses for
         // this, see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html
         /*
+    	// Blackcoin
         CTxMemPool::Limits cpfp_carve_out_limits{
             .ancestor_count = 2,
             .ancestor_size_vbytes = maybe_rbf_limits.ancestor_size_vbytes,
@@ -1005,6 +1007,7 @@ bool MemPoolAccept::ReplacementChecks(Workspace& ws)
                                          m_pool.m_incremental_relay_feerate, hash)}) {
         return state.Invalid(TxValidationResult::TX_MEMPOOL_POLICY, "insufficient fee", *err_string);
     }
+    return true;
 }
 */
 
@@ -1138,7 +1141,7 @@ bool MemPoolAccept::Finalize(const ATMPArgs& args, Workspace& ws)
     // Store transaction in memory
     m_pool.addUnchecked(*entry, ws.m_ancestors, validForFeeEstimation);
     */
-
+    // Blackcoin
     m_pool.addUnchecked(*entry, ws.m_ancestors);
 
     // trim mempool and check if tx was trimmed
@@ -1237,6 +1240,8 @@ MempoolAcceptResult MemPoolAccept::AcceptSingleTransaction(const CTransactionRef
     Workspace ws(ptx);
 
     if (!PreChecks(args, ws)) return MempoolAcceptResult::Failure(ws.m_state);
+    // Blackcoin
+    // if (m_rbf && !ReplacementChecks(ws)) return MempoolAcceptResult::Failure(ws.m_state);
 
     // Perform the inexpensive checks first and avoid hashing and signature verification unless
     // those checks pass, to mitigate CPU exhaustion denial-of-service attacks.
@@ -1654,7 +1659,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, b
 // USDG
 // Premine 1500 blocks to get 21 000 000 USDG.
 // Continue PoW for another 900 blocks at 0.0125 USDG reward and mature more blocks for staking.
-// PoW will stop at block 2400.
+// PoW will stop at block 2400 - Except for testnet
 // PoS will be enabled at block 1501 at 0.0125 USDG block reward
 CAmount GetProofOfWorkSubsidy(int nHeight)
 {
@@ -2111,6 +2116,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     const Consensus::Params& consensusparams = chainman.GetConsensus();
 
     /*
+    // USDG
     // BIP16 didn't become active until Apr 1 2012 (on mainnet, and
     // retroactively applied to testnet)
     // However, only one historical block violated the P2SH rules (on both
@@ -2409,7 +2415,7 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
              Ticks<SecondsDouble>(time_verify),
              Ticks<MillisecondsDouble>(time_verify) / num_blocks_total);
 
-    // Set proof-of-stake hash modifier
+    // Blackcoin: Set proof-of-stake hash modifier
     pindex->nStakeModifier = ComputeStakeModifier(pindex->pprev, block.IsProofOfStake() ? block.vtx[1]->vin[0].prevout.hash : block.GetHash());
 
     if (fJustCheck)
@@ -3572,7 +3578,7 @@ static bool CheckBlockHeader(const CBlockHeader& block, BlockValidationState& st
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, consensusParams))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed");
 
-    // Check timestamp
+    // Blackcoin: Check timestamp
     if (block.GetBlockTime() > FutureDrift(chainstate, GetAdjustedTimeSeconds()))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "time-too-new", "block timestamp too far in the future");
 
@@ -3699,11 +3705,11 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
         if (block.vtx[i]->IsCoinBase())
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-multiple", "more than one coinbase");
 
-    // Check coinbase timestamp
+    // Blackcoin: Check coinbase timestamp
     if (block.GetBlockTime() > FutureDrift(chainstate, block.vtx[0]->nTime ? (int64_t)block.vtx[0]->nTime : block.GetBlockTime()))
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-time", "coinbase timestamp is too early");
 
-    // Check coinstake timestamp
+    // Blackcoin: Check coinstake timestamp
     if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), block.vtx[1]->nTime ? (int64_t)block.vtx[1]->nTime : block.GetBlockTime()))
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-time", "coinstake timestamp violation");
 
@@ -3726,7 +3732,7 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-multiple", "more than one coinstake");
     }
 
-    // Check proof-of-stake block signature
+    // Blackcoin Check proof-of-stake block signature
     if (fCheckSig && !CheckBlockSignature(block))
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-blk-signature", "bad proof-of-stake block signature");
 
@@ -3741,7 +3747,7 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, tx_state.GetRejectReason(),
                                  strprintf("Transaction check failed (tx hash %s) %s", tx->GetHash().ToString(), tx_state.GetDebugMessage()));
 
-            // Check transaction timestamp
+            // Blackcoin: Check transaction timestamp
             if (block.GetBlockTime() < (tx->nTime ? (int64_t)tx->nTime : block.GetBlockTime()))
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-tx-time", strprintf("%s : block timestamp earlier than transaction timestamp", __func__));
         }
@@ -3871,17 +3877,17 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, BlockValidatio
     if (block.nBits != GetNextTargetRequired(pindexPrev, consensusParams, fProofOfStake))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", strprintf("%s: incorrect %s", __func__, !fProofOfStake ? "proof-of-work" : "proof-of-stake"));
 
-    // Check maximum reorg depth
+    // Blackcoin: Check maximum reorg depth
     if (chain.Height() - nHeight >= consensusParams.nMaxReorganizationDepth) {
         LogPrintf("ERROR: %s: forked chain older than max reorganization depth (height %d)\n", __func__, nHeight);
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "older-than-maxreorg-depth");
     }
 
-    // Check for the last proof of work block
+    // Blackcoin: Check for the last proof of work block
     if (nHeight > consensusParams.nLastPOWBlock && !fProofOfStake)
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "reject-pow", strprintf("%s: reject proof-of-work at height %d", __func__, nHeight));
 
-    // Preliminary check of pos timestamp
+    // Blackcoin: Preliminary check of pos timestamp
     if (nHeight > consensusParams.nLastPOWBlock && !CheckStakeBlockTimestamp(block.GetBlockTime()))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-pos-time", "incorrect pos block timestamp");
 
@@ -3910,7 +3916,7 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, BlockValidatio
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "time-too-old", "block's timestamp is too early");
 
     // Check timestamp
-    if (block.Time() > NodeClock::now() + std::chrono::seconds{MAX_FUTURE_BLOCK_TIME}) {
+    if (block.Time() > now + std::chrono::seconds{MAX_FUTURE_BLOCK_TIME}) {
         return state.Invalid(BlockValidationResult::BLOCK_TIME_FUTURE, "time-too-new", "block timestamp too far in the future");
     }
 
@@ -4360,7 +4366,7 @@ bool TestBlockValidity(BlockValidationState& state,
 
     return true;
 }
-
+// Blackcoin
 bool IsCanonicalBlockSignature(const std::shared_ptr<const CBlock>& pblock, bool checkLowS)
 {
     if (pblock->IsProofOfWork()) {
@@ -4369,7 +4375,7 @@ bool IsCanonicalBlockSignature(const std::shared_ptr<const CBlock>& pblock, bool
 
     return checkLowS ? IsLowDERSignature(pblock->vchBlockSig, nullptr, false) : IsDERSignature(pblock->vchBlockSig, nullptr, false);
 }
-
+// Blackcoin
 bool CheckCanonicalBlockSignature(const std::shared_ptr<const CBlock>& pblock)
 {
     // Check block signature encoding
@@ -4843,7 +4849,7 @@ void ChainstateManager::LoadExternalBlockFile(
                         blkdat >> TX_WITH_WITNESS(*pblock);
                         nRewind = blkdat.GetPos();
 
-                        // Set nFlags in case of proof of stake block
+                        // Blackcoin: Set nFlags in case of proof of stake block
                         if (pblock->IsProofOfStake())
                             pblock->nFlags |= CBlockIndex::BLOCK_PROOF_OF_STAKE;
 

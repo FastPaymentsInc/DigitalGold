@@ -469,7 +469,7 @@ void CoinControlDialog::updateLabels(CCoinControl& m_coin_control, WalletModel *
             if (nAmount - nPayAmount == 0)
                 nBytes -= 34;
 
-        // Fee
+        // Blackcoin: Fee
         nPayFee = model->wallet().getMinimumFee(nBytes, m_coin_control, GetAdjustedTimeSeconds());
 
         if (nPayAmount > 0)

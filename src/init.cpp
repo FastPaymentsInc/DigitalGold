@@ -116,7 +116,6 @@
 #include <zmq/zmqrpc.h>
 #endif
 
-
 using kernel::DumpMempool;
 using kernel::LoadMempool;
 using kernel::ValidationCacheSizes;
