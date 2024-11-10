@@ -86,8 +86,64 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     m_node(node),
     trayIconMenu{new QMenu()},
     platformStyle(_platformStyle),
-    m_network_style(networkStyle)
+    m_network_style(networkStyle)    
 {
+    // Blackcoin: Set global stylesheet
+
+    qApp->setStyleSheet(
+        "QWidget {"
+        "    background-color: #242424;"      // Background color for all widgets
+        "    font-family: 'Roboto';"   // Font family for the entire application
+        "    font-size: 15px;"
+        "    color: white;"               // Default font size for all widgets
+        "}"
+        "QMenuBar {"
+        "    background-color: orange;"
+        "    font-size: 10px;"               // Specific font size for the menu bar
+        "    color: black;"
+        "}"
+        "QMenu {"
+        "    font-size: 10px;"               // Font size for menu items
+        "    color: black;"
+        "}"
+        "QToolBar {"
+        "    background-color: orange;"         // Orange background color for the toolbar
+        "    font-size: 20px;"                   // Font size for toolbar text
+        "    color: black;"
+        "    border: none;"
+        "    padding: 0px;"
+        "    margin: 0;"                         // Remove any default margin
+        "}"
+        "QToolButton {"
+        "    background-color: orange;"           // Ensure buttons also have the orange background
+        "    color: black;"                        // Set button text color for visibility
+        "    border: none;"                        // Remove button borders for cleaner look
+        "}"
+        "QToolButton:pressed, QToolButton:hover {"
+        "    background-color: orange;"           // Maintain orange color when pressed or hovered
+        "    color: white;"
+        "}"
+        "QHeaderView::section {"
+        "    background-color: gray;"    // Set the color for the header section here
+        "    color: white;"                 // Set the text color for better visibility
+        "    padding: 4px;"
+        "}"
+        "QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {"
+        "    background-color: white;"       // Set the background color for text input fields to white
+        "    color: black;"                  // Set the text color to black for readability
+        "    border: 1px solid #CCCCCC;"    
+        "    padding: 4px;"                  // Optional: padding inside input fields
+        "}"
+        "QTableView {"
+        "    background-color: #292929;"        // Background color for the table
+        "    alternate-background-color: #5C5C5C;"  // Light grey for alternate rows
+        "}"
+        "QTableView::item:hover {"
+        "    background-color: orange;"         // Orange background for transaction rows on hover
+        "    color: white;"                     // White text color on hover
+        "}"
+    );
+
     QSettings settings;
     if (!restoreGeometry(settings.value("MainWindowGeometry").toByteArray())) {
         // Restore failed (perhaps missing setting), center the window
@@ -263,9 +319,10 @@ void BitcoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
     connect(modalOverlay, &ModalOverlay::triggered, tabGroup, &QActionGroup::setEnabled);
-
-    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Overview"), this);
-    overviewAction->setStatusTip(tr("Show general overview of wallet"));
+    
+    // Blackcoin: changed the main page name from "Overview" to "Balance"
+    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Balance"), this); 
+    overviewAction->setStatusTip(tr("Show wallet balance"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(QStringLiteral("Alt+1")));
@@ -594,6 +651,7 @@ void BitcoinGUI::createToolBars()
     {
         QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
         appToolBar = toolbar;
+
         toolbar->setMovable(false);
         toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         toolbar->addAction(overviewAction);
@@ -605,6 +663,7 @@ void BitcoinGUI::createToolBars()
 #ifdef ENABLE_WALLET
         QWidget *spacer = new QWidget();
         spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        spacer->setStyleSheet("background-color: orange;"); // Blackcoin: sets color of spacer to orange
         toolbar->addWidget(spacer);
 
         m_wallet_selector = new QComboBox();
@@ -614,7 +673,10 @@ void BitcoinGUI::createToolBars()
         m_wallet_selector_label = new QLabel();
         m_wallet_selector_label->setText(tr("Wallet:") + " ");
         m_wallet_selector_label->setBuddy(m_wallet_selector);
-
+        m_wallet_selector_label->setStyleSheet(
+            "background-color: orange;"
+            "color: black;"
+        ); // Blackcoin: sets color of wallet label to orange.
         m_wallet_selector_label_action = appToolBar->addWidget(m_wallet_selector_label);
         m_wallet_selector_action = appToolBar->addWidget(m_wallet_selector);
 
@@ -623,6 +685,7 @@ void BitcoinGUI::createToolBars()
 #endif
     }
 }
+
 
 void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
 {
