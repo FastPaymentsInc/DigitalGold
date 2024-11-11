@@ -60,11 +60,12 @@ Q_SIGNALS:
     void subtractFeeFromAmountChanged();
 
 private Q_SLOTS:
-    void deleteClicked();
+    // Blackcoin: button removal
+    /*void deleteClicked();*/
     void useAvailableBalanceClicked();
     void on_payTo_textChanged(const QString &address);
     void on_addressBookButton_clicked();
-    void on_pasteButton_clicked();
+    /*void on_pasteButton_clicked();*/
     void updateDisplayUnit();
 
 protected:
