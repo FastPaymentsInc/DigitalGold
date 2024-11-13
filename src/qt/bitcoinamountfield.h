@@ -9,6 +9,7 @@
 #include <qt/bitcoinunits.h>
 
 #include <QWidget>
+#include <QLabel>
 
 class AmountSpinBox;
 
@@ -75,10 +76,11 @@ protected:
 
 private:
     AmountSpinBox* amount{nullptr};
-    QValueComboBox *unit;
+    QLabel* unitLabel{nullptr}; // Necessary for USDG label
+    // QValueComboBox *unit;
 
 private Q_SLOTS:
-    void unitChanged(int idx);
+    // void unitChanged(int idx);
 
 };
 
