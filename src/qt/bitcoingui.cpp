@@ -97,6 +97,14 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
         "    font-size: 15px;"
         "    color: white;"               // Default font size for all widgets
         "}"
+        "QPushButton {"
+        "   background-color: #242424;"
+        "   color: #D4D4D4;"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: #242424;"       /* Orange background on hover */
+        "   color: white;"                  /* White text on hover */
+        "}"
         "QMenuBar {"
         "    background-color: orange;"
         "    font-size: 10px;"               // Specific font size for the menu bar
@@ -104,7 +112,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
         "}"
         "QMenu {"
         "    font-size: 10px;"               // Font size for menu items
-        "    color: black;"
+        "    color: white;"
         "}"
         "QToolBar {"
         "    background-color: orange;"         // Orange background color for the toolbar
@@ -132,7 +140,13 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
         "    background-color: white;"       // Set the background color for text input fields to white
         "    color: black;"                  // Set the text color to black for readability
         "    border: 1px solid #CCCCCC;"    
-        "    padding: 4px;"                  // Optional: padding inside input fields
+        "    padding: 4px;"
+        "}"                 
+        "QComboBox QAbstractItemView {" // Dropdown lists are white with black letters
+        "   background-color: white;"
+        "   color: black;"
+        "   selection-background-color: orange;"
+        "   selection-color: white;"
         "}"
         "QTableView {"
         "    background-color: #292929;"        // Background color for the table
