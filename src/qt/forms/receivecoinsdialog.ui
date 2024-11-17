@@ -194,7 +194,8 @@
             </property>
            </widget>
           </item>
-          <item>
+          <!-- Blackoin: removed the "Bash32" dropdown -->
+          <!-- <item>
            <widget class="QComboBox" name="addressType">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -212,7 +213,7 @@
              <enum>Qt::StrongFocus</enum>
             </property>
            </widget>
-          </item>
+          </item> -->
           <item>
            <spacer name="horizontalSpacer_3">
             <property name="orientation">
