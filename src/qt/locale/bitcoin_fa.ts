@@ -43,14 +43,6 @@
         <translation type="unfinished">عبارت عبور وارد شده برای رمزگشایی کیف پول نادرست است. این شامل یک کاراکتر تهی (به معنی صفر بایت) است.  اگر عبارت عبور را در نسخه ای از این نرم افزار که قدیمی تر نسخه 25.0 است تنظیم کرده اید ، لطفا عبارت را تا آنجایی که اولین کاراکتر تهی قرار دارد امتحان کنید ( خود کاراکتر تهی را درج نکنید ) و دوباره امتحان کنید. اگر این کار موفقیت آمیز بود ، لطفا یک عبارت عبور جدید تنظیم کنید تا دوباره به این مشکل بر نخورید.</translation>
     </message>
     <message>
-        <source>Passphrase change failed</source>
-        <translation type="unfinished">تغییر عبارت عبور ناموفق بود.</translation>
-    </message>
-    <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character.</source>
-        <translation type="unfinished">عبارت عبور قدیمی وارد شده برای رمزگشایی کیف پول نادرست است. این عبارت عبور شامل یک کاراکتر تهی (به عنوان مثال - کاراکتری با حجم صفر بایت) است . اگر عبارت عبور خود را در نسخه ای از این نرم افزار تا قبل از نسخه  25.0 تنظیم کرده اید ،لطفا دوباره عبارت عبور را تا قبل از کاراکتر تهی یا NULL امتحان کنید ( خود کاراکتر تهی را درج نکنید ).</translation>
-    </message>
-    <message>
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished">هشدار: کلید کلاه قفل  روشن است!
  </translation>

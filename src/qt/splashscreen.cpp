@@ -45,7 +45,7 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
 
     QString copyrightTextBitcoin     = QChar(0xA9)+QString(" %1-%2 ").arg(2009).arg(COPYRIGHT_YEAR) + QString("The Bitcoin Core developers");
-    QString copyrightTextUSDG        = QChar(0xA9)+QString(" %1-%2 ").arg(2022).arg(COPYRIGHT_YEAR) + QString("The USDG developers");
+    QString copyrightTextDigitalGold = QChar(0xA9)+QString(" %1-%2 ").arg(2024).arg(COPYRIGHT_YEAR) + QString("The Digital Gold developers");
     // QString copyrightText   = QString::fromUtf8(CopyrightHolders(strprintf("\xc2\xA9 %u-%u ", 2009, COPYRIGHT_YEAR)).c_str());
     const QString& titleAddText    = networkStyle->getTitleAddText();
 
@@ -68,7 +68,7 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     QRect rGradient(QPoint(0,0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
-    // draw the usdg icon, expected size of PNG: 1024x1024
+    // draw the digitalgold icon, expected size of PNG: 1024x1024
     QRect rectIcon(QPoint(-130,-102), QSize(350,350));
 
     const QSize requiredSize(1024,1024);
@@ -106,7 +106,7 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
         const int x = pixmap.width()/devicePixelRatio-titleTextWidth-paddingRight;
         const int y = paddingTop+titleCopyrightVSpace;
         pixPaint.drawText(x,y,copyrightTextBitcoin);
-        pixPaint.drawText(x,y+15,copyrightTextUSDG);
+        pixPaint.drawText(x,y+15,copyrightTextDigitalGold);
     }
 
     // draw additional text if special network

@@ -2,7 +2,7 @@
 
 **Updated for FreeBSD [12.3](https://www.freebsd.org/releases/12.3R/announce/)**
 
-This guide describes how to build usdgd, command-line utilities, and GUI on FreeBSD.
+This guide describes how to build digitalgold, command-line utilities, and GUI on FreeBSD.
 
 ## Preparation
 
@@ -16,16 +16,16 @@ pkg install autoconf automake boost-libs git gmake libevent libtool pkgconf
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone USDG Repo
-Now that `git` and all the required dependencies are installed, let's clone the USDG repository to a directory. All build scripts and commands will run from this directory.
+### 2. Clone DigitalGold Repo
+Now that `git` and all the required dependencies are installed, let's clone the DigitalGold repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
-git clone https://github.com/DigitalGoldFoundation/USDGcoin.git
+git clone https://github.com/DigitalGoldFoundation/DigitalGoldcoin.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run either `usdgd` or `usdg-qt`.
+It is not necessary to build wallet functionality to run either `digitalgold` or `digitalgold-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -64,7 +64,7 @@ sh/bash: export BDB_PREFIX=[path displayed above]
 #### GUI Dependencies
 ###### Qt5
 
-USDG includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`. Skip if you don't intend to use the GUI.
+DigitalGold includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`. Skip if you don't intend to use the GUI.
 ```bash
 pkg install qt5
 ```
@@ -79,7 +79,7 @@ pkg install libqrencode
 #### Notifications
 ###### ZeroMQ
 
-USDG can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
+DigitalGold can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
 ```bash
 pkg install libzmq4
 ```
@@ -93,11 +93,11 @@ pkg install python3 databases/py-sqlite3
 ```
 ---
 
-## Building USDG
+## Building DigitalGold
 
 ### 1. Configuration
 
-There are many ways to configure USDG, here are a few common examples:
+There are many ways to configure DigitalGold, here are a few common examples:
 
 ##### Descriptor Wallet and GUI:
 This explicitly enables the GUI and disables legacy wallet support, assuming `sqlite` and `qt` are installed.

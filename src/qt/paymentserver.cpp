@@ -37,7 +37,7 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("usdg:");
+const QString BITCOIN_IPC_PREFIX("dgd:");
 
 //
 // Create a name that is unique for:
@@ -130,7 +130,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
     : QObject(parent)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click usdg: links
+    // on Mac: sent when you click dgd: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -147,7 +147,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start usdg: click-to-pay handler"));
+                tr("Cannot start dgd: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -158,7 +158,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
 PaymentServer::~PaymentServer() = default;
 
 //
-// OSX-specific way of handling usdg: URIs
+// OSX-specific way of handling dgd: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -193,12 +193,12 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("usdg://", Qt::CaseInsensitive))
+    if (s.startsWith("dgd://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'usdg://' is not a valid URI. Use 'usdg:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'dgd://' is not a valid URI. Use 'dgd:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // usdg: URI
+    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // dgd: URI
     {
         QUrlQuery uri((QUrl(s)));
         // normal URI
@@ -225,7 +225,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid USDG address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid digitalgold address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

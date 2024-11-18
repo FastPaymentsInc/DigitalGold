@@ -266,13 +266,6 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation type="unfinished">Ausreisser Ausnahme</translation>
     </message>
     <message>
-        <source>Runaway exception</source>
-        <translation type="unfinished">Ausreisser Ausnahme</translation>
-    </message>
-</context>
-<context>
-    <name>UnitDisplayStatusBarControl</name>
-    <message>
         <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>
         <translation type="unfinished">Ein fataler Fehler ist aufgetreten. %1 kann nicht länger sicher fortfahren und wird beendet.</translation>
     </message>
@@ -1651,14 +1644,8 @@ Während des Migrationsprozesses wird vor der Migration ein Backup der Wallet er
         <translation type="unfinished">R&amp;PC-Server aktivieren</translation>
     </message>
     <message>
-        <source>Whether to set subtract fee from amount as default or not.</source>
-        <extracomment>Tooltip text for Options window setting that sets subtracting the fee from a sending amount as default.</extracomment>
-        <translation type="unfinished">Wählen Sie, ob die Gebühr standardmäßig vom Betrag abgezogen werden soll oder nicht.</translation>
-    </message>
-    <message>
-        <source>Subtract &amp;fee from amount by default</source>
-        <extracomment>An Options window setting to set subtracting the fee from a sending amount as default.</extracomment>
-        <translation type="unfinished">Standardmäßig die Gebühr vom Betrag abziehen</translation>
+        <source>W&amp;allet</source>
+        <translation type="unfinished">B&amp;rieftasche</translation>
     </message>
     <message>
         <source>Whether to set subtract fee from amount as default or not.</source>
@@ -2514,7 +2501,7 @@ Wenn Sie diese Fehlermeldung erhalten, sollten Sie den Händler bitten, einen BI
     </message>
     <message>
         <source>Totals</source>
-        <translation type="unfinished">Gesamtbetrag</translation>
+        <translation type="unfinished">Gesamtbetrag:</translation>
     </message>
     <message>
         <source>Debug log file</source>
@@ -2999,7 +2986,7 @@ Für weitere Informationen über diese Konsole, tippe %6.
     </message>
     <message>
         <source>Recommended:</source>
-        <translation type="unfinished">Empfohlen:</translation>
+        <translation type="unfinished">Empfehlungen:</translation>
     </message>
     <message>
         <source>Custom:</source>
@@ -3901,7 +3888,7 @@ Hinweis: Da die Gebühr auf Basis der Bytes berechnet wird, führt eine Gebühre
     </message>
     <message>
         <source>Watch-only</source>
-        <translation type="unfinished">beobachtet</translation>
+        <translation type="unfinished">Nur beobachten</translation>
     </message>
     <message>
         <source>Date</source>

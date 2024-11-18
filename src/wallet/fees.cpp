@@ -10,10 +10,11 @@
 #include <wallet/coincontrol.h>
 #include <wallet/wallet.h>
 
+
 namespace wallet {
 CAmount GetMinimumFee(const CWallet& wallet, unsigned int nTxBytes, const CCoinControl& coin_control, int64_t current_time)
 {
-    return std::max(GetMinFee(nTxBytes, current_time), GetMinimumFeeRate(wallet, coin_control, current_time).GetFee(nTxBytes));
+    return std::max(GetMinFee(nTxBytes), GetMinimumFeeRate(wallet, coin_control, current_time).GetFee(nTxBytes));
 }
 
 CFeeRate GetRequiredFeeRate(const CWallet& wallet)
@@ -39,18 +40,18 @@ CFeeRate GetMinimumFeeRate(const CWallet& wallet, const CCoinControl& coin_contr
         feerate_needed = wallet.m_pay_tx_fee;
     }
 
+    // Blackcoin: do we need this?
     // prevent user from paying a fee below the required fee rate
     CFeeRate required_feerate = GetRequiredFeeRate(wallet);
     if (required_feerate > feerate_needed) {
         feerate_needed = required_feerate;
     }
 
-    // after-fork minimum feerate
+    // Blackcoin: minimum feerate
     CFeeRate min_feerate = CFeeRate{TX_FEE_PER_KB};
     if (min_feerate > feerate_needed) {
         feerate_needed = min_feerate;
     }
-
     return feerate_needed;
 }
 

@@ -736,17 +736,7 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Tárca adatai</translation>
-    </message>
-    <message>
-        <source>Load Wallet Backup</source>
-        <extracomment>The title for Restore Wallet File Windows</extracomment>
-        <translation type="unfinished">Tárca biztonsági mentés betöltése</translation>
-    </message>
-    <message>
-        <source>Restore Wallet</source>
-        <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
-        <translation type="unfinished">Tárca visszaállítása</translation>
+        <translation type="unfinished">Tárca adat</translation>
     </message>
     <message>
         <source>Load Wallet Backup</source>
@@ -4071,7 +4061,7 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Tárca adatai</translation>
+        <translation type="unfinished">Tárca adat</translation>
     </message>
     <message>
         <source>Backup Failed</source>

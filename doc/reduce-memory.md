@@ -43,12 +43,12 @@ threads take up 8MiB for the thread stack on a 64-bit system, and 4MiB in a
 
 ## Linux specific
 
-By default, glibc's implementation of `malloc` may use more than one arena. This is known to cause excessive memory usage in some scenarios. To avoid this, make a script that sets `MALLOC_ARENA_MAX` before starting usdgd:
+By default, glibc's implementation of `malloc` may use more than one arena. This is known to cause excessive memory usage in some scenarios. To avoid this, make a script that sets `MALLOC_ARENA_MAX` before starting digitalgold:
 
 ```bash
 #!/usr/bin/env bash
 export MALLOC_ARENA_MAX=1
-usdgd
+digitalgold
 ```
 
-The behavior was introduced to increase CPU locality of allocated memory and performance with concurrent allocation, so this setting could in theory reduce performance. However, in USDG very little parallel allocation happens, so the impact is expected to be small or absent.
+The behavior was introduced to increase CPU locality of allocated memory and performance with concurrent allocation, so this setting could in theory reduce performance. However, in digitalgold very little parallel allocation happens, so the impact is expected to be small or absent.

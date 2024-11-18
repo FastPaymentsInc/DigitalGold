@@ -26,6 +26,7 @@
 #include <txmempool.h>
 #include <validation.h>
 #include <wallet/coincontrol.h>
+#include <wallet/fees.h>
 #include <wallet/wallet.h>
 
 #include <array>

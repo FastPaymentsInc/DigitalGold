@@ -27,7 +27,6 @@
  * Serialized format:
  * - VARINT((coinbase ? 1 : 0) | (height << 1))
  * - VARINT((coinstake ? 2 : 0) | (height << 2))
- * - VARINT(nTime)
  * - the non-spent CTxOut (via TxOutCompression)
  */
 class Coin
@@ -45,23 +44,19 @@ public:
     //! at which height this containing transaction was included in the active block chain
     uint32_t nHeight : 31;
 
-    //! time of the transaction
-    unsigned int nTime;
-
     //! construct a Coin from a CTxOut and height/coinbase information.
-    Coin(CTxOut&& outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn, int nTimeIn) : out(std::move(outIn)), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn), nTime(nTimeIn) {}
-    Coin(const CTxOut& outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn, int nTimeIn) : out(outIn), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn), nTime(nTimeIn) {}
+    Coin(CTxOut&& outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn) : out(std::move(outIn)), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn) {}
+    Coin(const CTxOut& outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn) : out(outIn), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn) {}
 
     void Clear() {
         out.SetNull();
         fCoinBase = false;
         fCoinStake = false;
         nHeight = 0;
-        nTime = 0;
     }
 
     //! empty constructor
-    Coin() : fCoinBase(false), fCoinStake(false), nHeight(0), nTime(0) { }
+    Coin() : fCoinBase(false), fCoinStake(false), nHeight(0) { }
 
     bool IsCoinBase() const {
         return fCoinBase;
@@ -76,7 +71,6 @@ public:
         assert(!IsSpent());
         uint32_t code = nHeight * uint32_t{4} + (fCoinBase ? 1 : 0) + (fCoinStake ? 2 : 0);
         ::Serialize(s, VARINT(code));
-        ::Serialize(s, VARINT(nTime));
         ::Serialize(s, Using<TxOutCompression>(out));
     }
 
@@ -87,7 +81,6 @@ public:
         nHeight = code >> 2;
         fCoinBase = code & 1;
         fCoinStake = (code >> 1) & 1;
-        ::Unserialize(s, VARINT(nTime));
         ::Unserialize(s, Using<TxOutCompression>(out));
     }
 

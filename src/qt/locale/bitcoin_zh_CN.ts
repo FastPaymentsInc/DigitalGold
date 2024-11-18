@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished">单击鼠标右键编辑地址或标签</translation>
+        <translation type="unfinished">鼠标右击编辑地址或标签</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -27,11 +27,11 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation type="unfinished">从列表中删除当前选中的地址</translation>
+        <translation type="unfinished">从列表中删除选中的地址</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>
-        <translation type="unfinished">输入地址或标签用来搜索</translation>
+        <translation type="unfinished">输入地址或标签来搜索</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished">导出(E)</translation>
+        <translation type="unfinished">导出(&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">这是您用来付款的比特币地址。在付款之前，务必要检查金额和收款地址是否正确。</translation>
+        <translation type="unfinished">您可以给这些比特币地址付款。在付款之前，务必要检查金额和收款地址是否正确。</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
@@ -1073,11 +1073,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>RestoreWalletActivity</name>
+    <name>LoadWalletsActivity</name>
     <message>
-        <source>Restore Wallet</source>
-        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
-        <translation type="unfinished">恢复钱包</translation>
+        <source>Load Wallets</source>
+        <extracomment>Title of progress window which is displayed when wallets are being loaded.</extracomment>
+        <translation type="unfinished">加载钱包</translation>
     </message>
     <message>
         <source>Loading wallets…</source>
@@ -1141,6 +1141,37 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Open wallet failed</source>
         <translation type="unfinished">打开钱包失败</translation>
+    </message>
+    <message>
+        <source>Open wallet warning</source>
+        <translation type="unfinished">打开钱包警告</translation>
+    </message>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">默认钱包</translation>
+    </message>
+    <message>
+        <source>Open Wallet</source>
+        <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
+        <translation type="unfinished">打开钱包</translation>
+    </message>
+    <message>
+        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the open wallet progress window which indicates to the user which wallet is currently being opened.</extracomment>
+        <translation type="unfinished">打开钱包&lt;b&gt;%1&lt;/b&gt;...</translation>
+    </message>
+</context>
+<context>
+    <name>RestoreWalletActivity</name>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
+        <translation type="unfinished">恢复钱包</translation>
+    </message>
+    <message>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
+        <translation type="unfinished">恢复钱包&lt;b&gt;%1&lt;/b&gt;…</translation>
     </message>
     <message>
         <source>Restore wallet failed</source>
@@ -1329,6 +1360,10 @@ The migration process will create a backup of the wallet before migrating. This 
 </context>
 <context>
     <name>Intro</name>
+    <message>
+        <source>Bitcoin</source>
+        <translation type="unfinished">比特币</translation>
+    </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
         <translation type="unfinished">
@@ -1393,6 +1428,18 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
         <translation type="unfinished">由于这是第一次启动此程序，您可以选择%1存储数据的位置</translation>
+    </message>
+    <message>
+        <source>Limit block chain storage to</source>
+        <translation type="unfinished">将区块链存储限制到</translation>
+    </message>
+    <message>
+        <source>Reverting this setting requires re-downloading the entire blockchain. It is faster to download the full chain first and prune it later. Disables some advanced features.</source>
+        <translation type="unfinished">取消此设置需要重新下载整个区块链。先完整下载整条链再进行修剪会更快。这会禁用一些高级功能。</translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation type="unfinished">初始化同步过程是非常吃力的，同时可能会暴露您之前没有注意到的电脑硬件问题。你每次启动%1时，它都会从之前中断的地方继续下载。</translation>
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
@@ -1789,6 +1836,11 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>&amp;Cancel</source>
         <translation type="unfinished">取消(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Compiled without external signing support (required for external signing)</source>
+        <extracomment>"External signing" means using devices such as hardware wallets.</extracomment>
+        <translation type="unfinished">编译时未启用外部签名支持 (外部签名需要这个功能)</translation>
     </message>
     <message>
         <source>default</source>
@@ -4002,12 +4054,16 @@ Go to File &gt; Open Wallet to load a wallet.
         <source>Can't display address</source>
         <translation type="unfinished">无法显示地址</translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">默认钱包</translation>
+    </message>
+</context>
 <context>
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished">导出(E)</translation>
+        <translation type="unfinished">导出(&amp;E)</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

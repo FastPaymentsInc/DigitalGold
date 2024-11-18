@@ -102,13 +102,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Repeat new passphrase</source>
         <translation type="unfinished">دووبارەکردنەوەی دەستەواژەی تێپەڕی نوێ</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n block(s) of transaction history.</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
     <message>
         <source>Show passphrase</source>
         <translation type="unfinished">نیشان دانا ناوه چونه</translation>

@@ -318,7 +318,7 @@ public:
 
     int64_t GetMedianTimePast() const
     {
-        // USDG uses block time here
+        // digitalgold uses block time here
         return GetBlockTime();
     }
 

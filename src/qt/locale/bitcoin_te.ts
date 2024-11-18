@@ -734,7 +734,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>S&amp;how</source>
-        <translation type="unfinished">&amp;చూపించు</translation>
+        <translation type="unfinished">S&amp;ఎలా</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Bitcoin network.</source>

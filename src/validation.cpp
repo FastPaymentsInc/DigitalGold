@@ -667,7 +667,7 @@ private:
     {
         AssertLockHeld(::cs_main);
         AssertLockHeld(m_pool.cs);
-        CAmount minFee = GetMinFee(package_size, GetAdjustedTimeSeconds());
+        CAmount minFee = GetMinFee(package_size);
         if (minFee > 0 && package_fee < minFee) {
             return state.Invalid(TxValidationResult::TX_MEMPOOL_POLICY, "min fee not met", strprintf("%d < %d", package_fee, minFee));
         }
@@ -711,11 +711,6 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     TxValidationState& state = ws.m_state;
     std::unique_ptr<CTxMemPoolEntry>& entry = ws.m_entry;
 
-    // Blackcoin: in v2 transactions use GetAdjustedTime() as nTimeTx
-    int64_t nTimeTx = (int64_t)tx.nTime;
-    if (!nTimeTx && tx.nVersion >= 2)
-        nTimeTx = GetAdjustedTimeSeconds();
-
     if (!CheckTransaction(tx, state)) {
         return false; // state filled in by CheckTransaction
     }
@@ -743,11 +738,6 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     // be mined yet.
     if (!CheckFinalTxAtTip(*Assert(m_active_chainstate.m_chain.Tip()), tx)) {
         return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "non-final");
-    }
-
-    // For the same reasons as in the case with non-final transactions
-    if (nTimeTx > FutureDrift(m_active_chainstate, GetAdjustedTimeSeconds())) {
-        return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "time-too-new");
     }
 
     if (m_pool.exists(GenTxid::Wtxid(tx.GetWitnessHash()))) {
@@ -821,7 +811,7 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     }
 
     // Blackcoin: Minimum fee check
-    if (ws.m_base_fees < GetMinFee(tx, nTimeTx))
+    if (ws.m_base_fees < GetMinFee(tx))
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-fee-not-enough");
 
     if (m_pool.m_require_standard && !AreInputsStandard(tx, m_view)) {
@@ -1656,25 +1646,25 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, b
     return GetProofOfWorkSubsidy(nHeight);
 }
 
-// USDG
-// Premine 1500 blocks to get 21 000 000 USDG.
-// Continue PoW for another 900 blocks at 0.0125 USDG reward and mature more blocks for staking.
+// digitalgold
+// Premine 1500 blocks to get 21 000 000 DGD.
+// Continue PoW for another 900 blocks at 0.0125 DGD reward and mature more blocks for staking.
 // PoW will stop at block 2400 - Except for testnet
-// PoS will be enabled at block 1501 at 0.0125 USDG block reward
+// PoS will be enabled at block 1501 with no block reward
 CAmount GetProofOfWorkSubsidy(int nHeight)
 {
     if (nHeight <= 500) 
-        return 1000 * COIN; // 500 000 USDG used for staking nodes.
+        return 1000 * COIN; // 500 000 DGD used for staking nodes.
     else if (nHeight > 500 && nHeight <= 1500)
-        return 20500 * COIN; // 20 500 000 USDG used for the main address.
+        return 20500 * COIN; // 20 500 000 DGD used for the main address.
     else
         return COIN * 1 / 80; // Premine ends at block 2400. These extra blocks are needed to keep the network going. 
 }
 
-// USDG
+// digitalgold
 CAmount GetProofOfStakeSubsidy()
 {
-    return COIN * 1 / 80; // 0.0125 USDG PoS block reward.
+    return 0; // no PoS block reward.
 }
 
 CoinsViews::CoinsViews(DBParams db_params, CoinsViewOptions options)
@@ -1996,7 +1986,6 @@ int ApplyTxInUndo(Coin&& undo, CCoinsViewCache& view, const COutPoint& out)
             undo.nHeight = alternate.nHeight;
             undo.fCoinBase = alternate.fCoinBase;
             undo.fCoinStake = alternate.fCoinStake;
-            undo.nTime = alternate.nTime;
         } else {
             return DISCONNECT_FAILED; // adding output for transaction without known metadata
         }
@@ -2116,7 +2105,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     const Consensus::Params& consensusparams = chainman.GetConsensus();
 
     /*
-    // USDG
+    // UDigitalGold
     // BIP16 didn't become active until Apr 1 2012 (on mainnet, and
     // retroactively applied to testnet)
     // However, only one historical block violated the P2SH rules (on both
@@ -2127,7 +2116,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
     // violating blocks.
     uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_WITNESS | SCRIPT_VERIFY_TAPROOT};
     */
-    // USDG: BIP16, DER encoding of pubkeys and low S in sigs are always active.
+    // digitalgold: BIP16, DER encoding of pubkeys and low S in sigs are always active.
     // For simplicity, always leave P2SH+DERSIG+DERKEY+LOW_S+WITNESS on except for the
     // violating blocks.
     uint32_t flags{SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_DERKEY | SCRIPT_VERIFY_LOW_S | SCRIPT_VERIFY_WITNESS};
@@ -2136,7 +2125,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex& block_index, const Ch
         flags = it->second;
     }
 
-    // USDG: Enforce CHECKLOCKTIMEVERIFY (BIP65) and BIP147 NULLDUMMY
+    // digitalgold: Enforce CHECKLOCKTIMEVERIFY (BIP65) and BIP147 NULLDUMMY
     flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
     flags |= SCRIPT_VERIFY_NULLDUMMY;
 
@@ -2212,7 +2201,7 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
     assert(hashPrevBlock == view.GetBestBlock());
 
     // Check proof-of-stake
-    if (block.IsProofOfStake() && !CheckProofOfStake(pindex->pprev, *block.vtx[1], block.nBits, state, view, block.vtx[1]->nTime ? block.vtx[1]->nTime : block.nTime)) {
+    if (block.IsProofOfStake() && !CheckProofOfStake(pindex->pprev, *block.vtx[1], block.nBits, state, view, block.nTime)) {
         LogPrintf("WARNING: %s: check proof-of-stake failed for block %s\n", __func__, block.GetHash().ToString());
         return false; // do not error here as we expect this during initial block download
     }
@@ -2388,7 +2377,7 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
              Ticks<MillisecondsDouble>(time_connect) / num_blocks_total);
 
     if (block.IsProofOfWork()) {
-        CAmount blockReward = nFees + GetBlockSubsidy(pindex->nHeight, params.GetConsensus(), false);
+        CAmount blockReward = GetBlockSubsidy(pindex->nHeight, params.GetConsensus(), false); // DGD: fees are not included in block reward
         if (block.vtx[0]->GetValueOut() > blockReward) {
             LogPrintf("ERROR: ConnectBlock(): coinbase pays too much (actual=%d vs limit=%d)\n", block.vtx[0]->GetValueOut(), blockReward);
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-amount");
@@ -2396,7 +2385,7 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
     }
 
     if (block.IsProofOfStake()) {
-        CAmount blockReward = nFees + GetBlockSubsidy(pindex->nHeight, params.GetConsensus(), true);
+        CAmount blockReward = GetBlockSubsidy(pindex->nHeight, params.GetConsensus(), true); // DGD:  fees are not included in block reward
         if (nActualStakeReward > blockReward) {
             LogPrintf("ERROR: ConnectBlock(): coinstake pays too much (actual=%d vs limit=%d)\n", nActualStakeReward, blockReward);
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
@@ -3706,11 +3695,11 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-multiple", "more than one coinbase");
 
     // Blackcoin: Check coinbase timestamp
-    if (block.GetBlockTime() > FutureDrift(chainstate, block.vtx[0]->nTime ? (int64_t)block.vtx[0]->nTime : block.GetBlockTime()))
+    if (block.GetBlockTime() > FutureDrift(chainstate, block.GetBlockTime()))
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-time", "coinbase timestamp is too early");
 
     // Blackcoin: Check coinstake timestamp
-    if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), block.vtx[1]->nTime ? (int64_t)block.vtx[1]->nTime : block.GetBlockTime()))
+    if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), block.GetBlockTime()))
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-time", "coinstake timestamp violation");
 
     if (block.IsProofOfStake()) {
@@ -3746,10 +3735,6 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
             assert(tx_state.GetResult() == TxValidationResult::TX_CONSENSUS);
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, tx_state.GetRejectReason(),
                                  strprintf("Transaction check failed (tx hash %s) %s", tx->GetHash().ToString(), tx_state.GetDebugMessage()));
-
-            // Blackcoin: Check transaction timestamp
-            if (block.GetBlockTime() < (tx->nTime ? (int64_t)tx->nTime : block.GetBlockTime()))
-                return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-tx-time", strprintf("%s : block timestamp earlier than transaction timestamp", __func__));
         }
     }
     unsigned int nSigOps = 0;

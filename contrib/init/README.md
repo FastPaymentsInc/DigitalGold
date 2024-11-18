@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-systemd: usdgd.service
-Upstart: usdgd.conf
-OpenRC:  usdgd.openrc
-         usdgd.openrcconf
-CentOS:  usdgd.init
-macOS:   org.digitalgoldfoundation.usdgd.plist
+systemd: bitcoind.service
+Upstart: bitcoind.conf
+OpenRC:  bitcoind.openrc
+         bitcoind.openrcconf
+CentOS:  bitcoind.init
+macOS:   org.bitcoin.bitcoind.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

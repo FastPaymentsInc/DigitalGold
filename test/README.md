@@ -283,13 +283,13 @@ test run:
 Use the path to find the pid file in the temp folder:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoind.pid
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/digitalgold.pid
 ```
 
 Then you can use the pid to start `gdb`:
 
 ```bash
-gdb /home/example/bitcoind <pid>
+gdb /home/example/digitalgold <pid>
 ```
 
 Note: gdb attach step may require ptrace_scope to be modified, or `sudo` preceding the `gdb`.

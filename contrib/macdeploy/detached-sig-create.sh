@@ -7,8 +7,8 @@ export LC_ALL=C
 set -e
 
 ROOTDIR=dist
-BUNDLE="${ROOTDIR}/USDG-Qt.app"
-BINARY="${BUNDLE}/Contents/MacOS/USDG-Qt"
+BUNDLE="${ROOTDIR}/DigitalGold-Qt.app"
+BINARY="${BUNDLE}/Contents/MacOS/DigitalGold-Qt"
 SIGNAPPLE=signapple
 TEMPDIR=sign.temp
 ARCH=$(${SIGNAPPLE} info ${BINARY} | head -n 1 | cut -d " " -f 1)

@@ -779,6 +779,7 @@ void CWallet::AddToSpends(const COutPoint& outpoint, const uint256& wtxid, Walle
     SyncMetaData(range);
 }
 
+
 void CWallet::AddToSpends(const CWalletTx& wtx, WalletBatch* batch)
 {
     if (wtx.IsCoinBase()) // Coinbases don't spend anything!
@@ -2125,7 +2126,7 @@ bool CWallet::SignTransaction(CMutableTransaction& tx) const
         }
         const CWalletTx& wtx = mi->second;
         int prev_height = wtx.state<TxStateConfirmed>() ? wtx.state<TxStateConfirmed>()->confirmed_block_height : 0;
-        coins[input.prevout] = Coin(wtx.tx->vout[input.prevout.n], prev_height, wtx.IsCoinBase(), wtx.IsCoinStake(), wtx.nTimeSmart);
+        coins[input.prevout] = Coin(wtx.tx->vout[input.prevout.n], prev_height, wtx.IsCoinBase(), wtx.IsCoinStake());
     }
     std::map<int, bilingual_str> input_errors;
     return SignTransaction(tx, coins, SIGHASH_DEFAULT, input_errors);
@@ -3095,9 +3096,11 @@ std::shared_ptr<CWallet> CWallet::Create(WalletContext& context, const std::stri
 
     walletInstance->m_spend_zero_conf_change = args.GetBoolArg("-spendzeroconfchange", DEFAULT_SPEND_ZEROCONF_CHANGE);
 
+    //Blackcoin
     std::optional<CAmount> min_staking_amount = ParseMoney(gArgs.GetArg("-minstakingamount", FormatMoney(DEFAULT_MIN_STAKING_AMOUNT)));
     walletInstance->m_min_staking_amount = min_staking_amount.value_or(DEFAULT_MIN_STAKING_AMOUNT);
-
+    
+    //Blackcoin
     std::optional<CAmount> reserve_balance = ParseMoney(gArgs.GetArg("-reservebalance", FormatMoney(DEFAULT_RESERVE_BALANCE)));
     walletInstance->m_reserve_balance = reserve_balance.value_or(DEFAULT_RESERVE_BALANCE);
 

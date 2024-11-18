@@ -112,7 +112,7 @@ bool OptionsModel::Init(bilingual_str& error)
 
     // These are Qt-only settings:
 
-    // Main - USDG - enable autostart
+    // Main - digitalgold - enable autostart
     if (!settings.contains("fAutoStart")) {
     GUIUtil::SetStartOnSystemStartup(true);
     settings.setValue("fAutoStart", true);
@@ -128,7 +128,7 @@ bool OptionsModel::Init(bilingual_str& error)
     if (!settings.contains("fMinimizeToTray"))
         settings.setValue("fMinimizeToTray", false);
     fMinimizeToTray = settings.value("fMinimizeToTray").toBool() && m_show_tray_icon;
-    // USDG - default minimize on close
+    // digitalgold - default minimize on close
     if (!settings.contains("fMinimizeOnClose"))
         settings.setValue("fMinimizeOnClose", true);
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
@@ -244,7 +244,7 @@ void OptionsModel::Reset()
     // Set that this was reset
     settings.setValue("fReset", true);
 
-    // USDG - enable autostart om reset
+    // digitalgold - enable autostart om reset
     // Enable the default setting for OptionsModel::StartAtStartup if it’s not already active
     if (!GUIUtil::GetStartOnSystemStartup()) {
         GUIUtil::SetStartOnSystemStartup(true);

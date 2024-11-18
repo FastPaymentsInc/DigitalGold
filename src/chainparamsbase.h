@@ -7,13 +7,14 @@
 
 #include <util/chaintype.h>
 
+#include <cstdint>
 #include <memory>
 #include <string>
 
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between usdg-cli and usdgd)
+ * CBaseChainParams defines the base parameters (shared between digitalgold-cli and digitalgold)
  * of a given instance of the Bitcoin system.
  */
 class CBaseChainParams

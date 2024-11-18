@@ -11,7 +11,7 @@ first. See CONTRIBUTING.md
 
 <!--
 Please provide clear motivation for your patch and explain how it improves
-USDG user experience or USDG developer experience
+Digital Gold user experience or Digital Gold developer experience
 significantly:
 
 * Any test improvements or new tests that improve coverage are always welcome.

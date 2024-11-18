@@ -97,15 +97,15 @@ BOOST_AUTO_TEST_CASE(netbase_splithost)
     BOOST_CHECK(TestSplitHost("www.bitcoincore.org:80", "www.bitcoincore.org", 80));
     BOOST_CHECK(TestSplitHost("[www.bitcoincore.org]:80", "www.bitcoincore.org", 80));
     BOOST_CHECK(TestSplitHost("127.0.0.1", "127.0.0.1", 0));
-    BOOST_CHECK(TestSplitHost("127.0.0.1:7633", "127.0.0.1", 7633));
+    BOOST_CHECK(TestSplitHost("127.0.0.1:7733", "127.0.0.1", 7733));
     BOOST_CHECK(TestSplitHost("[127.0.0.1]", "127.0.0.1", 0));
-    BOOST_CHECK(TestSplitHost("[127.0.0.1]:7633", "127.0.0.1", 7633));
+    BOOST_CHECK(TestSplitHost("[127.0.0.1]:7733", "127.0.0.1", 7733));
     BOOST_CHECK(TestSplitHost("::ffff:127.0.0.1", "::ffff:127.0.0.1", 0));
-    BOOST_CHECK(TestSplitHost("[::ffff:127.0.0.1]:7633", "::ffff:127.0.0.1", 7633));
-    BOOST_CHECK(TestSplitHost("[::]:7633", "::", 7633));
-    BOOST_CHECK(TestSplitHost("::7633", "::7633", 0));
-    BOOST_CHECK(TestSplitHost(":7633", "", 7633));
-    BOOST_CHECK(TestSplitHost("[]:7633", "", 7633));
+    BOOST_CHECK(TestSplitHost("[::ffff:127.0.0.1]:7733", "::ffff:127.0.0.1", 7733));
+    BOOST_CHECK(TestSplitHost("[::]:7733", "::", 7733));
+    BOOST_CHECK(TestSplitHost("::7733", "::7733", 0));
+    BOOST_CHECK(TestSplitHost(":7733", "", 7733));
+    BOOST_CHECK(TestSplitHost("[]:7733", "", 7733));
     BOOST_CHECK(TestSplitHost("", "", 0));
     BOOST_CHECK(TestSplitHost(":65535", "", 65535));
     BOOST_CHECK(TestSplitHost(":65536", ":65536", 0, false));
@@ -135,10 +135,10 @@ bool static TestParse(std::string src, std::string canon)
 BOOST_AUTO_TEST_CASE(netbase_lookupnumeric)
 {
     BOOST_CHECK(TestParse("127.0.0.1", "127.0.0.1:65535"));
-    BOOST_CHECK(TestParse("127.0.0.1:7633", "127.0.0.1:7633"));
+    BOOST_CHECK(TestParse("127.0.0.1:7733", "127.0.0.1:7733"));
     BOOST_CHECK(TestParse("::ffff:127.0.0.1", "127.0.0.1:65535"));
     BOOST_CHECK(TestParse("::", "[::]:65535"));
-    BOOST_CHECK(TestParse("[::]:7633", "[::]:7633"));
+    BOOST_CHECK(TestParse("[::]:7733", "[::]:7733"));
     BOOST_CHECK(TestParse("[127.0.0.1]", "127.0.0.1:65535"));
     BOOST_CHECK(TestParse(":::", "[::]:0"));
 
@@ -599,7 +599,7 @@ BOOST_AUTO_TEST_CASE(isbadport)
 
     BOOST_CHECK(!IsBadPort(80));
     BOOST_CHECK(!IsBadPort(443));
-    BOOST_CHECK(!IsBadPort(7633));
+    BOOST_CHECK(!IsBadPort(7733));
 
     // Check all ports, there must be 80 bad ports in total.
     size_t total_bad_ports{0};

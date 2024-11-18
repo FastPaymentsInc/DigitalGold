@@ -2,18 +2,18 @@
 
 *.exe
 *.pdb
-src/usdg
-src/usdgd
-src/usdg-cli
-src/usdg-gui
-src/usdg-node
-src/usdg-tx
-src/usdg-util
-src/usdg-chainstate
-src/usdg-wallet
+src/digitalgold
+src/digitalgold
+src/digitalgold-cli
+src/digitalgold-gui
+src/digitalgold-node
+src/digitalgold-tx
+src/digitalgold-util
+src/digitalgold-chainstate
+src/digitalgold-wallet
 src/test/fuzz/fuzz
-src/test/test_usdg
-src/qt/test/test_usdg-qt
+src/test/test_digitalgold
+src/qt/test/test_digitalgold-qt
 
 # autoreconf
 Makefile.in
@@ -50,11 +50,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/usdg-qt.config
-src/qt/usdg-qt.creator
-src/qt/usdg-qt.creator.user
-src/qt/usdg-qt.files
-src/qt/usdg-qt.includes
+src/qt/digitalgold-qt.config
+src/qt/digitalgold-qt.creator
+src/qt/digitalgold-qt.creator.user
+src/qt/digitalgold-qt.files
+src/qt/digitalgold-qt.includes
 
 .deps
 .dirstamp
@@ -92,15 +92,15 @@ src/qt/usdg-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/usdg-qt
-USDG-Qt.app
+src/qt/digitalgold-qt
+DigitalGold-Qt.app
 
 # Qt Creator
 Makefile.am.user
 
 # Unit-tests
 Makefile.test
-usdg-qt_test
+digitalgold-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -138,8 +138,8 @@ test/.mypy_cache/
 libbitcoinconsensus.pc
 contrib/devtools/split-debug.sh
 
-# Output from running db62 installation
-db62/
+# Output from running db4 installation
+db4/
 
 # clang-check
 *.plist
@@ -151,34 +151,34 @@ dist/
 
 /ci/scratch/
 
-# USDG specifics
+# DigitalGold specifics
 
 #binaries
-src/usdg
-src/usdgd
-src/usdg-cli
-src/usdg-gui
-src/usdg-node
-src/usdg-tx
-src/usdg-util
-src/usdg-chainstate
-src/usdg-wallet
-src/test/test_usdg
-src/qt/test/test_usdg-qt
+src/digitalgold
+src/digitalgold
+src/digitalgold-cli
+src/digitalgold-gui
+src/digitalgold-node
+src/digitalgold-tx
+src/digitalgold-util
+src/digitalgold-chainstate
+src/digitalgold-wallet
+src/test/test_digitalgold
+src/qt/test/test_digitalgold-qt
 
 # autoreconf
-src/qt/usdg-qt.config
-src/qt/usdg-qt.creator
-src/qt/usdg-qt.creator.user
-src/qt/usdg-qt.files
-src/qt/usdg-qt.includes
+src/qt/digitalgold-qt.config
+src/qt/digitalgold-qt.creator
+src/qt/digitalgold-qt.creator.user
+src/qt/digitalgold-qt.files
+src/qt/digitalgold-qt.includes
 
 # Compilation and Qt preprocessor part
-src/qt/usdg-qt
-USDG-Qt.app
+src/qt/digitalgold-qt
+DigitalGold-Qt.app
 
 # Unit-tests
-usdg-qt_test
+digitalgold-qt_test
 
 # Output from running db62 installation
 db62/

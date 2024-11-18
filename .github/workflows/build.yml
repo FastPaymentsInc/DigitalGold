@@ -119,11 +119,11 @@ jobs:
         run: ${{ matrix.postinstall }}
 
       - name: Checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.2
 
       - name: SDK cache
         if: ${{ matrix.sdk }}
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.1.2
         env:
           cache-name: sdk
         with:
@@ -139,7 +139,7 @@ jobs:
           tar -C depends/SDKs -xzvf depends/sdk-sources/Xcode-${{ matrix.sdk }}-extracted-SDK-with-libcxx-headers.tar.gz
 
       - name: Dependency cache
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.1.2
         env:
           cache-name: depends
         with:
@@ -149,7 +149,7 @@ jobs:
       - name: Build depends
         run: |
           make -j $MAKEJOBS -C depends HOST=${{ matrix.host }} ${{ matrix.dep-opts }}
-      - name: Build USDG
+      - name: Build DigitalGold
         run: |
           ./autogen.sh
           ./configure --prefix=`pwd`/depends/${{ matrix.host }} ${{ matrix.config-opts }} --enable-reduce-exports || ( cat config.log && false)
@@ -164,16 +164,16 @@ jobs:
         run: make -C src check-symbols
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.4.3
         with:
-          name: usdg-26.2-${{ github.sha }}-${{ matrix.name }}
+          name: digitalgold-26.2-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/usdg*
-            dist/USDG-Qt.app
+            depends/${{ matrix.host }}/bin/digitalgold*
+            dist/DigitalGold-Qt.app
           if-no-files-found: error
           retention-days: 14
 
       - name: Download artifacts
         uses: actions/download-artifact@v4.1.8
         with:
-          name: usdg-26.2-${{ github.sha }}-${{ matrix.name }}
+          name: digitalgold-26.2-${{ github.sha }}-${{ matrix.name }}

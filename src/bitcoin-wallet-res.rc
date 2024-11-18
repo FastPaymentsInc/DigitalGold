@@ -14,14 +14,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "USDG"
-            VALUE "FileDescription",    "usdg-wallet (CLI tool for " PACKAGE_NAME " wallets)"
+            VALUE "CompanyName",        "Digital Gold"
+            VALUE "FileDescription",    "digitalgold-wallet (CLI tool for " PACKAGE_NAME " wallets)"
             VALUE "FileVersion",        PACKAGE_VERSION
-            VALUE "InternalName",       "usdg-wallet"
+            VALUE "InternalName",       "digitalgold-wallet"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "usdg-wallet.exe"
-            VALUE "ProductName",        "usdg-wallet"
+            VALUE "OriginalFilename",   "digitalgold-wallet.exe"
+            VALUE "ProductName",        "digitalgold-wallet"
             VALUE "ProductVersion",     PACKAGE_VERSION
         END
     END

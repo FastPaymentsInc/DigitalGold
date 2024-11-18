@@ -515,32 +515,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">পরিবর্তন</translation>
     </message>
     <message numerus="yes">
-        <source>Processed %n block(s) of transaction history.</source>
-        <translation>
-            <numerusform />
-            <numerusform />
-        </translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation type="unfinished">টিকেট</translation>
-    </message>
-    </context>
-<context>
-    <name>SendCoinsDialog</name>
-    <message>
-        <source>Quantity:</source>
-        <translation type="unfinished">পরিমাণ</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation type="unfinished">পারিশ্রমিক</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation type="unfinished">পরিবর্তন</translation>
-    </message>
-    <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation type="unfinished">
             <numerusform />

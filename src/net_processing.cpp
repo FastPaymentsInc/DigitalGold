@@ -3600,11 +3600,11 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
             return;
         }
 
-        // USDG: disconnect from old clients, excluding Bitcore
+        // digitalgold: disconnect from old clients, excluding Bitcore
         bool fProbablyBitcore = nVersion == BITCORE_VERSION;
         bool fOldVersion = nVersion < MIN_PEER_PROTO_VERSION;
         if (fOldVersion && !fProbablyBitcore) {
-            // USDG: old client and most likely not Bitcore
+            // digitalgold: old client and most likely not Bitcore
             // disconnect from peers older than this proto version
             LogPrint(BCLog::NET, "peer=%d using obsolete version %i; disconnecting\n", pfrom.GetId(), nVersion);
             pfrom.fDisconnect = true;
@@ -3635,18 +3635,6 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
             LogPrintf("connected to self at %s, disconnecting\n", pfrom.addr.ToStringAddrPort());
             pfrom.fDisconnect = true;
             return;
-        }
-
-        // USDG: disconnect if it is not actually Bitcore
-        if (fProbablyBitcore) {
-            std::size_t pos = cleanSubVer.find(":");
-            std::string clientName = cleanSubVer.substr(1, pos-1);
-            if (fOldVersion && clientName != "bitcore") {
-                // USDG: old client and definitely not Bitcore
-                LogPrint(BCLog::NET, "peer=%d using obsolete version %i; disconnecting\n", pfrom.GetId(), nVersion);
-                pfrom.fDisconnect = true;
-                return;
-            }
         }
 
         if (pfrom.IsInboundConn() && addrMe.IsRoutable())

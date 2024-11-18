@@ -174,11 +174,6 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
                          strprintf("%s: inputs missing/spent", __func__));
     }
 
-    // Blackcoin: in v2 transactions use GetAdjustedTime() as nTimeTx
-    int64_t nTimeTx = tx.nTime;
-    if (!nTimeTx && tx.nVersion >= 2)
-        nTimeTx = GetAdjustedTimeSeconds();
-
     CAmount nValueIn = 0;
     for (unsigned int i = 0; i < tx.vin.size(); ++i) {
         const COutPoint &prevout = tx.vin[i].prevout;
@@ -190,10 +185,6 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
             return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "bad-txns-premature-spend-of-coinbase",
                 strprintf("tried to spend coinbase at depth %d", nSpendHeight - coin.nHeight));
         }
-
-        // Check transaction timestamp
-        if (coin.nTime > nTimeTx)
-            return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-time-earlier-than-input");
 
         // Check for negative or overflow input values
         nValueIn += coin.out.nValue;
@@ -217,7 +208,7 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
         }
 
         // Blackcoin: Minimum fee check
-        if (txfee_aux < GetMinFee(tx, nTimeTx))
+        if (txfee_aux < GetMinFee(tx))
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-fee-not-enough");
 
         txfee = txfee_aux; 
@@ -227,13 +218,13 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
 }
 
 // Blackcoin: GetMinFee
-CAmount GetMinFee(const CTransaction& tx, uint32_t nTimeTx)
+CAmount GetMinFee(const CTransaction& tx)
 {
     size_t nBytes = GetVirtualTransactionSize(tx);
-    return GetMinFee(nBytes, nTimeTx);
+    return GetMinFee(nBytes);
 }
 
-CAmount GetMinFee(size_t nBytes, uint32_t nTime)
+CAmount GetMinFee(size_t nBytes)
 {
     CAmount nMinFee;
     CFeeRate nMinFeeRate;

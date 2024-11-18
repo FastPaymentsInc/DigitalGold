@@ -28,7 +28,6 @@ class CTxMemPool;
 class ChainstateManager;
 class NetGroupManager;
 class PeerManager;
-
 namespace interfaces {
 class Chain;
 class ChainClient;

@@ -46,12 +46,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "USDG"
-#define QAPP_ORG_DOMAIN "usdigitalgold.org"
-#define QAPP_APP_NAME_DEFAULT "USDG-Qt"
-#define QAPP_APP_NAME_TESTNET "USDG-Qt-testnet"
-#define QAPP_APP_NAME_SIGNET "USDG-Qt-signet"
-#define QAPP_APP_NAME_REGTEST "USDG-Qt-regtest"
+#define QAPP_ORG_NAME "Digital Gold"
+#define QAPP_ORG_DOMAIN "digitalgoldfoundation.org"
+#define QAPP_APP_NAME_DEFAULT "DigitalGold-Qt"
+#define QAPP_APP_NAME_TESTNET "DigitalGold-Qt-testnet"
+#define QAPP_APP_NAME_SIGNET "DigitalGold-Qt-signet"
+#define QAPP_APP_NAME_REGTEST "DigitalGold-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

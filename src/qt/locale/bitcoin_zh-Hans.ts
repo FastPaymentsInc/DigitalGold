@@ -723,7 +723,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">显示%1帮助消息以获得可能包含Bitcoin命令行选项的列表</translation>
+        <translation type="unfinished">显示 %1 帮助信息，获取可用命令行选项列表</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -789,7 +789,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
+            <numerusform>%n 条到比特币网络的活动连接</numerusform>
         </translation>
     </message>
     <message>
@@ -1140,11 +1140,11 @@ The migration process will create a backup of the wallet before migrating. This 
     <name>OpenWalletActivity</name>
     <message>
         <source>Open wallet failed</source>
-        <translation type="unfinished">打開錢包失敗</translation>
+        <translation type="unfinished">打开钱包失败</translation>
     </message>
     <message>
         <source>Open wallet warning</source>
-        <translation type="unfinished">打開錢包警告</translation>
+        <translation type="unfinished">打开钱包警告</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -1153,7 +1153,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
-        <translation type="unfinished">開啟錢包</translation>
+        <translation type="unfinished">打开钱包</translation>
     </message>
     <message>
         <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
@@ -1216,7 +1216,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <name>CreateWalletDialog</name>
     <message>
         <source>Create Wallet</source>
-        <translation type="unfinished">新增錢包</translation>
+        <translation type="unfinished">创建钱包</translation>
     </message>
     <message>
         <source>You are one step away from creating your new wallet!</source>
@@ -1228,15 +1228,15 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Wallet Name</source>
-        <translation type="unfinished">錢包名稱</translation>
+        <translation type="unfinished">钱包名称</translation>
     </message>
     <message>
         <source>Wallet</source>
-        <translation type="unfinished">錢包</translation>
+        <translation type="unfinished">钱包</translation>
     </message>
     <message>
         <source>Encrypt the wallet. The wallet will be encrypted with a passphrase of your choice.</source>
-        <translation type="unfinished">加密錢包。 錢包將使用您選擇的密碼進行加密。</translation>
+        <translation type="unfinished">加密钱包。将会使用您指定的密码将钱包加密。</translation>
     </message>
     <message>
         <source>Encrypt Wallet</source>
@@ -1248,7 +1248,7 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
-        <translation type="unfinished">禁用此錢包的私鑰。取消了私鑰的錢包將沒有私鑰，並且不能有HD種子或匯入的私鑰。這是只能看的錢包的理想選擇。</translation>
+        <translation type="unfinished">禁用此钱包的私钥。被禁用私钥的钱包将不会含有任何私钥，而且也不能含有HD种子或导入的私钥。作为仅观察钱包，这是比较理想的。</translation>
     </message>
     <message>
         <source>Disable Private Keys</source>
@@ -1256,11 +1256,11 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
-        <translation type="unfinished">製作一個空白的錢包。空白錢包最初沒有私鑰或腳本。以後可以匯入私鑰和地址，或者可以設定HD種子。</translation>
+        <translation type="unfinished">创建一个空白的钱包。空白钱包最初不含有任何私钥或脚本。可以以后再导入私钥和地址，或设置HD种子。</translation>
     </message>
     <message>
         <source>Make Blank Wallet</source>
-        <translation type="unfinished">製作空白錢包</translation>
+        <translation type="unfinished">创建空白钱包</translation>
     </message>
     <message>
         <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
@@ -1308,7 +1308,7 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Edit receiving address</source>
-        <translation type="unfinished">編輯接收地址</translation>
+        <translation type="unfinished">编辑收款地址</translation>
     </message>
     <message>
         <source>Edit sending address</source>
@@ -1332,14 +1332,14 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>New key generation failed.</source>
-        <translation type="unfinished">產生新的密鑰失敗了。</translation>
+        <translation type="unfinished">生成新密钥失败。</translation>
     </message>
 </context>
 <context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation type="unfinished">就要產生新的資料目錄。</translation>
+        <translation type="unfinished">一个新的数据目录将被创建。</translation>
     </message>
     <message>
         <source>name</source>
@@ -1347,7 +1347,7 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation type="unfinished">已經有這個目錄了。如果你要在裡面造出新的目錄的話，請加上 %1.</translation>
+        <translation type="unfinished">目录已存在。如果您打算在这里创建一个新目录，请添加 %1。</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
@@ -1363,36 +1363,6 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Bitcoin</source>
         <translation type="unfinished">比特币</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n GB of space available</source>
-        <translation type="unfinished">
-            <numerusform>可用空间 %n GB</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <source>(of %n GB needed)</source>
-        <translation type="unfinished">
-            <numerusform>(需要 %n GB的空间)</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <source>(%n GB needed for full chain)</source>
-        <translation type="unfinished">
-            <numerusform>(保存完整的链需要 %n GB)</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Choose data directory</source>
-        <translation type="unfinished">选择数据目录</translation>
-    </message>
-    <message>
-        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
-        <translation type="unfinished">此目录中至少会保存 %1 GB 的数据，并且大小还会随着时间增长。</translation>
-    </message>
-    <message>
-        <source>Approximately %1 GB of data will be stored in this directory.</source>
-        <translation type="unfinished">会在此目录中存储约 %1 GB 的数据。</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>

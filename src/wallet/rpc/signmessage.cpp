@@ -17,7 +17,7 @@ RPCHelpMan signmessage()
         "\nSign a message with the private key of an address" +
           HELP_REQUIRING_PASSPHRASE,
         {
-            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The usdg address to use for the private key."},
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The digitalgold address to use for the private key."},
             {"message", RPCArg::Type::STR, RPCArg::Optional::NO, "The message to create a signature of."},
         },
         RPCResult{
@@ -27,11 +27,11 @@ RPCHelpMan signmessage()
             "\nUnlock the wallet for 30 seconds\n"
             + HelpExampleCli("walletpassphrase", "\"mypassphrase\" 30") +
             "\nCreate the signature\n"
-            + HelpExampleCli("signmessage", "\"BKDvboD1CzZ5KycP1FRSXRoi7XXhHoQhS1\" \"my message\"") +
+            + HelpExampleCli("signmessage", "\"GeoBGevMHs8pzivMPXjg8rUfP6GzhD4HTg\" \"my message\"") +
             "\nVerify the signature\n"
-            + HelpExampleCli("verifymessage", "\"BKDvboD1CzZ5KycP1FRSXRoi7XXhHoQhS1\" \"signature\" \"my message\"") +
+            + HelpExampleCli("verifymessage", "\"GeoBGevMHs8pzivMPXjg8rUfP6GzhD4HTg\" \"signature\" \"my message\"") +
             "\nAs a JSON-RPC call\n"
-            + HelpExampleRpc("signmessage", "\"BKDvboD1CzZ5KycP1FRSXRoi7XXhHoQhS1\", \"my message\"")
+            + HelpExampleRpc("signmessage", "\"GeoBGevMHs8pzivMPXjg8rUfP6GzhD4HTg\", \"my message\"")
         },
         [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
         {

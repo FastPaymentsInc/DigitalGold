@@ -523,11 +523,11 @@ def main():
 def run_tests(*, test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False, use_term_control):
     args = args or []
 
-    # Warn if usdgd is already running
+    # Warn if digitalgold is already running
     try:
         # pgrep exits with code zero when one or more matching processes found
-        if subprocess.run(["pgrep", "-x", "usdgd"], stdout=subprocess.DEVNULL).returncode == 0:
-            print("%sWARNING!%s There is already a usdgd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.run(["pgrep", "-x", "digitalgold"], stdout=subprocess.DEVNULL).returncode == 0:
+            print("%sWARNING!%s There is already a digitalgold process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except OSError:
         # pgrep not supported
         pass

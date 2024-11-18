@@ -34,16 +34,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>USDG-Qt</string>
+  <string>DigitalGold-Qt</string>
 
   <key>CFBundleName</key>
-  <string>USDG-Qt</string>
+  <string>DigitalGold-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.digitalgoldfoundation.USDG-Qt</string>
+  <string>org.digitalgoldfoundation.DigitalGold-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -51,10 +51,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.digitalgoldfoundation.USDGPayment</string>
+      <string>org.digitalgoldfoundation.DigitalGoldPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>bitcoin</string>
+        <string>digitalgold</string>
       </array>
     </dict>
   </array>

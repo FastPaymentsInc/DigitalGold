@@ -53,7 +53,6 @@ static void SetupBitcoinTxArgs(ArgsManager &argsman)
     argsman.AddArg("delout=N", "Delete output N from TX", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
     argsman.AddArg("in=TXID:VOUT(:SEQUENCE_NUMBER)", "Add input to TX", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
     argsman.AddArg("locktime=N", "Set TX lock time to N", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
-    argsman.AddArg("time=N", "Set TX time to N", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
     argsman.AddArg("nversion=N", "Set TX version to N", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
     argsman.AddArg("outaddr=VALUE:ADDRESS", "Add address-based output to TX", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
     argsman.AddArg("outdata=[VALUE:]DATA", "Add data-based output to TX", ArgsManager::ALLOW_ANY, OptionsCategory::COMMANDS);
@@ -101,14 +100,14 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs) || gArgs.IsArgSet("-version")) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " usdg-tx utility version " + FormatFullVersion() + "\n";
+        std::string strUsage = PACKAGE_NAME " digitalgold-tx utility version " + FormatFullVersion() + "\n";
 
         if (gArgs.IsArgSet("-version")) {
             strUsage += FormatParagraph(LicenseInfo());
         } else {
             strUsage += "\n"
-                "Usage:  usdg-tx [options] <hex-tx> [commands]  Update hex-encoded usdg transaction\n"
-                "or:     usdg-tx [options] -create [commands]   Create hex-encoded usdg transaction\n"
+                "Usage:  digitalgold-tx [options] <hex-tx> [commands]  Update hex-encoded digitalgold transaction\n"
+                "or:     digitalgold-tx [options] -create [commands]   Create hex-encoded digitalgold transaction\n"
                 "\n";
             strUsage += gArgs.GetHelpMessage();
         }
@@ -217,15 +216,6 @@ static void MutateTxLocktime(CMutableTransaction& tx, const std::string& cmdVal)
         throw std::runtime_error("Invalid TX locktime requested: '" + cmdVal + "'");
 
     tx.nLockTime = (unsigned int) newLocktime;
-}
-
-static void MutateTxTime(CMutableTransaction& tx, const std::string& cmdVal)
-{
-    int64_t newTime;
-    if (!ParseInt64(cmdVal, &newTime) || newTime < 0LL || newTime > 0xffffffffLL)
-        throw std::runtime_error("Invalid TX time requested: '" + cmdVal + "'");
-
-    tx.nTime = (unsigned int) newTime;
 }
 
 template <typename T>
@@ -700,8 +690,6 @@ static void MutateTx(CMutableTransaction& tx, const std::string& command,
         MutateTxVersion(tx, commandVal);
     else if (command == "locktime")
         MutateTxLocktime(tx, commandVal);
-    else if (command == "time")
-        MutateTxTime(tx, commandVal);
     else if (command == "delin")
         MutateTxDelInput(tx, commandVal);
     else if (command == "in")

@@ -1,12 +1,12 @@
-Contributing to USDG
+Contributing to DigitalGold
 ============================
 
-The USDG project operates an open contributor model where anyone is
+The Digital Gold project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
 
-First, in terms of structure, there is no particular concept of "USDG
+First, in terms of structure, there is no particular concept of "DigitalGold
 developers" in the sense of privileged people. Open source often naturally
 revolves around a meritocracy where contributors earn trust from the developer
 community over time. Nevertheless, some hierarchy is necessary for practical
@@ -289,11 +289,11 @@ workload on reviewing.
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the USDG project (and related
-projects such as libsecp256k1), and is not to be confused with overall USDG
+The following applies to code changes to the DigitalGold project (and related
+projects such as libsecp256k1), and is not to be confused with overall DigitalGold
 Network Protocol consensus changes.
 
-Whether a pull request is merged into USDG rests with the project merge
+Whether a pull request is merged into DigitalGold rests with the project merge
 maintainers.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -312,7 +312,7 @@ In general, all pull requests must:
     demonstrating the bug and also proving the fix. This helps prevent regression.
   - Change relevant comments and documentation when behaviour of code changes.
 
-Patches that change USDG consensus rules are considerably more involved than
+Patches that change DigitalGold consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -373,7 +373,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus-critical code.
 
-Where a patch set proposes to change the USDG consensus, it must have been
+Where a patch set proposes to change the DigitalGold consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.

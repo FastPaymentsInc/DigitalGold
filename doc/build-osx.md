@@ -2,7 +2,7 @@
 
 **Updated for MacOS [11.2](https://www.apple.com/macos/big-sur/)**
 
-This guide describes how to build usdgd, command-line utilities, and GUI on macOS
+This guide describes how to build digitalgold, command-line utilities, and GUI on macOS
 
 ## Preparation
 
@@ -16,7 +16,7 @@ macOS comes with a built-in Terminal located in:
 ### 1. Xcode Command Line Tools
 
 The Xcode Command Line Tools are a collection of build tools for macOS.
-These tools must be installed in order to build USDG from source.
+These tools must be installed in order to build DigitalGold from source.
 
 To install, run the following command from your terminal:
 
@@ -51,21 +51,21 @@ To install, run the following from your terminal:
 brew install automake libtool boost pkg-config libevent
 ```
 
-### 4. Clone USDG repository
+### 4. Clone DigitalGold repository
 
 `git` should already be installed by default on your system.
-Now that all the required dependencies are installed, let's clone the USDG repository to a directory.
+Now that all the required dependencies are installed, let's clone the DigitalGold repository to a directory.
 All build scripts and commands will run from this directory.
 
 ``` bash
-git clone https://github.com/DigitalGoldFoundation/USDGcoin.git
+git clone https://github.com/DigitalGoldFoundation/DigitalGoldcoin.git
 ```
 
 ### 5. Install Optional Dependencies
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run `usdgd` or  `usdg-qt`.
+It is not necessary to build wallet functionality to run `digitalgold` or  `digitalgold-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -88,7 +88,7 @@ brew install berkeley-db@62
 
 ###### Qt
 
-USDG includes a GUI built with the cross-platform Qt Framework.
+DigitalGold includes a GUI built with the cross-platform Qt Framework.
 To compile the GUI, we need to install `qt@5`.
 Skip if you don't intend to use the GUI.
 
@@ -163,14 +163,14 @@ brew install python
 
 #### Deploy Dependencies
 
-You can deploy a `.zip` containing the USDG application using `make deploy`.
+You can deploy a `.zip` containing the DigitalGold application using `make deploy`.
 It is required that you have `python` installed.
 
-## Building USDG
+## Building DigitalGold
 
 ### 1. Configuration
 
-There are many ways to configure USDG, here are a few common examples:
+There are many ways to configure DigitalGold, here are a few common examples:
 
 ##### Wallet (BDB + SQlite) Support, No GUI:
 
@@ -215,7 +215,7 @@ Examine the output of the following command for a full list of configuration opt
 ### 2. Compile
 
 After configuration, you are ready to compile.
-Run the following in your terminal to compile USDG:
+Run the following in your terminal to compile DigitalGold:
 
 ``` bash
 make        # use "-j N" here for N parallel jobs
@@ -230,41 +230,41 @@ You can also create a  `.zip` containing the `.app` bundle by running the follow
 make deploy
 ```
 
-## Running USDG
+## Running DigitalGold
 
-USDG should now be available at `./src/usdgd`.
-If you compiled support for the GUI, it should be available at `./src/qt/usdg-qt`.
+DigitalGold should now be available at `./src/digitalgold`.
+If you compiled support for the GUI, it should be available at `./src/qt/digitalgold-qt`.
 
-The first time you run `usdgd` or `usdg-qt`, it will start downloading the blockchain.
+The first time you run `digitalgold` or `digitalgold-qt`, it will start downloading the blockchain.
 This process could take many hours, or even days on slower than average systems.
 
 By default, blockchain and wallet data files will be stored in:
 
 ``` bash
-/Users/${USER}/Library/Application Support/usdg/
+/Users/${USER}/Library/Application Support/digitalgold/
 ```
 
 Before running, you may create an empty configuration file:
 
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/usdg"
+mkdir -p "/Users/${USER}/Library/Application Support/digitalgold"
 
-touch "/Users/${USER}/Library/Application Support/usdg/usdg.conf"
+touch "/Users/${USER}/Library/Application Support/digitalgold/digitalgold.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/usdg/usdg.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/digitalgold/digitalgold.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
 
 ```shell
-tail -f $HOME/Library/Application\ Support/usdg/debug.log
+tail -f $HOME/Library/Application\ Support/digitalgold/debug.log
 ```
 
 ## Other commands:
 
 ```shell
-./src/usdgd -daemon      # Starts the usdg daemon.
-./src/usdg-cli --help    # Outputs a list of command-line options.
-./src/usdg-cli help      # Outputs a list of RPC commands when the daemon is running.
-./src/qt/usdg-qt -server # Starts the usdg-qt server mode, allows usdg-cli control
+./src/digitalgold -daemon      # Starts the digitalgold daemon.
+./src/digitalgold-cli --help    # Outputs a list of command-line options.
+./src/digitalgold-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/qt/digitalgold-qt -server # Starts the digitalgold-qt server mode, allows digitalgold-cli control
 ```

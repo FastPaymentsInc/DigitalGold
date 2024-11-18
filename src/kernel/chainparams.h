@@ -103,6 +103,8 @@ public:
     bool IsMockableChain() const { return m_is_mockable_chain; }
     /** Minimum free space (in GB) needed for data directory */
     uint64_t AssumedBlockchainSize() const { return m_assumed_blockchain_size; }
+    /** Minimum free space (in GB) needed for data directory when pruned; Does not include prune target*/
+    uint64_t AssumedChainStateSize() const { return m_assumed_chain_state_size; }
     /** Whether it is possible to mine blocks on demand (no retargeting) */
     bool MineBlocksOnDemand() const { return consensus.fPowNoRetargeting; }
     /** Return the chain type string */
@@ -164,6 +166,7 @@ protected:
     MessageStartChars pchMessageStart;
     uint16_t nDefaultPort;
     uint64_t m_assumed_blockchain_size;
+    uint64_t m_assumed_chain_state_size;
     std::vector<std::string> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
     std::string bech32_hrp;
@@ -175,7 +178,6 @@ protected:
     CCheckpointData checkpointData;
     std::vector<AssumeutxoData> m_assumeutxo_data;
     ChainTxData chainTxData;
-    std::vector<std::string> vDevFundAddress;
 };
 
 #endif // BITCOIN_KERNEL_CHAINPARAMS_H

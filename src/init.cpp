@@ -155,7 +155,7 @@ static const char* DEFAULT_ASMAP_FILENAME="ip_asn.map";
 /**
  * The PID file facilities.
  */
-static const char* BITCOIN_PID_FILENAME = "usdgd.pid";
+static const char* BITCOIN_PID_FILENAME = "digitalgold.pid";
 /**
  * True if this process has created a PID file.
  * Used to determine whether we should remove the PID file on shutdown.
@@ -658,7 +658,7 @@ void SetupServerArgs(ArgsManager& argsman)
     hidden_args.emplace_back("-daemonwait");
 #endif
 
-    // Header spam filter
+    //Qtum: Header spam filter
     argsman.AddArg("-headerspamfilter=<n>", strprintf("Use header spam filter (default: %u)", DEFAULT_HEADER_SPAM_FILTER), false, OptionsCategory::OPTIONS);
     argsman.AddArg("-headerspamfiltermaxsize=<n>", strprintf("Maximum size of the list of indexes in the header spam filter (default: %u)", DEFAULT_HEADER_SPAM_FILTER_MAX_SIZE), false, OptionsCategory::OPTIONS);
     argsman.AddArg("-headerspamfiltermaxavg=<n>", strprintf("Maximum average size of an index occurrence in the header spam filter (default: %u)", DEFAULT_HEADER_SPAM_FILTER_MAX_AVG), false, OptionsCategory::OPTIONS);

@@ -293,12 +293,13 @@ public:
     //! Returns last CBlockIndex* that is a checkpoint
     const CBlockIndex* GetLastCheckpoint(const CCheckpointData& data) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
 
+    //qtum: hardened checkpoints
     //! Checks that the block hash at height nHeight matches the expected hardened checkpoint
     bool CheckHardened(int nHeight, const uint256& hash, const CCheckpointData& data) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
-
+    //qtum: hardened checkpoints
     //! Returns last CBlockIndex* from the auto selected checkpoint
     const CBlockIndex* AutoSelectSyncCheckpoint(const CBlockIndex *pindexBest) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
-
+    //qtum: hardened checkpoints
     //! Check against automatically selected checkpoint
     bool CheckSyncCheckpoint(int nHeight, const CBlockIndex *pindexBest) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
     
@@ -329,7 +330,6 @@ public:
 };
 
 void ImportBlocks(ChainstateManager& chainman, std::vector<fs::path> vImportFiles);
-
 } // namespace node
 
 #endif // BITCOIN_NODE_BLOCKSTORAGE_H

@@ -1,39 +1,39 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit usdgd.service
+# $ systemctl edit digitalgold.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/usdg/usdg.conf, but keep in mind those explicitly
+# /etc/digitalgold/digitalgold.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
 [Unit]
-Description=USDG daemon
-Documentation=https://github.com/DigitalGoldFoundation/USDGcoin/blob/master/doc/init.md
+Description=DigitalGold daemon
+Documentation=https://github.com/DigitalGoldFoundation/DigitalGoldcoin/blob/master/doc/init.md
 
 # https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
 After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/bin/usdgd -pid=/run/usdgd/usdgd.pid \
-                            -conf=/etc/usdg/usdg.conf \
-                            -datadir=/var/lib/usdgd \
+ExecStart=/usr/bin/digitalgold -pid=/run/digitalgold/digitalgold.pid \
+                            -conf=/etc/digitalgold/digitalgold.conf \
+                            -datadir=/var/lib/digitalgold \
                             -startupnotify='systemd-notify --ready' \
                             -shutdownnotify='systemd-notify --stopping'
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
-ExecStartPre=/bin/chgrp usdg /etc/usdg
+ExecStartPre=/bin/chgrp digitalgold /etc/digitalgold
 
 # Process management
 ####################
 
 Type=notify
 NotifyAccess=all
-PIDFile=/run/usdgd/usdgd.pid
+PIDFile=/run/digitalgold/digitalgold.pid
 
 Restart=on-failure
 TimeoutStartSec=infinity
@@ -42,20 +42,20 @@ TimeoutStopSec=600
 # Directory creation and permissions
 ####################################
 
-# Run as usdg:usdg
-User=usdg
-Group=usdg
+# Run as digitalgold:digitalgold
+User=digitalgold
+Group=digitalgold
 
-# /run/usdgd
-RuntimeDirectory=usdgd
+# /run/digitalgold
+RuntimeDirectory=digitalgold
 RuntimeDirectoryMode=0710
 
-# /etc/usdg
-ConfigurationDirectory=usdg
+# /etc/digitalgold
+ConfigurationDirectory=digitalgold
 ConfigurationDirectoryMode=0710
 
-# /var/lib/usdgd
-StateDirectory=usdgd
+# /var/lib/digitalgold
+StateDirectory=digitalgold
 StateDirectoryMode=0710
 
 # Hardening measures

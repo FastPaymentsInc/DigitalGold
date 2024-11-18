@@ -16,7 +16,7 @@
 /** Formatter for undo information for a CTxIn
  *
  *  Contains the prevout's CTxOut being spent, and its metadata as well
- *  (coinbase or not, height, time). The serialization contains a dummy value of
+ *  (coinbase or not, height). The serialization contains a dummy value of
  *  zero. This is compatible with older versions which expect to see
  *  the transaction version there.
  */
@@ -29,7 +29,6 @@ struct TxInUndoFormatter
             // Required to maintain compatibility with older undo format.
             ::Serialize(s, (unsigned char)0);
         }
-        ::Serialize(s, VARINT(txout.nTime));
         ::Serialize(s, Using<TxOutCompression>(txout.out));
     }
 
@@ -47,7 +46,6 @@ struct TxInUndoFormatter
             unsigned int nVersionDummy;
             ::Unserialize(s, VARINT(nVersionDummy));
         }
-        ::Unserialize(s, VARINT(txout.nTime));
         ::Unserialize(s, Using<TxOutCompression>(txout.out));
     }
 };

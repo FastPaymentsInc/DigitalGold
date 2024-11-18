@@ -815,10 +815,6 @@ bool IsSegWitOutput(const SigningProvider& provider, const CScript& script)
 bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* keystore, const std::map<COutPoint, Coin>& coins, int nHashType, std::map<int, bilingual_str>& input_errors)
 {
     bool fHashSingle = ((nHashType & ~SIGHASH_ANYONECANPAY) == SIGHASH_SINGLE);
-	
-	// we don't need nTime anymore
-    if (mtx.nVersion >= 2)
-        mtx.nTime = 0;
 
     // Use CTransaction for the constant parts of the
     // transaction to avoid rehashing.

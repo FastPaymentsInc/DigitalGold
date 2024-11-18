@@ -182,7 +182,7 @@ util::Result<SelectionResult> SelectCoinsBnB(std::vector<OutputGroup>& utxo_pool
     result.ComputeAndSetWaste(cost_of_change, cost_of_change, CAmount{0});
 
     // Blackcoin ToDo: find a way to fix a possible assertion here
-    // assert(best_waste == result.GetWaste());
+    assert(best_waste == result.GetWaste());
 
     return result;
 }
@@ -406,7 +406,7 @@ void OutputGroup::Insert(const std::shared_ptr<COutput>& output, size_t ancestor
 
     fee += coin.GetFee();
 
-    coin.long_term_fee = coin.input_bytes < 0 ? 0 : GetMinFee(coin.input_bytes, GetAdjustedTimeSeconds());
+    coin.long_term_fee = coin.input_bytes < 0 ? 0 : GetMinFee(coin.input_bytes);
     long_term_fee += coin.long_term_fee;
 
     effective_value += coin.GetEffectiveValue();

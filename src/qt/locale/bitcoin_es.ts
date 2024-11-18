@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation type="unfinished">Exportar los datos de la pestaña actual a un archivo</translation>
+        <translation type="unfinished">Exportar a un archivo los datos de esta pestaña</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -105,7 +105,7 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
         <source>Exporting Failed</source>
         <translation type="unfinished">Error al exportar</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -693,7 +693,7 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">Muestra el mensaje %1 de ayuda para obtener un listado con las opciones posibles de la línea de instrucciones de Bitcoin.</translation>
+        <translation type="unfinished">Muestra el mensaje de ayuda %1 para obtener una lista con posibles opciones de línea de comandos de Bitcoin.</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -701,7 +701,7 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     </message>
     <message>
         <source>Mask the values in the Overview tab</source>
-        <translation type="unfinished">Esconder los valores de la ventana de previsualización</translation>
+        <translation type="unfinished">Ocultar los valores de la ventana de previsualización</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -719,7 +719,7 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     <message>
         <source>Load Wallet Backup</source>
         <extracomment>The title for Restore Wallet File Windows</extracomment>
-        <translation type="unfinished">Cargar respaldo del monedero</translation>
+        <translation type="unfinished">Cargar copia de seguridad del monedero</translation>
     </message>
     <message>
         <source>Restore Wallet</source>
@@ -734,6 +734,10 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     <message>
         <source>&amp;Window</source>
         <translation type="unfinished">&amp;Ventana</translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation type="unfinished">Acercar</translation>
     </message>
     <message>
         <source>Main Window</source>
@@ -762,17 +766,17 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     <message>
         <source>Click for more actions.</source>
         <extracomment>A substring of the tooltip. "More actions" are available via the context menu.</extracomment>
-        <translation type="unfinished">Pulse para ver más acciones.</translation>
+        <translation type="unfinished">Haz clic para ver más acciones.</translation>
     </message>
     <message>
         <source>Show Peers tab</source>
         <extracomment>A context menu item. The "Peers tab" is an element of the "Node window".</extracomment>
-        <translation type="unfinished">Mostrar pestaña de parejas</translation>
+        <translation type="unfinished">Mostrar pestaña de pares</translation>
     </message>
     <message>
         <source>Disable network activity</source>
         <extracomment>A context menu item.</extracomment>
-        <translation type="unfinished">Deshabilita la actividad de la red</translation>
+        <translation type="unfinished">Desactivar la actividad de la red</translation>
     </message>
     <message>
         <source>Enable network activity</source>
@@ -1107,12 +1111,12 @@ El proceso de migración creará una copia de seguridad del monedero antes de mi
     </message>
     <message>
         <source>default wallet</source>
-        <translation type="unfinished">Monedero predeterminado</translation>
+        <translation type="unfinished">monedero predeterminado</translation>
     </message>
     <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
-        <translation type="unfinished">Abrir Monedero</translation>
+        <translation type="unfinished">Abrir monedero</translation>
     </message>
     <message>
         <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
@@ -1187,7 +1191,7 @@ El proceso de migración creará una copia de seguridad del monedero antes de mi
     </message>
     <message>
         <source>Wallet Name</source>
-        <translation type="unfinished">Nombre del Monedero</translation>
+        <translation type="unfinished">Nombre del monedero</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1208,10 +1212,6 @@ El proceso de migración creará una copia de seguridad del monedero antes de mi
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
         <translation type="unfinished">Deshabilita las claves privadas para este monedero. Los monederos con claves privadas deshabilitadas no tendrán claves privadas y no podrán tener ni una semilla HD ni claves privadas importadas. Esto es ideal para monederos solo de observación.</translation>
-    </message>
-    <message>
-        <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
-        <translation type="unfinished">Deshabilita las claves privadas para este monedero. Los monederos con claves privadas deshabilitadas no tendrán claves privadas y no podrán tener ni una semilla HD ni claves privadas importadas. Esto es ideal para monederos de solo lectura.</translation>
     </message>
     <message>
         <source>Disable Private Keys</source>
@@ -1492,14 +1492,6 @@ El proceso de migración creará una copia de seguridad del monedero antes de mi
     <message>
         <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
         <translation type="unfinished">%1 está actualmente sincronizándose. Descargará encabezados y bloques de nodos semejantes y los validará hasta alcanzar la cabeza de la cadena de bloques.</translation>
-    </message>
-    <message>
-        <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
-        <translation type="unfinished">%1 está actualmente sincronizándose. Descargará cabeceras y bloques de nodos semejantes y los validará hasta alcanzar la cabeza de la cadena de bloques.</translation>
-    </message>
-    <message>
-        <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
-        <translation type="unfinished">%1 está actualmente sincronizándose. Descargará cabeceras y bloques de nodos semejantes y los validará hasta alcanzar la cabeza de la cadena de bloques.</translation>
     </message>
     <message>
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
@@ -3711,10 +3703,6 @@ Nota: Dado que la comisión se calcula por byte, una tasa de "100 satoshis por k
         <translation type="unfinished">(n/d)</translation>
     </message>
     <message>
-        <source>(n/a)</source>
-        <translation type="unfinished">(n/d)</translation>
-    </message>
-    <message>
         <source>(no label)</source>
         <translation type="unfinished">(sin etiqueta)</translation>
     </message>
@@ -3992,11 +3980,6 @@ Ve a "Archivo &gt; Abrir monedero" para cargar uno.
         <translation type="unfinished">Copiada al portapapeles</translation>
     </message>
     <message>
-        <source>Copied to clipboard</source>
-        <comment>Fee-bump PSBT saved</comment>
-        <translation type="unfinished">Copiada al portapapeles</translation>
-    </message>
-    <message>
         <source>Can't sign transaction.</source>
         <translation type="unfinished">No se puede firmar la transacción.</translation>
     </message>
@@ -4030,7 +4013,7 @@ Ve a "Archivo &gt; Abrir monedero" para cargar uno.
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Datos del Monedero </translation>
+        <translation type="unfinished">Datos del monedero </translation>
     </message>
     <message>
         <source>Backup Failed</source>

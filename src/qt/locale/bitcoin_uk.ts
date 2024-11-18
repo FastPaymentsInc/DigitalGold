@@ -753,7 +753,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Mask values</source>
-        <translation type="unfinished">&amp;Приховати значення</translation>
+        <translation type="unfinished">При&amp;ховати значення</translation>
     </message>
     <message>
         <source>Mask the values in the Overview tab</source>
@@ -1255,7 +1255,7 @@ The migration process will create a backup of the wallet before migrating. This 
     </message>
     <message>
         <source>Wallet Name</source>
-        <translation type="unfinished">Назва Гаманця</translation>
+        <translation type="unfinished">Назва гаманця</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -1572,10 +1572,6 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
         <translation type="unfinished">Невідомо. Синхронізація заголовків (%1, %2%)…</translation>
-    </message>
-    <message>
-        <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>
-        <translation type="unfinished">Невідомо. Триває попередня синхронізація заголовків (%1, %2%)…</translation>
     </message>
     <message>
         <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>

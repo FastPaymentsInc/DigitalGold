@@ -236,14 +236,6 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation type="unfinished">De oude wachtwoordzin die is ingevoerd voor de decodering van de portemonnee is onjuist. Het bevat een null-teken (dwz - een nulbyte). Als de wachtwoordzin is ingesteld met een versie van deze software ouder dan 25.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken.</translation>
     </message>
     <message>
-        <source>Passphrase change failed</source>
-        <translation type="unfinished">Wijzigen van wachtwoordzin mislukt</translation>
-    </message>
-    <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character.</source>
-        <translation type="unfinished">De oude wachtwoordzin die is ingevoerd voor de decodering van de portemonnee is onjuist. Het bevat een null-teken (dwz - een nulbyte). Als de wachtwoordzin is ingesteld met een versie van deze software ouder dan 25.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken.</translation>
-    </message>
-    <message>
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished">Waarschuwing: De Caps-Lock toets staat aan!</translation>
     </message>
@@ -705,16 +697,6 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation type="unfinished">Herstel een portemonnee vanuit een back-upbestand</translation>
     </message>
     <message>
-        <source>Restore Wallet…</source>
-        <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
-        <translation type="unfinished">Portemonnee Herstellen...</translation>
-    </message>
-    <message>
-        <source>Restore a wallet from a backup file</source>
-        <extracomment>Status tip for Restore Wallet menu item</extracomment>
-        <translation type="unfinished">Herstel een portemonnee vanuit een back-upbestand</translation>
-    </message>
-    <message>
         <source>Close all wallets</source>
         <translation type="unfinished">Sluit alle portemonnees</translation>
     </message>
@@ -745,26 +727,6 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
     <message>
         <source>No wallets available</source>
         <translation type="unfinished">Geen portefeuilles beschikbaar</translation>
-    </message>
-    <message>
-        <source>Wallet Data</source>
-        <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Walletgegevens</translation>
-    </message>
-    <message>
-        <source>Load Wallet Backup</source>
-        <extracomment>The title for Restore Wallet File Windows</extracomment>
-        <translation type="unfinished">Laad back-up van portemonnee</translation>
-    </message>
-    <message>
-        <source>Restore Wallet</source>
-        <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
-        <translation type="unfinished">Wallet herstellen</translation>
-    </message>
-    <message>
-        <source>Wallet Name</source>
-        <extracomment>Label of the input field where the name of the wallet is entered.</extracomment>
-        <translation type="unfinished">Walletnaam</translation>
     </message>
     <message>
         <source>Wallet Data</source>
@@ -1140,12 +1102,12 @@ Het migratieproces maakt voorafgaand aan het migreren een backup van de wallet. 
     </message>
     <message>
         <source>default wallet</source>
-        <translation type="unfinished">standaard wallet</translation>
+        <translation type="unfinished">standaard portemonnee</translation>
     </message>
     <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
-        <translation type="unfinished">Wallet openen</translation>
+        <translation type="unfinished">Portemonnee Openen</translation>
     </message>
     <message>
         <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
@@ -1185,7 +1147,7 @@ Het migratieproces maakt voorafgaand aan het migreren een backup van de wallet. 
     <name>WalletController</name>
     <message>
         <source>Close wallet</source>
-        <translation type="unfinished">Wallet sluiten</translation>
+        <translation type="unfinished">Portemonnee Sluiten</translation>
     </message>
     <message>
         <source>Are you sure you wish to close the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
@@ -1197,7 +1159,7 @@ Het migratieproces maakt voorafgaand aan het migreren een backup van de wallet. 
     </message>
     <message>
         <source>Close all wallets</source>
-        <translation type="unfinished">Alle wallets sluiten</translation>
+        <translation type="unfinished">Sluit alle portemonnees</translation>
     </message>
     <message>
         <source>Are you sure you wish to close all wallets?</source>
@@ -3813,7 +3775,7 @@ Ga naar Bestand &gt; Wallet openen om een wallet te laden.
     </message>
     <message>
         <source>Create a new wallet</source>
-        <translation type="unfinished">Nieuwe wallet aanmaken</translation>
+        <translation type="unfinished">Nieuwe wallet creëren</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3906,7 +3868,7 @@ Ga naar Bestand &gt; Wallet openen om een wallet te laden.
     </message>
     <message>
         <source>default wallet</source>
-        <translation type="unfinished">standaard wallet</translation>
+        <translation type="unfinished">standaard portemonnee</translation>
     </message>
 </context>
 <context>

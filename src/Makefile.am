@@ -85,33 +85,33 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_ZMQ)
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += usdgd
+  bin_PROGRAMS += digitalgold
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += usdg-node
+  bin_PROGRAMS += digitalgold-node
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += usdg-cli
+  bin_PROGRAMS += digitalgold-cli
 endif
 
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += usdg-tx
+  bin_PROGRAMS += digitalgold-tx
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += usdg-wallet
+  bin_PROGRAMS += digitalgold-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += usdg-util
+  bin_PROGRAMS += digitalgold-util
 endif
 
 if BUILD_BITCOIN_CHAINSTATE
-  bin_PROGRAMS += usdg-chainstate
+  bin_PROGRAMS += digitalgold-chainstate
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -657,7 +657,6 @@ libbitcoin_consensus_a_SOURCES = \
   script/script_error.h \
   serialize.h \
   span.h \
-  timedatadummy.cpp \
   tinyformat.h \
   uint256.cpp \
   uint256.h \
@@ -776,17 +775,17 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# usdgd & usdg-node binaries #
-usdg_daemon_sources = bitcoind.cpp
-usdg_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-usdg_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
-usdg_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# digitalgold & digitalgold-node binaries #
+digitalgold_daemon_sources = bitcoind.cpp
+digitalgold_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+digitalgold_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
+digitalgold_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-usdg_daemon_sources += bitcoind-res.rc
+digitalgold_daemon_sources += bitcoind-res.rc
 endif
 
-usdg_bin_ldadd = \
+digitalgold_bin_ldadd = \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -798,53 +797,51 @@ usdg_bin_ldadd = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-usdg_bin_ldadd += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
+digitalgold_bin_ldadd += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-usdgd_SOURCES = $(usdg_daemon_sources) init/bitcoind.cpp
-usdgd_CPPFLAGS = $(usdg_bin_cppflags)
-usdgd_CXXFLAGS = $(usdg_bin_cxxflags)
-usdgd_LDFLAGS = $(usdg_bin_ldflags)
-usdgd_LDADD = $(LIBBITCOIN_NODE) $(usdg_bin_ldadd)
+digitalgold_SOURCES = $(digitalgold_daemon_sources) init/bitcoind.cpp
+digitalgold_CPPFLAGS = $(digitalgold_bin_cppflags)
+digitalgold_CXXFLAGS = $(digitalgold_bin_cxxflags)
+digitalgold_LDFLAGS = $(digitalgold_bin_ldflags)
+digitalgold_LDADD = $(LIBBITCOIN_NODE) $(digitalgold_bin_ldadd)
 
-usdg_node_SOURCES = $(usdg_daemon_sources) init/bitcoin-node.cpp
-usdg_node_CPPFLAGS = $(usdg_bin_cppflags)
-usdg_node_CXXFLAGS = $(usdg_bin_cxxflags)
-usdg_node_LDFLAGS = $(usdg_bin_ldflags)
-usdg_node_LDADD = $(LIBBITCOIN_NODE) $(usdg_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+digitalgold_node_SOURCES = $(digitalgold_daemon_sources) init/bitcoin-node.cpp
+digitalgold_node_CPPFLAGS = $(digitalgold_bin_cppflags)
+digitalgold_node_CXXFLAGS = $(digitalgold_bin_cxxflags)
+digitalgold_node_LDFLAGS = $(digitalgold_bin_ldflags)
+digitalgold_node_LDADD = $(LIBBITCOIN_NODE) $(digitalgold_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
-# usdg-cli binary #
-usdg_cli_SOURCES = bitcoin-cli.cpp
-usdg_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-usdg_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-usdg_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# digitalgold-cli binary #
+digitalgold_cli_SOURCES = bitcoin-cli.cpp
+digitalgold_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+digitalgold_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+digitalgold_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-usdg_cli_SOURCES += bitcoin-cli-res.rc
+digitalgold_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-usdg_cli_LDADD = \
+digitalgold_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-usdg_cli_LDADD += $(EVENT_LIBS)
+digitalgold_cli_LDADD += $(EVENT_LIBS)
 #
 
-# usdg-tx binary #
-usdg_tx_SOURCES = \
-  bitcoin-tx.cpp \
-  timedatadummy.cpp
-usdg_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-usdg_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-usdg_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# digitalgold-tx binary #
+digitalgold_tx_SOURCES = bitcoin-tx.cpp
+digitalgold_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+digitalgold_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+digitalgold_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-usdg_tx_SOURCES += bitcoin-tx-res.rc
+digitalgold_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-usdg_tx_LDADD = \
+digitalgold_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -853,13 +850,13 @@ usdg_tx_LDADD = \
   $(LIBSECP256K1)
 #
 
-# usdg-wallet binary #
-usdg_wallet_SOURCES = bitcoin-wallet.cpp
-usdg_wallet_SOURCES += init/bitcoin-wallet.cpp
-usdg_wallet_CPPFLAGS = $(usdg_bin_cppflags)
-usdg_wallet_CXXFLAGS = $(usdg_bin_cxxflags)
-usdg_wallet_LDFLAGS = $(usdg_bin_ldflags)
-usdg_wallet_LDADD = \
+# digitalgold-wallet binary #
+digitalgold_wallet_SOURCES = bitcoin-wallet.cpp
+digitalgold_wallet_SOURCES += init/bitcoin-wallet.cpp
+digitalgold_wallet_CPPFLAGS = $(digitalgold_bin_cppflags)
+digitalgold_wallet_CXXFLAGS = $(digitalgold_bin_cxxflags)
+digitalgold_wallet_LDFLAGS = $(digitalgold_bin_ldflags)
+digitalgold_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_NODE) \
@@ -873,21 +870,21 @@ usdg_wallet_LDADD = \
   $(SQLITE_LIBS)
 
 if TARGET_WINDOWS
-usdg_wallet_SOURCES += bitcoin-wallet-res.rc
+digitalgold_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 #
 
-# usdg-util binary #
-usdg_util_SOURCES = bitcoin-util.cpp
-usdg_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-usdg_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-usdg_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# digitalgold-util binary #
+digitalgold_util_SOURCES = bitcoin-util.cpp
+digitalgold_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+digitalgold_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+digitalgold_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-usdg_util_SOURCES += bitcoin-util-res.rc
+digitalgold_util_SOURCES += bitcoin-util-res.rc
 endif
 
-usdg_util_LDADD = \
+digitalgold_util_LDADD = \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
@@ -896,17 +893,17 @@ usdg_util_LDADD = \
   $(LIBSECP256K1)
 #
 
-# usdg-chainstate binary #
-usdg_chainstate_SOURCES = bitcoin-chainstate.cpp
-usdg_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
-usdg_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+# digitalgold-chainstate binary #
+digitalgold_chainstate_SOURCES = bitcoin-chainstate.cpp
+digitalgold_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
+digitalgold_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
-usdg_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS) $(LIBTOOL_APP_LDFLAGS) -static
-usdg_chainstate_LDADD = $(LIBBITCOINKERNEL)
+digitalgold_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+digitalgold_chainstate_LDADD = $(LIBBITCOINKERNEL)
 
 # libtool is unable to calculate this indirect dependency, presumably because it's a subproject.
 # libsecp256k1 only needs to be linked in when libbitcoinkernel is static.
-usdg_chainstate_LDADD += $(LIBSECP256K1)
+digitalgold_chainstate_LDADD += $(LIBSECP256K1)
 #
 
 # bitcoinkernel library #

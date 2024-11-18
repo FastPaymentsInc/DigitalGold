@@ -78,7 +78,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "usdg.conf";
+const char * const BITCOIN_CONF_FILENAME = "digitalgold.conf";
 const char * const BITCOIN_SETTINGS_FILENAME = "settings.json";
 
 ArgsManager gArgs;
@@ -317,7 +317,7 @@ bool ArgsManager::ParseParameters(int argc, const char* const argv[], std::strin
         if (key.substr(0, 5) == "-psn_") continue;
 #endif
 
-        if (key == "-") break; //usdg-tx using stdin
+        if (key == "-") break; //digitalgold-tx using stdin
         std::string val;
         size_t is_index = key.find('=');
         if (is_index != std::string::npos) {
@@ -766,7 +766,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "usdg";
+    const char* pszModule = "digitalgold";
 #endif
     if (pex)
         return strprintf(
@@ -785,12 +785,12 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows: C:\Users\Username\AppData\Roaming\usdg
-    // macOS: ~/Library/Application Support/usdg
-    // Unix-like: ~/.usdg
+    // Windows: C:\Users\Username\AppData\Roaming\digitalgold
+    // macOS: ~/Library/Application Support/digitalgold
+    // Unix-like: ~/.digitalgold
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "usdg";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "digitalgold";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -800,10 +800,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/usdg";
+    return pathRet / "Library/Application Support/digitalgold";
 #else
     // Unix-like
-    return pathRet / ".usdg";
+    return pathRet / ".digitalgold";
 #endif
 #endif
 }
@@ -1355,7 +1355,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
     std::string strCopyrightHolders =
         strPrefix + "The Bitcoin Core developers" +
-        "\n" + strPrefix + "The USDG developers";
+        "\n" + strPrefix + "The Digital Gold developers";
     return strCopyrightHolders;
 }
 

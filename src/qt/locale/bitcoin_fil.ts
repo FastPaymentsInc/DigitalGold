@@ -695,7 +695,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>(%1 locked)</source>
-        <translation type="unfinished">(%1 Naka-lock)</translation>
+        <translation type="unfinished">(%1 ay naka-lock)</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>

@@ -486,10 +486,6 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
         <translation type="unfinished">&amp;Encriptar billetera…</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet…</source>
-        <translation type="unfinished">&amp;Encriptar billetera…</translation>
-    </message>
-    <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation type="unfinished">Encriptar las claves privadas que pertenecen a la billetera</translation>
     </message>
@@ -551,27 +547,7 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation type="unfinished">Barra de herramientas de pestañas</translation>
-    </message>
-    <message>
-        <source>Syncing Headers (%1%)…</source>
-        <translation type="unfinished">Sincronizando encabezados (%1%)...</translation>
-    </message>
-    <message>
-        <source>Synchronizing with network…</source>
-        <translation type="unfinished">Sincronizando con la red...</translation>
-    </message>
-    <message>
-        <source>Indexing blocks on disk…</source>
-        <translation type="unfinished">Indexando bloques en disco...</translation>
-    </message>
-    <message>
-        <source>Processing blocks on disk…</source>
-        <translation type="unfinished">Procesando bloques en disco...</translation>
-    </message>
-    <message>
-        <source>Connecting to peers…</source>
-        <translation type="unfinished">Conectando a pares...</translation>
+        <translation type="unfinished">Barra de pestañas</translation>
     </message>
     <message>
         <source>Syncing Headers (%1%)…</source>
@@ -712,11 +688,15 @@ Solo es posible firmar con direcciones de tipo "legacy".</translation>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de Bitcoin</translation>
+        <translation type="unfinished">Mostrar el mensaje de ayuda %1 para obtener una lista de las posibles opciones de línea de comandos de Bitcoin</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
         <translation type="unfinished">&amp;Ocultar valores</translation>
+    </message>
+    <message>
+        <source>Mask the values in the Overview tab</source>
+        <translation type="unfinished">Ocultar los valores en la pestaña de vista general</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -1194,7 +1174,7 @@ El proceso de migración creará una copia de seguridad de la billetera antes de
     <name>CreateWalletDialog</name>
     <message>
         <source>Create Wallet</source>
-        <translation type="unfinished">Crear Billetera</translation>
+        <translation type="unfinished">Crear billetera</translation>
     </message>
     <message>
         <source>You are one step away from creating your new wallet!</source>
@@ -1214,7 +1194,7 @@ El proceso de migración creará una copia de seguridad de la billetera antes de
     </message>
     <message>
         <source>Encrypt the wallet. The wallet will be encrypted with a passphrase of your choice.</source>
-        <translation type="unfinished">Encriptar la billetera. La billetera será encriptada con una contraseña de tu elección.</translation>
+        <translation type="unfinished">Encriptar la billetera. La billetera se encriptará con una frase de contraseña de tu elección.</translation>
     </message>
     <message>
         <source>Encrypt Wallet</source>

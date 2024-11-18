@@ -711,7 +711,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation type="unfinished">Xəta: %1</translation>
+        <translation type="unfinished">XƏta: %1</translation>
     </message>
     <message>
         <source>Warning: %1</source>

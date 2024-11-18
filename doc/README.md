@@ -1,28 +1,30 @@
-USDG
+DigitalGold
 =============
 
 Setup
 ---------------------
-USDG is the original USDG client and it builds the backbone of the network. It downloads and, by default, stores the entire history of USDG transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Digital Gold is the original Digital Gold client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Bitcoin transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+
+To download Digital Gold, visit [digitalgoldfoundation.org](https://digitalgoldfoundation.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run USDG on your native platform.
+The following are some helpful notes on how to run DigitalGold on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/usdg-qt` (GUI) or
-- `bin/usdgd` (headless)
+- `bin/digitalgold-qt` (GUI) or
+- `bin/digitalgold` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run usdg-qt.exe.
+Unpack the files into a directory, and then run digitalgold-qt.exe.
 
 ### macOS
 
-Drag USDG to your applications folder, and then run USDG.
+Drag Digital Gold to your applications folder, and then run Digital Gold.
 
 ### Need Help?
 

@@ -164,6 +164,7 @@ ChainTestingSetup::ChainTestingSetup(const ChainType chainType, const std::vecto
     GetMainSignals().RegisterBackgroundSignalScheduler(*m_node.scheduler);
 
     m_node.mempool = std::make_unique<CTxMemPool>(MemPoolOptionsForTest(m_node));
+
     m_cache_sizes = CalculateCacheSizes(m_args);
 
     m_node.notifications = std::make_unique<KernelNotifications>(m_node.exit_status);
@@ -280,8 +281,8 @@ TestChain100Setup::TestChain100Setup(
     coinbaseKey.Set(vchKey.begin(), vchKey.end(), true);
 
     // Blackcoin
-    // Generate a 500-block chain:
-    this->mineBlocks(500);
+    // Generate a 240-block chain:
+    this->mineBlocks(240);
     {
         LOCK(::cs_main);
         assert(

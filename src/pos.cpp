@@ -52,16 +52,16 @@ bool CheckStakeBlockTimestamp(int64_t nTimeBlock)
    return CheckCoinStakeTimestamp(nTimeBlock, nTimeBlock);
 }
 
-// BlackCoin kernel protocol v3
+// BlackCoin kernel protocol
 // coinstake must meet hash target according to the protocol:
 // kernel (input 0) must meet the formula
-//     hash(nStakeModifier + txPrev.nTime + txPrev.vout.hash + txPrev.vout.n + nTime) < bnTarget * nWeight
+//     hash(nStakeModifier + blockFrom.nTime + txPrev.vout.hash + txPrev.vout.n + nTime) < bnTarget * nWeight
 // this ensures that the chance of getting a coinstake is proportional to the
 // amount of coins one owns.
 // The reason this hash is chosen is the following:
 //   nStakeModifier: scrambles computation to make it very difficult to precompute
 //                   future proof-of-stake
-//   txPrev.nTime: slightly scrambles computation
+//   blockFrom.nTime: slightly scrambles computation
 //   txPrev.vout.hash: hash of txPrev, to reduce the chance of nodes
 //                     generating coinstake at the same time
 //   txPrev.vout.n: output number of txPrev, to reduce the chance of nodes
@@ -71,9 +71,9 @@ bool CheckStakeBlockTimestamp(int64_t nTimeBlock)
 //   quantities so as to generate blocks faster, degrading the system back into
 //   a proof-of-work situation.
 //
-bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeTx, bool fPrintProofOfStake)
+bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeBlock, bool fPrintProofOfStake)
 {
-    if (nTimeTx < blockFromTime)  // Transaction timestamp violation
+    if (nTimeBlock < blockFromTime)  // Transaction timestamp violation
         return error("CheckStakeKernelHash() : nTime violation");
 
     // Base target
@@ -92,15 +92,15 @@ bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, uin
     // Calculate hash
     CHashWriter ss{};
     ss << nStakeModifier;
-    ss << blockFromTime << prevout.hash << prevout.n << nTimeTx;
+    ss << blockFromTime << prevout.hash << prevout.n << nTimeBlock;
 
     uint256 hashProofOfStake = ss.GetHash();
 
     if (fPrintProofOfStake)
     {
-        LogPrintf("CheckStakeKernelHash() : nStakeModifier=%s, txPrev.nTime=%u, txPrev.vout.hash=%s, txPrev.vout.n=%u, nTimeTx=%u, hashProof=%s\n",
+        LogPrintf("CheckStakeKernelHash() : nStakeModifier=%s, nTimeBlockFrom=%u, txPrev.vout.hash=%s, txPrev.vout.n=%u, nTimeBlock=%u, hashProof=%s\n",
             nStakeModifier.GetHex().c_str(),
-            blockFromTime, prevout.hash.ToString(), prevout.n, nTimeTx,
+            blockFromTime, prevout.hash.ToString(), prevout.n, nTimeBlock,
             hashProofOfStake.ToString());
     }
 
@@ -110,9 +110,9 @@ bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, uin
         
     if (LogInstance().WillLogCategory(BCLog::COINSTAKE) && !fPrintProofOfStake)
     {
-        LogPrintf("CheckStakeKernelHash() : nStakeModifier=%s, txPrev.nTime=%u, txPrev.vout.hash=%s, txPrev.vout.n=%u, nTimeTx=%u, hashProof=%s\n",
+        LogPrintf("CheckStakeKernelHash() : nStakeModifier=%s, nTimeBlockFrom=%u, txPrev.vout.hash=%s, txPrev.vout.n=%u, nTimeBlock=%u, hashProof=%s\n",
             nStakeModifier.GetHex().c_str(),
-            blockFromTime, prevout.hash.ToString(), prevout.n, nTimeTx,
+            blockFromTime, prevout.hash.ToString(), prevout.n, nTimeBlock,
             hashProofOfStake.ToString());
     }
 
@@ -120,7 +120,7 @@ bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, uin
 }
 
 // Check kernel hash target and coinstake signature
-bool CheckProofOfStake(CBlockIndex* pindexPrev, const CTransaction& tx, unsigned int nBits, BlockValidationState& state, CCoinsViewCache& view, unsigned int nTimeTx)
+bool CheckProofOfStake(CBlockIndex* pindexPrev, const CTransaction& tx, unsigned int nBits, BlockValidationState& state, CCoinsViewCache& view, unsigned int nTimeBlock)
 {
     if (!tx.IsCoinStake())
         return error("CheckProofOfStake() : called on non-coinstake %s", tx.GetHash().ToString());
@@ -148,7 +148,7 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, const CTransaction& tx, unsigned
     if (!VerifySignature(coinPrev, txin.prevout.hash, tx, 0, SCRIPT_VERIFY_NONE))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "stake-verify-signature-failed", strprintf("CheckProofOfStake() : VerifySignature failed on coinstake %s", tx.GetHash().ToString()));
 
-    if (!CheckStakeKernelHash(pindexPrev, nBits, (coinPrev.nTime ? coinPrev.nTime : blockFrom->nTime), coinPrev.out.nValue, txin.prevout, nTimeTx, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
+    if (!CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, txin.prevout, nTimeBlock, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
         return state.Invalid(BlockValidationResult::BLOCK_HEADER_SYNC, "stake-check-kernel-failed", strprintf("CheckProofOfStake() : INFO: check kernel failed on coinstake %s", tx.GetHash().ToString())); // may occur during initial download or if behind on block chain sync
 
     return true;
@@ -183,7 +183,7 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTime, co
             return error("CheckKernel(): Coin is spent");
         }
 
-        return CheckStakeKernelHash(pindexPrev, nBits, (coinPrev.nTime ? coinPrev.nTime : blockFrom->nTime), coinPrev.out.nValue, prevout, nTime);
+        return CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, prevout, nTime);
     } else {
         // found in cache
         const CStakeCache& stake = it->second;
@@ -216,6 +216,6 @@ void CacheKernel(std::map<COutPoint, CStakeCache>& cache, const COutPoint& prevo
         return;
     }
 
-    CStakeCache c((coinPrev.nTime ? coinPrev.nTime : blockFrom->nTime), coinPrev.out.nValue);
+    CStakeCache c(blockFrom->nTime, coinPrev.out.nValue);
     cache.insert({prevout, c});
 }

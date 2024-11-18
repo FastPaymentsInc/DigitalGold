@@ -8,8 +8,8 @@ The `TestShell` submodule extends the `BitcoinTestFramework` functionality to
 external interactive environments for prototyping and educational purposes. Just
 like `BitcoinTestFramework`, the `TestShell` allows the user to:
 
-* Manage regtest usdgd subprocesses.
-* Access RPC interfaces of the underlying usdgd instances.
+* Manage regtest digitalgold subprocesses.
+* Access RPC interfaces of the underlying digitalgold instances.
 * Log events to the functional test logging utility.
 
 The `TestShell` can be useful in interactive environments where it is necessary
@@ -20,21 +20,21 @@ user inputs. Such environments include the Python3 command line interpreter or
 ## 1. Requirements
 
 * Python3
-* `usdgd` built in the same repository as the `TestShell`.
+* `digitalgold` built in the same repository as the `TestShell`.
 
-## 2. Importing `TestShell` from the USDG repository
+## 2. Importing `TestShell` from the digitalgold repository
 
-We can import the `TestShell` by adding the path of the USDG
+We can import the `TestShell` by adding the path of the digitalgold
 `test_framework` module to the beginning of the PATH variable, and then
 importing the `TestShell` class from the `test_shell` sub-package.
 
 ```
 >>> import sys
->>> sys.path.insert(0, "/path/to/usdg/test/functional")
+>>> sys.path.insert(0, "/path/to/digitalgold/test/functional")
 >>> from test_framework.test_shell import TestShell
 ```
 
-The following `TestShell` methods manage the lifetime of the underlying usdgd
+The following `TestShell` methods manage the lifetime of the underlying digitalgold
 processes and logging utilities.
 
 * `TestShell().setup()`
@@ -52,7 +52,7 @@ The following sections demonstrate how to initialize, run, and shut down a
 
 ```
 >>> test = TestShell().setup(num_nodes=2, setup_clean_chain=True)
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Initializing test directory /path/to/usdg_func_test_XXXXXXX
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Initializing test directory /path/to/digitalgold_func_test_XXXXXXX
 ```
 The `TestShell` forwards all functional test parameters of the parent
 `BitcoinTestFramework` object. The full set of argument keywords which can be
@@ -61,7 +61,7 @@ used to initialize the `TestShell` can be found in [section
 
 **Note: Running multiple instances of `TestShell` is not allowed.** Running a
 single process also ensures that logging remains consolidated in the same
-temporary folder. If you need more usdgd nodes than set by default (1),
+temporary folder. If you need more digitalgold nodes than set by default (1),
 simply increase the `num_nodes` parameter during setup.
 
 ```
@@ -72,10 +72,10 @@ TestShell is already running!
 ## 4. Interacting with the `TestShell`
 
 Unlike the `BitcoinTestFramework` class, the `TestShell` keeps the underlying
-usdgd subprocesses (nodes) and logging utilities running until the user
+digitalgold subprocesses (nodes) and logging utilities running until the user
 explicitly shuts down the `TestShell` object.
 
-During the time between the `setup` and `shutdown` calls, all `usdgd` node
+During the time between the `setup` and `shutdown` calls, all `digitalgold` node
 processes and `BitcoinTestFramework` convenience methods can be accessed
 interactively.
 
@@ -128,18 +128,18 @@ test-framework**. Modules such as
 [key.py](../test/functional/test_framework/key.py),
 [script.py](../test/functional/test_framework/script.py) and
 [messages.py](../test/functional/test_framework/messages.py) are particularly
-useful in constructing objects which can be passed to the usdgd nodes managed
+useful in constructing objects which can be passed to the digitalgold nodes managed
 by a running `TestShell` object.
 
 ## 5. Shutting the `TestShell` down
 
-Shutting down the `TestShell` will safely tear down all running usdgd
+Shutting down the `TestShell` will safely tear down all running digitalgold
 instances and remove all temporary data and logging directories.
 
 ```
 >>> test.shutdown()
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Stopping nodes
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Cleaning up /path/to/usdg_func_test_XXXXXXX on exit
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Cleaning up /path/to/digitalgold_func_test_XXXXXXX on exit
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Tests successful
 ```
 To prevent the logs from being removed after a shutdown, simply set the
@@ -148,15 +148,15 @@ To prevent the logs from being removed after a shutdown, simply set the
 >>> test.options.nocleanup = True
 >>> test.shutdown()
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Stopping nodes
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Not cleaning up dir /path/to/usdg_func_test_XXXXXXX on exit
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Not cleaning up dir /path/to/digitalgold_func_test_XXXXXXX on exit
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Tests successful
 ```
 
-The following utility consolidates logs from the usdgd nodes and the
+The following utility consolidates logs from the digitalgold nodes and the
 underlying `BitcoinTestFramework`:
 
-* `/path/to/usdg/test/functional/combine_logs.py
-  '/path/to/usdg_func_test_XXXXXXX'`
+* `/path/to/digitalgold/test/functional/combine_logs.py
+  '/path/to/digitalgold_func_test_XXXXXXX'`
 
 ## 6. Custom `TestShell` parameters
 
@@ -169,20 +169,20 @@ can be called after the TestShell is shut down.
 
 | Test parameter key | Default Value | Description |
 |---|---|---|
-| `bind_to_localhost_only` | `True` | Binds usdgd RPC services to `127.0.0.1` if set to `True`.|
-| `cachedir` | `"/path/to/usdg/test/cache"` | Sets the usdgd datadir directory. |
-| `chain`  | `"regtest"` | Sets the chain-type for the underlying test usdgd processes. |
-| `configfile` | `"/path/to/usdg/test/config.ini"` | Sets the location of the test framework config file. |
-| `coveragedir` | `None` | Records usdgd RPC test coverage into this directory if set. |
+| `bind_to_localhost_only` | `True` | Binds digitalgold RPC services to `127.0.0.1` if set to `True`.|
+| `cachedir` | `"/path/to/digitalgold/test/cache"` | Sets the digitalgold datadir directory. |
+| `chain`  | `"regtest"` | Sets the chain-type for the underlying test digitalgold processes. |
+| `configfile` | `"/path/to/digitalgold/test/config.ini"` | Sets the location of the test framework config file. |
+| `coveragedir` | `None` | Records digitalgold RPC test coverage into this directory if set. |
 | `loglevel` | `INFO` | Logs events at this level and higher. Can be set to `DEBUG`, `INFO`, `WARNING`, `ERROR` or `CRITICAL`. |
 | `nocleanup` | `False` | Cleans up temporary test directory if set to `True` during `shutdown`. |
-| `noshutdown` | `False` | Does not stop usdgd instances after `shutdown` if set to `True`. |
-| `num_nodes` | `1` | Sets the number of initialized usdgd processes. |
+| `noshutdown` | `False` | Does not stop digitalgold instances after `shutdown` if set to `True`. |
+| `num_nodes` | `1` | Sets the number of initialized digitalgold processes. |
 | `perf` | False | Profiles running nodes with `perf` for the duration of the test if set to `True`. |
-| `rpc_timeout` | `60` | Sets the RPC server timeout for the underlying usdgd processes. |
+| `rpc_timeout` | `60` | Sets the RPC server timeout for the underlying digitalgold processes. |
 | `setup_clean_chain` | `False` | A 200-block-long chain is initialized from cache by default. Instead, `setup_clean_chain` initializes an empty blockchain if set to `True`. |
 | `randomseed` | Random Integer | `TestShell().options.randomseed` is a member of `TestShell` which can be accessed during a test to seed a random generator. User can override default with a constant value for reproducible test runs. |
-| `supports_cli` | `False` | Whether the usdg-cli utility is compiled and available for the test. |
+| `supports_cli` | `False` | Whether the digitalgold-cli utility is compiled and available for the test. |
 | `tmpdir` | `"/var/folders/.../"` | Sets directory for test logs. Will be deleted upon a successful test run unless `nocleanup` is set to `True` |
 | `trace_rpc` | `False` | Logs all RPC calls if set to `True`. |
-| `usecli` | `False` | Uses the usdg-cli interface for all usdgd commands instead of directly calling the RPC server. Requires `supports_cli`. |
+| `usecli` | `False` | Uses the digitalgold-cli interface for all digitalgold commands instead of directly calling the RPC server. Requires `supports_cli`. |

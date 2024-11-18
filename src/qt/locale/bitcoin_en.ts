@@ -77,7 +77,7 @@
     <message>
         <location line="+6"/>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your USDG addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -206,7 +206,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR USDGS&lt;/b&gt;!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
@@ -440,7 +440,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="-1194"/>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Send coins to a USDG address</translation>
+        <translation>Send coins to a Bitcoin address</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -495,7 +495,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+1"/>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Sign messages with your USDG addresses to prove you own them</translation>
+        <translation>Sign messages with your Bitcoin addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -505,7 +505,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+1"/>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verify messages to ensure they were signed with specified USDG addresses</translation>
+        <translation>Verify messages to ensure they were signed with specified Bitcoin addresses</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -580,7 +580,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="-852"/>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation>Request payments (generates QR codes and usdg: URIs)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+65"/>
@@ -653,7 +653,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+26"/>
         <source>Load Partially Signed Bitcoin Transaction</source>
-        <translation>Load Partially Signed USDG Transaction</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -663,7 +663,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+1"/>
         <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
-        <translation>Load Partially Signed USDG Transaction from clipboard</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -688,7 +688,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+4"/>
         <source>Open a bitcoin: URI</source>
-        <translation>Open a usdg: URI</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -735,7 +735,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+4"/>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation>Show the %1 help message to get a list with possible USDG command-line options</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -820,9 +820,9 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
         <location line="+117"/>
         <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation>
-            <numerusform>%n active connection to USDG network.</numerusform>
-            <numerusform>%n active connections to USDG network.</numerusform>
+        <translation type="unfinished">
+            <numerusform>%n active connection to Bitcoin network.</numerusform>
+            <numerusform>%n active connections to Bitcoin network.</numerusform>
         </translation>
     </message>
     <message>
@@ -1284,7 +1284,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+77"/>
         <source>The entered address &quot;%1&quot; is not a valid Bitcoin address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid USDG address.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+33"/>
@@ -1413,7 +1413,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location filename="../intro.cpp" line="+30"/>
         <source>Bitcoin</source>
-        <translation>USDG</translation>
+        <translation type="unfinished">Bitcoin</translation>
     </message>
     <message numerus="yes">
         <location line="+162"/>
@@ -1466,7 +1466,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     <message>
         <location line="+2"/>
         <source>%1 will download and store a copy of the Bitcoin block chain.</source>
-        <translation>%1 will download and store a copy of the USDG block chain.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1566,12 +1566,12 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+119"/>
         <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
-        <translation>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the usdg network, as detailed below.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Attempting to spend usdgs that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+63"/>
@@ -1642,7 +1642,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location filename="../forms/openuridialog.ui" line="+14"/>
         <source>Open bitcoin URI</source>
-        <translation>Open usdg URI</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+8"/>
@@ -1887,7 +1887,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+42"/>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the USDG client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <translation>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1897,7 +1897,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+7"/>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>Automatically open the USDG client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1917,7 +1917,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+7"/>
         <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation>Connect to the USDG network through a SOCKS5 proxy.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2036,7 +2036,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+300"/>
         <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation>Connect to the USDG network through a separate SOCKS5 proxy for Tor onion services.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2171,7 +2171,7 @@ The migration process will create a backup of the wallet before migrating. This 
         <location line="+62"/>
         <location line="+335"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the USDG network after a connection is established, but this process has not completed yet.</translation>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-127"/>
@@ -2438,7 +2438,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+1"/>
         <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation>Cannot start usdg: click-to-pay handler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+48"/>
@@ -2451,7 +2451,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="-29"/>
         <source>&apos;bitcoin://&apos; is not a valid URI. Use &apos;bitcoin:&apos; instead.</source>
-        <translation>&apos;usdg://&apos; is not a valid URI. Use &apos;usdg:&apos; instead.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2557,7 +2557,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <location filename="../guiutil.cpp" line="+133"/>
         <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Enter a USDG address (e.g. %1)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+288"/>
@@ -3516,7 +3516,7 @@ For more information on using this console, type %6.
     <message>
         <location line="-3"/>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the USDG network.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
@@ -3937,7 +3937,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+35"/>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
-        <translation>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for usdg transactions than the network can process.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4044,7 +4044,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+1"/>
         <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Creates a Partially Signed USDG Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+92"/>
@@ -4119,7 +4119,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
         <location line="-31"/>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation>Please, review your transaction proposal. This will produce a Partially Signed USDG Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-6"/>
@@ -4131,7 +4131,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
         <location line="+11"/>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Bitcoin Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation>Please, review your transaction. You can create and send this transaction or create a Partially Signed USDG Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4240,7 +4240,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+95"/>
         <source>Warning: Invalid Bitcoin address</source>
-        <translation>Warning: Invalid USDG address</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4288,7 +4288,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="-7"/>
         <source>The Bitcoin address to send the payment to</source>
-        <translation>The USDG address to send the payment to</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+23"/>
@@ -4318,7 +4318,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+7"/>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>The fee will be deducted from the amount being sent. The recipient will receive less usdgs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4344,7 +4344,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+58"/>
         <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>A message that was attached to the usdg: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the USDG network.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4388,12 +4388,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+6"/>
         <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>You can sign messages/agreements with your addresses to prove you can receive usdgs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
         <source>The Bitcoin address to sign the message with</source>
-        <translation>The USDG address to sign the message with</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
@@ -4436,7 +4436,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+21"/>
         <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Sign the message to prove you own this USDG address</translation>
+        <translation>Sign the message to prove you own this Bitcoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4467,7 +4467,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+21"/>
         <source>The Bitcoin address the message was signed with</source>
-        <translation>The USDG address the message was signed with</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>
@@ -4484,7 +4484,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of &quot;100 
     <message>
         <location line="+9"/>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified USDG address</translation>
+        <translation>Verify the message to ensure it was signed with the specified Bitcoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -5380,7 +5380,7 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <location line="+1"/>
         <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
-        <translation>%s corrupt. Try using the wallet tool usdg-wallet to salvage or restoring a backup.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -5440,7 +5440,7 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <location line="+2"/>
         <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation>Error: Dumpfile version is not supported. This version of usdg-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>

@@ -119,7 +119,7 @@ static const CAmount DEFAULT_CONSOLIDATE_FEERATE{10000}; // 10 sat/vbyte
  */
 static const CAmount DEFAULT_MAX_AVOIDPARTIALSPEND_FEE = 0;
 //! discourage APS fee higher than this amount
-constexpr CAmount HIGH_APS_FEE{COIN / 10};
+constexpr CAmount HIGH_APS_FEE{COIN / 10000};
 //! Default for -spendzeroconfchange
 static const bool DEFAULT_SPEND_ZEROCONF_CHANGE = true;
 //! Default for -walletrejectlongchains
@@ -128,16 +128,17 @@ static const bool DEFAULT_WALLETBROADCAST = true;
 static const bool DEFAULT_DISABLE_WALLET = false;
 static const bool DEFAULT_WALLETCROSSCHAIN = false;
 //! -maxtxfee default
-constexpr CAmount DEFAULT_TRANSACTION_MAXFEE{1 * COIN};
+constexpr CAmount DEFAULT_TRANSACTION_MAXFEE{COIN / 10};
 //! Discourage users to set fees higher than this amount (in satoshis) per kB
-constexpr CAmount HIGH_TX_FEE_PER_KB{COIN / 10};
+constexpr CAmount HIGH_TX_FEE_PER_KB{COIN / 100};
 //! -maxtxfee will warn if called with a higher fee than this amount (in satoshis)
 constexpr CAmount HIGH_MAX_TX_FEE{100 * HIGH_TX_FEE_PER_KB};
 //! Pre-calculated constants for input size estimation in *virtual size*
 static constexpr size_t DUMMY_NESTED_P2WPKH_INPUT_SIZE = 91;
-
+//Blackcoin
 //! -minstakingamount default
 static const CAmount DEFAULT_MIN_STAKING_AMOUNT = 0.1 * COIN;
+//Blackcoin
 //! -reservebalance default
 static const CAmount DEFAULT_RESERVE_BALANCE = 0;
 
@@ -689,7 +690,12 @@ public:
     void MaybeUpdateBirthTime(int64_t time);
 
     CFeeRate m_pay_tx_fee{DEFAULT_PAY_TX_FEE};
+    /** Allow Coin Selection to pick unconfirmed UTXOs that were sent from our own wallet if it
+     * cannot fund the transaction otherwise. */
     bool m_spend_zero_conf_change{DEFAULT_SPEND_ZEROCONF_CHANGE};
+
+     /** If the cost to spend a change output at this feerate is greater than the value of the
+      * output itself, just drop it to fees. */
     CFeeRate m_discard_rate{DEFAULT_DISCARD_FEE};
 
     /** When the actual feerate is less than the consolidate feerate, we will tend to make transactions which
@@ -710,6 +716,8 @@ public:
     std::optional<OutputType> m_default_change_type{};
     /** Absolute maximum transaction fee (in satoshis) used by default for the wallet */
     CAmount m_default_max_tx_fee{DEFAULT_TRANSACTION_MAXFEE};
+
+    //Blackcoin
     // optional setting to unlock wallet for staking only
     // serves to disable the trivial sendmoney when OS account compromised
     // provides no real security
@@ -879,6 +887,7 @@ public:
     /* Returns the time of the first created key or, in case of an import, it could be the time of the first received transaction */
     int64_t GetBirthTime() const { return m_birth_time; }
 
+    //Blackcoin
     /* Function that will remove potentially abandoned coinstakes, returning the input to the wallet. */
     void AbandonOrphanedCoinstakes();
 

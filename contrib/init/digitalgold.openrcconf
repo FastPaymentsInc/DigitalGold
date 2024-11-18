@@ -1,0 +1,33 @@
+# /etc/conf.d/digitalgold: config file for /etc/init.d/digitalgold
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/digitalgold/digitalgold.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/digitalgold"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/digitalgold.pid"
+
+# Where to write digitalgold data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/digitalgold"
+
+# User and group to own digitalgold process
+#BITCOIND_USER="digitalgold"
+#BITCOIND_GROUP="digitalgold"
+
+# Path to bitcoind executable
+#BITCOIND_BIN="/usr/bin/digitalgold"
+
+# Nice value to run digitalgold under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for digitalgold to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=600

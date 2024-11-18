@@ -749,7 +749,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">Показать помощь по %1, чтобы получить список доступных параметров командной строки</translation>
+        <translation type="unfinished">Показать справку %1 со списком доступных параметров командной строки</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -1572,10 +1572,6 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
         <translation type="unfinished">Неизвестно. Синхронизируются заголовки (%1, %2%)…</translation>
-    </message>
-    <message>
-        <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>
-        <translation type="unfinished">Неизвестно. Предсинхронизация заголовков (%1, %2%)…</translation>
     </message>
     <message>
         <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>
@@ -2522,10 +2518,6 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <source>Services</source>
         <translation type="unfinished">Службы</translation>
-    </message>
-    <message>
-        <source>High bandwidth BIP152 compact block relay: %1</source>
-        <translation type="unfinished">Широкополосный ретранслятор компактных блоков BIP152: %1</translation>
     </message>
     <message>
         <source>High Bandwidth</source>

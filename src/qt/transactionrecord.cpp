@@ -66,7 +66,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const interface
 
             if (fAllFromMe) {
                 // Change is only really possible if we're the sender
-                // Otherwise, someone just sent usdgs to a change address, which should be shown
+                // Otherwise, someone just sent dgd to a change address, which should be shown
                 if (wtx.txout_is_change[i]) {
                     continue;
                 }
@@ -81,7 +81,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const interface
 
                 if (!std::get_if<CNoDestination>(&wtx.txout_address[i]))
                 {
-                    // Sent to USDG Address
+                    // Sent to digitalgold Address
                     sub.type = TransactionRecord::SendToAddress;
                     sub.address = EncodeDestination(wtx.txout_address[i]);
                 }

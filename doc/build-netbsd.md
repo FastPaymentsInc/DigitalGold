@@ -2,7 +2,7 @@
 
 Updated for NetBSD [9.2](https://netbsd.org/releases/formal-9/NetBSD-9.2.html).
 
-This guide describes how to build usdgd, command-line utilities, and GUI on NetBSD.
+This guide describes how to build digitalgold, command-line utilities, and GUI on NetBSD.
 
 ## Preparation
 
@@ -34,12 +34,12 @@ Then, when configuring, pass the following:
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone USDG Repo
+### 2. Clone DigitalGold Repo
 
-Clone the USDG repository to a directory. All build scripts and commands will run from this directory.
+Clone the DigitalGold repository to a directory. All build scripts and commands will run from this directory.
 
 ```bash
-git clone https://github.com/DigitalGoldFoundation/USDGcoin.git
+git clone https://github.com/DigitalGoldFoundation/DigitalGoldcoin.git
 ```
 
 ### 3. Install Optional Dependencies
@@ -66,7 +66,7 @@ pkgin install db62
 
 #### GUI Dependencies
 
-USDG includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
+DigitalGold includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
 
 ```bash
 pkgin install qt5
@@ -87,14 +87,14 @@ To run the test suite (recommended), you will need to have Python 3 installed:
 pkgin install python37
 ```
 
-### Building USDG
+### Building DigitalGold
 
 **Note**: Use `gmake` (the non-GNU `make` will exit with an error).
 
 
 ### 1. Configuration
 
-There are many ways to configure USDG. Here is an example that
+There are many ways to configure DigitalGold. Here is an example that
 explicitly disables the wallet and GUI:
 
 ```bash

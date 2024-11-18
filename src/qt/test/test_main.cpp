@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
     #endif
 
     BitcoinApplication app;
-    app.setApplicationName("USDG-Qt-test");
+    app.setApplicationName("DigitalGold-Qt-test");
     app.createNode(*init);
 
     int num_test_failures{0};

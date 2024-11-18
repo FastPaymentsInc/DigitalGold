@@ -232,14 +232,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">العبارة السابقة المدخلة لفك تشفير المحفظة غير صحيحة: تحتوي على خانة فارغة. إذا تم تعيين هذه العبارة في نسخة سابقة لـ 25.0، يرجى المحاولة مجددا بإدخال جميع الخانات السابقة للخانة الفارغة والتوقف عند الخانة الفارغة دون إدخال الفراغ.</translation>
     </message>
     <message>
-        <source>Passphrase change failed</source>
-        <translation type="unfinished">فشل تغيير العبارة </translation>
-    </message>
-    <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character.</source>
-        <translation type="unfinished">العبارة السابقة المدخلة لفك تشفير المحفظة غير صحيحة: تحتوي على خانة فارغة. إذا تم تعيين هذه العبارة في نسخة سابقة لـ 25.0، يرجى المحاولة مجددا بإدخال جميع الخانات السابقة للخانة الفارغة والتوقف عند الخانة الفارغة دون إدخال الفراغ.</translation>
-    </message>
-    <message>
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished">‫تحذير: مفتاح الحروف الكبيرة مفعل!‬</translation>
     </message>
@@ -556,24 +548,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp; تشفير المحفظة</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet…</source>
-        <translation type="unfinished">&amp; تشفير المحفظة</translation>
-    </message>
-    <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation type="unfinished">تشفير المفتاح الخاص بمحفظتك</translation>
-    </message>
-    <message>
-        <source>&amp;Backup Wallet…</source>
-        <translation type="unfinished">&amp; محفظة احتياطية</translation>
-    </message>
-    <message>
-        <source>&amp;Change Passphrase…</source>
-        <translation type="unfinished">وتغيير العبارات...</translation>
-    </message>
-    <message>
-        <source>Sign &amp;message…</source>
-        <translation type="unfinished">علامة ورسالة...</translation>
     </message>
     <message>
         <source>&amp;Backup Wallet…</source>
@@ -596,32 +572,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp; تحقق من الرسالة</translation>
     </message>
     <message>
-        <source>&amp;Verify message…</source>
-        <translation type="unfinished">&amp; تحقق من الرسالة</translation>
-    </message>
-    <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
         <translation type="unfinished">تحقق من الرسائل للتأكد من أنَها وُقعت برسائل Bitcoin محدَدة</translation>
-    </message>
-    <message>
-        <source>&amp;Load PSBT from file…</source>
-        <translation type="unfinished">وتحميل PSBT من ملف...</translation>
-    </message>
-    <message>
-        <source>Open &amp;URI…</source>
-        <translation type="unfinished">فتح ورابط...</translation>
-    </message>
-    <message>
-        <source>Close Wallet…</source>
-        <translation type="unfinished">اغلاق المحفظة</translation>
-    </message>
-    <message>
-        <source>Create Wallet…</source>
-        <translation type="unfinished">انشاء المحفظة</translation>
-    </message>
-    <message>
-        <source>Close All Wallets…</source>
-        <translation type="unfinished">اغلاق جميع المحافظ</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -676,22 +628,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">الاتصال بالأقران ...</translation>
     </message>
     <message>
-        <source>Synchronizing with network…</source>
-        <translation type="unfinished">مزامنة مع الشبكة ...</translation>
-    </message>
-    <message>
-        <source>Indexing blocks on disk…</source>
-        <translation type="unfinished">كتل الفهرسة على القرص ...</translation>
-    </message>
-    <message>
-        <source>Processing blocks on disk…</source>
-        <translation type="unfinished">كتل المعالجة على القرص ...</translation>
-    </message>
-    <message>
-        <source>Connecting to peers…</source>
-        <translation type="unfinished">الاتصال بالأقران ...</translation>
-    </message>
-    <message>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation type="unfinished">أطلب دفعات (يولد كودات الرمز المربع وبيت كوين: العناوين المعطاة)</translation>
     </message>
@@ -721,10 +657,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>%1 behind</source>
         <translation type="unfinished">خلف %1</translation>
-    </message>
-    <message>
-        <source>Catching up…</source>
-        <translation type="unfinished">يمسك…</translation>
     </message>
     <message>
         <source>Catching up…</source>
@@ -810,23 +742,23 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">بين اشارة المساعدة %1 للحصول على قائمة من خيارات اوامر البت كوين المحتملة </translation>
+        <translation type="unfinished">‫اعرض %1 رسالة المساعدة للحصول على قائمة من خيارات سطر أوامر البتكوين المحتملة‬</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
-        <translation type="unfinished">&amp; إخفاء القيم</translation>
+        <translation type="unfinished">&amp;إخفاء القيم</translation>
     </message>
     <message>
         <source>Mask the values in the Overview tab</source>
-        <translation type="unfinished">إخفاء القيم في علامة التبويب نظرة عامة</translation>
+        <translation type="unfinished">‫إخفاء القيم في علامة التبويب: نظرة عامة‬</translation>
     </message>
     <message>
         <source>default wallet</source>
-        <translation type="unfinished">المحفظة الإفتراضية</translation>
+        <translation type="unfinished">‫محفظة افتراضية‬</translation>
     </message>
     <message>
         <source>No wallets available</source>
-        <translation type="unfinished">المحفظة الرقمية غير متوفرة</translation>
+        <translation type="unfinished">‫لا يوجد محفظة متاحة‬</translation>
     </message>
     <message>
         <source>Wallet Data</source>
@@ -850,7 +782,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation type="unfinished">&amp;نافذة</translation>
+        <translation type="unfinished">‫&amp;نافذة‬</translation>
     </message>
     <message>
         <source>Zoom</source>
@@ -1210,34 +1142,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>RestoreWalletActivity</name>
-    <message>
-        <source>Restore Wallet</source>
-        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
-        <translation type="unfinished">استعادة المحفظة</translation>
-    </message>
-    <message>
-        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
-        <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
-        <translation type="unfinished">استعادة المحفظة &lt;b&gt;%1&lt;/b&gt;...</translation>
-    </message>
-    <message>
-        <source>Restore wallet failed</source>
-        <extracomment>Title of message box which is displayed when the wallet could not be restored.</extracomment>
-        <translation type="unfinished">‫تعذر استعادة المحفظة‬</translation>
-    </message>
-    <message>
-        <source>Restore wallet warning</source>
-        <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
-        <translation type="unfinished">‫تحذير استعادة المحفظة‬</translation>
-    </message>
-    <message>
-        <source>Restore wallet message</source>
-        <extracomment>Title of message box which is displayed when the wallet is successfully restored.</extracomment>
-        <translation type="unfinished">‫رسالة استعادة محفظة‬</translation>
-    </message>
-</context>
-<context>
     <name>WalletController</name>
     <message>
         <source>Close wallet</source>
@@ -1502,10 +1406,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">‫عندما تنقر موافق. %1 سنبدأ التحميل ومعالجة كامل %4 الطوابق المتتالية (%2 GB) بدأً من أوائل العمليات في %3 عندما %4 تم الاطلاق لأول مرة.‬</translation>
     </message>
     <message>
-        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
-        <translation type="unfinished">‫عندما تنقر موافق. %1 سنبدأ التحميل ومعالجة كامل %4 الطوابق المتتالية (%2 GB) بدأً من أوائل العمليات في %3 عندما %4 تم الاطلاق لأول مرة.‬</translation>
-    </message>
-    <message>
         <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
         <translation type="unfinished">إذا كنت قد اخترت تقييد تخزين سلسلة الكتل (التجريد)، فيجب تحميل البيانات القديمة ومعالجتها، ولكن سيتم حذفها بعد ذلك للحفاظ على انخفاض استخدام القرص.</translation>
     </message>
@@ -1597,10 +1497,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
         <translation type="unfinished">مجهول.  مزامنة الرؤوس (%1،%2٪) ...</translation>
-    </message>
-    <message>
-        <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>
-        <translation type="unfinished">‫غير معروف. ما قبل مزامنة الرؤوس (%1, %2%)…‬</translation>
     </message>
     <message>
         <source>Unknown. Pre-syncing Headers (%1, %2%)…</source>

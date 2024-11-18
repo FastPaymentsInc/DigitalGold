@@ -6,8 +6,8 @@ define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2024)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[USDG]])
-AC_INIT([USDG],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/DigitalGoldFoundation],[USDG],[https://digitalgoldfoundation.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Digital Gold]])
+AC_INIT([Digital Gold],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/DigitalGoldFoundation],[DigitalGold],[https://digitalgoldfoundation.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -29,17 +29,17 @@ if test -n "$PKG_CONFIG_LIBDIR"; then
   PKG_CONFIG="env PKG_CONFIG_LIBDIR=$PKG_CONFIG_LIBDIR $PKG_CONFIG"
 fi
 
-BITCOIN_DAEMON_NAME=usdgd
-BITCOIN_GUI_NAME=usdg-qt
-BITCOIN_TEST_NAME=test_usdg
-BITCOIN_CLI_NAME=usdg-cli
-BITCOIN_TX_NAME=usdg-tx
-BITCOIN_UTIL_NAME=usdg-util
-BITCOIN_CHAINSTATE_NAME=usdg-chainstate
-BITCOIN_WALLET_TOOL_NAME=usdg-wallet
+BITCOIN_DAEMON_NAME=digitalgold
+BITCOIN_GUI_NAME=digitalgold-qt
+BITCOIN_TEST_NAME=test_digitalgold
+BITCOIN_CLI_NAME=digitalgold-cli
+BITCOIN_TX_NAME=digitalgold-tx
+BITCOIN_UTIL_NAME=digitalgold-util
+BITCOIN_CHAINSTATE_NAME=digitalgold-chainstate
+BITCOIN_WALLET_TOOL_NAME=digitalgold-wallet
 dnl Multi Process
-BITCOIN_MP_NODE_NAME=usdg-node
-BITCOIN_MP_GUI_NAME=usdg-gui
+BITCOIN_MP_NODE_NAME=digitalgold-node
+BITCOIN_MP_GUI_NAME=digitalgold-gui
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 dnl This is also the default as-of libtool 2.4.7
@@ -291,7 +291,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess usdg-node, usdg-wallet, and usdg-gui executables in addition to monolithic usdgd and usdg-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess digitalgold-node, digitalgold-wallet, and digitalgold-gui executables in addition to monolithic digitalgold and digitalgold-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
@@ -630,37 +630,37 @@ CORE_CPPFLAGS="$CORE_CPPFLAGS -DHAVE_BUILD_INFO"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build usdg-cli usdg-tx usdg-util usdg-wallet (default=yes)])],
+  [build digitalgold-cli digitalgold-tx digitalgold-util digitalgold-wallet (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
 AC_ARG_ENABLE([util-cli],
   [AS_HELP_STRING([--enable-util-cli],
-  [build usdg-cli])],
+  [build digitalgold-cli])],
   [build_bitcoin_cli=$enableval],
   [build_bitcoin_cli=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-tx],
   [AS_HELP_STRING([--enable-util-tx],
-  [build usdg-tx])],
+  [build digitalgold-tx])],
   [build_bitcoin_tx=$enableval],
   [build_bitcoin_tx=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-wallet],
   [AS_HELP_STRING([--enable-util-wallet],
-  [build usdg-wallet])],
+  [build digitalgold-wallet])],
   [build_bitcoin_wallet=$enableval],
   [build_bitcoin_wallet=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build usdg-util])],
+  [build digitalgold-util])],
   [build_bitcoin_util=$enableval],
   [build_bitcoin_util=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([experimental-util-chainstate],
   [AS_HELP_STRING([--enable-experimental-util-chainstate],
-  [build experimental usdg-chainstate executable (default=no)])],
+  [build experimental digitalgold-chainstate executable (default=no)])],
   [build_bitcoin_chainstate=$enableval],
   [build_bitcoin_chainstate=no])
 
@@ -678,7 +678,7 @@ AC_ARG_WITH([experimental-kernel-lib],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build usdg daemon (default=yes)])],
+  [build digitalgold daemon (default=yes)])],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 
@@ -758,11 +758,11 @@ case $host in
            AX_CHECK_PREPROC_FLAG([-Xclang -internal-isystem -Xclang /usr/local/include/], [CORE_CPPFLAGS="$CORE_CPPFLAGS -Xclang -internal-isystem -Xclang /usr/local/include/"], [], [$CXXFLAG_WERROR])
          fi
 
-         if test "$use_bdb" != "no" && $BREW list --versions berkeley-db@62 >/dev/null && test "$BDB_CFLAGS" = "" && test "$BDB_LIBS" = ""; then
-           bdb_prefix=$($BREW --prefix berkeley-db@62 2>/dev/null)
-           dnl This must precede the call to BITCOIN_FIND_BDB62 below.
+         if test "$use_bdb" != "no" && $BREW list --versions berkeley-db@4 >/dev/null && test "$BDB_CFLAGS" = "" && test "$BDB_LIBS" = ""; then
+           bdb_prefix=$($BREW --prefix berkeley-db@4 2>/dev/null)
+           dnl This must precede the call to BITCOIN_FIND_BDB48 below.
            BDB_CFLAGS="-I$bdb_prefix/include"
-           BDB_LIBS="-L$bdb_prefix/lib -ldb_cxx-6.2"
+           BDB_LIBS="-L$bdb_prefix/lib -ldb_cxx-4.8"
          fi
 
          if $BREW list --versions qt@5 >/dev/null; then
@@ -1016,7 +1016,7 @@ AC_CHECK_DECLS([getifaddrs, freeifaddrs],[CHECK_SOCKET],,
     #include <ifaddrs.h>]
 )
 
-dnl These are used for daemonization in usdgd
+dnl These are used for daemonization in digitalgold
 AC_CHECK_DECLS([fork])
 AC_CHECK_DECLS([setsid])
 
@@ -1367,7 +1367,7 @@ fi
 if test "$enable_wallet" != "no"; then
     dnl Check for libdb_cxx only if wallet enabled
     if test "$use_bdb" != "no"; then
-      BITCOIN_FIND_BDB62
+      BITCOIN_FIND_BDB48
       if test "$suppress_external_warnings" != "no" ; then
         BDB_CPPFLAGS=SUPPRESS_WARNINGS($BDB_CPPFLAGS)
       fi
@@ -1652,30 +1652,30 @@ if test "$build_multiprocess" != "no"; then
   AC_SUBST(MPGEN_PREFIX)
 fi
 
-AC_MSG_CHECKING([whether to build usdgd])
+AC_MSG_CHECKING([whether to build digitalgold])
 AM_CONDITIONAL([BUILD_BITCOIND], [test $build_bitcoind = "yes"])
 AC_MSG_RESULT($build_bitcoind)
 
-AC_MSG_CHECKING([whether to build usdg-cli])
+AC_MSG_CHECKING([whether to build digitalgold-cli])
 AM_CONDITIONAL([BUILD_BITCOIN_CLI], [test $build_bitcoin_cli = "yes"])
 AC_MSG_RESULT($build_bitcoin_cli)
 
-AC_MSG_CHECKING([whether to build usdg-tx])
+AC_MSG_CHECKING([whether to build digitalgold-tx])
 AM_CONDITIONAL([BUILD_BITCOIN_TX], [test $build_bitcoin_tx = "yes"])
 AC_MSG_RESULT($build_bitcoin_tx)
 
-AC_MSG_CHECKING([whether to build usdg-wallet])
+AC_MSG_CHECKING([whether to build digitalgold-wallet])
 AM_CONDITIONAL([BUILD_BITCOIN_WALLET], [test $build_bitcoin_wallet = "yes"])
 AC_MSG_RESULT($build_bitcoin_wallet)
 
-AC_MSG_CHECKING([whether to build usdg-util])
+AC_MSG_CHECKING([whether to build digitalgold-util])
 AM_CONDITIONAL([BUILD_BITCOIN_UTIL], [test $build_bitcoin_util = "yes"])
 AC_MSG_RESULT($build_bitcoin_util)
 
-AC_MSG_CHECKING([whether to build experimental usdg-chainstate])
+AC_MSG_CHECKING([whether to build experimental digitalgold-chainstate])
 if test "$build_bitcoin_chainstate" = "yes"; then
   if test "$build_experimental_kernel_lib" = "no"; then
-    AC_MSG_ERROR([experimental usdg-chainstate cannot be built without the experimental bitcoinkernel library. Use --with-experimental-kernel-lib]);
+    AC_MSG_ERROR([experimental digitalgold-chainstate cannot be built without the experimental bitcoinkernel library. Use --with-experimental-kernel-lib]);
   fi
 fi
 AM_CONDITIONAL([BUILD_BITCOIN_CHAINSTATE], [test $build_bitcoin_chainstate = "yes"])
@@ -1797,7 +1797,7 @@ if test "$bitcoin_enable_qt" != "no"; then
     AC_MSG_WARN([xgettext is required to update qt translations])
   fi
 
-  AC_MSG_CHECKING([whether to build test_usdg-qt])
+  AC_MSG_CHECKING([whether to build test_digitalgold-qt])
   if test "$use_gui_tests$bitcoin_enable_qt_test" = "yesyes"; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
@@ -1806,7 +1806,7 @@ if test "$bitcoin_enable_qt" != "no"; then
   fi
 fi
 
-AC_MSG_CHECKING([whether to build test_usdg])
+AC_MSG_CHECKING([whether to build test_digitalgold])
 if test "$use_tests" = "yes"; then
   if test "$enable_fuzz" = "yes"; then
     AC_MSG_RESULT([no, because fuzzing is enabled])
@@ -1990,7 +1990,7 @@ echo "  with zmq        = $use_zmq"
 if test $enable_fuzz = "no"; then
     echo "  with test       = $use_tests"
 else
-    echo "  with test       = not building test_usdg because fuzzing is enabled"
+    echo "  with test       = not building test_digitalgold because fuzzing is enabled"
 fi
 echo "  with fuzz binary = $enable_fuzz_binary"
 echo "  with bench      = $use_bench"

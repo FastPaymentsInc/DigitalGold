@@ -113,7 +113,7 @@ int fork_daemon(bool nochdir, bool noclose, TokenPipeEnd& endpoint)
 
 static bool ParseArgs(ArgsManager& args, int argc, char* argv[])
 {
-    // If Qt is used, parameters/usdg.conf are parsed in qt/bitcoin.cpp's main()
+    // If Qt is used, parameters/digitalgold.conf are parsed in qt/bitcoin.cpp's main()
     SetupServerArgs(args);
     std::string error;
     if (!args.ParseParameters(argc, argv, error)) {
@@ -127,7 +127,7 @@ static bool ParseArgs(ArgsManager& args, int argc, char* argv[])
     // Error out when loose non-argument tokens are encountered on command line
     for (int i = 1; i < argc; i++) {
         if (!IsSwitchChar(argv[i][0])) {
-            return InitError(Untranslated(strprintf("Command line contains unexpected token '%s', see usdgd -h for a list of options.", argv[i])));
+            return InitError(Untranslated(strprintf("Command line contains unexpected token '%s', see digitalgold -h for a list of options.", argv[i])));
         }
     }
     return true;
@@ -142,7 +142,7 @@ static bool ProcessInitCommands(ArgsManager& args)
         if (args.IsArgSet("-version")) {
             strUsage += FormatParagraph(LicenseInfo());
         } else {
-            strUsage += "\nUsage:  usdgd [options]                     Start " PACKAGE_NAME "\n"
+            strUsage += "\nUsage:  digitalgold [options]                     Start " PACKAGE_NAME "\n"
                 "\n";
             strUsage += args.GetHelpMessage();
         }
@@ -260,7 +260,7 @@ MAIN_FUNCTION
 
     SetupEnvironment();
 
-    // Connect usdgd signal handlers
+    // Connect digitalgold signal handlers
     noui_connect();
 
     util::ThreadSetInternalName("init");

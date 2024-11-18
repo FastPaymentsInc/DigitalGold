@@ -36,7 +36,7 @@ from test_framework.wallet import MiniWallet
 
 VERSIONBITS_TOP_BITS = 0x20000000
 VERSIONBITS_DEPLOYMENT_TESTDUMMY_BIT = 28
-DEFAULT_BLOCK_MIN_TX_FEE = 1000  # default `-blockmintxfee` setting [sat/kvB]
+DEFAULT_BLOCK_MIN_TX_FEE = 100000  # default `-blockmintxfee` setting [sat/kvB]
 
 
 def assert_template(node, block, expect, rehash=True):
@@ -64,7 +64,7 @@ class MiningTest(BitcoinTestFramework):
         mining_info = self.nodes[0].getmininginfo()
         assert_equal(mining_info['blocks'], 200)
         assert_equal(mining_info['currentblocktx'], 0)
-        assert_equal(mining_info['currentblockweight'], 4000)
+        assert_equal(mining_info['currentblockweight'], 8000)
 
         self.log.info('test blockversion')
         self.restart_node(0, extra_args=[f'-mocktime={t}', '-blockversion=1337'])

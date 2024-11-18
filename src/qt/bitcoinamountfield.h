@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering usdg amounts.
+/** Widget for entering digitalgold amounts.
   */
 class BitcoinAmountField: public QWidget
 {

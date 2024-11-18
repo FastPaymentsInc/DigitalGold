@@ -766,8 +766,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
-            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
+            <numerusform>1%n  ενεργές συνδέσεις στο δίκτυο Bitcoin.</numerusform>
+            <numerusform>%n ενεργές συνδέσεις στο δίκτυο Bitcoin.</numerusform>
         </translation>
     </message>
     <message>

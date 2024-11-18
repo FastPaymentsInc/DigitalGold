@@ -954,7 +954,7 @@ Só é possível assinar com endereços do tipo 'legado'.</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation type="unfinished">Copiar alteração</translation>
+        <translation type="unfinished">Copiar troco</translation>
     </message>
     <message>
         <source>(%1 locked)</source>

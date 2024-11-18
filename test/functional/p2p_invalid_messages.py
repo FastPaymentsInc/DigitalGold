@@ -216,7 +216,7 @@ class InvalidMessagesTest(BitcoinTestFramework):
         self.test_addrv2('unrecognized network',
             [
                 'received: addrv2 (25 bytes)',
-                '9.9.9.9:7633 mapped',
+                '9.9.9.9:7733 mapped',
                 'Added 1 addresses',
             ],
             bytes.fromhex(

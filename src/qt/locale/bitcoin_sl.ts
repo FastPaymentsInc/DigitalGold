@@ -688,18 +688,6 @@ Podpisovanje je možno le s podedovanimi ("legacy") naslovi.</translation>
         <translation type="unfinished">O&amp;kno</translation>
     </message>
     <message>
-        <source>Zoom</source>
-        <translation type="unfinished">Povečava</translation>
-    </message>
-    <message>
-        <source>Main Window</source>
-        <translation type="unfinished">Glavno okno</translation>
-    </message>
-    <message>
-        <source>%1 client</source>
-        <translation type="unfinished">Odjemalec %1</translation>
-    </message>
-    <message>
         <source>&amp;Hide</source>
         <translation type="unfinished">&amp;Skrij</translation>
     </message>

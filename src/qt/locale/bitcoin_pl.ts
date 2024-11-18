@@ -64,32 +64,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 Podpisywanie jest możliwe tylko z adresami typu 'legacy'.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation type="unfinished">Kopiuj adres</translation>
-    </message>
-    <message>
-        <source>Copy &amp;Label</source>
-        <translation type="unfinished">Kopiuj etykietę</translation>
-    </message>
-    <message>
-        <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Edytuj</translation>
-    </message>
-    <message>
-        <source>Export Address List</source>
-        <translation type="unfinished">Eksportuj listę adresów </translation>
-    </message>
-    <message>
-        <source>Comma separated file</source>
-        <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation type="unfinished">Plik *.CSV rozdzielany pzrecinkami</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the address list to %1. Please try again.</source>
-        <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
-        <translation type="unfinished">Wystąpił błąd podczas próby zapisu listy adresów do %1. Proszę spróbować ponownie.</translation>
-    </message>
-    <message>
         <source>Exporting Failed</source>
         <translation type="unfinished">Eksportowanie nie powiodło się </translation>
     </message>
@@ -134,14 +108,6 @@ Podpisywanie jest możliwe tylko z adresami typu 'legacy'.</translation>
     <message>
         <source>Encrypt wallet</source>
         <translation type="unfinished">Zaszyfruj portfel </translation>
-    </message>
-    <message>
-        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation type="unfinished">Ta operacja wymaga hasła do portfela aby odblokować portfel. </translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation type="unfinished">Odblokuj portfel</translation>
     </message>
     <message>
         <source>Change passphrase</source>

@@ -474,10 +474,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">显示%1帮助消息以获得可能包含Bitcoin命令行选项的列表</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">默认钱包</translation>
-    </message>
-    <message>
         <source>No wallets available</source>
         <translation type="unfinished">无可用钱包</translation>
     </message>
@@ -655,10 +651,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy fee</source>
         <translation type="unfinished">复制手续费</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation type="unfinished">(无标签)</translation>
     </message>
     <message>
         <source>(no label)</source>

@@ -11,7 +11,7 @@
 
 static const int PROTOCOL_VERSION = 70016;
 
-//! USDG: used to communicate with Bitcore clients
+//! digitalgold: used to communicate with Bitcore clients
 static const int BITCORE_VERSION = 70011;
 
 //! initial proto version, to be increased after version/verack negotiation

@@ -1241,10 +1241,6 @@ Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translatio
         <translation type="unfinished">Käytä ulkoista allekirjoituslaitetta, kuten laitteistolompakkoa. Määritä ulkoisen allekirjoittajan skripti ensin lompakon asetuksissa.</translation>
     </message>
     <message>
-        <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
-        <translation type="unfinished">Käytä ulkoista allekirjoituslaitetta, kuten laitteistolompakkoa. Määritä ulkoisen allekirjoittajan skripti ensin lompakon asetuksissa.</translation>
-    </message>
-    <message>
         <source>External signer</source>
         <translation type="unfinished">Ulkopuolinen allekirjoittaja</translation>
     </message>

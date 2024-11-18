@@ -31,9 +31,9 @@ QList<BitcoinUnit> BitcoinUnits::availableUnits()
 QString BitcoinUnits::longName(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("USDG");
-    case Unit::mBTC: return QString("mUSDG");
-    case Unit::uBTC: return QString::fromUtf8("μUSDG (bits)");
+    case Unit::BTC: return QString("DGD");
+    case Unit::mBTC: return QString("mDGD");
+    case Unit::uBTC: return QString::fromUtf8("μDGD (bits)");
     case Unit::SAT: return QString("Satoshi (sat)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);
@@ -53,9 +53,9 @@ QString BitcoinUnits::shortName(Unit unit)
 QString BitcoinUnits::description(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("Usdgs");
-    case Unit::mBTC: return QString("Milli-usdgs (1 / 1" THIN_SP_UTF8 "000)");
-    case Unit::uBTC: return QString("Micro-usdgs (blits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case Unit::BTC: return QString("Dgds");
+    case Unit::mBTC: return QString("Milli-dgds (1 / 1" THIN_SP_UTF8 "000)");
+    case Unit::uBTC: return QString("Micro-dgds (blits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case Unit::SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);

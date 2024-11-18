@@ -65,7 +65,7 @@ RPCHelpMan walletpassphrase()
         }
 
         if (strWalletPass.empty()) {
-            throw JSONRPCError(RPC_INVALID_PARAMETER, "passphrase can not be empty");
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "passphrase cannot be empty");
         }
 
         // Used to restore m_wallet_unlock_staking_only value in case of unlock failure
@@ -239,7 +239,7 @@ RPCHelpMan encryptwallet()
                 RPCExamples{
             "\nEncrypt your wallet\n"
             + HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending usdg\n"
+            "\nNow set the passphrase to use the wallet, such as for signing or sending digitalgold\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can do something like sign\n"
             + HelpExampleCli("signmessage", "\"address\" \"test message\"") +

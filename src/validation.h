@@ -76,16 +76,16 @@ class SignalInterrupt;
 } // namespace util
 
 /** Minimum fee for transactions */
-static const unsigned int MIN_TX_FEE = 10000;
+static const unsigned int MIN_TX_FEE = 1000;
 /** Minimum fee per kB */
-static const unsigned int TX_FEE_PER_KB = 100000;
+static const unsigned int TX_FEE_PER_KB = 10000;
 /** Maximum number of dedicated script-checking threads allowed */
 static const int MAX_SCRIPTCHECK_THREADS = 15;
 /** -par default (number of script-checking threads, 0 = auto) */
 static const int DEFAULT_SCRIPTCHECK_THREADS = 0;
 /** Block files containing a block-height within MIN_BLOCKS_TO_KEEP of ActiveChain().Tip() will not be pruned. */
-static const unsigned int MIN_BLOCKS_TO_KEEP = 288;
-static const signed int DEFAULT_CHECKBLOCKS = 6;
+static const unsigned int MIN_BLOCKS_TO_KEEP = 2700;
+static const signed int DEFAULT_CHECKBLOCKS = 64;
 static constexpr int DEFAULT_CHECKLEVEL{3};
 // Require that user allocate at least 550 MiB for block & undo files (blk???.dat and rev???.dat)
 // At 1MB per block, 288 blocks = 288MB.

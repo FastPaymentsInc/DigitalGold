@@ -13,7 +13,7 @@
 
 namespace wallet {
 
-static int64_t GetStakeCombineThreshold() { return 250 * COIN; }
+static int64_t GetStakeCombineThreshold() { return 120 * COIN; }
 static int64_t GetStakeSplitThreshold() { return 2 * GetStakeCombineThreshold(); }
 
 void StakeCoins(CWallet& wallet, bool fStake) {
@@ -245,7 +245,7 @@ bool SelectCoinsForStaking(const CWallet& wallet, CAmount& nTargetValue, std::se
 
 // peercoin: create coin stake transaction
 typedef std::vector<unsigned char> valtype;
-bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, CAmount& nFees, CTxDestination destination)
+bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, CAmount& nFees, uint32_t& nTimeBlock, CTxDestination destination)
 {
     bool fAllowWatchOnly = wallet.IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS);
     CBlockIndex* pindexPrev = wallet.chain().getTip();
@@ -306,7 +306,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
             // Search backward in time from the given txNew timestamp
             // Search nSearchInterval seconds back up to nMaxStakeSearchInterval
             COutPoint prevoutStake = COutPoint(pcoin.first->GetHash(), pcoin.second);
-            if (CheckKernel(pindexPrev, nBits, txNew.nTime - n, prevoutStake, wallet.chain().getCoinsTip()))
+            if (CheckKernel(pindexPrev, nBits, nTimeBlock - n, prevoutStake, wallet.chain().getCoinsTip()))
             {
                 // Found a kernel
                 LogPrint(BCLog::COINSTAKE, "CreateCoinStake : kernel found\n");
@@ -373,7 +373,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
                     bMinterKey = true;
                 }
 
-                txNew.nTime -= n;
+                nTimeBlock -= n;
                 txNew.vin.push_back(CTxIn(pcoin.first->GetHash(), pcoin.second));
                 nCredit += pcoin.first->tx->vout[pcoin.second].nValue;
                 vwtxPrev.push_back(tx);
@@ -433,7 +433,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
     }
 
     // Calculate reward
-    CAmount nReward = nFees + GetProofOfStakeSubsidy();
+    CAmount nReward = GetProofOfStakeSubsidy(); // DGD: fees are not included in block reward
     if (nReward < 0)
         return false;
 
@@ -473,9 +473,7 @@ bool CreateCoinStake(CWallet& wallet, unsigned int nBits, int64_t nSearchInterva
         wallet.chain().findCoins(coins);
         // Script verification errors
         std::map<int, bilingual_str> input_errors;
-        int nTime = txNew.nTime;
         wallet.SignTransaction(txNew, coins, SIGHASH_ALL, input_errors);
-        txNew.nTime = nTime;
     }
 
     // Limit size

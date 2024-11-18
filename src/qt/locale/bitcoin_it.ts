@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation type="unfinished">Copia negli appunti del sistema l'indirizzo attualmente selezionato</translation>
+        <translation type="unfinished">Copia l'indirizzo attualmente selezionato negli appunti di sistema</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation type="unfinished">Rimuovi dalla lista l'indirizzo attualmente selezionato</translation>
+        <translation type="unfinished">Rimuovi l'indirizzo attualmente selezionato dall'elenco</translation>
     </message>
     <message>
         <source>Enter address or label to search</source>

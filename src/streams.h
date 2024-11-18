@@ -95,6 +95,7 @@ class VectorWriter
     {
         return nType;
     }
+
 private:
     const int nType;
     std::vector<unsigned char>& vchData;

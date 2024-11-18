@@ -667,23 +667,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation type="unfinished">វិនដូ(&amp;W)</translation>
-    </message>
-    <message>
-        <source>Main Window</source>
-        <translation type="unfinished">វិនដូចម្បង</translation>
-    </message>
-    <message>
-        <source>%1 client</source>
-        <translation type="unfinished">%1 អតិថិជន</translation>
+        <translation type="unfinished">&amp;វិនដូ</translation>
     </message>
     <message>
         <source>&amp;Hide</source>
-        <translation type="unfinished">លាក់(&amp;H)</translation>
+        <translation type="unfinished">&amp;លាក់</translation>
     </message>
     <message>
         <source>S&amp;how</source>
-        <translation type="unfinished">របៀប(&amp;S)</translation>
+        <translation type="unfinished">S&amp;របៀប</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Bitcoin network.</source>
@@ -894,10 +886,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy fee</source>
         <translation type="unfinished">ចម្លងតម្លៃ</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation type="unfinished">អាច +/- %1 satoshi(s)ច្រើនក្នុងការបញ្ជូលមួយ។</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1416,7 +1404,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation type="unfinished">វិនដូ(&amp;W)</translation>
+        <translation type="unfinished">&amp;វិនដូ</translation>
     </message>
     <message>
         <source>&amp;Display</source>
@@ -1871,7 +1859,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>Last block time</source>
-        <translation type="unfinished">ពេលវេលាប្លុកចុងក្រោយ</translation>
+        <translation type="unfinished">ពេវេលាប្លុកជុងក្រោយ</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>

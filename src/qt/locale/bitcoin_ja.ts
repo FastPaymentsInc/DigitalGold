@@ -266,8 +266,7 @@ Existing translations will be added in the string's history. Are you sure you wa
     </message>
     <message>
         <source>Internal error</source>
-        <translation type="unfinished">内部エラー
-：あなたの問題ではありません</translation>
+        <translation type="unfinished">内部エラー</translation>
     </message>
     <message>
         <source>An internal error occurred. %1 will attempt to continue safely. This is an unexpected bug which can be reported as described below.</source>
@@ -1572,10 +1571,6 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <source>Number of script &amp;verification threads</source>
         <translation type="unfinished">スクリプト検証用スレッド数(&amp;v)</translation>
-    </message>
-    <message>
-        <source>Full path to a %1 compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">%1 対応スクリプトのフルパス（例：C:\Downloads\hwi.exe や /Users/you/Downloads/hwi.py）。マルウェアにコインを盗まれないようご注意ください。</translation>
     </message>
     <message>
         <source>Full path to a %1 compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
@@ -3255,10 +3250,6 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
         <translation type="unfinished">%1 よりも高い手数料は、法外に高い手数料と判定されます。</translation>
-    </message>
-    <message>
-        <source>%1/kvB</source>
-        <translation type="unfinished">%1 /kvB</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>

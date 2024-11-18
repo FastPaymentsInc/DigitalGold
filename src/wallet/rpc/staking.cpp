@@ -322,7 +322,7 @@ static RPCHelpMan checkkernel()
 
     CBlock *pblock = &pblocktemplate->block;
     CMutableTransaction coinstakeTx(*pblock->vtx[0]);
-    pblock->nTime = coinstakeTx.nTime = nTime;
+    pblock->nTime = nTime;
     pblock->vtx[0] = MakeTransactionRef(std::move(coinstakeTx));
 
     CDataStream ss(SER_DISK);

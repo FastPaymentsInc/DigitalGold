@@ -140,10 +140,6 @@ TxSize CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *walle
     // Segwit marker and flag
     if (is_segwit) weight += 2;
 
-    // Blackcoin: transaction weight should be increased for v1 transactions because of additional nTime field
-    if (tx.nVersion < 2)
-        weight += 4 * WITNESS_SCALE_FACTOR;
-
     // Add the size of the transaction outputs.
     for (const auto& txo : tx.vout) weight += GetSerializeSize(txo) * WITNESS_SCALE_FACTOR;
 
@@ -1023,8 +1019,8 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
     // For creating the change output now, we use the effective feerate.
     // For spending the change output in the future, we use the discard feerate for now.
     // So cost of change = (change output size * effective feerate) + (size of spending change output * discard feerate)
-    coin_selection_params.m_change_fee = std::max(GetMinFee(coin_selection_params.change_output_size, current_time), coin_selection_params.m_effective_feerate.GetFee(coin_selection_params.change_output_size));
-    coin_selection_params.m_cost_of_change = std::max(GetMinFee(coin_selection_params.change_spend_size, current_time), coin_selection_params.m_discard_feerate.GetFee(coin_selection_params.change_spend_size)) + coin_selection_params.m_change_fee;
+    coin_selection_params.m_change_fee = std::max(GetMinFee(coin_selection_params.change_output_size), coin_selection_params.m_effective_feerate.GetFee(coin_selection_params.change_output_size));
+    coin_selection_params.m_cost_of_change = std::max(GetMinFee(coin_selection_params.change_spend_size), coin_selection_params.m_discard_feerate.GetFee(coin_selection_params.change_spend_size)) + coin_selection_params.m_change_fee;
 
     coin_selection_params.m_min_change_target = GenerateChangeTarget(std::floor(recipients_sum / vecSend.size()), coin_selection_params.m_change_fee, rng_fast);
 
@@ -1053,7 +1049,7 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
     }
 
     // Include the fees for things that aren't inputs, excluding the change output
-    const CAmount not_input_fees = std::max(coin_selection_params.m_subtract_fee_outputs ? 0 : GetMinFee(coin_selection_params.tx_noinputs_size, current_time), coin_selection_params.m_effective_feerate.GetFee(coin_selection_params.m_subtract_fee_outputs ? 0 : coin_selection_params.tx_noinputs_size));
+    const CAmount not_input_fees = std::max(coin_selection_params.m_subtract_fee_outputs ? 0 : GetMinFee(coin_selection_params.tx_noinputs_size), coin_selection_params.m_effective_feerate.GetFee(coin_selection_params.m_subtract_fee_outputs ? 0 : coin_selection_params.tx_noinputs_size));
     CAmount selection_target = recipients_sum + not_input_fees;
 
     // This can only happen if feerate is 0, and requested destinations are value of 0 (e.g. OP_RETURN)
@@ -1124,7 +1120,7 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
     if (nBytes == -1) {
         return util::Error{_("Missing solving data for estimating transaction size")};
     }
-    CAmount fee_needed = std::max(coin_selection_params.m_effective_feerate.GetFee(nBytes), GetMinFee(nBytes, current_time)) + result.GetTotalBumpFees();
+    CAmount fee_needed = std::max(coin_selection_params.m_effective_feerate.GetFee(nBytes), GetMinFee(nBytes)) + result.GetTotalBumpFees();
     const CAmount output_value = CalculateOutputValue(txNew);
     Assume(recipients_sum + change_amount == output_value);
     CAmount current_fee = result.GetSelectedValue() - output_value;

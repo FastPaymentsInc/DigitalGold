@@ -210,7 +210,6 @@ static constexpr TransactionSerParams TX_NO_WITNESS{.allow_witness = false};
 /**
  * Basic transaction serialization format:
  * - int32_t nVersion
- * - uint32_t nTime
  * - std::vector<CTxIn> vin
  * - std::vector<CTxOut> vout
  * - uint32_t nLockTime
@@ -231,10 +230,6 @@ void UnserializeTransaction(TxType& tx, Stream& s, const TransactionSerParams& p
     const bool fAllowWitness = params.allow_witness;
 
     s >> tx.nVersion;
-    if (tx.nVersion < 2)
-        s >> tx.nTime;
-    else
-        tx.nTime = 0;
     unsigned char flags = 0;
     tx.vin.clear();
     tx.vout.clear();
@@ -275,8 +270,6 @@ void SerializeTransaction(const TxType& tx, Stream& s, const TransactionSerParam
     const bool fAllowWitness = params.allow_witness;
 
     s << tx.nVersion;
-    if (tx.nVersion < 2)
-        s << tx.nTime;
     unsigned char flags = 0;
     // Consistency check
     if (fAllowWitness) {
@@ -325,7 +318,6 @@ public:
     const std::vector<CTxIn> vin;
     const std::vector<CTxOut> vout;
     const int32_t nVersion;
-    const uint32_t nTime;
     const uint32_t nLockTime;
 
 private:
@@ -410,7 +402,6 @@ struct CMutableTransaction
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
     int32_t nVersion;
-    uint32_t nTime;
     uint32_t nLockTime;
 
     explicit CMutableTransaction();
