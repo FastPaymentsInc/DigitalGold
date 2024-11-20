@@ -155,10 +155,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 40500 77ff9070cb337241c501259b5e22a1e6d4b52c45121df33250cccd09671b3aa1 // block 6142
-            // .nTime    = 1728915568,
-            // .nTxCount = 295485,
-            // .dTxRate  = 0.02821852910212062
+            // Data from RPC: getchaintxstats 6141 77ff9070cb337241c501259b5e22a1e6d4b52c45121df33250cccd09671b3aa1 // block 6142
+            .nTime    = 1732101136,
+            .nTxCount = 10678,
+            .dTxRate  = 0.02654519595605969
         };
     }
 };
