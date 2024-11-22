@@ -131,6 +131,10 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
         "    background-color: orange;"           // Maintain orange color when pressed or hovered
         "    color: white;"
         "}"
+        "QToolButton:checked  {"
+        "   background-color: #242424;"
+        "   color: white;"
+        "}"
         "QHeaderView::section {"
         "    background-color: gray;"    // Set the color for the header section here
         "    color: white;"                 // Set the text color for better visibility
