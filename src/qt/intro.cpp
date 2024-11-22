@@ -117,6 +117,83 @@ Intro::Intro(QWidget *parent, int64_t blockchain_size_gb) :
     m_blockchain_size_gb(blockchain_size_gb)
 {
     ui->setupUi(this);
+
+    // Blackcoin: stylesheet for the welcome message.
+    this->setStyleSheet(R"(
+        /* General Dialog Styling */
+        QDialog {
+            background-color: #242424; /* Dark background */
+            color: white;              /* Default text color */
+            font-family: 'Roboto';     /* Consistent font family */
+            font-size: 14px;           /* Base font size */
+        }
+
+        /* Label Styling */
+        QLabel#welcomeLabel, QLabel#storageLabel, QLabel#ExplanationLabel1, QLabel#ExplanationLabel2 {
+            color: white;              /* White text for labels */
+            font-size: 14px;           /* Consistent font size */
+        }
+
+        /* RadioButton Styling */
+        QRadioButton {
+            color: white;              /* White text for radio buttons */
+            font-size: 14px;           /* Consistent font size */
+        }
+
+        /* RadioButton Indicator Styling (Optional) */
+        QRadioButton::indicator {
+            width: 13px;
+            height: 13px;
+        }
+
+        /* Label Styling */
+        QLabel {
+            color: white;              /* White text for labels */
+            font-size: 14px;           /* Consistent font size */
+        }
+
+        /* Button Styling */
+        QPushButton {
+            background-color: #555555; /* Dark grey background */
+            color: white;              /* White text */
+            border: none;              /* No borders */
+            padding: 6px 12px;         /* Padding inside buttons */
+            border-radius: 4px;        /* Rounded corners */
+            font-size: 14px;           /* Consistent font size */
+        }
+
+        QPushButton:hover {
+            background-color: #666666; /* Slightly lighter on hover */
+        }
+
+        QPushButton:pressed {
+            background-color: #444444; /* Darker when pressed */
+        }
+
+        /* Line Edit Styling */
+        QLineEdit {
+            background-color: #333333; /* Darker background for input fields */
+            color: white;              /* White text */
+            border: 1px solid #555555; /* Border color */
+            padding: 4px 8px;          /* Padding inside input fields */
+            border-radius: 4px;        /* Rounded corners */
+            font-size: 14px;           /* Consistent font size */
+        }
+
+
+        /* Error Message Styling */
+        QLabel#errorMessage {
+            color: #FF5555;            /* Bright red for errors */
+            font-weight: bold;         /* Bold text */
+        }
+
+        /* Free Space Label Styling */
+        QLabel#freeSpace {
+            color: #FFFF55;            /* Bright yellow for warnings */
+        }
+    )");
+
+
     ui->welcomeLabel->setText(ui->welcomeLabel->text().arg(PACKAGE_NAME));
     ui->storageLabel->setText(ui->storageLabel->text().arg(PACKAGE_NAME));
 
