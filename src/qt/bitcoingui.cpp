@@ -129,12 +129,10 @@ qApp->setStyleSheet(R"(
     }
     QToolButton:pressed, QToolButton:hover {
         background-color: orange;         /* Maintain orange color when pressed or hovered */
-        font-size: 20px;                  /* Font size for toolbar text */
         border: 1px solid white;         /* Highlight border on hover */
     }
     QToolButton:checked  {
         background-color: orange;
-        font-size: 20px;                  /* Font size for toolbar text */
         border: 2px solid white;          /* Bold border when checked */
     }
     QHeaderView::section {
