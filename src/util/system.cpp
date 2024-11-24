@@ -1355,6 +1355,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
     std::string strCopyrightHolders =
         strPrefix + "The Bitcoin Core developers" +
+        "\n" + strPrefix + "The Blackcoin More developers" +
         "\n" + strPrefix + "The Digital Gold developers";
     return strCopyrightHolders;
 }
