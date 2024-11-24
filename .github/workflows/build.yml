@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - main
+      - qtchanges
     paths-ignore:
       - '**/*.md'
   pull_request:
