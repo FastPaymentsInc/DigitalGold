@@ -91,6 +91,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
     std::string strCopyrightHolders =
         strPrefix + "The Bitcoin Core developers" +
+        "\n" + strPrefix + "The Blackcoin More developers"
         "\n" + strPrefix + "The Digital Gold developers";
     return strCopyrightHolders;
 }
@@ -100,6 +101,8 @@ std::string LicenseInfo()
     const std::string URL_SOURCE_CODE = "<https://github.com/DigitalGoldFoundation/DigitalGold>";
 
     return strprintf(_("Copyright (C) 2009-%i The Bitcoin Core Developers").translated, COPYRIGHT_YEAR) +
+           "\n" +
+           strprintf(_("Copyright (C) 2018-%i The Blackcoin More Developers").translated, COPYRIGHT_YEAR) +
            "\n" +
            strprintf(_("Copyright (C) 2024-%i The Digital Gold Developers").translated, COPYRIGHT_YEAR) +
            "\n" +

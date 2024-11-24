@@ -31,9 +31,9 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     : QWidget()
 {
     // set reference point, paddings
-    int paddingRight            = 130;
-    int paddingTop              = 60;
-    int titleVersionVSpace      = 17;
+    int paddingRight            = 75;
+    int paddingTop              = 100;
+    int titleVersionVSpace      = 25;
     int titleCopyrightVSpace    = 50;
 
     float fontFactor            = 1.0;
@@ -44,8 +44,9 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     QString titleText       = PACKAGE_NAME;
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
 
-    QString copyrightTextBitcoin     = QChar(0xA9)+QString(" %1-%2 ").arg(2009).arg(COPYRIGHT_YEAR) + QString("The Bitcoin Core developers");
-    QString copyrightTextDigitalGold = QChar(0xA9)+QString(" %1-%2 ").arg(2024).arg(COPYRIGHT_YEAR) + QString("The Digital Gold developers");
+    QString copyrightTextBitcoin        = QChar(0xA9)+QString(" %1-%2 ").arg(2009).arg(COPYRIGHT_YEAR) + QString("The Bitcoin Core developers");
+    QString copyrightTextBlackcoinMore  = QChar(0xA9)+QString(" %1-%2 ").arg(2018).arg(COPYRIGHT_YEAR) + QString("The Blackcoin More developers");
+    QString copyrightTextDigitalGold    = QChar(0xA9)+QString(" %1-%2 ").arg(2024).arg(COPYRIGHT_YEAR) + QString("The Digital Gold developers");
     // QString copyrightText   = QString::fromUtf8(CopyrightHolders(strprintf("\xc2\xA9 %u-%u ", 2009, COPYRIGHT_YEAR)).c_str());
     const QString& titleAddText    = networkStyle->getTitleAddText();
 
@@ -59,13 +60,19 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     pixmap.setDevicePixelRatio(devicePixelRatio);
 
     QPainter pixPaint(&pixmap);
-    pixPaint.setPen(QColor(100,100,100));
+    pixPaint.setPen(QColor(255, 255, 255)); // White
 
-    // draw a slightly radial gradient
-    QRadialGradient gradient(QPoint(0,0), splashSize.width()/devicePixelRatio);
-    gradient.setColorAt(0, Qt::white);
-    gradient.setColorAt(1, QColor(247,247,247));
-    QRect rGradient(QPoint(0,0), splashSize);
+
+    // Define the radial gradient with the center at (0, 0) and a large radius
+    QRadialGradient gradient(QPoint(0, 0), splashSize.width() * 1.5); // Extend radius to cover most of the screen
+
+    // Set the gradient colors
+    gradient.setColorAt(0, QColor(30, 40, 50, 191));           // Start with Black (center)
+    gradient.setColorAt(0.50, QColor(30, 40, 50, 191));        // 50% Black
+    gradient.setColorAt(1, QColor(247, 147, 26));              // 15% Bitcoin Orange
+
+    // Apply the gradient to the splash screen area
+    QRect rGradient(QPoint(0, 0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
     // draw the digitalgold icon, expected size of PNG: 1024x1024
@@ -105,8 +112,10 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
         pixPaint.setFont(QFont(font, 10*fontFactor));
         const int x = pixmap.width()/devicePixelRatio-titleTextWidth-paddingRight;
         const int y = paddingTop+titleCopyrightVSpace;
+        pixPaint.setPen(QColor(255, 255, 255)); // White
         pixPaint.drawText(x,y,copyrightTextBitcoin);
-        pixPaint.drawText(x,y+15,copyrightTextDigitalGold);
+        pixPaint.drawText(x,y+15,copyrightTextBlackcoinMore);
+        pixPaint.drawText(x,y+30,copyrightTextDigitalGold);
     }
 
     // draw additional text if special network
@@ -164,21 +173,21 @@ bool SplashScreen::eventFilter(QObject * obj, QEvent * ev) {
     return QObject::eventFilter(obj, ev);
 }
 
-static void InitMessage(SplashScreen *splash, const std::string &message)
+static void InitMessage(SplashScreen* splash, const std::string& message)
 {
     bool invoked = QMetaObject::invokeMethod(splash, "showMessage",
         Qt::QueuedConnection,
         Q_ARG(QString, QString::fromStdString(message)),
-        Q_ARG(int, Qt::AlignBottom|Qt::AlignHCenter),
-        Q_ARG(QColor, QColor(55,55,55)));
+        Q_ARG(int, Qt::AlignBottom | Qt::AlignHCenter),
+        Q_ARG(QColor, QColor(255, 255, 255))); // White
     assert(invoked);
 }
 
-static void ShowProgress(SplashScreen *splash, const std::string &title, int nProgress, bool resume_possible)
+static void ShowProgress(SplashScreen* splash, const std::string& title, int nProgress, bool resume_possible)
 {
     InitMessage(splash, title + std::string("\n") +
             (resume_possible ? SplashScreen::tr("(press q to shutdown and continue later)").toStdString()
-                                : SplashScreen::tr("press q to shutdown").toStdString()) +
+                             : SplashScreen::tr("press q to shutdown").toStdString()) +
             strprintf("\n%d", nProgress) + "%");
 }
 
@@ -213,11 +222,11 @@ void SplashScreen::unsubscribeFromCoreSignals()
     m_connected_wallets.clear();
 }
 
-void SplashScreen::showMessage(const QString &message, int alignment, const QColor &color)
+void SplashScreen::showMessage(const QString& message, int alignment, const QColor& color)
 {
     curMessage = message;
     curAlignment = alignment;
-    curColor = color;
+    curColor = QColor(255, 255, 255); // Always White
     update();
 }
 
