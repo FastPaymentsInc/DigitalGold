@@ -99,8 +99,8 @@ public:
         consensus.nStakeTimestampMask = 0xf; // 15
         consensus.nCoinbaseMaturity = 240;
 
-        consensus.nMinimumChainWork = uint256S("0x00"); // block 
-        consensus.defaultAssumeValid = uint256S("0x00"); // block
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000249f4ecbdad850e2"); // block 6142
+        consensus.defaultAssumeValid = uint256S("0x77ff9070cb337241c501259b5e22a1e6d4b52c45121df33250cccd09671b3aa1"); // block 6142
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -117,27 +117,7 @@ public:
 
         genesis = CreateGenesisBlock(1731231100, 3084801063, 0x1d00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //calculate main genesis block
-        /*consensus.hashGenesisBlock = uint256S("0x00");
-        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
-		std::cout << std::string("Calculating main genesis block...\n");
-            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-            uint256 hash;
-            genesis.nNonce = 0;
-            while (UintToArith256(genesis.GetHash()) > hashTarget)
-            {
-                ++genesis.nNonce;
-                if (genesis.nNonce == 0)
-                {
-                    ++genesis.nTime;
-                }
-            }
-            std::cout << "Main genesis block found!\n";
-            std::cout << "nonce: " << genesis.nNonce << "\n";
-            std::cout << "time: " << genesis.nTime << "\n";
-            std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-        }*/
+
         assert(consensus.hashGenesisBlock == uint256S("0x00000000db90927162c1bb1c815407ec2c46fa0acd20af3ac30f88b7cc70c8a1"));
         assert(genesis.hashMerkleRoot == uint256S("0x4f0bc0729a85682a527243609b55b163041a2869d69a43f7a9a037e4aa1ca7b9"));
 
@@ -166,6 +146,7 @@ public:
         checkpointData = {
             {
                 {     0, uint256S("0x00000000db90927162c1bb1c815407ec2c46fa0acd20af3ac30f88b7cc70c8a1")}, // Genesis block
+                {     2400, uint256S("0xdc4c6089e32801b62c3a6c2bb9d050934469b534d177e7ca145db4aa1d8eaac1")}, // Pre-mine ended
             }
         };
 
@@ -174,10 +155,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 3000 3db6467bc8d6a716dca7c0f9ea681328786a3e1aeab2193c9fcea42509bf69f7 // block 148120
-            // .nTime    = 1728915568,
-            // .nTxCount = 295485,
-            // .dTxRate  = 0.02821852910212062
+            // Data from RPC: getchaintxstats 6141 77ff9070cb337241c501259b5e22a1e6d4b52c45121df33250cccd09671b3aa1 // block 6142
+            .nTime    = 1732101136,
+            .nTxCount = 10678,
+            .dTxRate  = 0.02654519595605969
         };
     }
 };
