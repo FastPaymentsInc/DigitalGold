@@ -92,17 +92,17 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
 
 qApp->setStyleSheet(R"(
     QWidget {
-        background-color: #242424;      /* Background color for all widgets */
+        background-color: black;      /* Background color for all widgets */
         font-family: 'Roboto';          /* Font family for the entire application */
         font-size: 15px;
         color: white;                   /* Default text color for all widgets */
     }
     QPushButton {
-        background-color: #242424;
-        color: #D4D4D4;
+        background-color: black;
+        color: white;                     /* White text */
     }
     QPushButton:hover {
-        background-color: #242424;       /* Maintain background color on hover */
+        background-color: black;       /* Maintain background color on hover */
         color: white;                     /* White text on hover */
     }
     QMenuBar {
@@ -129,11 +129,15 @@ qApp->setStyleSheet(R"(
     }
     QToolButton:pressed, QToolButton:hover {
         background-color: orange;         /* Maintain orange color when pressed or hovered */
+        font-size: 20px;                  /* Font size for toolbar text */
         color: white;
+        border: 1px solid white;         /* Highlight border on hover */
     }
     QToolButton:checked  {
-        background-color: #242424;
+        background-color: orange;
+        font-size: 20px;                  /* Font size for toolbar text */
         color: white;
+        border: 2px solid white;          /* Bold border when checked */
     }
     QHeaderView::section {
         background-color: gray;           /* Set the color for the header section */
@@ -143,7 +147,7 @@ qApp->setStyleSheet(R"(
     QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {
         background-color: white;          /* Set the background color for text input fields to white */
         color: black;                     /* Set the text color to black for readability */
-        border: 1px solid #CCCCCC;
+        border: 1px solid white;
         padding: 4px;
     }
     QComboBox QAbstractItemView {        /* Dropdown lists are white with black letters */
@@ -153,8 +157,8 @@ qApp->setStyleSheet(R"(
         selection-color: white;
     }
     QTableView {
-        background-color: #292929;        /* Background color for the table */
-        alternate-background-color: #5C5C5C; /* Light grey for alternate rows */
+        background-color: black;        /* Background color for the table */
+        alternate-background-color: dimgray; /* Light grey for alternate rows */
     }
     QTableView::item:hover {
         background-color: orange;         /* Orange background for transaction rows on hover */
