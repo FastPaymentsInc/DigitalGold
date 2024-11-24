@@ -107,11 +107,11 @@ qApp->setStyleSheet(R"(
     }
     QMenuBar {
         background-color: orange;
-        font-size: 10px;                  /* Specific font size for the menu bar */
+        font-size: 14px;                  /* Specific font size for the menu bar */
         color: black;
     }
     QMenu {
-        font-size: 10px;                  /* Font size for menu items */
+        font-size: 14px;                  /* Font size for menu items */
         color: white;
     }
     QToolBar {
