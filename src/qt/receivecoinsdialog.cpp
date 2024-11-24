@@ -87,14 +87,14 @@ void ReceiveCoinsDialog::setModel(WalletModel *_model)
             &ReceiveCoinsDialog::recentRequestsView_selectionChanged);
 
         // Populate address type dropdown and select default
-        // auto add_address_type = [&](OutputType type, const QString& text, const QString& tooltip) {
-        //     const auto index = ui->addressType->count();
-        //     ui->addressType->addItem(text, (int) type);
-        //     ui->addressType->setItemData(index, tooltip, Qt::ToolTipRole);
-        //     if (model->wallet().getDefaultAddressType() == type) ui->addressType->setCurrentIndex(index);
+        auto add_address_type = [&](OutputType type, const QString& text, const QString& tooltip) {
+            const auto index = ui->addressType->count();
+            ui->addressType->addItem(text, (int) type);
+            ui->addressType->setItemData(index, tooltip, Qt::ToolTipRole);
+            if (model->wallet().getDefaultAddressType() == type) ui->addressType->setCurrentIndex(index);
         };
-        // add_address_type(OutputType::LEGACY, tr("Base58 (Legacy)"), tr("Not recommended due to higher fees and less protection against typos."));
-        // add_address_type(OutputType::BECH32, tr("Bech32 (SegWit)"), tr("Generates a native segwit address (BIP-173). Some old wallets don't support it."));
+        add_address_type(OutputType::LEGACY, tr("Base58 (Legacy)"), tr("Not recommended due to higher fees and less protection against typos."));
+        add_address_type(OutputType::BECH32, tr("Bech32 (SegWit)"), tr("Generates a native segwit address (BIP-173). Some old wallets don't support it."));
             
         // DigitalGold: hide Taproot address type before Taproot activation
         /*
@@ -110,7 +110,7 @@ void ReceiveCoinsDialog::setModel(WalletModel *_model)
         connect(model, &WalletModel::canGetAddressesChanged, [this] {
             ui->receiveButton->setEnabled(model->wallet().canGetAddresses());
         });
-    
+    }
 }
 
 ReceiveCoinsDialog::~ReceiveCoinsDialog()
@@ -154,8 +154,8 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
     QString address;
     QString label = ui->reqLabel->text();
     /* Generate new receiving address */
-    // const OutputType address_type = (OutputType)ui->addressType->currentData().toInt();
-    // address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "", address_type);
+    const OutputType address_type = (OutputType)ui->addressType->currentData().toInt();
+    address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "", address_type);
 
     switch(model->getAddressTableModel()->getEditStatus())
     {
@@ -178,11 +178,11 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
             tr("Could not unlock wallet."),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
-    // case AddressTableModel::EditStatus::KEY_GENERATION_FAILURE:
-    //     QMessageBox::critical(this, windowTitle(),
-    //         tr("Could not generate new %1 address").arg(QString::fromStdString(FormatOutputType(address_type))),
-    //         QMessageBox::Ok, QMessageBox::Ok);
-    //     break;
+    case AddressTableModel::EditStatus::KEY_GENERATION_FAILURE:
+        QMessageBox::critical(this, windowTitle(),
+            tr("Could not generate new %1 address").arg(QString::fromStdString(FormatOutputType(address_type))),
+            QMessageBox::Ok, QMessageBox::Ok);
+        break;
     // These aren't valid return values for our action
     case AddressTableModel::EditStatus::INVALID_ADDRESS:
     case AddressTableModel::EditStatus::DUPLICATE_ADDRESS:
