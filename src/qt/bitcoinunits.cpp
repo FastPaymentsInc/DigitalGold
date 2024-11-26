@@ -53,9 +53,9 @@ QString BitcoinUnits::shortName(Unit unit)
 QString BitcoinUnits::description(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("Dgds");
-    case Unit::mBTC: return QString("Milli-dgds (1 / 1" THIN_SP_UTF8 "000)");
-    case Unit::uBTC: return QString("Micro-dgds (blits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case Unit::BTC: return QString("DGD");
+    case Unit::mBTC: return QString("Milli-DGD (1 / 1" THIN_SP_UTF8 "000)");
+    case Unit::uBTC: return QString("Micro-DGD (blits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case Unit::SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);

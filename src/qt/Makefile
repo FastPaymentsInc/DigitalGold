@@ -1,11 +1,11 @@
 .PHONY: FORCE
 all: FORCE
-	$(MAKE) -C .. usdg_qt test_usdg_qt
+	$(MAKE) -C .. digitalgold_qt test_digitalgold_qt
 clean: FORCE
-	$(MAKE) -C .. usdg_qt_clean test_usdg_qt_clean
+	$(MAKE) -C .. digitalgold_qt_clean test_digitalgold_qt_clean
 check: FORCE
-	$(MAKE) -C .. test_usdg_qt_check
-usdg-qt usdg-qt.exe: FORCE
-	 $(MAKE) -C .. usdg_qt
+	$(MAKE) -C .. test_digitalgold_qt_check
+digitalgold-qt digitalgold-qt.exe: FORCE
+	 $(MAKE) -C .. digitalgold_qt
 apk: FORCE
-	$(MAKE) -C .. usdg_qt_apk
+	$(MAKE) -C .. digitalgold_qt_apk

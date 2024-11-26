@@ -52,7 +52,7 @@ enum class TxValidationResult {
      * Currently this is only used if the transaction already exists in the mempool or on chain.
      */
     TX_CONFLICT,
-    TX_MEMPOOL_POLICY,        //!< violated mempool's fee/size/descendant/etc limits
+    TX_MEMPOOL_POLICY,        //!< violated mempool's fee/size/descendant/RBF/etc limits
     TX_NO_MEMPOOL,            //!< this node does not have a mempool so can't validate the transaction
 };
 

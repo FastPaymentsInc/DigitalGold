@@ -258,7 +258,7 @@ qApp->setStyleSheet(R"(
     frameBlocksLayout->addStretch();
     frameBlocksLayout->addWidget(labelBlocksIcon);
     frameBlocksLayout->addStretch();
-	
+//Blackcoin: lock/unlock wallet 	
 #ifdef ENABLE_WALLET
 	if (node::CanStake())
     {
@@ -404,11 +404,14 @@ void BitcoinGUI::createActions()
     backupWalletAction->setStatusTip(tr("Backup wallet to another location"));
     changePassphraseAction = new QAction(tr("&Change Passphrase…"), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
+
+    //Blackcoin: lock/unlock wallet
     unlockWalletAction = new QAction(tr("&Unlock Wallet..."), this);
     unlockWalletAction->setToolTip(tr("Unlock wallet"));
     unlockWalletAction->setObjectName("unlockWalletAction");
     lockWalletAction = new QAction(tr("&Lock Wallet"), this);
     lockWalletAction->setToolTip(tr("Lock wallet"));
+
     signMessageAction = new QAction(tr("Sign &message…"), this);
     signMessageAction->setStatusTip(tr("Sign messages with your Bitcoin addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify message…"), this);
@@ -481,8 +484,11 @@ void BitcoinGUI::createActions()
         connect(encryptWalletAction, &QAction::triggered, walletFrame, &WalletFrame::encryptWallet);
         connect(backupWalletAction, &QAction::triggered, walletFrame, &WalletFrame::backupWallet);
         connect(changePassphraseAction, &QAction::triggered, walletFrame, &WalletFrame::changePassphrase);
+
+	//Blackcoin: lock/unlock wallet
         connect(unlockWalletAction, SIGNAL(triggered()), walletFrame, SLOT(unlockWallet()));
         connect(lockWalletAction, SIGNAL(triggered()), walletFrame, SLOT(lockWallet()));
+
         connect(signMessageAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
         connect(signMessageAction, &QAction::triggered, [this]{ gotoSignMessageTab(); });
         connect(m_load_psbt_action, &QAction::triggered, [this]{ gotoLoadPSBT(); });
@@ -599,8 +605,11 @@ void BitcoinGUI::createMenuBar()
     {
         settings->addAction(encryptWalletAction);
         settings->addAction(changePassphraseAction);
+
+	//Blackcoin: lock/unlock wallet
         settings->addAction(unlockWalletAction);
         settings->addAction(lockWalletAction);
+
         settings->addSeparator();
         settings->addAction(m_mask_values_action);
         settings->addSeparator();
@@ -747,8 +756,8 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndH
             walletFrame->setClientModel(_clientModel);
         }
 #endif // ENABLE_WALLET
-        // unitDisplayControl->setOptionsModel(_clientModel->getOptionsModel());
-        
+       // unitDisplayControl->setOptionsModel(_clientModel->getOptionsModel());
+
         OptionsModel* optionsModel = _clientModel->getOptionsModel();
         if (optionsModel && trayIcon) {
             // be aware of the tray icon disable state change reported by the OptionsModel object.
@@ -906,8 +915,11 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
+
+    //Blackcoin: lock/unlock wallet
     unlockWalletAction->setEnabled(enabled);
     lockWalletAction->setEnabled(enabled);
+
     signMessageAction->setEnabled(enabled);
     verifyMessageAction->setEnabled(enabled);
     usedSendingAddressesAction->setEnabled(enabled);
@@ -1523,6 +1535,8 @@ void BitcoinGUI::setEncryptionStatus(WalletModel *walletModel)
         encryptWalletAction->setChecked(false);
         changePassphraseAction->setEnabled(false);
         encryptWalletAction->setEnabled(true);
+
+	//Blackcoin: lock/unlock wallet
         unlockWalletAction->setVisible(false);
         lockWalletAction->setVisible(false);
         break;
@@ -1622,7 +1636,7 @@ void BitcoinGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
-
+//Blackcoin: staking info
 #ifdef ENABLE_WALLET
 void BitcoinGUI::updateStakingIcon()
 {

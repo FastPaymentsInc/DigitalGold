@@ -111,10 +111,11 @@ void FreespaceChecker::check()
     Q_EMIT reply(replyStatus, replyMessage, freeBytesAvailable);
 }
 
-Intro::Intro(QWidget *parent, int64_t blockchain_size_gb) :
+Intro::Intro(QWidget *parent, int64_t blockchain_size_gb, int64_t chain_state_size_gb) :
     QDialog(parent, GUIUtil::dialog_flags),
     ui(new Ui::Intro),
-    m_blockchain_size_gb(blockchain_size_gb)
+    m_blockchain_size_gb(blockchain_size_gb),
+    m_chain_state_size_gb(chain_state_size_gb)
 {
     ui->setupUi(this);
 
@@ -201,7 +202,7 @@ Intro::Intro(QWidget *parent, int64_t blockchain_size_gb) :
         .arg(PACKAGE_NAME)
         .arg(m_blockchain_size_gb)
         .arg(2024)
-        .arg(tr("Digital Gold"))
+        .arg(tr("Bitcoin"))
     );
     ui->lblExplanation2->setText(ui->lblExplanation2->text().arg(PACKAGE_NAME));
 
@@ -260,7 +261,7 @@ bool Intro::showIfNeeded(bool& did_show_intro)
         }
 
         /* If current default data directory does not exist, let the user choose one */
-        Intro intro(nullptr, Params().AssumedBlockchainSize());
+        Intro intro(nullptr, Params().AssumedBlockchainSize(), Params().AssumedChainStateSize());
         intro.setDataDirectory(dataDir);
         intro.setWindowIcon(QIcon(":icons/bitcoin"));
         did_show_intro = true;
