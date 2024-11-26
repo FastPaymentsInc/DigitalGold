@@ -77,6 +77,49 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QToolButton" name="pasteButton">
+       <property name="toolTip">
+        <string>Paste address from clipboard</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../bitcoin.qrc">
+         <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+       <property name="shortcut">
+        <string>Alt+P</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="deleteButton">
+       <property name="toolTip">
+        <string>Remove this entry</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../bitcoin.qrc">
+         <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="0">
@@ -188,6 +231,8 @@
  <tabstops>
   <tabstop>payTo</tabstop>
   <tabstop>addressBookButton</tabstop>
+  <tabstop>pasteButton</tabstop>
+  <tabstop>deleteButton</tabstop>
   <tabstop>addAsLabel</tabstop>
   <tabstop>payAmount</tabstop>
  </tabstops>

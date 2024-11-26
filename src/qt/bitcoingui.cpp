@@ -86,82 +86,103 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     m_node(node),
     trayIconMenu{new QMenu()},
     platformStyle(_platformStyle),
-    m_network_style(networkStyle)    
+    m_network_style(networkStyle)
 {
     // Blackcoin: Set global stylesheet
 
 qApp->setStyleSheet(R"(
     QWidget {
-        background-color: black;      /* Background color for all widgets */
-        font-family: 'Roboto';          /* Font family for the entire application */
-        font-size: 15px;
-        color: white;                   /* Default text color for all widgets */
+        background-color: #161E26;          /* Background color for all widgets */
+        color: white;                       /* Default text color for all widgets */
     }
+
     QPushButton {
-        background-color: black;
-        color: white;                     /* White text */
+        background-color: #161E26;
+        color: white;                       /* White text */
     }
+
     QPushButton:hover {
-        background-color: black;       /* Maintain background color on hover */
-        color: white;                     /* White text on hover */
+        background-color: #161E26;          /* Maintain background color on hover */
+        color: white;                       /* White text on hover */
     }
-    QMenuBar {
-        background-color: orange;
-        font-size: 14px;                  /* Specific font size for the menu bar */
-        color: black;
-    }
+
     QMenu {
-        font-size: 14px;                  /* Font size for menu items */
         color: white;
     }
+
+    QMenu::item {
+        color: white;               /* Default text color */
+        padding: 5px 10px;          /* Adds padding for submenu items */
+}
+
+    QMenu::item:selected {          /* Applies when a menu item is hovered or selected */
+        background-color: lightgrey; /* Lighter gray for submenu hover */
+        color: black;              /* Change text color to black for better contrast */
+        border: none;              /* Optional: remove border for cleaner look */
+}
+
+
+    QMenuBar {
+        background-color: #FA960F; /* Orange background */
+        color: black;             /* Black text */
+        font-weight: bold;        /* Makes the text bold */
+    }
+
+    QMenuBar::item:pressed {
+        background-color: #FFB347; /* Slightly softer orange when pressed */
+    }
+
     QToolBar {
-        background-color: orange;         /* Orange background color for the toolbar */
-        font-size: 20px;                  /* Font size for toolbar text */
+        background-color: #FA960F;          /* Orange background color for the toolbar */
         color: black;
         border: none;
         padding: 0px;
-        margin: 0;                         /* Remove any default margin */
+        margin: 0;                          /* Remove any default margin */
     }
     QToolButton {
-        background-color: orange;         /* Ensure buttons also have the orange background */
-        color: black;                     /* Set button text color for visibility */
-        border: none;                     /* Remove button borders for a cleaner look */
+        background-color: #FA960F;          /* Ensure buttons also have the orange background */
+        color: black;                       /* Set button text color for visibility */
+        font-weight: bold;                  /* Makes the text bold */
+        border: none;                       /* Remove button borders for a cleaner look */
     }
-    QToolButton:pressed, QToolButton:hover {
-        background-color: orange;         /* Maintain orange color when pressed or hovered */
-        border: 1px solid white;         /* Highlight border on hover */
+    QToolButton:pressed {
+        background-color: #FA960F;          /* Maintain orange color when pressed or hovered */
+        border: 1px solid white;            /* Highlight border on hover */
     }
     QToolButton:checked  {
-        background-color: orange;
-        border: 2px solid white;          /* Bold border when checked */
+        background-color: #FA960F;          /* orange background
+        border: 2px solid white;            /* Bold border when checked */
+    }
+    QToolButton:hover  {
+        background-color: #FFB347;          /* soft orange on hover */
+        border: 2px solid white;            /* Bold border when checked */
     }
     QHeaderView::section {
-        background-color: gray;           /* Set the color for the header section */
-        color: white;                     /* Set the text color for better visibility */
+        background-color: gray;             /* Set the color for the header section */
+        color: white;                       /* Set the text color for better visibility */
         padding: 4px;
     }
     QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {
-        background-color: white;          /* Set the background color for text input fields to white */
-        color: black;                     /* Set the text color to black for readability */
+        background-color: lightgrey;          /* Set the background color for text input fields to white */
+        color: black;                       /* Set the text color to black for readability */
         border: 1px solid white;
         padding: 4px;
     }
-    QComboBox QAbstractItemView {        /* Dropdown lists are white with black letters */
+    QComboBox QAbstractItemView {           /* Dropdown lists are white with black letters */
         background-color: white;
         color: black;
-        selection-background-color: orange;
+        selection-background-color: #FA960F;
         selection-color: white;
     }
     QTableView {
-        background-color: black;        /* Background color for the table */
+        background-color: #161E26;           /* Background color for the table */
         alternate-background-color: dimgray; /* Light grey for alternate rows */
     }
     QTableView::item:hover {
-        background-color: orange;         /* Orange background for transaction rows on hover */
-        color: white;                     /* White text color on hover */
+        background-color: #FA960F;          /* Orange background for transaction rows on hover */
+        color: white;                       /* White text color on hover */
     }
 )");
-
 
     QSettings settings;
     if (!restoreGeometry(settings.value("MainWindowGeometry").toByteArray())) {
@@ -338,10 +359,9 @@ void BitcoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
     connect(modalOverlay, &ModalOverlay::triggered, tabGroup, &QActionGroup::setEnabled);
-    
-    // Blackcoin: changed the main page name from "Overview" to "Balance"
-    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Balance"), this); 
-    overviewAction->setStatusTip(tr("Show wallet balance"));
+
+    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Overview"), this);
+    overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(QStringLiteral("Alt+1")));
@@ -679,7 +699,6 @@ void BitcoinGUI::createToolBars()
     {
         QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
         appToolBar = toolbar;
-
         toolbar->setMovable(false);
         toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         toolbar->addAction(overviewAction);
@@ -691,7 +710,7 @@ void BitcoinGUI::createToolBars()
 #ifdef ENABLE_WALLET
         QWidget *spacer = new QWidget();
         spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        spacer->setStyleSheet("background-color: orange;"); // Blackcoin: sets color of spacer to orange
+        spacer->setStyleSheet("background-color: #FA960F;"); // Blackcoin: sets color of spacer to orange
         toolbar->addWidget(spacer);
 
         m_wallet_selector = new QComboBox();
@@ -703,9 +722,8 @@ void BitcoinGUI::createToolBars()
         m_wallet_selector_label->setBuddy(m_wallet_selector);
         m_wallet_selector->setFixedSize(120, 25);
         m_wallet_selector_label->setStyleSheet(
-            "background-color: orange;"
+            "background-color: #FA960F;"
             "color: black;"
-            "font-size: 11px;"
         ); // Blackcoin: sets color of wallet label to orange.
         m_wallet_selector_label_action = appToolBar->addWidget(m_wallet_selector_label);
         m_wallet_selector_action = appToolBar->addWidget(m_wallet_selector);
@@ -715,7 +733,6 @@ void BitcoinGUI::createToolBars()
 #endif
     }
 }
-
 
 void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
 {

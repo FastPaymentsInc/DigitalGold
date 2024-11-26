@@ -38,15 +38,14 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
     ui->setupUi(this);
     this->setStyleSheet(R"(
         QTabBar::tab {
-            background: orange;
+            background: #FA960F; // orange
             color: black;
-            font-size: 14px;
             padding: 10px;
             border: none;
         }
 
         QTabBar::tab:selected {
-            background: #242424;
+            background: #232F38; // darkgrey
             color: white;
         }
 
