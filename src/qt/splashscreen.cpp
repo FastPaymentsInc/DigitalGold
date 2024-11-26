@@ -66,8 +66,8 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     QRadialGradient gradient(QPoint(0, 0), splashSize.width() * 1.5); // Extend radius to cover most of the screen
 
     // Set the gradient colors
-    gradient.setColorAt(0, QColor(30, 40, 50, 191));           // Start with Black (center)
-    gradient.setColorAt(0.50, QColor(30, 40, 50, 191));        // 50% Black
+    gradient.setColorAt(0, QColor(30, 40, 50));           // Start with Black (center)
+    gradient.setColorAt(0.50, QColor(30, 40, 50));        // 50% Black
     gradient.setColorAt(1, QColor(247, 147, 26));              // 15% Bitcoin Orange
 
     // Apply the gradient to the splash screen area
