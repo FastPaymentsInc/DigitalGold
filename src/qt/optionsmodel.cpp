@@ -112,7 +112,7 @@ bool OptionsModel::Init(bilingual_str& error)
 
     // These are Qt-only settings:
 
-    // Main - digitalgold - enable autostart
+    // Digital Gold - enable autostart
     if (!settings.contains("fAutoStart")) {
     GUIUtil::SetStartOnSystemStartup(true);
     settings.setValue("fAutoStart", true);
@@ -128,7 +128,8 @@ bool OptionsModel::Init(bilingual_str& error)
     if (!settings.contains("fMinimizeToTray"))
         settings.setValue("fMinimizeToTray", false);
     fMinimizeToTray = settings.value("fMinimizeToTray").toBool() && m_show_tray_icon;
-    // digitalgold - default minimize on close
+
+    // Digital Gold - default minimize on close
     if (!settings.contains("fMinimizeOnClose"))
         settings.setValue("fMinimizeOnClose", true);
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
@@ -244,7 +245,7 @@ void OptionsModel::Reset()
     // Set that this was reset
     settings.setValue("fReset", true);
 
-    // digitalgold - enable autostart om reset
+    // Digital Gold - enable autostart om reset
     // Enable the default setting for OptionsModel::StartAtStartup if it’s not already active
     if (!GUIUtil::GetStartOnSystemStartup()) {
         GUIUtil::SetStartOnSystemStartup(true);
@@ -622,7 +623,7 @@ void OptionsModel::checkAndMigrate()
         // -dbcache was bumped from 100 to 300 in 0.13
         // see https://github.com/bitcoin/bitcoin/pull/8273
         // force people to upgrade to the new value if they are using 100MB
-        if (settingsVersion < 330000 && settings.contains("nDatabaseCache") && settings.value("nDatabaseCache").toLongLong() == 100)
+        if (settingsVersion < 130000 && settings.contains("nDatabaseCache") && settings.value("nDatabaseCache").toLongLong() == 100)
             settings.setValue("nDatabaseCache", (qint64)nDefaultDbCache);
 
         settings.setValue(strSettingsVersionKey, CLIENT_VERSION);

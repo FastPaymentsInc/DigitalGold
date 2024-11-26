@@ -43,7 +43,6 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     // define text to place
     QString titleText       = PACKAGE_NAME;
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
-
     QString copyrightTextBitcoin        = QChar(0xA9)+QString(" %1-%2 ").arg(2009).arg(COPYRIGHT_YEAR) + QString("The Bitcoin Core developers");
     QString copyrightTextBlackcoinMore  = QChar(0xA9)+QString(" %1-%2 ").arg(2018).arg(COPYRIGHT_YEAR) + QString("The Blackcoin More developers");
     QString copyrightTextDigitalGold    = QChar(0xA9)+QString(" %1-%2 ").arg(2024).arg(COPYRIGHT_YEAR) + QString("The Digital Gold developers");
@@ -72,7 +71,7 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     gradient.setColorAt(1, QColor(247, 147, 26));              // 15% Bitcoin Orange
 
     // Apply the gradient to the splash screen area
-    QRect rGradient(QPoint(0, 0), splashSize);
+    QRect rGradient(QPoint(0,0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
     // draw the digitalgold icon, expected size of PNG: 1024x1024
@@ -173,21 +172,21 @@ bool SplashScreen::eventFilter(QObject * obj, QEvent * ev) {
     return QObject::eventFilter(obj, ev);
 }
 
-static void InitMessage(SplashScreen* splash, const std::string& message)
+static void InitMessage(SplashScreen *splash, const std::string &message)
 {
     bool invoked = QMetaObject::invokeMethod(splash, "showMessage",
         Qt::QueuedConnection,
         Q_ARG(QString, QString::fromStdString(message)),
-        Q_ARG(int, Qt::AlignBottom | Qt::AlignHCenter),
-        Q_ARG(QColor, QColor(255, 255, 255))); // White
+        Q_ARG(int, Qt::AlignBottom|Qt::AlignHCenter),
+        Q_ARG(QColor, QColor(255,255,255)));
     assert(invoked);
 }
 
-static void ShowProgress(SplashScreen* splash, const std::string& title, int nProgress, bool resume_possible)
+static void ShowProgress(SplashScreen *splash, const std::string &title, int nProgress, bool resume_possible)
 {
     InitMessage(splash, title + std::string("\n") +
             (resume_possible ? SplashScreen::tr("(press q to shutdown and continue later)").toStdString()
-                             : SplashScreen::tr("press q to shutdown").toStdString()) +
+                                : SplashScreen::tr("press q to shutdown").toStdString()) +
             strprintf("\n%d", nProgress) + "%");
 }
 
@@ -222,7 +221,7 @@ void SplashScreen::unsubscribeFromCoreSignals()
     m_connected_wallets.clear();
 }
 
-void SplashScreen::showMessage(const QString& message, int alignment, const QColor& color)
+void SplashScreen::showMessage(const QString &message, int alignment, const QColor &color)
 {
     curMessage = message;
     curAlignment = alignment;

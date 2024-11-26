@@ -31,7 +31,7 @@ class Intro : public QDialog
 
 public:
     explicit Intro(QWidget *parent = nullptr,
-                   int64_t blockchain_size_gb = 0);
+                   int64_t blockchain_size_gb = 0, int64_t chain_state_size_gb = 0);
     ~Intro();
 
     QString getDataDirectory();
@@ -68,6 +68,7 @@ private:
     bool signalled{false};
     QString pathToCheck;
     const int64_t m_blockchain_size_gb;
+    const int64_t m_chain_state_size_gb;
     //! Total required space (in GB).
     int64_t m_required_space_gb{0};
     uint64_t m_bytes_available{0};

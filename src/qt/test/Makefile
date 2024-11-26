@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C ../../ test_usdg_qt
+	$(MAKE) -C ../../ test_digitalgold_qt
 clean:
-	$(MAKE) -C ../../ test_usdg_qt_clean
+	$(MAKE) -C ../../ test_digitalgold_qt_clean
 check:
-	$(MAKE) -C ../../ test_usdg_qt_check
+	$(MAKE) -C ../../ test_digitalgold_qt_check

@@ -53,7 +53,9 @@ static ChainstateLoadResult CompleteChainstateInitialization(
 
     if (options.check_interrupt && options.check_interrupt()) return {ChainstateLoadStatus::INTERRUPTED, {}};
 
-    // Note that LoadBlockIndex sets fReindex global based on the disk flag!
+    // LoadBlockIndex will load m_have_pruned if we've ever removed a
+    // block file from disk.
+    // Note that it also sets fReindex global based on the disk flag!
     // From here on, fReindex and options.reindex values may be different!
     if (!chainman.LoadBlockIndex()) {
         if (options.check_interrupt && options.check_interrupt()) return {ChainstateLoadStatus::INTERRUPTED, {}};
