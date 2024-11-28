@@ -3691,7 +3691,7 @@ For more information on using this console, type %6.
     <message>
         <location line="+46"/>
         <source>Base58 (Legacy)</source>
-        <translation>Legacy</translation>
+        <translation>Legacy (Base58)</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3701,7 +3701,7 @@ For more information on using this console, type %6.
     <message>
         <location line="+1"/>
         <source>Bech32 (SegWit)</source>
-        <translation>SegWit</translation>
+        <translation>Native (SegWit)</translation>
     </message>
     <message>
         <location line="+0"/>

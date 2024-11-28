@@ -625,7 +625,7 @@ void PoSMiner(CWallet *pwallet)
     unsigned int pos_timio;
     {
         LOCK2(pwallet->cs_wallet, cs_main);
-        const std::string label = "Staking Reward";
+        const std::string label = "Staking Block"; //DigitalGold: renamed, no rewards are given
         pwallet->ForEachAddrBookEntry([&](const CTxDestination& _dest, const std::string& _label, bool _is_change, const std::optional<wallet::AddressPurpose>& _purpose) {
             if (_is_change) return;
             if (_label == label)
