@@ -8,6 +8,7 @@
 #ifndef BLACKCOIN_WALLET_STAKE_H
 #define BLACKCOIN_WALLET_STAKE_H
 
+#include <index/txindex.h> // Blackcoin: txindex check
 #include <wallet/spend.h>
 #include <wallet/wallet.h>
 
