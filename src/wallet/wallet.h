@@ -135,10 +135,10 @@ constexpr CAmount HIGH_TX_FEE_PER_KB{COIN / 100};
 constexpr CAmount HIGH_MAX_TX_FEE{100 * HIGH_TX_FEE_PER_KB};
 //! Pre-calculated constants for input size estimation in *virtual size*
 static constexpr size_t DUMMY_NESTED_P2WPKH_INPUT_SIZE = 91;
-//Blackcoin
+// Blackcoin
 //! -minstakingamount default
 static const CAmount DEFAULT_MIN_STAKING_AMOUNT = 0.1 * COIN;
-//Blackcoin
+// Blackcoin
 //! -reservebalance default
 static const CAmount DEFAULT_RESERVE_BALANCE = 0;
 
@@ -717,7 +717,7 @@ public:
     /** Absolute maximum transaction fee (in satoshis) used by default for the wallet */
     CAmount m_default_max_tx_fee{DEFAULT_TRANSACTION_MAXFEE};
 
-    //Blackcoin
+    // Blackcoin
     // optional setting to unlock wallet for staking only
     // serves to disable the trivial sendmoney when OS account compromised
     // provides no real security
@@ -887,7 +887,7 @@ public:
     /* Returns the time of the first created key or, in case of an import, it could be the time of the first received transaction */
     int64_t GetBirthTime() const { return m_birth_time; }
 
-    //Blackcoin
+    // Blackcoin
     /* Function that will remove potentially abandoned coinstakes, returning the input to the wallet. */
     void AbandonOrphanedCoinstakes();
 

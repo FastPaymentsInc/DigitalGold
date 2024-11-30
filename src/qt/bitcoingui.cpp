@@ -279,7 +279,7 @@ qApp->setStyleSheet(R"(
     frameBlocksLayout->addStretch();
     frameBlocksLayout->addWidget(labelBlocksIcon);
     frameBlocksLayout->addStretch();
-//Blackcoin: lock/unlock wallet 	
+// Blackcoin: lock/unlock wallet 	
 #ifdef ENABLE_WALLET
 	if (node::CanStake())
     {
@@ -425,7 +425,7 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase…"), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
 
-    //Blackcoin: lock/unlock wallet
+    // Blackcoin: lock/unlock wallet
     unlockWalletAction = new QAction(tr("&Unlock Wallet..."), this);
     unlockWalletAction->setToolTip(tr("Unlock wallet"));
     unlockWalletAction->setObjectName("unlockWalletAction");
@@ -505,7 +505,7 @@ void BitcoinGUI::createActions()
         connect(backupWalletAction, &QAction::triggered, walletFrame, &WalletFrame::backupWallet);
         connect(changePassphraseAction, &QAction::triggered, walletFrame, &WalletFrame::changePassphrase);
 
-	//Blackcoin: lock/unlock wallet
+	// Blackcoin: lock/unlock wallet
         connect(unlockWalletAction, SIGNAL(triggered()), walletFrame, SLOT(unlockWallet()));
         connect(lockWalletAction, SIGNAL(triggered()), walletFrame, SLOT(lockWallet()));
 
@@ -626,7 +626,7 @@ void BitcoinGUI::createMenuBar()
         settings->addAction(encryptWalletAction);
         settings->addAction(changePassphraseAction);
 
-	//Blackcoin: lock/unlock wallet
+	// Blackcoin: lock/unlock wallet
         settings->addAction(unlockWalletAction);
         settings->addAction(lockWalletAction);
 
@@ -933,7 +933,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
 
-    //Blackcoin: lock/unlock wallet
+    // Blackcoin: lock/unlock wallet
     unlockWalletAction->setEnabled(enabled);
     lockWalletAction->setEnabled(enabled);
 
@@ -1553,7 +1553,7 @@ void BitcoinGUI::setEncryptionStatus(WalletModel *walletModel)
         changePassphraseAction->setEnabled(false);
         encryptWalletAction->setEnabled(true);
 
-	//Blackcoin: lock/unlock wallet
+	// Blackcoin: lock/unlock wallet
         unlockWalletAction->setVisible(false);
         lockWalletAction->setVisible(false);
         break;
@@ -1653,7 +1653,7 @@ void BitcoinGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
-//Blackcoin: staking info
+// Blackcoin: staking info
 #ifdef ENABLE_WALLET
 void BitcoinGUI::updateStakingIcon()
 {

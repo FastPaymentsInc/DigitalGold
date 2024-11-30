@@ -402,18 +402,18 @@ void CTxMemPoolEntry::UpdateAncestorState(int32_t modifySize, CAmount modifyFee,
 
 CTxMemPool::CTxMemPool(const Options& opts)
     : m_check_ratio{opts.check_ratio},
-      // Blackcoin
+      // Blackcoin: Fee estimates are not used
       // minerPolicyEstimator{opts.estimator},
       m_max_size_bytes{opts.max_size_bytes},
       m_expiry{opts.expiry},
-      // Blackcoin
+      // Blackcoin: Fee estimates are not used
       // m_incremental_relay_feerate{opts.incremental_relay_feerate},
       m_min_relay_feerate{opts.min_relay_feerate},
       m_dust_relay_feerate{opts.dust_relay_feerate},
       m_permit_bare_multisig{opts.permit_bare_multisig},
       m_max_datacarrier_bytes{opts.max_datacarrier_bytes},
       m_require_standard{opts.require_standard},
-      // Blackcoin
+      // Blackcoin: RBF is not used
       // m_full_rbf{opts.full_rbf},
       m_persist_v1_dat{opts.persist_v1_dat},
       m_limits{opts.limits}
@@ -480,7 +480,7 @@ void CTxMemPool::addUnchecked(const CTxMemPoolEntry &entry, setEntries &setAnces
     nTransactionsUpdated++;
     totalTxSize += entry.GetTxSize();
     m_total_fee += entry.GetFee();
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     /*
     if (minerPolicyEstimator) {
         minerPolicyEstimator->processTransaction(entry, validFeeEstimate);
@@ -539,7 +539,7 @@ void CTxMemPool::removeUnchecked(txiter it, MemPoolRemovalReason reason)
     cachedInnerUsage -= memusage::DynamicUsage(it->GetMemPoolParentsConst()) + memusage::DynamicUsage(it->GetMemPoolChildrenConst());
     mapTx.erase(it);
     nTransactionsUpdated++;
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     // if (minerPolicyEstimator) {minerPolicyEstimator->removeTx(hash, false);}
 }
 
@@ -641,7 +641,7 @@ void CTxMemPool::removeConflicts(const CTransaction &tx)
 }
 
 /**
- * Called when a block is connected. Removes from mempool.
+ * Called when a block is connected. Removes from mempool and updates the miner fee estimator.
  */
 void CTxMemPool::removeForBlock(const std::vector<CTransactionRef>& vtx, unsigned int nBlockHeight)
 {
@@ -655,7 +655,7 @@ void CTxMemPool::removeForBlock(const std::vector<CTransactionRef>& vtx, unsigne
         if (i != mapTx.end())
             entries.push_back(&*i);
     }
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     // Before the txs in the new block have been removed from the mempool, update policy estimates
     // if (minerPolicyEstimator) {minerPolicyEstimator->processBlock(nBlockHeight, entries);}
     for (const auto& tx : vtx)
@@ -670,7 +670,7 @@ void CTxMemPool::removeForBlock(const std::vector<CTransactionRef>& vtx, unsigne
         ClearPrioritisation(tx->GetHash());
     }
     lastRollingFeeUpdate = GetTime();
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     // blockSinceLastRollingFeeBump = true;
 }
 
@@ -1121,7 +1121,7 @@ void CTxMemPool::UpdateParent(txiter entry, txiter parent, bool add)
 }
 
 /*
-// Blackcoin
+// Blackcoin: Fee estimates are not used
 CFeeRate CTxMemPool::GetMinFee(size_t sizelimit) const {
     LOCK(cs);
     if (!blockSinceLastRollingFeeBump || rollingMinimumFeeRate == 0)
@@ -1159,7 +1159,7 @@ void CTxMemPool::TrimToSize(size_t sizelimit, std::vector<COutPoint>* pvNoSpends
     AssertLockHeld(cs);
 
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     unsigned nTxnRemoved = 0;
     CFeeRate maxFeeRateRemoved(0);
     */
@@ -1203,7 +1203,7 @@ void CTxMemPool::TrimToSize(size_t sizelimit, std::vector<COutPoint>* pvNoSpends
     }
 
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     if (maxFeeRateRemoved > CFeeRate(0)) {
         LogPrint(BCLog::MEMPOOL, "Removed %u txn, rolling minimum fee bumped to %s\n", nTxnRemoved, maxFeeRateRemoved.ToString());
     }

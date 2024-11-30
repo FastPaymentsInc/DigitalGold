@@ -160,7 +160,7 @@ const CLogCategoryDesc LogCategories[] =
     {BCLog::WALLETDB, "walletdb"},
     {BCLog::RPC, "rpc"},
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     {BCLog::ESTIMATEFEE, "estimatefee"},
     */
     {BCLog::ADDRMAN, "addrman"},
@@ -251,7 +251,7 @@ std::string LogCategoryToStr(BCLog::LogFlags category)
     case BCLog::LogFlags::RPC:
         return "rpc";
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     case BCLog::LogFlags::ESTIMATEFEE:
         return "estimatefee";
     */
