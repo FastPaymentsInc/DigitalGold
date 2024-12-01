@@ -18,6 +18,7 @@ ModalOverlay::ModalOverlay(bool enable_wallet, QWidget* parent)
       bestHeaderDate(QDateTime())
 {
     ui->setupUi(this);
+
     connect(ui->closeButton, &QPushButton::clicked, this, &ModalOverlay::closeClicked);
     if (parent) {
         parent->installEventFilter(this);

@@ -30,6 +30,9 @@ namespace {
 void MakeSingleColorImage(QImage& img, const QColor& colorbase)
 {
     img = img.convertToFormat(QImage::Format_ARGB32);
+    // DigitalGold: new QT settings
+    // QColor iconColor = QColor(255, 255, 255); // White color
+
     for (int x = img.width(); x--; )
     {
         for (int y = img.height(); y--; )

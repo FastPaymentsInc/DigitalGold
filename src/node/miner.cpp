@@ -565,13 +565,25 @@ bool SleepStaker(CWallet *pwallet, uint64_t milliseconds) {
     return !pwallet->IsStakeClosing();
 }
 
-// qtum
+// Qtum - Blackcoin: 
 bool CanStake() {
     bool canStake = gArgs.GetBoolArg("-staking", DEFAULT_STAKE);
 
     if (canStake) {
-        // Signet is for creating PoW blocks by an authorized signer
+        // Disable staking on Signet
         canStake = !Params().GetConsensus().signet_blocks;
+
+        if (canStake) {
+            // Retrieve the txindex setting
+            bool txindex = gArgs.GetBoolArg("-txindex", DEFAULT_TXINDEX);
+
+            // Disable staking when txindex=0
+            canStake = txindex;
+
+            if (!canStake) {
+                LogPrintf("Staking is disabled because txindex is not enabled. Please restart with -txindex=1 to enable staking.\n");
+            }
+        }
     }
 
     return canStake;

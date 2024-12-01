@@ -46,7 +46,7 @@ namespace BCLog {
         WALLETDB    = (1 <<  6),
         RPC         = (1 <<  7),
         /*
-        // Blackcoin
+        // Blackcoin: Fee estimates are not used
         ESTIMATEFEE = (1 <<  8),
         */
         ADDRMAN     = (1 <<  9),

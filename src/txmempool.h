@@ -231,6 +231,9 @@ struct TxMempoolInfo
  * local node), but not all transactions seen are added to the pool. For
  * example, the following new transactions will not be added to the mempool:
  * - a transaction which doesn't meet the minimum fee requirements.
+ * - a new transaction that double-spends an input of a transaction already in
+ * the pool where the new transaction does not meet the Replace-By-Fee
+ * requirements as defined in doc/policy/mempool-replacements.md.
  * - a non-standard transaction.
  *
  * CTxMemPool::mapTx, and CTxMemPoolEntry bookkeeping:
@@ -305,7 +308,7 @@ protected:
 
     mutable int64_t lastRollingFeeUpdate GUARDED_BY(cs){GetTime()};
     mutable bool blockSinceLastRollingFeeBump GUARDED_BY(cs){false};
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     // mutable double rollingMinimumFeeRate GUARDED_BY(cs){0}; //!< minimum fee to get into the pool, decreases exponentially
     mutable Epoch m_epoch GUARDED_BY(cs){};
 
@@ -319,7 +322,7 @@ protected:
     bool m_load_tried GUARDED_BY(cs){false};
 
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     CFeeRate GetMinFee(size_t sizelimit) const;
     */
 
@@ -437,7 +440,7 @@ public:
 
     const int64_t m_max_size_bytes;
     const std::chrono::seconds m_expiry;
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     // const CFeeRate m_incremental_relay_feerate;
     const CFeeRate m_min_relay_feerate;
     const CFeeRate m_dust_relay_feerate;
@@ -624,7 +627,7 @@ public:
      *  would otherwise be half of this, it is set to 0 instead.
      */
     /*
-    // Blackcoin
+    // Blackcoin: Fee estimates are not used
     CFeeRate GetMinFee() const {
         return GetMinFee(m_max_size_bytes);
     }

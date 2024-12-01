@@ -368,7 +368,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+267"/>
+        <location filename="../bitcoingui.cpp" line="+341"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overview</translation>
     </message>
@@ -433,12 +433,12 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>&amp;Minimize</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+80"/>
         <source>Wallet:</source>
         <translation>Wallet:</translation>
     </message>
     <message>
-        <location line="+421"/>
+        <location line="+426"/>
         <source>Network activity disabled.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation>Network activity disabled.</translation>
@@ -449,7 +449,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location line="-1238"/>
+        <location line="-1244"/>
         <source>Send coins to a Bitcoin address</source>
         <translation>Send coins to a Digital Gold address</translation>
     </message>
@@ -564,7 +564,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="+485"/>
+        <location line="+491"/>
         <source>Syncing Headers (%1%)…</source>
         <translation>Syncing Headers (%1%)…</translation>
     </message>
@@ -589,7 +589,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Connecting to peers…</translation>
     </message>
     <message>
-        <location line="-879"/>
+        <location line="-885"/>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation>Request payments (generates QR codes and Digital Gold: URIs)</translation>
     </message>
@@ -609,7 +609,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
-        <location line="+783"/>
+        <location line="+789"/>
         <source>Processed %n block(s) of transaction history.</source>
         <translation>
             <numerusform>Processed %n block of transaction history.</numerusform>
@@ -657,7 +657,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Up to date</translation>
     </message>
     <message>
-        <location line="-864"/>
+        <location line="-870"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
@@ -833,7 +833,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Main Window</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+289"/>
         <source>%1 client</source>
         <translation>%1 client</translation>
     </message>
@@ -1506,7 +1506,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Use a custom data directory:</translation>
     </message>
     <message numerus="yes">
-        <location filename="../intro.cpp" line="+145"/>
+        <location filename="../intro.cpp" line="+222"/>
         <source>%n GB of space available</source>
         <translation>
             <numerusform>%n GB of space available</numerusform>
@@ -1651,7 +1651,7 @@ The migration process will create a backup of the wallet before migrating. This 
     <message>
         <location line="+7"/>
         <location line="+26"/>
-        <location filename="../modaloverlay.cpp" line="+152"/>
+        <location filename="../modaloverlay.cpp" line="+153"/>
         <source>Unknown…</source>
         <translation>Unknown…</translation>
     </message>
@@ -2125,7 +2125,7 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+91"/>
+        <location filename="../optionsdialog.cpp" line="+109"/>
         <source>Compiled without external signing support (required for external signing)</source>
         <extracomment>&quot;External signing&quot; means using devices such as hardware wallets.</extracomment>
         <translation>Compiled without external signing support (required for external signing)</translation>
