@@ -635,9 +635,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == ChainType::MAIN)
-            optionFile << "Name=Digital Gold\n";
+            optionFile << "Name=DigitalGold\n";
         else
-            optionFile << strprintf("Name=Digital Gold (%s)\n", ChainTypeToString(chain));
+            optionFile << strprintf("Name=DigitalGold (%s)\n", ChainTypeToString(chain));
         optionFile << "Exec=" << pszExePath << strprintf(" -min -chain=%s\n", ChainTypeToString(chain));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
