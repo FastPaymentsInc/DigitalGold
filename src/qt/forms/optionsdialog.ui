@@ -1083,8 +1083,9 @@
   </customwidget>
   <customwidget>
    <class>BitcoinAmountField</class>
-   <extends>QSpinBox</extends>
+   <extends>QLineEdit</extends>
    <header>qt/bitcoinamountfield.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
