@@ -118,80 +118,80 @@ Intro::Intro(QWidget *parent, int64_t blockchain_size_gb, int64_t chain_state_si
     m_chain_state_size_gb(chain_state_size_gb)
 {
     ui->setupUi(this);
-
-    // Blackcoin: stylesheet for the welcome message.
-    this->setStyleSheet(R"(
-        /* General Dialog Styling */
-        QDialog {
-            background-color: #232F38;      /* Dark background */
-            color: white;                   /* Default text color */
+    // DigitalGold: new QT settings
+    /*this->setStyleSheet(R"(
+          // General Dialog Styling
+          QDialog {
+            background-color: #232F38;      // Dark background
+            color: white;                   // Default text color
         }
-
-        /* RadioButton Styling */
+    
+        // RadioButton Styling
         QRadioButton {
-            color: white;                   /* White text for radio buttons */
+            color: white;                   // White text for radio buttons
         }
-
+    
         QRadioButton::indicator {
-            width: 14px;                    /* Diameter of the circle */
-            height: 14px;                   /* Diameter of the circle */
-            border-radius: 7px;             /* Half the width/height for a perfect circle */
-            border: 1px solid gray;         /* Default border for unselected buttons */
-            background-color: white;        /* Default background */
+            width: 14px;                    // width of the circle
+            height: 14px;                   // height of the circle
+            border-radius: 7px;             // Half the width/height for a perfect circle
+            border: 1px solid gray;         // Default border for unselected buttons
+            background-color: white;        // Default background
         }
-
+    
         QRadioButton::indicator:checked {
-            background-color: #FFB347;      /* soft orange background for selected button */
-            border: 1px solid gray;         /* White border for better visibility */
-            border-radius: 7px;             /* Ensure it stays circular */
+            background-color: #FFB347;      // soft orange background for selected button
+            border: 1px solid gray;         // White border for better visibility
+            border-radius: 7px;             // Ensure it stays circular
         }
-
+    
         QRadioButton::indicator:hover {
-            background-color: gray;         /* Optional: Gray when hovered */
+            background-color: gray;         // Optional: Gray when hovered
         }
-
-        /* Label Styling */
+    
+        // Label Styling
         QLabel {
-            color: white;                   /* White text for labels */
+            color: white;                   // White text for labels
         }
-
-        /* Button Styling */
+    
+        // Button Styling
         QPushButton {
-            background-color: #555555;      /* Dark grey background */
-            color: white;                   /* White text */
-            border: none;                   /* No borders */
-            padding: 6px 12px;              /* Padding inside buttons */
-            border-radius: 4px;             /* Rounded corners */
+            background-color: #555555;      // Dark grey background
+            color: white;                   // White text
+            border: none;                   // No borders
+            padding: 6px 12px;              // Padding inside buttons
+            border-radius: 4px;             // Rounded corners
         }
-
+    
         QPushButton:hover {
-            background-color: #666666;      /* Slightly lighter on hover */
+            background-color: #666666;      // Slightly lighter on hover
         }
-
+    
         QPushButton:pressed {
-            background-color: #444444;      /* Darker when pressed */
+            background-color: #444444;      // Darker when pressed
         }
-
-        /* Line Edit Styling */
+    
+        // Line Edit Styling
         QLineEdit {
-            background-color: #333333;      /* Darker background for input fields */
-            color: white;                   /* White text */
-            border: 1px solid #555555;      /* Border color */
-            padding: 4px 8px;               /* Padding inside input fields */
-            border-radius: 4px;             /* Rounded corners */
+            background-color: #333333;      // Darker background for input fields
+            color: white;                   // White text
+            border: 1px solid #555555;      // Border color
+            padding: 4px 8px;               // Padding inside input fields
+            border-radius: 4px;             // Rounded corners
         }
-
-        /* Error Message Styling */
+    
+        // Error Message Styling
         QLabel#errorMessage {
-            color: #FFB347;                 /* soft orange for errors */
+            color: #FFB347;                 // soft orange for errors
         }
-
-        /* Free Space Label Styling */
+    
+        // Free Space Label Styling
         QLabel#freeSpace {
-            color: white;                   /* White text */
-            font-weight: bold;              /* Bold text */
+            color: white;                   // White text
+            font-weight: bold;              // Bold text
         }
-    )");
+      )"
+    );*/
 
 
     ui->welcomeLabel->setText(ui->welcomeLabel->text().arg(PACKAGE_NAME));
