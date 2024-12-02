@@ -368,7 +368,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+341"/>
+        <location filename="../bitcoingui.cpp" line="+391"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overview</translation>
     </message>
@@ -438,7 +438,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Wallet:</translation>
     </message>
     <message>
-        <location line="+426"/>
+        <location line="+425"/>
         <source>Network activity disabled.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation>Network activity disabled.</translation>
@@ -449,7 +449,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location line="-1244"/>
+        <location line="-1243"/>
         <source>Send coins to a Bitcoin address</source>
         <translation>Send coins to a Digital Gold address</translation>
     </message>
@@ -564,7 +564,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="+491"/>
+        <location line="+490"/>
         <source>Syncing Headers (%1%)…</source>
         <translation>Syncing Headers (%1%)…</translation>
     </message>
@@ -589,7 +589,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Connecting to peers…</translation>
     </message>
     <message>
-        <location line="-885"/>
+        <location line="-884"/>
         <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation>Request payments (generates QR codes and Digital Gold: URIs)</translation>
     </message>
@@ -609,7 +609,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
-        <location line="+789"/>
+        <location line="+788"/>
         <source>Processed %n block(s) of transaction history.</source>
         <translation>
             <numerusform>Processed %n block of transaction history.</numerusform>
@@ -657,7 +657,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Up to date</translation>
     </message>
     <message>
-        <location line="-870"/>
+        <location line="-869"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
@@ -833,7 +833,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Main Window</translation>
     </message>
     <message>
-        <location line="+289"/>
+        <location line="+288"/>
         <source>%1 client</source>
         <translation>%1 client</translation>
     </message>
@@ -1506,7 +1506,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</transla
         <translation>Use a custom data directory:</translation>
     </message>
     <message numerus="yes">
-        <location filename="../intro.cpp" line="+222"/>
+        <location filename="../intro.cpp" line="+221"/>
         <source>%n GB of space available</source>
         <translation>
             <numerusform>%n GB of space available</numerusform>
@@ -2125,7 +2125,7 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+109"/>
+        <location filename="../optionsdialog.cpp" line="+91"/>
         <source>Compiled without external signing support (required for external signing)</source>
         <extracomment>&quot;External signing&quot; means using devices such as hardware wallets.</extracomment>
         <translation>Compiled without external signing support (required for external signing)</translation>
