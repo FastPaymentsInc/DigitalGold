@@ -88,99 +88,127 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     platformStyle(_platformStyle),
     m_network_style(networkStyle)
 {
-// DigitalGold: new QT settings
-/*
+    // Blackcoin: Set global stylesheet
 qApp->setStyleSheet(R"(
     QWidget {
-        background-color: #161E26;          // Background color for all widgets
-        color: white;                       // Default text color for all widgets
+        background-color: #161E26; /* Background color for all widgets */
+        color: white; /* Default text color */
     }
 
     QPushButton {
-        background-color: #161E26;
-        color: white;                       // White text
+        background-color: #FA960F; /* Default background */
+        color: black; /* Default text color */
+        border: 1px solid #232F38; /* Border */
+        border-radius: 6px; /* Rounded corners */
+        padding: 5px;
     }
 
     QPushButton:hover {
-        background-color: #161E26;          // Maintain background color on hover
-        color: white;                       // White text on hover
+        background-color: #FFB347; /* Lighter orange on hover */
+    }
+    QPushButton:pressed {
+        background-color: #FFA726; /* Slightly darker orange when pressed */
+        color: white; /* White text when pressed */
+    }
+    QPushButton:focus {
+        border: 2px solid white; /* Highlight border when focused */
     }
 
     QMenu {
-        color: white;
+        color: white; /* Default menu text color */
     }
-
     QMenu::item {
-        color: white;                       // Default text color
-        padding: 5px 10px;                  // Adds padding for submenu items
-}
-
-    QMenu::item:selected {                  // Applies when a menu item is hovered or selected
-        background-color: lightgrey;        // Lighter gray for submenu hover
-        color: black;                       // Change text color to black for better contrast
-        border: none;                       // Optional: remove border for cleaner look
-}
-
+        color: white; /* Default text color */
+        padding: 5px 10px; /* Adds padding for submenu items */
+    }
+    QMenu::item:selected {
+        background-color: lightgrey; /* Lighter gray for submenu hover */
+        color: black; /* Change text color to black for better contrast */
+        border: none; /* Remove border for cleaner look */
+    }
 
     QMenuBar {
-        background-color: #FA960F;          // Orange background
-        color: black;                       // Black text
-        font-weight: bold;                  // Makes the text bold
+        background-color: #FA960F; /* Orange background */
+        color: black; /* Black text */
+        font-weight: bold; /* Bold text */
     }
-
     QMenuBar::item:pressed {
-        background-color: #FFB347;          // Slightly softer orange when pressed
+        background-color: #FFB347; /* Softer orange when pressed */
     }
 
     QToolBar {
-        background-color: #FA960F;          // Orange background color for the toolbar
+        background-color: #FA960F; /* Orange toolbar background */
         color: black;
         border: none;
         padding: 0px;
-        margin: 0;                          // Remove any default margin
+        margin: 0; /* Remove default margin */
     }
     QToolButton {
-        background-color: #FA960F;          // Ensure buttons also have the orange background
-        color: black;                       // Set button text color for visibility
-        font-weight: bold;                  // Makes the text bold
-        border: none;                       // Remove button borders for a cleaner look
+        background-color: #FA960F; /* Orange button background */
+        color: black; /* Text color */
+        font-weight: bold; /* Bold text */
+        border: none; /* Remove button borders */
     }
     QToolButton:pressed {
-        background-color: #FA960F;          // Maintain orange color when pressed or hovered
-        border: 1px solid white;            // Highlight border on hover
+        background-color: #FA960F; /* Orange on press */
+        border: 1px solid white; /* Highlight border */
     }
-    QToolButton:checked  {
-        background-color: #FA960F;          // orange background
-        border: 2px solid white;            // Bold border when checked
+    QToolButton:checked {
+        background-color: #FA960F; /* Orange background */
+        border: 2px solid white; /* Bold border when checked */
     }
-    QToolButton:hover  {
-        background-color: #FFB347;          // soft orange on hover
-        border: 2px solid white;            // Bold border when checked
+    QToolButton:hover {
+        background-color: #FFB347; /* Light orange on hover */
+        border: 2px solid white; /* Highlight border */
     }
+
     QHeaderView::section {
-        background-color: gray;             // Set the color for the header section
-        color: white;                       // Set the text color for better visibility
+        background-color: gray; /* Header background color */
+        color: white; /* Text color */
         padding: 4px;
     }
+
     QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {
-        background-color: lightgrey;        // Set the background color for text input fields to white
-        color: black;                       // Set the text color to black for readability
+        background-color: lightgrey; /* Input field background */
+        color: black; /* Input text color */
         border: 1px solid white;
         padding: 4px;
     }
-    QComboBox QAbstractItemView {           // Dropdown lists are white with black letters
-        background-color: white;
-        color: black;
-        selection-background-color: #FA960F;
-        selection-color: white;
+    QComboBox QAbstractItemView {
+        background-color: white; /* Dropdown background */
+        color: black; /* Dropdown text */
+        selection-background-color: #FA960F; /* Selection color */
+        selection-color: white; /* Text color when selected */
     }
+
     QTableView {
-        background-color: #161E26;           // Background color for the table
-        alternate-background-color: dimgray; // Light grey for alternate rows
+        background-color: #161E26; /* Table background */
+        alternate-background-color: dimgray; /* Alternate row color */
     }
     QTableView::item:hover {
-        background-color: #FA960F;          // Orange background for transaction rows on hover
-        color: white;                       // White text color on hover
+        background-color: #FA960F; /* Hover background */
+        color: white; /* Hover text color */
+    }
+
+    QTabWidget::pane {
+        border: 1px solid #232F38; /* Pane border */
+    }
+    QTabBar::tab {
+        background: #FA960F; /* Orange tabs */
+        color: black; /* Tab text */
+        padding: 10px; /* Padding for better spacing */
+        border: 1px solid #232F38; /* Tab border */
+        margin: 2px; /* Space between tabs */
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    QTabBar::tab:selected {
+        background: #232F38; /* Dark grey for selected tab */
+        color: white; /* White text */
+    }
+    QTabBar::tab:hover {
+        background: #FFA726; /* Lighter orange on hover */
+        color: black; /* Hover text */
     }
 )");
 */

@@ -36,25 +36,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
       ui(new Ui::OptionsDialog)
 {
     ui->setupUi(this);
-    // DigitalGold: new QT settings
-    /*this->setStyleSheet(R"(
-        QTabBar::tab {
-            background: #FA960F; // orange
-            color: black;
-            padding: 10px;
-            border: none;
-        }
-
-        QTabBar::tab:selected {
-            background: #232F38; // darkgrey
-            color: white;
-        }
-
-        QTabBar::tab:hover {
-            color: white;
-        }
-    )");*/
-
+    
     /* Main elements init */
     ui->databaseCache->setMinimum(nMinDbCache);
     ui->databaseCache->setMaximum(nMaxDbCache);

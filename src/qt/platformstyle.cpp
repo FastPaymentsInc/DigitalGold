@@ -19,7 +19,7 @@ static const struct {
     const bool useExtraSpacing;
 } platform_styles[] = {
     {"macosx", false, true, true},
-    {"windows", true, false, false},
+    {"windows", true, true, false},
     /* Other: linux, unix, ... */
     {"other", true, true, false}
 };
@@ -30,15 +30,15 @@ namespace {
 void MakeSingleColorImage(QImage& img, const QColor& colorbase)
 {
     img = img.convertToFormat(QImage::Format_ARGB32);
-    // DigitalGold: new QT settings
-    // QColor iconColor = QColor(255, 255, 255); // White color
+
+    QColor iconColor = QColor(255, 255, 255); // Blackcoin: White color
 
     for (int x = img.width(); x--; )
     {
         for (int y = img.height(); y--; )
         {
             const QRgb rgb = img.pixel(x, y);
-            img.setPixel(x, y, qRgba(colorbase.red(), colorbase.green(), colorbase.blue(), qAlpha(rgb)));
+            img.setPixel(x, y, qRgba(iconColor.red(), iconColor.green(), iconColor.blue(), qAlpha(rgb)));
         }
     }
 }
