@@ -211,7 +211,7 @@ qApp->setStyleSheet(R"(
         color: black; /* Hover text */
     }
 )");
-*/
+
     QSettings settings;
     if (!restoreGeometry(settings.value("MainWindowGeometry").toByteArray())) {
         // Restore failed (perhaps missing setting), center the window
